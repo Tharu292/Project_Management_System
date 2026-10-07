@@ -1,0 +1,15 @@
+# Local environment files: real secrets (DB_PASSWORD, JWT_SECRET, ...) live
+# outside the repository. Only a placeholder-only template may be committed.
+.env
+.env.*
+*.env
+!.env.example
+
+# Editor files at the repository root (each module has its own rules)
+/.idea/
+/.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
