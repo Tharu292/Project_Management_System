@@ -1,5 +1,6 @@
 package com.researchpms.backend.shared.common;
 
+import com.researchpms.backend.shared.security.PasswordChangeRequiredException;
 import java.time.Instant;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -49,6 +50,22 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	ResponseEntity<Object> handleForbidden(AccessDeniedException ex, WebRequest request) {
 		return respond(HttpStatus.FORBIDDEN, "You do not have permission to do this.", Map.of(), new HttpHeaders(),
 				request);
+	}
+
+	@ExceptionHandler(PasswordChangeRequiredException.class)
+	ResponseEntity<Object> handlePasswordChangeRequired(PasswordChangeRequiredException ex, WebRequest request) {
+		return respond(HttpStatus.FORBIDDEN, PasswordChangeRequiredException.MESSAGE, Map.of(), new HttpHeaders(),
+				request);
+	}
+
+	@ExceptionHandler(OperationNotAllowedException.class)
+	ResponseEntity<Object> handleNotAllowed(OperationNotAllowedException ex, WebRequest request) {
+		return respond(HttpStatus.FORBIDDEN, ex.getMessage(), Map.of(), new HttpHeaders(), request);
+	}
+
+	@ExceptionHandler(ResourceNotFoundException.class)
+	ResponseEntity<Object> handleNotFound(ResourceNotFoundException ex, WebRequest request) {
+		return respond(HttpStatus.NOT_FOUND, ex.getMessage(), Map.of(), new HttpHeaders(), request);
 	}
 
 	@ExceptionHandler(DuplicateResourceException.class)

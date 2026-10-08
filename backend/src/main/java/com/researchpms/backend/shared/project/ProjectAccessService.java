@@ -1,6 +1,7 @@
 package com.researchpms.backend.shared.project;
 
 import com.researchpms.backend.shared.security.CurrentUserService;
+import com.researchpms.backend.shared.security.PasswordChangeRequiredException;
 import com.researchpms.backend.shared.user.SystemRole;
 import java.util.Arrays;
 import java.util.EnumSet;
@@ -24,6 +25,12 @@ import org.springframework.stereotype.Service;
  * membership fails every member and role check, exactly like any other
  * non-member. {@link #requireMemberOrAdmin(UUID)} is the single, explicit
  * exception, reserved for administrative operations.
+ *
+ * <p>
+ * A signed-in user who must still change their password is treated, by every
+ * check on the current user, as holding no project role and not being an
+ * admin, whatever the database says. SecurityConfig already refuses their
+ * requests; this keeps the rule true for code reached any other way.
  */
 @Service
 public class ProjectAccessService {
@@ -55,15 +62,20 @@ public class ProjectAccessService {
 	}
 
 	public Set<ProjectRole> getCurrentUserRoles(UUID projectId) {
+		if (currentUserService.isPasswordChangeRequired()) {
+			return EnumSet.noneOf(ProjectRole.class);
+		}
 		return getRoles(currentUserService.getCurrentUserId(), projectId);
 	}
 
 	public boolean isCurrentUserMember(UUID projectId) {
-		return isMember(currentUserService.getCurrentUserId(), projectId);
+		return !currentUserService.isPasswordChangeRequired()
+				&& isMember(currentUserService.getCurrentUserId(), projectId);
 	}
 
 	public boolean currentUserHasRole(UUID projectId, ProjectRole role) {
-		return hasRole(currentUserService.getCurrentUserId(), projectId, role);
+		return !currentUserService.isPasswordChangeRequired()
+				&& hasRole(currentUserService.getCurrentUserId(), projectId, role);
 	}
 
 	public boolean currentUserHasAnyRole(UUID projectId, ProjectRole... roles) {
@@ -72,7 +84,8 @@ public class ProjectAccessService {
 	}
 
 	public boolean isCurrentUserAdmin() {
-		return currentUserService.getCurrentSystemRole() == SystemRole.ADMIN;
+		return !currentUserService.isPasswordChangeRequired()
+				&& currentUserService.getCurrentSystemRole() == SystemRole.ADMIN;
 	}
 
 	public void requireMember(UUID projectId) {
@@ -101,9 +114,10 @@ public class ProjectAccessService {
 		require(isCurrentUserAdmin());
 	}
 
-	private static void require(boolean allowed) {
+	private void require(boolean allowed) {
 		if (!allowed) {
-			throw new AccessDeniedException("Project access denied.");
+			throw currentUserService.isPasswordChangeRequired() ? new PasswordChangeRequiredException()
+					: new AccessDeniedException("Project access denied.");
 		}
 	}
 

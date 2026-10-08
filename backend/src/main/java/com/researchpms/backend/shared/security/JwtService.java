@@ -29,6 +29,12 @@ public class JwtService {
 
 	static final String CLAIM_SYSTEM_ROLE = "systemRole";
 
+	static final String CLAIM_SECURITY_VERSION = "securityVersion";
+
+	/** What a verified token says about its owner. */
+	public record TokenIdentity(UUID userId, int securityVersion) {
+	}
+
 	private final SecretKey key;
 
 	private final Duration lifetime;
@@ -55,24 +61,35 @@ public class JwtService {
 			.subject(user.getId().toString())
 			.claim(CLAIM_EMAIL, user.getEmail())
 			.claim(CLAIM_SYSTEM_ROLE, user.getSystemRole().name())
+			.claim(CLAIM_SECURITY_VERSION, user.getSecurityVersion())
 			.issuedAt(Date.from(now))
 			.expiration(Date.from(now.plus(lifetime)))
 			.signWith(key, Jwts.SIG.HS256)
 			.compact();
 	}
 
-	/** The user id of a correctly signed, unexpired token; empty for anything else. */
-	public Optional<UUID> extractUserId(String token) {
+	/**
+	 * The owner of a correctly signed, unexpired token; empty for anything else,
+	 * including a token without a security version. The caller must still compare
+	 * the version with the user's current one.
+	 */
+	public Optional<TokenIdentity> extractIdentity(String token) {
 		try {
 			Claims claims = parser.parseSignedClaims(token).getPayload();
-			if (claims.getSubject() == null || claims.getExpiration() == null) {
+			Integer securityVersion = claims.get(CLAIM_SECURITY_VERSION, Integer.class);
+			if (claims.getSubject() == null || claims.getExpiration() == null || securityVersion == null) {
 				return Optional.empty();
 			}
-			return Optional.of(UUID.fromString(claims.getSubject()));
+			return Optional.of(new TokenIdentity(UUID.fromString(claims.getSubject()), securityVersion));
 		}
 		catch (JwtException | IllegalArgumentException ex) {
 			return Optional.empty();
 		}
+	}
+
+	/** The user id of a correctly signed, unexpired token; empty for anything else. */
+	public Optional<UUID> extractUserId(String token) {
+		return extractIdentity(token).map(TokenIdentity::userId);
 	}
 
 	public long getExpiresInSeconds() {

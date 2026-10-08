@@ -60,7 +60,11 @@ public abstract class AuthApiTestSupport {
 	}
 
 	protected String accessTokenFor(User user) throws Exception {
-		String body = login(user.getEmail(), PASSWORD).andReturn().getResponse().getContentAsString();
+		return accessTokenFor(user, PASSWORD);
+	}
+
+	protected String accessTokenFor(User user, String password) throws Exception {
+		String body = login(user.getEmail(), password).andReturn().getResponse().getContentAsString();
 		return JsonPath.read(body, "$.accessToken");
 	}
 

@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import com.researchpms.backend.shared.SharedTestData;
 import com.researchpms.backend.shared.security.AuthenticatedUser;
+import com.researchpms.backend.shared.security.PasswordChangeRequiredException;
 import com.researchpms.backend.shared.user.SystemRole;
 import com.researchpms.backend.shared.user.User;
 import com.researchpms.backend.shared.user.UserRepository;
@@ -245,6 +246,60 @@ class ProjectAccessServiceTest {
 		assertThatThrownBy(() -> projectAccess.currentUserHasRole(project.getId(), ProjectRole.STUDENT))
 			.isInstanceOf(AuthenticationException.class);
 		assertThatThrownBy(projectAccess::isCurrentUserAdmin).isInstanceOf(AuthenticationException.class);
+	}
+
+	// ---- a user who must still change their password ----
+
+	@Test
+	void memberWhoMustChangeTheirPasswordHoldsNoProjectRoleYet() {
+		lecturer.setMustChangePassword(true);
+		signInAs(userRepository.saveAndFlush(lecturer));
+
+		assertThat(projectAccess.isCurrentUserMember(project.getId())).isFalse();
+		assertThat(projectAccess.getCurrentUserRoles(project.getId())).isEmpty();
+		assertThat(projectAccess.currentUserHasAnyRole(project.getId(), ProjectRole.values())).isFalse();
+		for (ProjectRole role : ProjectRole.values()) {
+			assertThat(projectAccess.currentUserHasRole(project.getId(), role)).as(role.name()).isFalse();
+			assertThatThrownBy(() -> projectAccess.requireRole(project.getId(), role)).as(role.name())
+				.isInstanceOf(PasswordChangeRequiredException.class);
+		}
+		assertThatThrownBy(() -> projectAccess.requireMember(project.getId()))
+			.isInstanceOf(PasswordChangeRequiredException.class)
+			.isInstanceOf(AccessDeniedException.class);
+		assertThatThrownBy(() -> projectAccess.requireAnyRole(project.getId(), ProjectRole.values()))
+			.isInstanceOf(PasswordChangeRequiredException.class);
+		assertThatThrownBy(() -> projectAccess.requireMemberOrAdmin(project.getId()))
+			.isInstanceOf(PasswordChangeRequiredException.class);
+
+		// The membership itself is untouched: only the current-user checks are closed.
+		assertThat(projectAccess.isMember(lecturer.getId(), project.getId())).isTrue();
+		assertThat(projectAccess.getRoles(lecturer.getId(), project.getId()))
+			.containsExactlyInAnyOrder(ProjectRole.SUPERVISOR, ProjectRole.EVALUATOR);
+	}
+
+	@Test
+	void adminWhoMustChangeTheirPasswordIsNotTreatedAsAnAdminYet() {
+		User admin = SharedTestData.staff();
+		admin.setSystemRole(SystemRole.ADMIN);
+		admin.setMustChangePassword(true);
+		signInAs(userRepository.saveAndFlush(admin));
+
+		assertThat(projectAccess.isCurrentUserAdmin()).isFalse();
+		assertThatThrownBy(projectAccess::requireAdmin).isInstanceOf(PasswordChangeRequiredException.class);
+		assertThatThrownBy(() -> projectAccess.requireMemberOrAdmin(project.getId()))
+			.isInstanceOf(PasswordChangeRequiredException.class);
+	}
+
+	@Test
+	void accessReturnsOnceThePasswordHasBeenChanged() {
+		lecturer.setMustChangePassword(true);
+		userRepository.saveAndFlush(lecturer);
+		lecturer.changePassword(SharedTestData.PASSWORD_HASH);
+		signInAs(userRepository.saveAndFlush(lecturer));
+
+		assertThatCode(() -> projectAccess.requireMember(project.getId())).doesNotThrowAnyException();
+		assertThat(projectAccess.getCurrentUserRoles(project.getId()))
+			.containsExactlyInAnyOrder(ProjectRole.SUPERVISOR, ProjectRole.EVALUATOR);
 	}
 
 }

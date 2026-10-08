@@ -19,6 +19,19 @@ public final class TestTokens {
 		return signed(secret, userId, Instant.now().minusSeconds(60));
 	}
 
+	/** Correctly signed and unexpired, claiming the given security version. */
+	public static String withSecurityVersion(String secret, UUID userId, int securityVersion) {
+		Instant expiry = Instant.now().plusSeconds(600);
+		return Jwts.builder()
+			.subject(userId.toString())
+			.claim(JwtService.CLAIM_SECURITY_VERSION, securityVersion)
+			.issuedAt(Date.from(expiry.minusSeconds(3600)))
+			.expiration(Date.from(expiry))
+			.signWith(new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), "HmacSHA256"), Jwts.SIG.HS256)
+			.compact();
+	}
+
+	/** Correctly signed, but without a security version, like a token issued before versions existed. */
 	public static String signed(String secret, UUID userId, Instant expiry) {
 		return Jwts.builder()
 			.subject(userId.toString())

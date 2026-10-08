@@ -54,7 +54,9 @@ class JwtServiceTest {
 		String payload = payloadOf(jwtService.generateToken(user));
 
 		assertThat(payload).contains("\"email\":\"" + user.getEmail() + "\"").contains("\"systemRole\":\"ADMIN\"");
-		assertThat(claimNames(payload)).containsExactlyInAnyOrder("sub", "email", "systemRole", "iat", "exp");
+		assertThat(payload).contains("\"securityVersion\":0");
+		assertThat(claimNames(payload)).containsExactlyInAnyOrder("sub", "email", "systemRole", "securityVersion",
+				"iat", "exp");
 		assertThat(payload).doesNotContain(user.getPasswordHash()).doesNotContainIgnoringCase("password");
 
 		long iat = numericClaim(payload, "iat");
@@ -62,6 +64,27 @@ class JwtServiceTest {
 		assertThat(iat).isBetween(before, before + 5);
 		assertThat(exp - iat).isEqualTo(ONE_HOUR_MS / 1000);
 		assertThat(jwtService.getExpiresInSeconds()).isEqualTo(3600);
+	}
+
+	@Test
+	void tokenCarriesTheUsersSecurityVersionAtTheTimeOfIssue() {
+		User user = userWithId();
+		String before = jwtService.generateToken(user);
+
+		user.changePassword(SharedTestData.PASSWORD_HASH);
+		String after = jwtService.generateToken(user);
+
+		assertThat(jwtService.extractIdentity(before))
+			.contains(new JwtService.TokenIdentity(user.getId(), 0));
+		assertThat(jwtService.extractIdentity(after)).contains(new JwtService.TokenIdentity(user.getId(), 1));
+	}
+
+	@Test
+	void tokenWithoutASecurityVersionIsRejected() {
+		String token = TestTokens.signed(SECRET, UUID.randomUUID(), Instant.now().plusSeconds(600));
+
+		assertThat(jwtService.extractIdentity(token)).isEmpty();
+		assertThat(jwtService.extractUserId(token)).isEmpty();
 	}
 
 	@Test
@@ -91,8 +114,8 @@ class JwtServiceTest {
 	void tokenSignedWithAnotherKeyIsRejected() {
 		String other = "a-completely-different-signing-key-0123456789-abcdef";
 
-		assertThat(jwtService.extractUserId(TestTokens.signed(other, UUID.randomUUID(), Instant.now().plusSeconds(600))))
-			.isEmpty();
+		assertThat(jwtService.extractUserId(TestTokens.withSecurityVersion(other, UUID.randomUUID(), 0))).isEmpty();
+		assertThat(jwtService.extractUserId(TestTokens.withSecurityVersion(SECRET, UUID.randomUUID(), 0))).isPresent();
 	}
 
 	@Test

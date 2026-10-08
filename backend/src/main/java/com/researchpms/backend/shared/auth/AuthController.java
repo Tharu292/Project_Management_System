@@ -1,5 +1,6 @@
 package com.researchpms.backend.shared.auth;
 
+import com.researchpms.backend.shared.auth.dto.ChangePasswordRequest;
 import com.researchpms.backend.shared.auth.dto.LoginRequest;
 import com.researchpms.backend.shared.auth.dto.LoginResponse;
 import com.researchpms.backend.shared.auth.dto.StudentRegistrationRequest;
@@ -42,6 +43,13 @@ public class AuthController {
 	@GetMapping("/me")
 	public UserResponse me() {
 		return UserResponse.from(currentUserService.getCurrentUser());
+	}
+
+	/** Succeeds without a body and without a new token: the caller's token is now invalid, so they log in again. */
+	@PostMapping("/change-password")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void changePassword(@Valid @RequestBody ChangePasswordRequest request) {
+		authService.changePassword(request);
 	}
 
 }

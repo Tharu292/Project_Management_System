@@ -74,9 +74,23 @@ public class User extends BaseEntity {
 	@Column(name = "staff_id", unique = true, length = 30)
 	private String staffId;
 
-	@Setter
 	@Column(name = "enabled", nullable = false)
 	private boolean enabled = true;
+
+	/**
+	 * True while the password was chosen by someone other than the account's
+	 * owner. Such a user may only read their own details and change the password.
+	 */
+	@Setter
+	@Column(name = "must_change_password", nullable = false)
+	private boolean mustChangePassword = false;
+
+	/**
+	 * Copied into every access token; a token carrying an older value is
+	 * refused. It only ever increases, and is never returned by an API.
+	 */
+	@Column(name = "security_version", nullable = false)
+	private int securityVersion = 0;
 
 	public User(String firstName, String lastName, String email, String passwordHash, AccountType accountType) {
 		this.firstName = firstName;
@@ -97,6 +111,27 @@ public class User extends BaseEntity {
 
 	public void setStaffId(String staffId) {
 		this.staffId = trimToNull(staffId);
+	}
+
+	/**
+	 * Disabling an account also invalidates every token already issued for it,
+	 * so re-enabling it later does not bring those tokens back.
+	 */
+	public void setEnabled(boolean enabled) {
+		if (this.enabled && !enabled) {
+			securityVersion++;
+		}
+		this.enabled = enabled;
+	}
+
+	/**
+	 * Replaces the password with one its owner chose: stores the new hash,
+	 * lifts the first-login restriction and invalidates every existing token.
+	 */
+	public void changePassword(String newPasswordHash) {
+		this.passwordHash = newPasswordHash;
+		this.mustChangePassword = false;
+		securityVersion++;
 	}
 
 	/** The single place that defines how an email is normalised before storage or lookup. */

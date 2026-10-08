@@ -37,6 +37,8 @@ class LoginTest extends AuthApiTestSupport {
 			.andExpect(jsonPath("$.user.email").value(student.getEmail()))
 			.andExpect(jsonPath("$.user.accountType").value("STUDENT"))
 			.andExpect(jsonPath("$.user.systemRole").value("USER"))
+			.andExpect(jsonPath("$.user.mustChangePassword").value(false))
+			.andExpect(jsonPath("$.user.securityVersion").doesNotExist())
 			.andExpect(jsonPath("$.user.passwordHash").doesNotExist())
 			.andExpect(content().string(not(containsString(student.getPasswordHash()))))
 			.andExpect(content().string(not(containsString(PASSWORD))));

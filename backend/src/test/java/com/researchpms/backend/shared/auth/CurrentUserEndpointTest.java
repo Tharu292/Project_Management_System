@@ -14,7 +14,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.researchpms.backend.shared.SharedTestData;
 import com.researchpms.backend.shared.security.CurrentUserService;
 import com.researchpms.backend.shared.security.TestTokens;
+import com.researchpms.backend.shared.user.SystemRole;
 import com.researchpms.backend.shared.user.User;
+import java.time.Instant;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +63,8 @@ class CurrentUserEndpointTest extends AuthApiTestSupport {
 			.andExpect(jsonPath("$.accountType").value("STUDENT"))
 			.andExpect(jsonPath("$.systemRole").value("USER"))
 			.andExpect(jsonPath("$.registrationNumber").value(student.getRegistrationNumber()))
-			.andExpect(jsonPath("$.staffId").isEmpty());
+			.andExpect(jsonPath("$.staffId").isEmpty())
+			.andExpect(jsonPath("$.mustChangePassword").value(false));
 	}
 
 	@Test
@@ -72,6 +75,7 @@ class CurrentUserEndpointTest extends AuthApiTestSupport {
 			.andExpect(jsonPath("$.passwordHash").doesNotExist())
 			.andExpect(jsonPath("$.password").doesNotExist())
 			.andExpect(jsonPath("$.projects").doesNotExist())
+			.andExpect(jsonPath("$.securityVersion").doesNotExist())
 			.andExpect(content().string(not(containsString(student.getPasswordHash()))))
 			.andExpect(content().string(not(containsString("$2"))));
 	}
@@ -84,6 +88,10 @@ class CurrentUserEndpointTest extends AuthApiTestSupport {
 		expectUnauthorized(getWithToken(ME, "not-a-jwt"));
 		expectUnauthorized(getWithToken(ME, TestTokens.expired(secret, student.getId())));
 		expectUnauthorized(getWithToken(ME, TestTokens.unsigned(student.getId())));
+		expectUnauthorized(getWithToken(ME, TestTokens.signed(secret, student.getId(), Instant.now().plusSeconds(600))));
+		expectUnauthorized(getWithToken(ME, TestTokens.withSecurityVersion(secret, student.getId(), 1)));
+		expectUnauthorized(getWithToken(ME, TestTokens.withSecurityVersion(secret, student.getId(), -1)));
+		getWithToken(ME, TestTokens.withSecurityVersion(secret, student.getId(), 0)).andExpect(status().isOk());
 		expectUnauthorized(getWithToken(ME, valid.substring(0, valid.length() - 4) + "AAAA"));
 		expectUnauthorized(getWithToken(ME, TestTokens.withSubjectReplaced(valid, student.getId(), UUID.randomUUID())));
 		expectUnauthorized(mockMvc.perform(get(ME).header(HttpHeaders.AUTHORIZATION, "Basic " + valid)));
@@ -118,6 +126,23 @@ class CurrentUserEndpointTest extends AuthApiTestSupport {
 
 		getWithToken("/api/v1/anything", accessTokenFor(student)).andExpect(status().isNotFound())
 			.andExpect(jsonPath("$.status").value(404));
+	}
+
+	@Test
+	void everySystemRoleHasNormalAccessAndOnlyAPendingPasswordChangeRemovesIt() throws Exception {
+		for (SystemRole role : SystemRole.values()) {
+			User user = SharedTestData.staff();
+			user.setSystemRole(role);
+			saveWithPassword(user);
+			// Past the security rules: an unknown URL is a 404, not a 403.
+			getWithToken("/api/v1/anything", accessTokenFor(user)).andExpect(status().isNotFound());
+
+			user.setMustChangePassword(true);
+			userRepository.saveAndFlush(user);
+			getWithToken("/api/v1/anything", accessTokenFor(user)).andExpect(status().isForbidden());
+			getWithToken(ME, accessTokenFor(user)).andExpect(status().isOk())
+				.andExpect(jsonPath("$.systemRole").value(role.name()));
+		}
 	}
 
 	@Test

@@ -3,6 +3,7 @@ package com.researchpms.backend.shared.security;
 import com.researchpms.backend.shared.user.AccountType;
 import com.researchpms.backend.shared.user.SystemRole;
 import com.researchpms.backend.shared.user.User;
+import com.researchpms.backend.shared.user.UserLocks;
 import com.researchpms.backend.shared.user.UserRepository;
 import java.util.UUID;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
@@ -20,8 +21,11 @@ public class CurrentUserService {
 
 	private final UserRepository userRepository;
 
-	public CurrentUserService(UserRepository userRepository) {
+	private final UserLocks userLocks;
+
+	public CurrentUserService(UserRepository userRepository, UserLocks userLocks) {
 		this.userRepository = userRepository;
+		this.userLocks = userLocks;
 	}
 
 	public boolean isAuthenticated() {
@@ -38,6 +42,29 @@ public class CurrentUserService {
 	public User getCurrentUser() {
 		return userRepository.findById(getCurrentUserId())
 			.orElseThrow(() -> new AuthenticationCredentialsNotFoundException("The signed-in user no longer exists."));
+	}
+
+	/**
+	 * The current user's row, locked for the rest of the transaction, for code
+	 * that is about to change the caller's own account. Fails with a 401 if the
+	 * account was disabled or its tokens were invalidated after this request
+	 * was authenticated, for example by a change that held the lock just before.
+	 */
+	public User getCurrentUserForUpdate() {
+		AuthenticatedUser caller = principal();
+		return userLocks.lock(caller.getId())
+			.filter(User::isEnabled)
+			.filter(user -> user.getSecurityVersion() == caller.getSecurityVersion())
+			.orElseThrow(() -> new AuthenticationCredentialsNotFoundException(
+					"The signed-in user's token is no longer valid."));
+	}
+
+	/**
+	 * True while the caller may only read their own details and change their
+	 * password. Such a caller must not be given any other access.
+	 */
+	public boolean isPasswordChangeRequired() {
+		return principal().isMustChangePassword();
 	}
 
 	public AccountType getCurrentAccountType() {

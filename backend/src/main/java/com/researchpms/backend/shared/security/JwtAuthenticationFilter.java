@@ -17,8 +17,10 @@ import org.springframework.web.filter.OncePerRequestFilter;
 /**
  * Authenticates a request from its "Authorization: Bearer" token. The user is
  * reloaded on every request, so a disabled or deleted account stops working
- * immediately even if its token has not expired. A missing or unusable token
- * simply leaves the request unauthenticated.
+ * immediately even if its token has not expired, and so does a token issued
+ * before the user's security version last changed (a password change, or the
+ * account having been disabled). A missing or unusable token simply leaves
+ * the request unauthenticated.
  */
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
@@ -38,8 +40,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 		String header = request.getHeader(HttpHeaders.AUTHORIZATION);
 		if (header != null && header.startsWith(BEARER_PREFIX)) {
-			jwtService.extractUserId(header.substring(BEARER_PREFIX.length()).trim())
-				.flatMap(userRepository::findById)
+			jwtService.extractIdentity(header.substring(BEARER_PREFIX.length()).trim())
+				.flatMap(identity -> userRepository.findById(identity.userId())
+					.filter(user -> user.getSecurityVersion() == identity.securityVersion()))
 				.filter(User::isEnabled)
 				.ifPresent(user -> authenticate(user, request));
 		}
