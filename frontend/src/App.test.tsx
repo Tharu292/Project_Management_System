@@ -267,17 +267,21 @@ describe('session', () => {
 
   it('a 401 on a later request signs the user out; a 403 does not', async () => {
     setToken(TEST_TOKEN)
-    let meCalls = 0
-    mockBackend({
-      [ME]: () => (++meCalls === 1 ? json(200, student) : apiError(401, 'Authentication is required.')),
+    let tokenStillValid = true
+    const backend = mockBackend({
+      [ME]: () => (tokenStillValid ? json(200, student) : apiError(401, 'Authentication is required.')),
       'GET /api/v1/forbidden': () => apiError(403, 'You do not have permission to do this.'),
     })
     renderAt('/dashboard')
     await screen.findByRole('heading', { name: 'Welcome, Test' })
 
     await expect(apiRequest('/api/v1/forbidden', { auth: true })).rejects.toMatchObject({ status: 403 })
+    // A 403 makes the app ask the backend who the user is now; nobody is signed out.
+    await waitFor(() => expect(backend.callsTo(ME)).toHaveLength(2))
     expect(getToken()).toBe(TEST_TOKEN)
     expect(screen.getByRole('heading', { name: 'Welcome, Test' })).toBeDefined()
+
+    tokenStillValid = false
 
     await expect(apiRequest('/api/v1/auth/me', { auth: true })).rejects.toMatchObject({ status: 401 })
     expect(await screen.findByRole('heading', { name: 'Sign in' })).toBeDefined()

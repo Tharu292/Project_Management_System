@@ -36,6 +36,19 @@ export function setUnauthorizedHandler(handler: (() => void) | null): void {
   unauthorizedHandler = handler
 }
 
+/** The one authenticated endpoint that never answers 403: it is how the app re-checks who the user is. */
+export const CURRENT_USER_PATH = '/api/v1/auth/me'
+
+let forbiddenHandler: (() => void) | null = null
+
+/**
+ * Lets the auth state re-check the user when an authenticated request is
+ * rejected with 403: the account may have changed since it was loaded.
+ */
+export function setForbiddenHandler(handler: (() => void) | null): void {
+  forbiddenHandler = handler
+}
+
 interface RequestOptions {
   method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'
   body?: unknown
@@ -47,7 +60,8 @@ interface RequestOptions {
  * The single place that talks to the backend. With `auth`, the bearer token is
  * attached here; a 401 on such a request means the token is no longer valid,
  * so it is removed and the auth state is told. A 403 leaves the session alone:
- * the user is still signed in, just not allowed to do that one thing.
+ * the user is still signed in, just not allowed to do that one thing. The auth
+ * state is told so it can re-check the user, but nobody is signed out.
  */
 export async function apiRequest<T>(path: string, options: RequestOptions = {}): Promise<T> {
   const { method = 'GET', body, auth = false } = options
@@ -81,6 +95,9 @@ export async function apiRequest<T>(path: string, options: RequestOptions = {}):
   if (response.status === 401 && auth && getToken() === sentToken) {
     removeToken()
     unauthorizedHandler?.()
+  }
+  if (response.status === 403 && auth && path !== CURRENT_USER_PATH && getToken() === sentToken) {
+    forbiddenHandler?.()
   }
   throw error
 }

@@ -1,9 +1,14 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useLocation } from 'react-router'
 import { ApiError } from '../api/client'
-import { useAuth } from '../auth/AuthContext'
+import { useAuth, type SessionNotice } from '../auth/AuthContext'
 import AuthLayout, { linkClass, primaryButtonClass } from '../components/AuthLayout'
 import FormField from '../components/FormField'
+
+const SESSION_NOTICES: Record<SessionNotice, string> = {
+  'password-changed': 'Password changed. Sign in with your new password.',
+  'session-ended': 'Your session has ended. Please sign in again.',
+}
 
 interface LoginLocationState {
   registeredEmail?: string
@@ -11,7 +16,7 @@ interface LoginLocationState {
 
 /** One sign-in page for every kind of account; the backend decides who the user is. */
 export default function LoginPage() {
-  const { login } = useAuth()
+  const { login, sessionNotice } = useAuth()
   const location = useLocation()
   const registeredEmail = (location.state as LoginLocationState | null)?.registeredEmail
 
@@ -61,6 +66,19 @@ export default function LoginPage() {
       {registeredEmail && !error && (
         <p role="status" className="mb-4 rounded-lg border border-green-200 bg-green-50 px-3 py-2 text-sm text-green-800">
           Account created. Sign in to continue.
+        </p>
+      )}
+      {sessionNotice && !registeredEmail && !error && (
+        <p
+          role="status"
+          className={
+            'mb-4 rounded-lg border px-3 py-2 text-sm ' +
+            (sessionNotice === 'password-changed'
+              ? 'border-green-200 bg-green-50 text-green-800'
+              : 'border-indigo-200 bg-indigo-50 text-indigo-900')
+          }
+        >
+          {SESSION_NOTICES[sessionNotice]}
         </p>
       )}
       {error && (

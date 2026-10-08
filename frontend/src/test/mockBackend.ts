@@ -1,5 +1,5 @@
 import { vi } from 'vitest'
-import type { User } from '../auth/types'
+import type { AdminUser, User } from '../auth/types'
 
 // A stand-in for the Spring Boot API: tests replace `fetch` and answer with
 // the same JSON shapes the real backend returns. Nothing here is a real credential.
@@ -16,6 +16,84 @@ export const student: User = {
   systemRole: 'USER',
   registrationNumber: 'IT00000000',
   staffId: null,
+  mustChangePassword: false,
+}
+
+/** An ordinary staff account that has already replaced its temporary password. */
+export const staff: User = {
+  id: '22222222-3333-4444-5555-666666666666',
+  firstName: 'Test',
+  lastName: 'Lecturer',
+  email: 'test.lecturer@sliit.lk',
+  accountType: 'STAFF',
+  systemRole: 'USER',
+  registrationNumber: null,
+  staffId: 'STF-0001',
+  mustChangePassword: false,
+}
+
+export const admin: User = {
+  id: '33333333-4444-5555-6666-777777777777',
+  firstName: 'System',
+  lastName: 'Administrator',
+  email: 'admin@sliit.lk',
+  accountType: 'STAFF',
+  systemRole: 'ADMIN',
+  registrationNumber: null,
+  staffId: null,
+  mustChangePassword: false,
+}
+
+/** As the backend returns them straight after an administrator, or the bootstrap, created the account. */
+export const flaggedStaff: User = { ...staff, mustChangePassword: true }
+export const flaggedAdmin: User = { ...admin, mustChangePassword: true }
+
+function asAdminUser(user: User, enabled: boolean, createdAt: string): AdminUser {
+  return { ...user, enabled, createdAt }
+}
+
+export const newStaffAccount: AdminUser = asAdminUser(
+  {
+    ...staff,
+    id: '44444444-5555-6666-7777-888888888888',
+    firstName: 'New',
+    lastName: 'Lecturer',
+    email: 'new.lecturer@sliit.lk',
+    staffId: 'STF-0002',
+    mustChangePassword: true,
+  },
+  true,
+  '2026-10-07T09:00:00Z',
+)
+
+export const disabledStudent: AdminUser = asAdminUser(
+  {
+    ...student,
+    id: '55555555-6666-7777-8888-999999999999',
+    firstName: 'Former',
+    lastName: 'Member',
+    email: 'it11111111@my.sliit.lk',
+    registrationNumber: 'IT11111111',
+  },
+  false,
+  '2026-10-06T09:00:00Z',
+)
+
+/** GET /api/v1/admin/users: 5 accounts, 2 students, 3 staff, 4 enabled, 1 disabled, 1 password change pending. */
+export const adminUserList: AdminUser[] = [
+  asAdminUser(admin, true, '2026-10-01T09:00:00Z'),
+  asAdminUser(student, true, '2026-10-02T09:00:00Z'),
+  asAdminUser(staff, true, '2026-10-03T09:00:00Z'),
+  disabledStudent,
+  newStaffAccount,
+]
+
+export function loginResponse(user: User): Response {
+  return json(200, { accessToken: TEST_TOKEN, tokenType: 'Bearer', expiresIn: 3600, user })
+}
+
+export function noContent(): Response {
+  return new Response(null, { status: 204 })
 }
 
 export function json(status: number, body: unknown): Response {
