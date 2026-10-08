@@ -29,6 +29,8 @@ const MY_GROUPS = 'GET /api/v1/c4/me/groups'
 
 const COMMON_SECTIONS = ['Contribution', 'Team progress', 'GitHub evidence', 'Assessment portfolio']
 const WELLBEING_SECTIONS = ['Team wellbeing', 'My wellbeing']
+/** Sections that have no page yet. */
+const UNBUILT_SECTIONS = ['GitHub evidence', 'Assessment portfolio', ...WELLBEING_SECTIONS, 'My results']
 
 afterEach(() => {
   vi.unstubAllEnvs()
@@ -329,7 +331,7 @@ describe('sections that are not built yet', () => {
     await screen.findByRole('heading', { level: 1, name: 'Test project Alpha' })
     const tabs = within(screen.getByRole('navigation', { name: 'Group sections' }))
 
-    for (const label of [...COMMON_SECTIONS, ...WELLBEING_SECTIONS, 'My results']) {
+    for (const label of UNBUILT_SECTIONS) {
       await user.click(tabs.getByRole('link', { name: label }))
 
       const section = await screen.findByRole('region', { name: label })

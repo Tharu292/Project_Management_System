@@ -56,6 +56,18 @@ class SharedProjectMembershipAdapter implements ProjectMembershipPort {
 
 	@Override
 	@Transactional(readOnly = true)
+	public List<GroupStudent> activeStudents(UUID projectId) {
+		return memberRepository.findByProjectIdAndProjectRoleAndActiveTrue(projectId, ProjectRole.STUDENT)
+			.stream()
+			.filter(SharedProjectMembershipAdapter::isStudent)
+			.map(member -> new GroupStudent(member.getUser().getId(),
+					(member.getUser().getFirstName() + " " + member.getUser().getLastName()).trim()))
+			.sorted(Comparator.comparing(GroupStudent::displayName).thenComparing(GroupStudent::userId))
+			.toList();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
 	public List<GroupMembership> activeMemberships(UUID userId) {
 		Map<UUID, GroupMembership> byProject = new LinkedHashMap<>();
 		for (ProjectMember member : memberRepository.findByUserIdAndActiveTrue(userId)) {

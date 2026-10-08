@@ -7,8 +7,6 @@ import com.researchpms.backend.c4.assessment.released.StudentAssessmentService;
 import com.researchpms.backend.c4.assessment.supervisor.SupervisorMarkResponse;
 import com.researchpms.backend.c4.assessment.supervisor.SupervisorMarkService;
 import com.researchpms.backend.c4.contribution.ContributionAccessService;
-import com.researchpms.backend.c4.contribution.ContributionQueryService;
-import com.researchpms.backend.c4.contribution.dto.ContributionSummaryResponse;
 import com.researchpms.backend.c4.wellbeing.GroupWellbeingSummaryService;
 import com.researchpms.backend.c4.wellbeing.PrivateWellbeingService;
 import com.researchpms.backend.c4.wellbeing.dto.GroupWellbeingSummaryResponse;
@@ -40,8 +38,6 @@ class C4AccessTestController {
 	record MarkEdit(BigDecimal markPercent, String feedback) {
 	}
 
-	private final ContributionQueryService contribution;
-
 	private final ContributionAccessService contributionAccess;
 
 	private final GroupWellbeingSummaryService groupWellbeing;
@@ -54,11 +50,10 @@ class C4AccessTestController {
 
 	private final StudentAssessmentService studentAssessment;
 
-	C4AccessTestController(ContributionQueryService contribution, ContributionAccessService contributionAccess,
+	C4AccessTestController(ContributionAccessService contributionAccess,
 			GroupWellbeingSummaryService groupWellbeing, PrivateWellbeingService privateWellbeing,
 			SupervisorMarkService supervisorMarks, EvaluatorMarkService evaluatorMarks,
 			StudentAssessmentService studentAssessment) {
-		this.contribution = contribution;
 		this.contributionAccess = contributionAccess;
 		this.groupWellbeing = groupWellbeing;
 		this.privateWellbeing = privateWellbeing;
@@ -67,17 +62,7 @@ class C4AccessTestController {
 		this.studentAssessment = studentAssessment;
 	}
 
-	// ---- contribution ----
-
-	@GetMapping("/projects/{projectId}/contribution")
-	List<ContributionSummaryResponse> groupContribution(@PathVariable UUID projectId) {
-		return contribution.groupContribution(projectId);
-	}
-
-	@GetMapping("/projects/{projectId}/students/{studentId}/contribution")
-	List<ContributionSummaryResponse> studentContribution(@PathVariable UUID projectId, @PathVariable UUID studentId) {
-		return contribution.studentContribution(projectId, studentId);
-	}
+	// ---- contribution: the views have real endpoints now; these two have none yet ----
 
 	@GetMapping("/projects/{projectId}/students/{studentId}/evidence")
 	String evidence(@PathVariable UUID projectId, @PathVariable UUID studentId) {

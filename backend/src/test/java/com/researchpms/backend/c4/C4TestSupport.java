@@ -156,13 +156,37 @@ abstract class C4TestSupport extends AuthApiTestSupport {
 		return saved;
 	}
 
+	/** Test-only: GitHub was read, the task source was not. Seven commits, three pull requests, no issue comments. */
+	protected static final String PARTIAL_METRICS = """
+			{"schemaVersion": 1,
+			 "metrics": {
+			   "COMMIT": {"state": "VALUE", "count": 7, "normalised": 70.00},
+			   "PULL_REQUEST": {"state": "VALUE", "count": 3, "normalised": 60.00},
+			   "COMPLETED_TASK": {"state": "UNAVAILABLE", "reason": "TASKS_NOT_CONNECTED"},
+			   "ISSUE_COMMENT": {"state": "VERIFIED_ZERO", "count": 0, "normalised": 0},
+			   "PULL_REQUEST_REVIEW": {"state": "VALUE", "count": 2, "normalised": 100}},
+			 "pullRequestStates": {"MERGED": 2, "OPEN": 1, "CLOSED_UNMERGED": 0}}
+			""";
+
+	protected static final String PARTIAL_COVERAGE = """
+			{"schemaVersion": 1,
+			 "sources": {"GITHUB": {"status": "AVAILABLE"},
+			             "TASKS": {"status": "UNAVAILABLE", "reason": "TASKS_NOT_CONNECTED"}}}
+			""";
+
+	/** A partial snapshot for September 2026. Made up for the test; nothing calculates it. */
 	protected UUID snapshot(Project project, User student, String indicator) {
+		return snapshot(project, student, indicator, LocalDate.of(2026, 9, 30), PARTIAL_METRICS, PARTIAL_COVERAGE,
+				true);
+	}
+
+	protected UUID snapshot(Project project, User student, String indicator, LocalDate periodEnd, String metrics,
+			String coverage, boolean partial) {
 		return snapshotRepository
 			.saveAndFlush(new ContributionSnapshot(project.getId(), student.getId(), LocalDate.of(2026, 9, 1),
-					LocalDate.of(2026, 9, 30), scoringConfigRepository.findByActiveTrue().orElseThrow(),
-					"{\"COMMITS\": {\"state\": \"VALUE\", \"count\": 7}}", new BigDecimal("70.00"), null,
-					new BigDecimal("50.00"), new BigDecimal(indicator), "{\"TASKS\": \"UNAVAILABLE\"}", true,
-					Instant.now()))
+					periodEnd, scoringConfigRepository.findByActiveTrue().orElseThrow(), metrics,
+					new BigDecimal("70.00"), null, new BigDecimal("50.00"), new BigDecimal(indicator), coverage,
+					partial, Instant.now()))
 			.getId();
 	}
 

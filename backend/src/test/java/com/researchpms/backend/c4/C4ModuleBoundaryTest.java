@@ -43,8 +43,8 @@ class C4ModuleBoundaryTest {
 
 	@Test
 	void theSourceFoldersBeingCheckedExistAndHoldCode() throws IOException {
-		for (String module : new String[] { "access", "integration", "groups", "contribution", "wellbeing",
-				"assessment", "assessment/supervisor", "assessment/evaluator" }) {
+		for (String module : new String[] { "access", "integration", "groups", "contribution", "progress",
+				"wellbeing", "assessment", "assessment/supervisor", "assessment/evaluator" }) {
 			try (Stream<Path> files = Files.walk(MAIN.resolve(Path.of("c4", module.split("/"))))) {
 				assertThat(files.filter(path -> path.toString().endsWith(".java")).count()).as(module).isPositive();
 			}
@@ -82,6 +82,12 @@ class C4ModuleBoundaryTest {
 				assertNoDependency(common, feature);
 			}
 		}
+	}
+
+	@Test
+	void progressDoesNotDependOnWellbeingOrAssessment() throws IOException {
+		assertNoDependency("progress", "wellbeing");
+		assertNoDependency("progress", "assessment");
 	}
 
 	@Test

@@ -41,13 +41,22 @@ describe('demonstration data', () => {
       ([path, source]) => !/\.test\.tsx?$/.test(path) && !path.endsWith('/demoData.ts') && source.includes('demoData'),
     )
 
-    expect(importers.map(([path]) => path)).toEqual(['/src/features/c4/groups/MyGroupsProvider.tsx'])
-    const [, source] = importers[0]
-    // Never a static import, and always behind the build-time development check.
-    expect(source).not.toMatch(/import\s[^;]*from\s+['"][^'"]*demoData['"]/)
-    expect(source).toMatch(
-      /if \(import\.meta\.env\.DEV && isDemoMode\(\)\) \{\s*const \{[^}]+\} = await import\('\.\.\/demo\/demoData'\)/,
-    )
+    expect(importers.map(([path]) => path).sort()).toEqual([
+      '/src/features/c4/api/contributionData.ts',
+      '/src/features/c4/groups/MyGroupsProvider.tsx',
+    ])
+    for (const [path, source] of importers) {
+      // Never a static import.
+      expect(source, path).not.toMatch(/import\s[^;]*from\s+['"][^'"]*demoData['"]/)
+      // Every dynamic import sits directly behind the build-time development check.
+      const imports = source.match(/import\('\.\.\/demo\/demoData'\)/g) ?? []
+      const guarded =
+        source.match(
+          /if \(import\.meta\.env\.DEV && isDemoMode\(\)\) \{\s*const \{[^}]+\} = await import\('\.\.\/demo\/demoData'\)/g,
+        ) ?? []
+      expect(imports.length, path).toBeGreaterThan(0)
+      expect(guarded.length, path).toBe(imports.length)
+    }
   })
 })
 

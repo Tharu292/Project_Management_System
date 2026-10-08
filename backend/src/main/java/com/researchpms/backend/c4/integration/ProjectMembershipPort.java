@@ -23,6 +23,16 @@ public interface ProjectMembershipPort {
 	List<UUID> activeStudentIds(UUID projectId);
 
 	/**
+	 * The active students of a project group with the name to show for each,
+	 * ordered by that name. The name is the only personal detail given out.
+	 */
+	List<GroupStudent> activeStudents(UUID projectId);
+
+	/** A student of a group, as other members of the group may see them. */
+	record GroupStudent(UUID userId, String displayName) {
+	}
+
+	/**
 	 * Every project in which the user has an active membership, with the roles
 	 * they hold there, ordered by project code. It describes that one user only.
 	 */
