@@ -6,6 +6,7 @@ import PasswordChangeRoute from './auth/PasswordChangeRoute'
 import ProtectedRoute from './auth/ProtectedRoute'
 import PublicOnlyRoute from './auth/PublicOnlyRoute'
 import { ADMIN_HOME_PATH } from './auth/landing'
+import C4Routes from './features/c4/C4Routes'
 import ChangePasswordPage from './pages/ChangePasswordPage'
 import DashboardPage from './pages/DashboardPage'
 import LoginPage from './pages/LoginPage'
@@ -33,6 +34,7 @@ function App() {
         </Route>
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/groups/*" element={<C4Routes />} />
           <Route element={<AdminRoute />}>
             <Route path="/admin" element={<Navigate to={ADMIN_HOME_PATH} replace />} />
             <Route path="/admin/dashboard" element={<AdminDashboardPage />} />

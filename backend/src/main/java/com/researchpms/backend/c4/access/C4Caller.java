@@ -3,6 +3,8 @@ package com.researchpms.backend.c4.access;
 import com.researchpms.backend.shared.project.ProjectRole;
 import com.researchpms.backend.shared.user.AccountType;
 import com.researchpms.backend.shared.user.SystemRole;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -46,6 +48,21 @@ public record C4Caller(UUID userId, AccountType accountType, SystemRole systemRo
 	 */
 	public boolean hasAssessmentConflict() {
 		return isSupervising() && isEvaluator();
+	}
+
+	/**
+	 * The roles that actually count for this user in the project, in a fixed
+	 * order. Empty when none of their memberships fits their account.
+	 */
+	public List<ProjectRole> effectiveRoles() {
+		return Arrays.stream(ProjectRole.values()).filter(this::holdsEffectively).toList();
+	}
+
+	private boolean holdsEffectively(ProjectRole role) {
+		if (!isOrdinaryUser() || !roles.contains(role)) {
+			return false;
+		}
+		return role == ProjectRole.STUDENT ? accountType == AccountType.STUDENT : accountType == AccountType.STAFF;
 	}
 
 	private boolean isOrdinaryUser() {

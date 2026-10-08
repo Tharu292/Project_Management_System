@@ -1,7 +1,9 @@
-import { useLocation } from 'react-router'
+import { Link, useLocation } from 'react-router'
 import { useAuth } from '../auth/AuthContext'
+import { isAdmin } from '../auth/landing'
 import Alert from '../components/Alert'
-import AppShell from '../components/AppShell'
+import AppShell, { secondaryButtonClass } from '../components/AppShell'
+import { GROUPS_PATH } from '../features/c4/paths'
 
 /** Temporary signed-in landing page. It only proves authentication works; the real dashboard comes later. */
 export default function DashboardPage() {
@@ -34,6 +36,13 @@ export default function DashboardPage() {
         )}
         <h1 className="text-2xl font-semibold text-slate-900">Welcome, {user.firstName}</h1>
         <p className="mt-1 text-slate-600">You are signed in. Project features will appear here.</p>
+        {!isAdmin(user) && (
+          <p className="mt-4">
+            <Link to={GROUPS_PATH} className={secondaryButtonClass}>
+              Open my groups
+            </Link>
+          </p>
+        )}
         <dl className="mt-6 divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white">
           {details.map(([term, value]) => (
             <div key={term} className="flex flex-col gap-1 px-4 py-3 sm:flex-row sm:justify-between">

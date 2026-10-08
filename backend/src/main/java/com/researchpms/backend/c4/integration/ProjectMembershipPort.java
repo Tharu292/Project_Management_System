@@ -1,6 +1,7 @@
 package com.researchpms.backend.c4.integration;
 
 import com.researchpms.backend.shared.project.ProjectRole;
+import com.researchpms.backend.shared.project.ProjectStatus;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
@@ -20,5 +21,16 @@ public interface ProjectMembershipPort {
 
 	/** The active students of a project group, in a stable order. */
 	List<UUID> activeStudentIds(UUID projectId);
+
+	/**
+	 * Every project in which the user has an active membership, with the roles
+	 * they hold there, ordered by project code. It describes that one user only.
+	 */
+	List<GroupMembership> activeMemberships(UUID userId);
+
+	/** One user's roles in one project, as the membership data records them. */
+	record GroupMembership(UUID projectId, String projectCode, String title, ProjectStatus status,
+			Set<ProjectRole> roles) {
+	}
 
 }

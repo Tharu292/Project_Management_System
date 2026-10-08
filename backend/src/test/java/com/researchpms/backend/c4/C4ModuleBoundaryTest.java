@@ -43,8 +43,8 @@ class C4ModuleBoundaryTest {
 
 	@Test
 	void theSourceFoldersBeingCheckedExistAndHoldCode() throws IOException {
-		for (String module : new String[] { "access", "integration", "contribution", "wellbeing", "assessment",
-				"assessment/supervisor", "assessment/evaluator" }) {
+		for (String module : new String[] { "access", "integration", "groups", "contribution", "wellbeing",
+				"assessment", "assessment/supervisor", "assessment/evaluator" }) {
 			try (Stream<Path> files = Files.walk(MAIN.resolve(Path.of("c4", module.split("/"))))) {
 				assertThat(files.filter(path -> path.toString().endsWith(".java")).count()).as(module).isPositive();
 			}
@@ -81,6 +81,13 @@ class C4ModuleBoundaryTest {
 			for (String feature : new String[] { "contribution", "wellbeing", "assessment" }) {
 				assertNoDependency(common, feature);
 			}
+		}
+	}
+
+	@Test
+	void groupDiscoveryDependsOnNoFeatureModule() throws IOException {
+		for (String feature : new String[] { "contribution", "wellbeing", "assessment" }) {
+			assertNoDependency("groups", feature);
 		}
 	}
 

@@ -1,5 +1,6 @@
 import { vi } from 'vitest'
 import type { AdminUser, User } from '../auth/types'
+import type { MyGroup } from '../features/c4/api/types'
 
 // A stand-in for the Spring Boot API: tests replace `fetch` and answer with
 // the same JSON shapes the real backend returns. Nothing here is a real credential.
@@ -87,6 +88,30 @@ export const adminUserList: AdminUser[] = [
   disabledStudent,
   newStaffAccount,
 ]
+
+// GET /api/v1/c4/me/groups, as the backend answers it for each kind of user.
+
+export const groupAlpha: MyGroup = {
+  projectId: 'aaaaaaaa-1111-4111-8111-aaaaaaaaaaaa',
+  projectCode: 'TEST-ALPHA',
+  title: 'Test project Alpha',
+  status: 'ACTIVE',
+  roles: ['STUDENT'],
+}
+
+export const groupBeta: MyGroup = {
+  projectId: 'bbbbbbbb-2222-4222-8222-bbbbbbbbbbbb',
+  projectCode: 'TEST-BETA',
+  title: 'Test project Beta',
+  status: 'COMPLETED',
+  roles: ['EVALUATOR'],
+}
+
+/** A student's groups. */
+export const studentGroups: MyGroup[] = [groupAlpha]
+
+/** A staff member who supervises one group and evaluates another. */
+export const staffGroups: MyGroup[] = [{ ...groupAlpha, roles: ['SUPERVISOR'] }, groupBeta]
 
 export function loginResponse(user: User): Response {
   return json(200, { accessToken: TEST_TOKEN, tokenType: 'Bearer', expiresIn: 3600, user })
