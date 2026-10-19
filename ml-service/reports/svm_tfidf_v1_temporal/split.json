@@ -1,0 +1,55 @@
+{
+  "method": "temporal: train and test papers come from disjoint submission-year ranges",
+  "train_years": [
+    2018,
+    2022
+  ],
+  "test_years": [
+    2023,
+    2024
+  ],
+  "seed": 42,
+  "sampling": "N smallest sha256('<seed>:<arxiv id>') per category within each period",
+  "cv_folds_on_train": 5,
+  "train_total": 8000,
+  "test_total": 2000,
+  "train_by_category": {
+    "cs.DB": 1600,
+    "cs.CV": 1600,
+    "cs.CL": 1600,
+    "cs.CR": 1600,
+    "cs.RO": 1600
+  },
+  "test_by_category": {
+    "cs.RO": 400,
+    "cs.CR": 400,
+    "cs.DB": 400,
+    "cs.CV": 400,
+    "cs.CL": 400
+  },
+  "test_by_year": {
+    "2023": 865,
+    "2024": 1135
+  },
+  "eligible_by_period": {
+    "train": {
+      "cs.RO": 12901,
+      "cs.CL": 26411,
+      "cs.CV": 53958,
+      "cs.CR": 11350,
+      "cs.DB": 2451
+    },
+    "test": {
+      "cs.CL": 25467,
+      "cs.CV": 42658,
+      "cs.RO": 11864,
+      "cs.CR": 7577,
+      "cs.DB": 1317
+    }
+  },
+  "leakage_checks": {
+    "shared_ids": 0,
+    "test_titles_seen_in_train": 0
+  },
+  "categories_below_target": {}
+}

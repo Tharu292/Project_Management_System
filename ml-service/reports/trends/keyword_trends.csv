@@ -1,0 +1,1101 @@
+category,term,direction,year,papers_with_term,papers,share
+cs.CV,diffusion models,rising,2015,2,1857,0.00108
+cs.CV,diffusion models,rising,2016,1,3083,0.00032
+cs.CV,diffusion models,rising,2017,0,4910,0.0
+cs.CV,diffusion models,rising,2018,1,7256,0.00014
+cs.CV,diffusion models,rising,2019,0,8483,0.0
+cs.CV,diffusion models,rising,2020,1,10998,9e-05
+cs.CV,diffusion models,rising,2021,11,12691,0.00087
+cs.CV,diffusion models,rising,2022,177,14623,0.0121
+cs.CV,diffusion models,rising,2023,1166,18899,0.0617
+cs.CV,diffusion models,rising,2024,2086,23784,0.08771
+cs.CV,diffusion models,rising,2025,2200,27877,0.07892
+cs.CV,large language,rising,2015,0,1857,0.0
+cs.CV,large language,rising,2016,1,3083,0.00032
+cs.CV,large language,rising,2017,0,4910,0.0
+cs.CV,large language,rising,2018,0,7256,0.0
+cs.CV,large language,rising,2019,0,8483,0.0
+cs.CV,large language,rising,2020,0,10998,0.0
+cs.CV,large language,rising,2021,1,12691,8e-05
+cs.CV,large language,rising,2022,18,14623,0.00123
+cs.CV,large language,rising,2023,558,18899,0.02953
+cs.CV,large language,rising,2024,1575,23784,0.06622
+cs.CV,large language,rising,2025,2612,27877,0.0937
+cs.CV,vision-language models,rising,2015,0,1857,0.0
+cs.CV,vision-language models,rising,2016,1,3083,0.00032
+cs.CV,vision-language models,rising,2017,0,4910,0.0
+cs.CV,vision-language models,rising,2018,0,7256,0.0
+cs.CV,vision-language models,rising,2019,0,8483,0.0
+cs.CV,vision-language models,rising,2020,1,10998,9e-05
+cs.CV,vision-language models,rising,2021,16,12691,0.00126
+cs.CV,vision-language models,rising,2022,62,14623,0.00424
+cs.CV,vision-language models,rising,2023,389,18899,0.02058
+cs.CV,vision-language models,rising,2024,1019,23784,0.04284
+cs.CV,vision-language models,rising,2025,2111,27877,0.07573
+cs.CV,prompts,rising,2015,0,1857,0.0
+cs.CV,prompts,rising,2016,0,3083,0.0
+cs.CV,prompts,rising,2017,1,4910,0.0002
+cs.CV,prompts,rising,2018,0,7256,0.0
+cs.CV,prompts,rising,2019,2,8483,0.00024
+cs.CV,prompts,rising,2020,2,10998,0.00018
+cs.CV,prompts,rising,2021,23,12691,0.00181
+cs.CV,prompts,rising,2022,120,14623,0.00821
+cs.CV,prompts,rising,2023,781,18899,0.04132
+cs.CV,prompts,rising,2024,1444,23784,0.06071
+cs.CV,prompts,rising,2025,1785,27877,0.06403
+cs.CV,vlms,rising,2015,0,1857,0.0
+cs.CV,vlms,rising,2016,0,3083,0.0
+cs.CV,vlms,rising,2017,0,4910,0.0
+cs.CV,vlms,rising,2018,0,7256,0.0
+cs.CV,vlms,rising,2019,0,8483,0.0
+cs.CV,vlms,rising,2020,0,10998,0.0
+cs.CV,vlms,rising,2021,0,12691,0.0
+cs.CV,vlms,rising,2022,17,14623,0.00116
+cs.CV,vlms,rising,2023,153,18899,0.0081
+cs.CV,vlms,rising,2024,615,23784,0.02586
+cs.CV,vlms,rising,2025,1633,27877,0.05858
+cs.CV,foundation models,rising,2015,0,1857,0.0
+cs.CV,foundation models,rising,2016,0,3083,0.0
+cs.CV,foundation models,rising,2017,0,4910,0.0
+cs.CV,foundation models,rising,2018,0,7256,0.0
+cs.CV,foundation models,rising,2019,0,8483,0.0
+cs.CV,foundation models,rising,2020,0,10998,0.0
+cs.CV,foundation models,rising,2021,3,12691,0.00024
+cs.CV,foundation models,rising,2022,33,14623,0.00226
+cs.CV,foundation models,rising,2023,316,18899,0.01672
+cs.CV,foundation models,rising,2024,744,23784,0.03128
+cs.CV,foundation models,rising,2025,1251,27877,0.04488
+cs.CV,llms,rising,2015,0,1857,0.0
+cs.CV,llms,rising,2016,0,3083,0.0
+cs.CV,llms,rising,2017,0,4910,0.0
+cs.CV,llms,rising,2018,0,7256,0.0
+cs.CV,llms,rising,2019,0,8483,0.0
+cs.CV,llms,rising,2020,0,10998,0.0
+cs.CV,llms,rising,2021,0,12691,0.0
+cs.CV,llms,rising,2022,5,14623,0.00034
+cs.CV,llms,rising,2023,285,18899,0.01508
+cs.CV,llms,rising,2024,777,23784,0.03267
+cs.CV,llms,rising,2025,1059,27877,0.03799
+cs.CV,tokens,rising,2015,0,1857,0.0
+cs.CV,tokens,rising,2016,0,3083,0.0
+cs.CV,tokens,rising,2017,3,4910,0.00061
+cs.CV,tokens,rising,2018,3,7256,0.00041
+cs.CV,tokens,rising,2019,6,8483,0.00071
+cs.CV,tokens,rising,2020,14,10998,0.00127
+cs.CV,tokens,rising,2021,125,12691,0.00985
+cs.CV,tokens,rising,2022,268,14623,0.01833
+cs.CV,tokens,rising,2023,476,18899,0.02519
+cs.CV,tokens,rising,2024,881,23784,0.03704
+cs.CV,tokens,rising,2025,1449,27877,0.05198
+cs.CV,splatting,rising,2015,0,1857,0.0
+cs.CV,splatting,rising,2016,0,3083,0.0
+cs.CV,splatting,rising,2017,0,4910,0.0
+cs.CV,splatting,rising,2018,0,7256,0.0
+cs.CV,splatting,rising,2019,0,8483,0.0
+cs.CV,splatting,rising,2020,1,10998,9e-05
+cs.CV,splatting,rising,2021,2,12691,0.00016
+cs.CV,splatting,rising,2022,4,14623,0.00027
+cs.CV,splatting,rising,2023,84,18899,0.00444
+cs.CV,splatting,rising,2024,769,23784,0.03233
+cs.CV,splatting,rising,2025,1001,27877,0.03591
+cs.CV,mllms,rising,2015,0,1857,0.0
+cs.CV,mllms,rising,2016,0,3083,0.0
+cs.CV,mllms,rising,2017,0,4910,0.0
+cs.CV,mllms,rising,2018,0,7256,0.0
+cs.CV,mllms,rising,2019,0,8483,0.0
+cs.CV,mllms,rising,2020,0,10998,0.0
+cs.CV,mllms,rising,2021,0,12691,0.0
+cs.CV,mllms,rising,2022,0,14623,0.0
+cs.CV,mllms,rising,2023,82,18899,0.00434
+cs.CV,mllms,rising,2024,484,23784,0.02035
+cs.CV,mllms,rising,2025,1224,27877,0.04391
+cs.CV,deep convolutional,falling,2015,136,1857,0.07324
+cs.CV,deep convolutional,falling,2016,218,3083,0.07071
+cs.CV,deep convolutional,falling,2017,395,4910,0.08045
+cs.CV,deep convolutional,falling,2018,421,7256,0.05802
+cs.CV,deep convolutional,falling,2019,369,8483,0.0435
+cs.CV,deep convolutional,falling,2020,267,10998,0.02428
+cs.CV,deep convolutional,falling,2021,246,12691,0.01938
+cs.CV,deep convolutional,falling,2022,134,14623,0.00916
+cs.CV,deep convolutional,falling,2023,105,18899,0.00556
+cs.CV,deep convolutional,falling,2024,91,23784,0.00383
+cs.CV,deep convolutional,falling,2025,57,27877,0.00204
+cs.CV,fully convolutional,falling,2015,21,1857,0.01131
+cs.CV,fully convolutional,falling,2016,101,3083,0.03276
+cs.CV,fully convolutional,falling,2017,193,4910,0.03931
+cs.CV,fully convolutional,falling,2018,246,7256,0.0339
+cs.CV,fully convolutional,falling,2019,154,8483,0.01815
+cs.CV,fully convolutional,falling,2020,126,10998,0.01146
+cs.CV,fully convolutional,falling,2021,76,12691,0.00599
+cs.CV,fully convolutional,falling,2022,59,14623,0.00403
+cs.CV,fully convolutional,falling,2023,48,18899,0.00254
+cs.CV,fully convolutional,falling,2024,37,23784,0.00156
+cs.CV,fully convolutional,falling,2025,19,27877,0.00068
+cs.CV,deep network,falling,2015,24,1857,0.01292
+cs.CV,deep network,falling,2016,63,3083,0.02043
+cs.CV,deep network,falling,2017,112,4910,0.02281
+cs.CV,deep network,falling,2018,173,7256,0.02384
+cs.CV,deep network,falling,2019,152,8483,0.01792
+cs.CV,deep network,falling,2020,135,10998,0.01227
+cs.CV,deep network,falling,2021,109,12691,0.00859
+cs.CV,deep network,falling,2022,81,14623,0.00554
+cs.CV,deep network,falling,2023,70,18899,0.0037
+cs.CV,deep network,falling,2024,59,23784,0.00248
+cs.CV,deep network,falling,2025,35,27877,0.00126
+cs.CV,convolutional neural,falling,2015,327,1857,0.17609
+cs.CV,convolutional neural,falling,2016,624,3083,0.2024
+cs.CV,convolutional neural,falling,2017,1124,4910,0.22892
+cs.CV,convolutional neural,falling,2018,1565,7256,0.21568
+cs.CV,convolutional neural,falling,2019,1349,8483,0.15902
+cs.CV,convolutional neural,falling,2020,1308,10998,0.11893
+cs.CV,convolutional neural,falling,2021,1198,12691,0.0944
+cs.CV,convolutional neural,falling,2022,979,14623,0.06695
+cs.CV,convolutional neural,falling,2023,857,18899,0.04535
+cs.CV,convolutional neural,falling,2024,893,23784,0.03755
+cs.CV,convolutional neural,falling,2025,800,27877,0.0287
+cs.CV,adversarial network,falling,2015,0,1857,0.0
+cs.CV,adversarial network,falling,2016,16,3083,0.00519
+cs.CV,adversarial network,falling,2017,95,4910,0.01935
+cs.CV,adversarial network,falling,2018,192,7256,0.02646
+cs.CV,adversarial network,falling,2019,200,8483,0.02358
+cs.CV,adversarial network,falling,2020,203,10998,0.01846
+cs.CV,adversarial network,falling,2021,182,12691,0.01434
+cs.CV,adversarial network,falling,2022,151,14623,0.01033
+cs.CV,adversarial network,falling,2023,114,18899,0.00603
+cs.CV,adversarial network,falling,2024,93,23784,0.00391
+cs.CV,adversarial network,falling,2025,80,27877,0.00287
+cs.CV,generative adversarial,falling,2015,3,1857,0.00162
+cs.CV,generative adversarial,falling,2016,32,3083,0.01038
+cs.CV,generative adversarial,falling,2017,207,4910,0.04216
+cs.CV,generative adversarial,falling,2018,403,7256,0.05554
+cs.CV,generative adversarial,falling,2019,438,8483,0.05163
+cs.CV,generative adversarial,falling,2020,431,10998,0.03919
+cs.CV,generative adversarial,falling,2021,436,12691,0.03436
+cs.CV,generative adversarial,falling,2022,374,14623,0.02558
+cs.CV,generative adversarial,falling,2023,312,18899,0.01651
+cs.CV,generative adversarial,falling,2024,271,23784,0.01139
+cs.CV,generative adversarial,falling,2025,201,27877,0.00721
+cs.CV,neural network,falling,2015,227,1857,0.12224
+cs.CV,neural network,falling,2016,482,3083,0.15634
+cs.CV,neural network,falling,2017,962,4910,0.19593
+cs.CV,neural network,falling,2018,1511,7256,0.20824
+cs.CV,neural network,falling,2019,1397,8483,0.16468
+cs.CV,neural network,falling,2020,1593,10998,0.14484
+cs.CV,neural network,falling,2021,1416,12691,0.11158
+cs.CV,neural network,falling,2022,1254,14623,0.08576
+cs.CV,neural network,falling,2023,1150,18899,0.06085
+cs.CV,neural network,falling,2024,1036,23784,0.04356
+cs.CV,neural network,falling,2025,875,27877,0.03139
+cs.CV,network cnn,falling,2015,64,1857,0.03446
+cs.CV,network cnn,falling,2016,133,3083,0.04314
+cs.CV,network cnn,falling,2017,264,4910,0.05377
+cs.CV,network cnn,falling,2018,306,7256,0.04217
+cs.CV,network cnn,falling,2019,279,8483,0.03289
+cs.CV,network cnn,falling,2020,267,10998,0.02428
+cs.CV,network cnn,falling,2021,236,12691,0.0186
+cs.CV,network cnn,falling,2022,178,14623,0.01217
+cs.CV,network cnn,falling,2023,176,18899,0.00931
+cs.CV,network cnn,falling,2024,167,23784,0.00702
+cs.CV,network cnn,falling,2025,165,27877,0.00592
+cs.CV,recurrent,falling,2015,55,1857,0.02962
+cs.CV,recurrent,falling,2016,137,3083,0.04444
+cs.CV,recurrent,falling,2017,232,4910,0.04725
+cs.CV,recurrent,falling,2018,279,7256,0.03845
+cs.CV,recurrent,falling,2019,260,8483,0.03065
+cs.CV,recurrent,falling,2020,268,10998,0.02437
+cs.CV,recurrent,falling,2021,242,12691,0.01907
+cs.CV,recurrent,falling,2022,166,14623,0.01135
+cs.CV,recurrent,falling,2023,156,18899,0.00825
+cs.CV,recurrent,falling,2024,163,23784,0.00685
+cs.CV,recurrent,falling,2025,160,27877,0.00574
+cs.CV,deep neural,falling,2015,74,1857,0.03985
+cs.CV,deep neural,falling,2016,204,3083,0.06617
+cs.CV,deep neural,falling,2017,376,4910,0.07658
+cs.CV,deep neural,falling,2018,640,7256,0.0882
+cs.CV,deep neural,falling,2019,722,8483,0.08511
+cs.CV,deep neural,falling,2020,865,10998,0.07865
+cs.CV,deep neural,falling,2021,828,12691,0.06524
+cs.CV,deep neural,falling,2022,770,14623,0.05266
+cs.CV,deep neural,falling,2023,779,18899,0.04122
+cs.CV,deep neural,falling,2024,632,23784,0.02657
+cs.CV,deep neural,falling,2025,417,27877,0.01496
+cs.CL,llms,rising,2015,0,587,0.0
+cs.CL,llms,rising,2016,0,1304,0.0
+cs.CL,llms,rising,2017,0,1922,0.0
+cs.CL,llms,rising,2018,1,2973,0.00034
+cs.CL,llms,rising,2019,0,4168,0.0
+cs.CL,llms,rising,2020,1,5579,0.00018
+cs.CL,llms,rising,2021,3,6578,0.00046
+cs.CL,llms,rising,2022,131,7132,0.01837
+cs.CL,llms,rising,2023,2742,10482,0.26159
+cs.CL,llms,rising,2024,7587,14997,0.5059
+cs.CL,llms,rising,2025,9461,17084,0.55379
+cs.CL,prompting,rising,2015,0,587,0.0
+cs.CL,prompting,rising,2016,0,1304,0.0
+cs.CL,prompting,rising,2017,0,1922,0.0
+cs.CL,prompting,rising,2018,1,2973,0.00034
+cs.CL,prompting,rising,2019,1,4168,0.00024
+cs.CL,prompting,rising,2020,2,5579,0.00036
+cs.CL,prompting,rising,2021,33,6578,0.00502
+cs.CL,prompting,rising,2022,173,7132,0.02426
+cs.CL,prompting,rising,2023,730,10482,0.06964
+cs.CL,prompting,rising,2024,1126,14997,0.07508
+cs.CL,prompting,rising,2025,1272,17084,0.07446
+cs.CL,retrieval-augmented,rising,2015,0,587,0.0
+cs.CL,retrieval-augmented,rising,2016,0,1304,0.0
+cs.CL,retrieval-augmented,rising,2017,0,1922,0.0
+cs.CL,retrieval-augmented,rising,2018,0,2973,0.0
+cs.CL,retrieval-augmented,rising,2019,0,4168,0.0
+cs.CL,retrieval-augmented,rising,2020,2,5579,0.00036
+cs.CL,retrieval-augmented,rising,2021,6,6578,0.00091
+cs.CL,retrieval-augmented,rising,2022,29,7132,0.00407
+cs.CL,retrieval-augmented,rising,2023,122,10482,0.01164
+cs.CL,retrieval-augmented,rising,2024,567,14997,0.03781
+cs.CL,retrieval-augmented,rising,2025,1043,17084,0.06105
+cs.CL,gpt-4,rising,2015,0,587,0.0
+cs.CL,gpt-4,rising,2016,0,1304,0.0
+cs.CL,gpt-4,rising,2017,0,1922,0.0
+cs.CL,gpt-4,rising,2018,0,2973,0.0
+cs.CL,gpt-4,rising,2019,0,4168,0.0
+cs.CL,gpt-4,rising,2020,0,5579,0.0
+cs.CL,gpt-4,rising,2021,0,6578,0.0
+cs.CL,gpt-4,rising,2022,11,7132,0.00154
+cs.CL,gpt-4,rising,2023,618,10482,0.05896
+cs.CL,gpt-4,rising,2024,1019,14997,0.06795
+cs.CL,gpt-4,rising,2025,405,17084,0.02371
+cs.CL,prompt,rising,2015,0,587,0.0
+cs.CL,prompt,rising,2016,2,1304,0.00153
+cs.CL,prompt,rising,2017,2,1922,0.00104
+cs.CL,prompt,rising,2018,6,2973,0.00202
+cs.CL,prompt,rising,2019,6,4168,0.00144
+cs.CL,prompt,rising,2020,14,5579,0.00251
+cs.CL,prompt,rising,2021,81,6578,0.01231
+cs.CL,prompt,rising,2022,283,7132,0.03968
+cs.CL,prompt,rising,2023,770,10482,0.07346
+cs.CL,prompt,rising,2024,1190,14997,0.07935
+cs.CL,prompt,rising,2025,1326,17084,0.07762
+cs.CL,in-context,rising,2015,0,587,0.0
+cs.CL,in-context,rising,2016,0,1304,0.0
+cs.CL,in-context,rising,2017,0,1922,0.0
+cs.CL,in-context,rising,2018,0,2973,0.0
+cs.CL,in-context,rising,2019,0,4168,0.0
+cs.CL,in-context,rising,2020,1,5579,0.00018
+cs.CL,in-context,rising,2021,18,6578,0.00274
+cs.CL,in-context,rising,2022,82,7132,0.0115
+cs.CL,in-context,rising,2023,454,10482,0.04331
+cs.CL,in-context,rising,2024,730,14997,0.04868
+cs.CL,in-context,rising,2025,512,17084,0.02997
+cs.CL,chain-of-thought,rising,2015,0,587,0.0
+cs.CL,chain-of-thought,rising,2016,0,1304,0.0
+cs.CL,chain-of-thought,rising,2017,0,1922,0.0
+cs.CL,chain-of-thought,rising,2018,1,2973,0.00034
+cs.CL,chain-of-thought,rising,2019,0,4168,0.0
+cs.CL,chain-of-thought,rising,2020,0,5579,0.0
+cs.CL,chain-of-thought,rising,2021,0,6578,0.0
+cs.CL,chain-of-thought,rising,2022,27,7132,0.00379
+cs.CL,chain-of-thought,rising,2023,258,10482,0.02461
+cs.CL,chain-of-thought,rising,2024,438,14997,0.02921
+cs.CL,chain-of-thought,rising,2025,850,17084,0.04975
+cs.CL,hallucinations,rising,2015,0,587,0.0
+cs.CL,hallucinations,rising,2016,0,1304,0.0
+cs.CL,hallucinations,rising,2017,0,1922,0.0
+cs.CL,hallucinations,rising,2018,0,2973,0.0
+cs.CL,hallucinations,rising,2019,1,4168,0.00024
+cs.CL,hallucinations,rising,2020,9,5579,0.00161
+cs.CL,hallucinations,rising,2021,15,6578,0.00228
+cs.CL,hallucinations,rising,2022,30,7132,0.00421
+cs.CL,hallucinations,rising,2023,182,10482,0.01736
+cs.CL,hallucinations,rising,2024,483,14997,0.03221
+cs.CL,hallucinations,rising,2025,636,17084,0.03723
+cs.CL,llama,rising,2015,0,587,0.0
+cs.CL,llama,rising,2016,0,1304,0.0
+cs.CL,llama,rising,2017,0,1922,0.0
+cs.CL,llama,rising,2018,0,2973,0.0
+cs.CL,llama,rising,2019,0,4168,0.0
+cs.CL,llama,rising,2020,0,5579,0.0
+cs.CL,llama,rising,2021,0,6578,0.0
+cs.CL,llama,rising,2022,3,7132,0.00042
+cs.CL,llama,rising,2023,220,10482,0.02099
+cs.CL,llama,rising,2024,478,14997,0.03187
+cs.CL,llama,rising,2025,515,17084,0.03015
+cs.CL,gpt-4o,rising,2015,0,587,0.0
+cs.CL,gpt-4o,rising,2016,0,1304,0.0
+cs.CL,gpt-4o,rising,2017,0,1922,0.0
+cs.CL,gpt-4o,rising,2018,0,2973,0.0
+cs.CL,gpt-4o,rising,2019,0,4168,0.0
+cs.CL,gpt-4o,rising,2020,0,5579,0.0
+cs.CL,gpt-4o,rising,2021,0,6578,0.0
+cs.CL,gpt-4o,rising,2022,0,7132,0.0
+cs.CL,gpt-4o,rising,2023,9,10482,0.00086
+cs.CL,gpt-4o,rising,2024,305,14997,0.02034
+cs.CL,gpt-4o,rising,2025,661,17084,0.03869
+cs.CL,recurrent neural,falling,2015,38,587,0.06474
+cs.CL,recurrent neural,falling,2016,145,1304,0.1112
+cs.CL,recurrent neural,falling,2017,161,1922,0.08377
+cs.CL,recurrent neural,falling,2018,179,2973,0.06021
+cs.CL,recurrent neural,falling,2019,153,4168,0.03671
+cs.CL,recurrent neural,falling,2020,96,5579,0.01721
+cs.CL,recurrent neural,falling,2021,62,6578,0.00943
+cs.CL,recurrent neural,falling,2022,54,7132,0.00757
+cs.CL,recurrent neural,falling,2023,35,10482,0.00334
+cs.CL,recurrent neural,falling,2024,38,14997,0.00253
+cs.CL,recurrent neural,falling,2025,25,17084,0.00146
+cs.CL,word embeddings,falling,2015,38,587,0.06474
+cs.CL,word embeddings,falling,2016,101,1304,0.07745
+cs.CL,word embeddings,falling,2017,166,1922,0.08637
+cs.CL,word embeddings,falling,2018,203,2973,0.06828
+cs.CL,word embeddings,falling,2019,286,4168,0.06862
+cs.CL,word embeddings,falling,2020,277,5579,0.04965
+cs.CL,word embeddings,falling,2021,209,6578,0.03177
+cs.CL,word embeddings,falling,2022,146,7132,0.02047
+cs.CL,word embeddings,falling,2023,108,10482,0.0103
+cs.CL,word embeddings,falling,2024,106,14997,0.00707
+cs.CL,word embeddings,falling,2025,64,17084,0.00375
+cs.CL,neural network,falling,2015,91,587,0.15503
+cs.CL,neural network,falling,2016,240,1304,0.18405
+cs.CL,neural network,falling,2017,297,1922,0.15453
+cs.CL,neural network,falling,2018,373,2973,0.12546
+cs.CL,neural network,falling,2019,414,4168,0.09933
+cs.CL,neural network,falling,2020,351,5579,0.06291
+cs.CL,neural network,falling,2021,262,6578,0.03983
+cs.CL,neural network,falling,2022,210,7132,0.02944
+cs.CL,neural network,falling,2023,223,10482,0.02127
+cs.CL,neural network,falling,2024,195,14997,0.013
+cs.CL,neural network,falling,2025,128,17084,0.00749
+cs.CL,convolutional,falling,2015,35,587,0.05963
+cs.CL,convolutional,falling,2016,79,1304,0.06058
+cs.CL,convolutional,falling,2017,127,1922,0.06608
+cs.CL,convolutional,falling,2018,157,2973,0.05281
+cs.CL,convolutional,falling,2019,159,4168,0.03815
+cs.CL,convolutional,falling,2020,121,5579,0.02169
+cs.CL,convolutional,falling,2021,104,6578,0.01581
+cs.CL,convolutional,falling,2022,67,7132,0.00939
+cs.CL,convolutional,falling,2023,78,10482,0.00744
+cs.CL,convolutional,falling,2024,49,14997,0.00327
+cs.CL,convolutional,falling,2025,52,17084,0.00304
+cs.CL,neural machine,falling,2015,10,587,0.01704
+cs.CL,neural machine,falling,2016,74,1304,0.05675
+cs.CL,neural machine,falling,2017,139,1922,0.07232
+cs.CL,neural machine,falling,2018,233,2973,0.07837
+cs.CL,neural machine,falling,2019,265,4168,0.06358
+cs.CL,neural machine,falling,2020,291,5579,0.05216
+cs.CL,neural machine,falling,2021,247,6578,0.03755
+cs.CL,neural machine,falling,2022,185,7132,0.02594
+cs.CL,neural machine,falling,2023,184,10482,0.01755
+cs.CL,neural machine,falling,2024,150,14997,0.01
+cs.CL,neural machine,falling,2025,57,17084,0.00334
+cs.CL,sequence-to-sequence,falling,2015,6,587,0.01022
+cs.CL,sequence-to-sequence,falling,2016,34,1304,0.02607
+cs.CL,sequence-to-sequence,falling,2017,92,1922,0.04787
+cs.CL,sequence-to-sequence,falling,2018,131,2973,0.04406
+cs.CL,sequence-to-sequence,falling,2019,169,4168,0.04055
+cs.CL,sequence-to-sequence,falling,2020,147,5579,0.02635
+cs.CL,sequence-to-sequence,falling,2021,159,6578,0.02417
+cs.CL,sequence-to-sequence,falling,2022,127,7132,0.01781
+cs.CL,sequence-to-sequence,falling,2023,108,10482,0.0103
+cs.CL,sequence-to-sequence,falling,2024,70,14997,0.00467
+cs.CL,sequence-to-sequence,falling,2025,38,17084,0.00222
+cs.CL,rnn,falling,2015,16,587,0.02726
+cs.CL,rnn,falling,2016,55,1304,0.04218
+cs.CL,rnn,falling,2017,76,1922,0.03954
+cs.CL,rnn,falling,2018,95,2973,0.03195
+cs.CL,rnn,falling,2019,91,4168,0.02183
+cs.CL,rnn,falling,2020,62,5579,0.01111
+cs.CL,rnn,falling,2021,40,6578,0.00608
+cs.CL,rnn,falling,2022,43,7132,0.00603
+cs.CL,rnn,falling,2023,30,10482,0.00286
+cs.CL,rnn,falling,2024,37,14997,0.00247
+cs.CL,rnn,falling,2025,27,17084,0.00158
+cs.CL,lstm,falling,2015,27,587,0.046
+cs.CL,lstm,falling,2016,86,1304,0.06595
+cs.CL,lstm,falling,2017,114,1922,0.05931
+cs.CL,lstm,falling,2018,138,2973,0.04642
+cs.CL,lstm,falling,2019,119,4168,0.02855
+cs.CL,lstm,falling,2020,129,5579,0.02312
+cs.CL,lstm,falling,2021,124,6578,0.01885
+cs.CL,lstm,falling,2022,64,7132,0.00897
+cs.CL,lstm,falling,2023,60,10482,0.00572
+cs.CL,lstm,falling,2024,54,14997,0.0036
+cs.CL,lstm,falling,2025,60,17084,0.00351
+cs.CL,state art,falling,2015,21,587,0.03578
+cs.CL,state art,falling,2016,51,1304,0.03911
+cs.CL,state art,falling,2017,77,1922,0.04006
+cs.CL,state art,falling,2018,126,2973,0.04238
+cs.CL,state art,falling,2019,168,4168,0.04031
+cs.CL,state art,falling,2020,175,5579,0.03137
+cs.CL,state art,falling,2021,165,6578,0.02508
+cs.CL,state art,falling,2022,94,7132,0.01318
+cs.CL,state art,falling,2023,109,10482,0.0104
+cs.CL,state art,falling,2024,82,14997,0.00547
+cs.CL,state art,falling,2025,78,17084,0.00457
+cs.CL,parser,falling,2015,24,587,0.04089
+cs.CL,parser,falling,2016,43,1304,0.03298
+cs.CL,parser,falling,2017,58,1922,0.03018
+cs.CL,parser,falling,2018,69,2973,0.02321
+cs.CL,parser,falling,2019,87,4168,0.02087
+cs.CL,parser,falling,2020,98,5579,0.01757
+cs.CL,parser,falling,2021,91,6578,0.01383
+cs.CL,parser,falling,2022,68,7132,0.00953
+cs.CL,parser,falling,2023,59,10482,0.00563
+cs.CL,parser,falling,2024,36,14997,0.0024
+cs.CL,parser,falling,2025,27,17084,0.00158
+cs.CR,large language,rising,2015,0,592,0.0
+cs.CR,large language,rising,2016,0,711,0.0
+cs.CR,large language,rising,2017,0,1053,0.0
+cs.CR,large language,rising,2018,0,1526,0.0
+cs.CR,large language,rising,2019,0,1933,0.0
+cs.CR,large language,rising,2020,1,2391,0.00042
+cs.CR,large language,rising,2021,1,2669,0.00037
+cs.CR,large language,rising,2022,5,2843,0.00176
+cs.CR,large language,rising,2023,142,3244,0.04377
+cs.CR,large language,rising,2024,641,4338,0.14776
+cs.CR,large language,rising,2025,1291,5797,0.2227
+cs.CR,prompt,rising,2015,0,592,0.0
+cs.CR,prompt,rising,2016,0,711,0.0
+cs.CR,prompt,rising,2017,2,1053,0.0019
+cs.CR,prompt,rising,2018,2,1526,0.00131
+cs.CR,prompt,rising,2019,3,1933,0.00155
+cs.CR,prompt,rising,2020,2,2391,0.00084
+cs.CR,prompt,rising,2021,3,2669,0.00112
+cs.CR,prompt,rising,2022,10,2843,0.00352
+cs.CR,prompt,rising,2023,52,3244,0.01603
+cs.CR,prompt,rising,2024,200,4338,0.0461
+cs.CR,prompt,rising,2025,410,5797,0.07073
+cs.CR,jailbreak,rising,2015,0,592,0.0
+cs.CR,jailbreak,rising,2016,0,711,0.0
+cs.CR,jailbreak,rising,2017,0,1053,0.0
+cs.CR,jailbreak,rising,2018,0,1526,0.0
+cs.CR,jailbreak,rising,2019,0,1933,0.0
+cs.CR,jailbreak,rising,2020,0,2391,0.0
+cs.CR,jailbreak,rising,2021,0,2669,0.0
+cs.CR,jailbreak,rising,2022,0,2843,0.0
+cs.CR,jailbreak,rising,2023,10,3244,0.00308
+cs.CR,jailbreak,rising,2024,115,4338,0.02651
+cs.CR,jailbreak,rising,2025,222,5797,0.0383
+cs.CR,fine-tuning,rising,2015,0,592,0.0
+cs.CR,fine-tuning,rising,2016,0,711,0.0
+cs.CR,fine-tuning,rising,2017,0,1053,0.0
+cs.CR,fine-tuning,rising,2018,3,1526,0.00197
+cs.CR,fine-tuning,rising,2019,5,1933,0.00259
+cs.CR,fine-tuning,rising,2020,12,2391,0.00502
+cs.CR,fine-tuning,rising,2021,14,2669,0.00525
+cs.CR,fine-tuning,rising,2022,26,2843,0.00915
+cs.CR,fine-tuning,rising,2023,37,3244,0.01141
+cs.CR,fine-tuning,rising,2024,160,4338,0.03688
+cs.CR,fine-tuning,rising,2025,304,5797,0.05244
+cs.CR,learning fl,rising,2015,0,592,0.0
+cs.CR,learning fl,rising,2016,0,711,0.0
+cs.CR,learning fl,rising,2017,0,1053,0.0
+cs.CR,learning fl,rising,2018,1,1526,0.00066
+cs.CR,learning fl,rising,2019,3,1933,0.00155
+cs.CR,learning fl,rising,2020,23,2391,0.00962
+cs.CR,learning fl,rising,2021,44,2669,0.01649
+cs.CR,learning fl,rising,2022,80,2843,0.02814
+cs.CR,learning fl,rising,2023,85,3244,0.0262
+cs.CR,learning fl,rising,2024,124,4338,0.02858
+cs.CR,learning fl,rising,2025,143,5797,0.02467
+cs.CR,alignment,rising,2015,1,592,0.00169
+cs.CR,alignment,rising,2016,1,711,0.00141
+cs.CR,alignment,rising,2017,3,1053,0.00285
+cs.CR,alignment,rising,2018,2,1526,0.00131
+cs.CR,alignment,rising,2019,5,1933,0.00259
+cs.CR,alignment,rising,2020,4,2391,0.00167
+cs.CR,alignment,rising,2021,4,2669,0.0015
+cs.CR,alignment,rising,2022,7,2843,0.00246
+cs.CR,alignment,rising,2023,19,3244,0.00586
+cs.CR,alignment,rising,2024,87,4338,0.02006
+cs.CR,alignment,rising,2025,251,5797,0.0433
+cs.CR,backdoor attacks,rising,2015,0,592,0.0
+cs.CR,backdoor attacks,rising,2016,0,711,0.0
+cs.CR,backdoor attacks,rising,2017,1,1053,0.00095
+cs.CR,backdoor attacks,rising,2018,2,1526,0.00131
+cs.CR,backdoor attacks,rising,2019,5,1933,0.00259
+cs.CR,backdoor attacks,rising,2020,33,2391,0.0138
+cs.CR,backdoor attacks,rising,2021,27,2669,0.01012
+cs.CR,backdoor attacks,rising,2022,56,2843,0.0197
+cs.CR,backdoor attacks,rising,2023,95,3244,0.02928
+cs.CR,backdoor attacks,rising,2024,136,4338,0.03135
+cs.CR,backdoor attacks,rising,2025,141,5797,0.02432
+cs.CR,enhances,rising,2015,2,592,0.00338
+cs.CR,enhances,rising,2016,1,711,0.00141
+cs.CR,enhances,rising,2017,4,1053,0.0038
+cs.CR,enhances,rising,2018,5,1526,0.00328
+cs.CR,enhances,rising,2019,7,1933,0.00362
+cs.CR,enhances,rising,2020,11,2391,0.0046
+cs.CR,enhances,rising,2021,16,2669,0.00599
+cs.CR,enhances,rising,2022,9,2843,0.00317
+cs.CR,enhances,rising,2023,51,3244,0.01572
+cs.CR,enhances,rising,2024,161,4338,0.03711
+cs.CR,enhances,rising,2025,238,5797,0.04106
+cs.CR,consistently,rising,2015,2,592,0.00338
+cs.CR,consistently,rising,2016,1,711,0.00141
+cs.CR,consistently,rising,2017,5,1053,0.00475
+cs.CR,consistently,rising,2018,1,1526,0.00066
+cs.CR,consistently,rising,2019,6,1933,0.0031
+cs.CR,consistently,rising,2020,14,2391,0.00586
+cs.CR,consistently,rising,2021,18,2669,0.00674
+cs.CR,consistently,rising,2022,20,2843,0.00703
+cs.CR,consistently,rising,2023,38,3244,0.01171
+cs.CR,consistently,rising,2024,74,4338,0.01706
+cs.CR,consistently,rising,2025,205,5797,0.03536
+cs.CR,ai,rising,2015,1,592,0.00169
+cs.CR,ai,rising,2016,1,711,0.00141
+cs.CR,ai,rising,2017,1,1053,0.00095
+cs.CR,ai,rising,2018,21,1526,0.01376
+cs.CR,ai,rising,2019,22,1933,0.01138
+cs.CR,ai,rising,2020,39,2391,0.01631
+cs.CR,ai,rising,2021,64,2669,0.02398
+cs.CR,ai,rising,2022,77,2843,0.02708
+cs.CR,ai,rising,2023,155,3244,0.04778
+cs.CR,ai,rising,2024,359,4338,0.08276
+cs.CR,ai,rising,2025,688,5797,0.11868
+cs.CR,bitcoin,falling,2015,17,592,0.02872
+cs.CR,bitcoin,falling,2016,22,711,0.03094
+cs.CR,bitcoin,falling,2017,39,1053,0.03704
+cs.CR,bitcoin,falling,2018,64,1526,0.04194
+cs.CR,bitcoin,falling,2019,86,1933,0.04449
+cs.CR,bitcoin,falling,2020,86,2391,0.03597
+cs.CR,bitcoin,falling,2021,67,2669,0.0251
+cs.CR,bitcoin,falling,2022,64,2843,0.02251
+cs.CR,bitcoin,falling,2023,51,3244,0.01572
+cs.CR,bitcoin,falling,2024,47,4338,0.01083
+cs.CR,bitcoin,falling,2025,68,5797,0.01173
+cs.CR,cryptocurrencies,falling,2015,3,592,0.00507
+cs.CR,cryptocurrencies,falling,2016,5,711,0.00703
+cs.CR,cryptocurrencies,falling,2017,12,1053,0.0114
+cs.CR,cryptocurrencies,falling,2018,26,1526,0.01704
+cs.CR,cryptocurrencies,falling,2019,46,1933,0.0238
+cs.CR,cryptocurrencies,falling,2020,44,2391,0.0184
+cs.CR,cryptocurrencies,falling,2021,38,2669,0.01424
+cs.CR,cryptocurrencies,falling,2022,43,2843,0.01512
+cs.CR,cryptocurrencies,falling,2023,31,3244,0.00956
+cs.CR,cryptocurrencies,falling,2024,26,4338,0.00599
+cs.CR,cryptocurrencies,falling,2025,31,5797,0.00535
+cs.CR,anonymous,falling,2015,18,592,0.03041
+cs.CR,anonymous,falling,2016,13,711,0.01828
+cs.CR,anonymous,falling,2017,19,1053,0.01804
+cs.CR,anonymous,falling,2018,40,1526,0.02621
+cs.CR,anonymous,falling,2019,33,1933,0.01707
+cs.CR,anonymous,falling,2020,37,2391,0.01547
+cs.CR,anonymous,falling,2021,27,2669,0.01012
+cs.CR,anonymous,falling,2022,37,2843,0.01301
+cs.CR,anonymous,falling,2023,38,3244,0.01171
+cs.CR,anonymous,falling,2024,26,4338,0.00599
+cs.CR,anonymous,falling,2025,44,5797,0.00759
+cs.CR,mining,falling,2015,7,592,0.01182
+cs.CR,mining,falling,2016,19,711,0.02672
+cs.CR,mining,falling,2017,21,1053,0.01994
+cs.CR,mining,falling,2018,48,1526,0.03145
+cs.CR,mining,falling,2019,57,1933,0.02949
+cs.CR,mining,falling,2020,62,2391,0.02593
+cs.CR,mining,falling,2021,54,2669,0.02023
+cs.CR,mining,falling,2022,66,2843,0.02321
+cs.CR,mining,falling,2023,61,3244,0.0188
+cs.CR,mining,falling,2024,57,4338,0.01314
+cs.CR,mining,falling,2025,61,5797,0.01052
+cs.CR,cryptocurrency,falling,2015,4,592,0.00676
+cs.CR,cryptocurrency,falling,2016,6,711,0.00844
+cs.CR,cryptocurrency,falling,2017,13,1053,0.01235
+cs.CR,cryptocurrency,falling,2018,29,1526,0.019
+cs.CR,cryptocurrency,falling,2019,45,1933,0.02328
+cs.CR,cryptocurrency,falling,2020,48,2391,0.02008
+cs.CR,cryptocurrency,falling,2021,52,2669,0.01948
+cs.CR,cryptocurrency,falling,2022,50,2843,0.01759
+cs.CR,cryptocurrency,falling,2023,41,3244,0.01264
+cs.CR,cryptocurrency,falling,2024,39,4338,0.00899
+cs.CR,cryptocurrency,falling,2025,41,5797,0.00707
+cs.CR,intel,falling,2015,7,592,0.01182
+cs.CR,intel,falling,2016,7,711,0.00985
+cs.CR,intel,falling,2017,34,1053,0.03229
+cs.CR,intel,falling,2018,35,1526,0.02294
+cs.CR,intel,falling,2019,33,1933,0.01707
+cs.CR,intel,falling,2020,44,2391,0.0184
+cs.CR,intel,falling,2021,41,2669,0.01536
+cs.CR,intel,falling,2022,37,2843,0.01301
+cs.CR,intel,falling,2023,39,3244,0.01202
+cs.CR,intel,falling,2024,33,4338,0.00761
+cs.CR,intel,falling,2025,46,5797,0.00794
+cs.CR,special,falling,2015,15,592,0.02534
+cs.CR,special,falling,2016,21,711,0.02954
+cs.CR,special,falling,2017,23,1053,0.02184
+cs.CR,special,falling,2018,33,1526,0.02163
+cs.CR,special,falling,2019,38,1933,0.01966
+cs.CR,special,falling,2020,50,2391,0.02091
+cs.CR,special,falling,2021,49,2669,0.01836
+cs.CR,special,falling,2022,39,2843,0.01372
+cs.CR,special,falling,2023,35,3244,0.01079
+cs.CR,special,falling,2024,43,4338,0.00991
+cs.CR,special,falling,2025,36,5797,0.00621
+cs.CR,purpose,falling,2015,14,592,0.02365
+cs.CR,purpose,falling,2016,22,711,0.03094
+cs.CR,purpose,falling,2017,24,1053,0.02279
+cs.CR,purpose,falling,2018,40,1526,0.02621
+cs.CR,purpose,falling,2019,54,1933,0.02794
+cs.CR,purpose,falling,2020,72,2391,0.03011
+cs.CR,purpose,falling,2021,61,2669,0.02286
+cs.CR,purpose,falling,2022,56,2843,0.0197
+cs.CR,purpose,falling,2023,63,3244,0.01942
+cs.CR,purpose,falling,2024,54,4338,0.01245
+cs.CR,purpose,falling,2025,56,5797,0.00966
+cs.CR,electronic,falling,2015,17,592,0.02872
+cs.CR,electronic,falling,2016,21,711,0.02954
+cs.CR,electronic,falling,2017,27,1053,0.02564
+cs.CR,electronic,falling,2018,29,1526,0.019
+cs.CR,electronic,falling,2019,48,1933,0.02483
+cs.CR,electronic,falling,2020,43,2391,0.01798
+cs.CR,electronic,falling,2021,38,2669,0.01424
+cs.CR,electronic,falling,2022,36,2843,0.01266
+cs.CR,electronic,falling,2023,52,3244,0.01603
+cs.CR,electronic,falling,2024,37,4338,0.00853
+cs.CR,electronic,falling,2025,55,5797,0.00949
+cs.CR,sensor,falling,2015,18,592,0.03041
+cs.CR,sensor,falling,2016,18,711,0.02532
+cs.CR,sensor,falling,2017,31,1053,0.02944
+cs.CR,sensor,falling,2018,40,1526,0.02621
+cs.CR,sensor,falling,2019,53,1933,0.02742
+cs.CR,sensor,falling,2020,45,2391,0.01882
+cs.CR,sensor,falling,2021,66,2669,0.02473
+cs.CR,sensor,falling,2022,45,2843,0.01583
+cs.CR,sensor,falling,2023,50,3244,0.01541
+cs.CR,sensor,falling,2024,41,4338,0.00945
+cs.CR,sensor,falling,2025,78,5797,0.01346
+cs.RO,large language,rising,2015,0,233,0.0
+cs.RO,large language,rising,2016,0,548,0.0
+cs.RO,large language,rising,2017,0,883,0.0
+cs.RO,large language,rising,2018,0,1283,0.0
+cs.RO,large language,rising,2019,0,1897,0.0
+cs.RO,large language,rising,2020,0,2572,0.0
+cs.RO,large language,rising,2021,0,3347,0.0
+cs.RO,large language,rising,2022,13,3825,0.0034
+cs.RO,large language,rising,2023,157,5108,0.03074
+cs.RO,large language,rising,2024,378,6762,0.0559
+cs.RO,large language,rising,2025,477,8121,0.05874
+cs.RO,vision-language,rising,2015,0,233,0.0
+cs.RO,vision-language,rising,2016,0,548,0.0
+cs.RO,vision-language,rising,2017,0,883,0.0
+cs.RO,vision-language,rising,2018,0,1283,0.0
+cs.RO,vision-language,rising,2019,0,1897,0.0
+cs.RO,vision-language,rising,2020,0,2572,0.0
+cs.RO,vision-language,rising,2021,1,3347,0.0003
+cs.RO,vision-language,rising,2022,1,3825,0.00026
+cs.RO,vision-language,rising,2023,41,5108,0.00803
+cs.RO,vision-language,rising,2024,151,6762,0.02233
+cs.RO,vision-language,rising,2025,456,8121,0.05615
+cs.RO,diffusion,rising,2015,0,233,0.0
+cs.RO,diffusion,rising,2016,2,548,0.00365
+cs.RO,diffusion,rising,2017,0,883,0.0
+cs.RO,diffusion,rising,2018,2,1283,0.00156
+cs.RO,diffusion,rising,2019,2,1897,0.00105
+cs.RO,diffusion,rising,2020,2,2572,0.00078
+cs.RO,diffusion,rising,2021,2,3347,0.0006
+cs.RO,diffusion,rising,2022,5,3825,0.00131
+cs.RO,diffusion,rising,2023,52,5108,0.01018
+cs.RO,diffusion,rising,2024,216,6762,0.03194
+cs.RO,diffusion,rising,2025,472,8121,0.05812
+cs.RO,vision-language-action,rising,2015,0,233,0.0
+cs.RO,vision-language-action,rising,2016,0,548,0.0
+cs.RO,vision-language-action,rising,2017,0,883,0.0
+cs.RO,vision-language-action,rising,2018,0,1283,0.0
+cs.RO,vision-language-action,rising,2019,0,1897,0.0
+cs.RO,vision-language-action,rising,2020,0,2572,0.0
+cs.RO,vision-language-action,rising,2021,0,3347,0.0
+cs.RO,vision-language-action,rising,2022,0,3825,0.0
+cs.RO,vision-language-action,rising,2023,5,5108,0.00098
+cs.RO,vision-language-action,rising,2024,39,6762,0.00577
+cs.RO,vision-language-action,rising,2025,368,8121,0.04531
+cs.RO,vlms,rising,2015,0,233,0.0
+cs.RO,vlms,rising,2016,0,548,0.0
+cs.RO,vlms,rising,2017,0,883,0.0
+cs.RO,vlms,rising,2018,0,1283,0.0
+cs.RO,vlms,rising,2019,0,1897,0.0
+cs.RO,vlms,rising,2020,0,2572,0.0
+cs.RO,vlms,rising,2021,0,3347,0.0
+cs.RO,vlms,rising,2022,2,3825,0.00052
+cs.RO,vlms,rising,2023,10,5108,0.00196
+cs.RO,vlms,rising,2024,112,6762,0.01656
+cs.RO,vlms,rising,2025,258,8121,0.03177
+cs.RO,foundation models,rising,2015,0,233,0.0
+cs.RO,foundation models,rising,2016,0,548,0.0
+cs.RO,foundation models,rising,2017,0,883,0.0
+cs.RO,foundation models,rising,2018,0,1283,0.0
+cs.RO,foundation models,rising,2019,0,1897,0.0
+cs.RO,foundation models,rising,2020,0,2572,0.0
+cs.RO,foundation models,rising,2021,0,3347,0.0
+cs.RO,foundation models,rising,2022,2,3825,0.00052
+cs.RO,foundation models,rising,2023,36,5108,0.00705
+cs.RO,foundation models,rising,2024,126,6762,0.01863
+cs.RO,foundation models,rising,2025,214,8121,0.02635
+cs.RO,significant challenges,rising,2015,0,233,0.0
+cs.RO,significant challenges,rising,2016,1,548,0.00182
+cs.RO,significant challenges,rising,2017,2,883,0.00227
+cs.RO,significant challenges,rising,2018,1,1283,0.00078
+cs.RO,significant challenges,rising,2019,1,1897,0.00053
+cs.RO,significant challenges,rising,2020,4,2572,0.00156
+cs.RO,significant challenges,rising,2021,4,3347,0.0012
+cs.RO,significant challenges,rising,2022,8,3825,0.00209
+cs.RO,significant challenges,rising,2023,50,5108,0.00979
+cs.RO,significant challenges,rising,2024,142,6762,0.021
+cs.RO,significant challenges,rising,2025,206,8121,0.02537
+cs.RO,project page,rising,2015,0,233,0.0
+cs.RO,project page,rising,2016,0,548,0.0
+cs.RO,project page,rising,2017,0,883,0.0
+cs.RO,project page,rising,2018,1,1283,0.00078
+cs.RO,project page,rising,2019,1,1897,0.00053
+cs.RO,project page,rising,2020,2,2572,0.00078
+cs.RO,project page,rising,2021,4,3347,0.0012
+cs.RO,project page,rising,2022,22,3825,0.00575
+cs.RO,project page,rising,2023,48,5108,0.0094
+cs.RO,project page,rising,2024,126,6762,0.01863
+cs.RO,project page,rising,2025,221,8121,0.02721
+cs.RO,transformer,rising,2015,0,233,0.0
+cs.RO,transformer,rising,2016,0,548,0.0
+cs.RO,transformer,rising,2017,0,883,0.0
+cs.RO,transformer,rising,2018,1,1283,0.00078
+cs.RO,transformer,rising,2019,1,1897,0.00053
+cs.RO,transformer,rising,2020,1,2572,0.00039
+cs.RO,transformer,rising,2021,15,3347,0.00448
+cs.RO,transformer,rising,2022,39,3825,0.0102
+cs.RO,transformer,rising,2023,87,5108,0.01703
+cs.RO,transformer,rising,2024,135,6762,0.01996
+cs.RO,transformer,rising,2025,181,8121,0.02229
+cs.RO,long-horizon,rising,2015,0,233,0.0
+cs.RO,long-horizon,rising,2016,1,548,0.00182
+cs.RO,long-horizon,rising,2017,1,883,0.00113
+cs.RO,long-horizon,rising,2018,4,1283,0.00312
+cs.RO,long-horizon,rising,2019,4,1897,0.00211
+cs.RO,long-horizon,rising,2020,23,2572,0.00894
+cs.RO,long-horizon,rising,2021,28,3347,0.00837
+cs.RO,long-horizon,rising,2022,41,3825,0.01072
+cs.RO,long-horizon,rising,2023,96,5108,0.01879
+cs.RO,long-horizon,rising,2024,180,6762,0.02662
+cs.RO,long-horizon,rising,2025,402,8121,0.0495
+cs.RO,convolutional neural,falling,2015,2,233,0.00858
+cs.RO,convolutional neural,falling,2016,20,548,0.0365
+cs.RO,convolutional neural,falling,2017,32,883,0.03624
+cs.RO,convolutional neural,falling,2018,55,1283,0.04287
+cs.RO,convolutional neural,falling,2019,57,1897,0.03005
+cs.RO,convolutional neural,falling,2020,51,2572,0.01983
+cs.RO,convolutional neural,falling,2021,60,3347,0.01793
+cs.RO,convolutional neural,falling,2022,52,3825,0.01359
+cs.RO,convolutional neural,falling,2023,43,5108,0.00842
+cs.RO,convolutional neural,falling,2024,57,6762,0.00843
+cs.RO,convolutional neural,falling,2025,38,8121,0.00468
+cs.RO,cnn,falling,2015,1,233,0.00429
+cs.RO,cnn,falling,2016,9,548,0.01642
+cs.RO,cnn,falling,2017,16,883,0.01812
+cs.RO,cnn,falling,2018,31,1283,0.02416
+cs.RO,cnn,falling,2019,36,1897,0.01898
+cs.RO,cnn,falling,2020,30,2572,0.01166
+cs.RO,cnn,falling,2021,40,3347,0.01195
+cs.RO,cnn,falling,2022,30,3825,0.00784
+cs.RO,cnn,falling,2023,36,5108,0.00705
+cs.RO,cnn,falling,2024,32,6762,0.00473
+cs.RO,cnn,falling,2025,32,8121,0.00394
+cs.RO,laser,falling,2015,3,233,0.01288
+cs.RO,laser,falling,2016,10,548,0.01825
+cs.RO,laser,falling,2017,14,883,0.01586
+cs.RO,laser,falling,2018,26,1283,0.02027
+cs.RO,laser,falling,2019,40,1897,0.02109
+cs.RO,laser,falling,2020,27,2572,0.0105
+cs.RO,laser,falling,2021,36,3347,0.01076
+cs.RO,laser,falling,2022,28,3825,0.00732
+cs.RO,laser,falling,2023,37,5108,0.00724
+cs.RO,laser,falling,2024,42,6762,0.00621
+cs.RO,laser,falling,2025,47,8121,0.00579
+cs.RO,deep neural,falling,2015,3,233,0.01288
+cs.RO,deep neural,falling,2016,8,548,0.0146
+cs.RO,deep neural,falling,2017,20,883,0.02265
+cs.RO,deep neural,falling,2018,44,1283,0.03429
+cs.RO,deep neural,falling,2019,43,1897,0.02267
+cs.RO,deep neural,falling,2020,61,2572,0.02372
+cs.RO,deep neural,falling,2021,83,3347,0.0248
+cs.RO,deep neural,falling,2022,67,3825,0.01752
+cs.RO,deep neural,falling,2023,59,5108,0.01155
+cs.RO,deep neural,falling,2024,81,6762,0.01198
+cs.RO,deep neural,falling,2025,61,8121,0.00751
+cs.RO,purpose,falling,2015,4,233,0.01717
+cs.RO,purpose,falling,2016,20,548,0.0365
+cs.RO,purpose,falling,2017,22,883,0.02492
+cs.RO,purpose,falling,2018,32,1283,0.02494
+cs.RO,purpose,falling,2019,40,1897,0.02109
+cs.RO,purpose,falling,2020,45,2572,0.0175
+cs.RO,purpose,falling,2021,62,3347,0.01852
+cs.RO,purpose,falling,2022,69,3825,0.01804
+cs.RO,purpose,falling,2023,73,5108,0.01429
+cs.RO,purpose,falling,2024,62,6762,0.00917
+cs.RO,purpose,falling,2025,55,8121,0.00677
+cs.RO,illustrate,falling,2015,12,233,0.0515
+cs.RO,illustrate,falling,2016,13,548,0.02372
+cs.RO,illustrate,falling,2017,21,883,0.02378
+cs.RO,illustrate,falling,2018,29,1283,0.0226
+cs.RO,illustrate,falling,2019,56,1897,0.02952
+cs.RO,illustrate,falling,2020,41,2572,0.01594
+cs.RO,illustrate,falling,2021,56,3347,0.01673
+cs.RO,illustrate,falling,2022,56,3825,0.01464
+cs.RO,illustrate,falling,2023,89,5108,0.01742
+cs.RO,illustrate,falling,2024,86,6762,0.01272
+cs.RO,illustrate,falling,2025,60,8121,0.00739
+cs.RO,exploiting,falling,2015,7,233,0.03004
+cs.RO,exploiting,falling,2016,14,548,0.02555
+cs.RO,exploiting,falling,2017,13,883,0.01472
+cs.RO,exploiting,falling,2018,29,1283,0.0226
+cs.RO,exploiting,falling,2019,48,1897,0.0253
+cs.RO,exploiting,falling,2020,49,2572,0.01905
+cs.RO,exploiting,falling,2021,64,3347,0.01912
+cs.RO,exploiting,falling,2022,88,3825,0.02301
+cs.RO,exploiting,falling,2023,76,5108,0.01488
+cs.RO,exploiting,falling,2024,78,6762,0.01154
+cs.RO,exploiting,falling,2025,61,8121,0.00751
+cs.RO,useful,falling,2015,6,233,0.02575
+cs.RO,useful,falling,2016,16,548,0.0292
+cs.RO,useful,falling,2017,29,883,0.03284
+cs.RO,useful,falling,2018,47,1283,0.03663
+cs.RO,useful,falling,2019,59,1897,0.0311
+cs.RO,useful,falling,2020,72,2572,0.02799
+cs.RO,useful,falling,2021,95,3347,0.02838
+cs.RO,useful,falling,2022,109,3825,0.0285
+cs.RO,useful,falling,2023,118,5108,0.0231
+cs.RO,useful,falling,2024,106,6762,0.01568
+cs.RO,useful,falling,2025,106,8121,0.01305
+cs.RO,main,falling,2015,19,233,0.08155
+cs.RO,main,falling,2016,42,548,0.07664
+cs.RO,main,falling,2017,53,883,0.06002
+cs.RO,main,falling,2018,65,1283,0.05066
+cs.RO,main,falling,2019,94,1897,0.04955
+cs.RO,main,falling,2020,108,2572,0.04199
+cs.RO,main,falling,2021,149,3347,0.04452
+cs.RO,main,falling,2022,153,3825,0.04
+cs.RO,main,falling,2023,167,5108,0.03269
+cs.RO,main,falling,2024,192,6762,0.02839
+cs.RO,main,falling,2025,130,8121,0.01601
+cs.RO,state art,falling,2015,3,233,0.01288
+cs.RO,state art,falling,2016,9,548,0.01642
+cs.RO,state art,falling,2017,21,883,0.02378
+cs.RO,state art,falling,2018,25,1283,0.01949
+cs.RO,state art,falling,2019,39,1897,0.02056
+cs.RO,state art,falling,2020,43,2572,0.01672
+cs.RO,state art,falling,2021,54,3347,0.01613
+cs.RO,state art,falling,2022,52,3825,0.01359
+cs.RO,state art,falling,2023,75,5108,0.01468
+cs.RO,state art,falling,2024,64,6762,0.00946
+cs.RO,state art,falling,2025,58,8121,0.00714
+cs.DB,large language,rising,2015,0,277,0.0
+cs.DB,large language,rising,2016,0,312,0.0
+cs.DB,large language,rising,2017,0,360,0.0
+cs.DB,large language,rising,2018,0,377,0.0
+cs.DB,large language,rising,2019,0,471,0.0
+cs.DB,large language,rising,2020,0,570,0.0
+cs.DB,large language,rising,2021,0,514,0.0
+cs.DB,large language,rising,2022,1,528,0.00189
+cs.DB,large language,rising,2023,35,597,0.05863
+cs.DB,large language,rising,2024,103,720,0.14306
+cs.DB,large language,rising,2025,164,969,0.16925
+cs.DB,text-to-sql,rising,2015,0,277,0.0
+cs.DB,text-to-sql,rising,2016,0,312,0.0
+cs.DB,text-to-sql,rising,2017,0,360,0.0
+cs.DB,text-to-sql,rising,2018,0,377,0.0
+cs.DB,text-to-sql,rising,2019,0,471,0.0
+cs.DB,text-to-sql,rising,2020,1,570,0.00175
+cs.DB,text-to-sql,rising,2021,0,514,0.0
+cs.DB,text-to-sql,rising,2022,3,528,0.00568
+cs.DB,text-to-sql,rising,2023,5,597,0.00838
+cs.DB,text-to-sql,rising,2024,21,720,0.02917
+cs.DB,text-to-sql,rising,2025,40,969,0.04128
+cs.DB,retrieval-augmented,rising,2015,0,277,0.0
+cs.DB,retrieval-augmented,rising,2016,0,312,0.0
+cs.DB,retrieval-augmented,rising,2017,0,360,0.0
+cs.DB,retrieval-augmented,rising,2018,0,377,0.0
+cs.DB,retrieval-augmented,rising,2019,0,471,0.0
+cs.DB,retrieval-augmented,rising,2020,0,570,0.0
+cs.DB,retrieval-augmented,rising,2021,0,514,0.0
+cs.DB,retrieval-augmented,rising,2022,0,528,0.0
+cs.DB,retrieval-augmented,rising,2023,0,597,0.0
+cs.DB,retrieval-augmented,rising,2024,13,720,0.01806
+cs.DB,retrieval-augmented,rising,2025,38,969,0.03922
+cs.DB,fine-tuning,rising,2015,0,277,0.0
+cs.DB,fine-tuning,rising,2016,0,312,0.0
+cs.DB,fine-tuning,rising,2017,0,360,0.0
+cs.DB,fine-tuning,rising,2018,0,377,0.0
+cs.DB,fine-tuning,rising,2019,1,471,0.00212
+cs.DB,fine-tuning,rising,2020,1,570,0.00175
+cs.DB,fine-tuning,rising,2021,1,514,0.00195
+cs.DB,fine-tuning,rising,2022,3,528,0.00568
+cs.DB,fine-tuning,rising,2023,5,597,0.00838
+cs.DB,fine-tuning,rising,2024,16,720,0.02222
+cs.DB,fine-tuning,rising,2025,24,969,0.02477
+cs.DB,enhances,rising,2015,1,277,0.00361
+cs.DB,enhances,rising,2016,0,312,0.0
+cs.DB,enhances,rising,2017,1,360,0.00278
+cs.DB,enhances,rising,2018,1,377,0.00265
+cs.DB,enhances,rising,2019,1,471,0.00212
+cs.DB,enhances,rising,2020,1,570,0.00175
+cs.DB,enhances,rising,2021,3,514,0.00584
+cs.DB,enhances,rising,2022,1,528,0.00189
+cs.DB,enhances,rising,2023,9,597,0.01508
+cs.DB,enhances,rising,2024,21,720,0.02917
+cs.DB,enhances,rising,2025,35,969,0.03612
+cs.DB,approximate nearest,rising,2015,0,277,0.0
+cs.DB,approximate nearest,rising,2016,1,312,0.00321
+cs.DB,approximate nearest,rising,2017,0,360,0.0
+cs.DB,approximate nearest,rising,2018,1,377,0.00265
+cs.DB,approximate nearest,rising,2019,1,471,0.00212
+cs.DB,approximate nearest,rising,2020,5,570,0.00877
+cs.DB,approximate nearest,rising,2021,4,514,0.00778
+cs.DB,approximate nearest,rising,2022,5,528,0.00947
+cs.DB,approximate nearest,rising,2023,1,597,0.00168
+cs.DB,approximate nearest,rising,2024,12,720,0.01667
+cs.DB,approximate nearest,rising,2025,40,969,0.04128
+cs.DB,highlighting,rising,2015,0,277,0.0
+cs.DB,highlighting,rising,2016,0,312,0.0
+cs.DB,highlighting,rising,2017,2,360,0.00556
+cs.DB,highlighting,rising,2018,1,377,0.00265
+cs.DB,highlighting,rising,2019,0,471,0.0
+cs.DB,highlighting,rising,2020,2,570,0.00351
+cs.DB,highlighting,rising,2021,1,514,0.00195
+cs.DB,highlighting,rising,2022,3,528,0.00568
+cs.DB,highlighting,rising,2023,7,597,0.01173
+cs.DB,highlighting,rising,2024,10,720,0.01389
+cs.DB,highlighting,rising,2025,27,969,0.02786
+cs.DB,advancements,rising,2015,1,277,0.00361
+cs.DB,advancements,rising,2016,0,312,0.0
+cs.DB,advancements,rising,2017,2,360,0.00556
+cs.DB,advancements,rising,2018,2,377,0.00531
+cs.DB,advancements,rising,2019,0,471,0.0
+cs.DB,advancements,rising,2020,5,570,0.00877
+cs.DB,advancements,rising,2021,3,514,0.00584
+cs.DB,advancements,rising,2022,2,528,0.00379
+cs.DB,advancements,rising,2023,10,597,0.01675
+cs.DB,advancements,rising,2024,25,720,0.03472
+cs.DB,advancements,rising,2025,24,969,0.02477
+cs.DB,ai,rising,2015,1,277,0.00361
+cs.DB,ai,rising,2016,0,312,0.0
+cs.DB,ai,rising,2017,4,360,0.01111
+cs.DB,ai,rising,2018,4,377,0.01061
+cs.DB,ai,rising,2019,2,471,0.00425
+cs.DB,ai,rising,2020,8,570,0.01404
+cs.DB,ai,rising,2021,7,514,0.01362
+cs.DB,ai,rising,2022,12,528,0.02273
+cs.DB,ai,rising,2023,15,597,0.02513
+cs.DB,ai,rising,2024,37,720,0.05139
+cs.DB,ai,rising,2025,64,969,0.06605
+cs.DB,leveraging,rising,2015,4,277,0.01444
+cs.DB,leveraging,rising,2016,6,312,0.01923
+cs.DB,leveraging,rising,2017,4,360,0.01111
+cs.DB,leveraging,rising,2018,6,377,0.01592
+cs.DB,leveraging,rising,2019,6,471,0.01274
+cs.DB,leveraging,rising,2020,13,570,0.02281
+cs.DB,leveraging,rising,2021,11,514,0.0214
+cs.DB,leveraging,rising,2022,19,528,0.03598
+cs.DB,leveraging,rising,2023,23,597,0.03853
+cs.DB,leveraging,rising,2024,66,720,0.09167
+cs.DB,leveraging,rising,2025,81,969,0.08359
+cs.DB,rdf data,falling,2015,10,277,0.0361
+cs.DB,rdf data,falling,2016,5,312,0.01603
+cs.DB,rdf data,falling,2017,7,360,0.01944
+cs.DB,rdf data,falling,2018,13,377,0.03448
+cs.DB,rdf data,falling,2019,6,471,0.01274
+cs.DB,rdf data,falling,2020,9,570,0.01579
+cs.DB,rdf data,falling,2021,8,514,0.01556
+cs.DB,rdf data,falling,2022,3,528,0.00568
+cs.DB,rdf data,falling,2023,4,597,0.0067
+cs.DB,rdf data,falling,2024,3,720,0.00417
+cs.DB,rdf data,falling,2025,5,969,0.00516
+cs.DB,data set,falling,2015,15,277,0.05415
+cs.DB,data set,falling,2016,5,312,0.01603
+cs.DB,data set,falling,2017,5,360,0.01389
+cs.DB,data set,falling,2018,12,377,0.03183
+cs.DB,data set,falling,2019,4,471,0.00849
+cs.DB,data set,falling,2020,7,570,0.01228
+cs.DB,data set,falling,2021,2,514,0.00389
+cs.DB,data set,falling,2022,8,528,0.01515
+cs.DB,data set,falling,2023,3,597,0.00503
+cs.DB,data set,falling,2024,5,720,0.00694
+cs.DB,data set,falling,2025,1,969,0.00103
+cs.DB,decision making,falling,2015,1,277,0.00361
+cs.DB,decision making,falling,2016,5,312,0.01603
+cs.DB,decision making,falling,2017,0,360,0.0
+cs.DB,decision making,falling,2018,8,377,0.02122
+cs.DB,decision making,falling,2019,10,471,0.02123
+cs.DB,decision making,falling,2020,12,570,0.02105
+cs.DB,decision making,falling,2021,10,514,0.01946
+cs.DB,decision making,falling,2022,6,528,0.01136
+cs.DB,decision making,falling,2023,2,597,0.00335
+cs.DB,decision making,falling,2024,3,720,0.00417
+cs.DB,decision making,falling,2025,5,969,0.00516
+cs.DB,machines,falling,2015,5,277,0.01805
+cs.DB,machines,falling,2016,7,312,0.02244
+cs.DB,machines,falling,2017,10,360,0.02778
+cs.DB,machines,falling,2018,14,377,0.03714
+cs.DB,machines,falling,2019,3,471,0.00637
+cs.DB,machines,falling,2020,10,570,0.01754
+cs.DB,machines,falling,2021,8,514,0.01556
+cs.DB,machines,falling,2022,2,528,0.00379
+cs.DB,machines,falling,2023,4,597,0.0067
+cs.DB,machines,falling,2024,2,720,0.00278
+cs.DB,machines,falling,2025,9,969,0.00929
+cs.DB,list,falling,2015,6,277,0.02166
+cs.DB,list,falling,2016,3,312,0.00962
+cs.DB,list,falling,2017,3,360,0.00833
+cs.DB,list,falling,2018,9,377,0.02387
+cs.DB,list,falling,2019,10,471,0.02123
+cs.DB,list,falling,2020,8,570,0.01404
+cs.DB,list,falling,2021,9,514,0.01751
+cs.DB,list,falling,2022,10,528,0.01894
+cs.DB,list,falling,2023,7,597,0.01173
+cs.DB,list,falling,2024,7,720,0.00972
+cs.DB,list,falling,2025,3,969,0.0031
+cs.DB,data mining,falling,2015,17,277,0.06137
+cs.DB,data mining,falling,2016,20,312,0.0641
+cs.DB,data mining,falling,2017,17,360,0.04722
+cs.DB,data mining,falling,2018,15,377,0.03979
+cs.DB,data mining,falling,2019,20,471,0.04246
+cs.DB,data mining,falling,2020,16,570,0.02807
+cs.DB,data mining,falling,2021,14,514,0.02724
+cs.DB,data mining,falling,2022,12,528,0.02273
+cs.DB,data mining,falling,2023,8,597,0.0134
+cs.DB,data mining,falling,2024,14,720,0.01944
+cs.DB,data mining,falling,2025,6,969,0.00619
+cs.DB,probability,falling,2015,7,277,0.02527
+cs.DB,probability,falling,2016,6,312,0.01923
+cs.DB,probability,falling,2017,9,360,0.025
+cs.DB,probability,falling,2018,13,377,0.03448
+cs.DB,probability,falling,2019,17,471,0.03609
+cs.DB,probability,falling,2020,18,570,0.03158
+cs.DB,probability,falling,2021,12,514,0.02335
+cs.DB,probability,falling,2022,18,528,0.03409
+cs.DB,probability,falling,2023,5,597,0.00838
+cs.DB,probability,falling,2024,9,720,0.0125
+cs.DB,probability,falling,2025,9,969,0.00929
+cs.DB,synthetic datasets,falling,2015,2,277,0.00722
+cs.DB,synthetic datasets,falling,2016,4,312,0.01282
+cs.DB,synthetic datasets,falling,2017,14,360,0.03889
+cs.DB,synthetic datasets,falling,2018,12,377,0.03183
+cs.DB,synthetic datasets,falling,2019,11,471,0.02335
+cs.DB,synthetic datasets,falling,2020,12,570,0.02105
+cs.DB,synthetic datasets,falling,2021,20,514,0.03891
+cs.DB,synthetic datasets,falling,2022,13,528,0.02462
+cs.DB,synthetic datasets,falling,2023,15,597,0.02513
+cs.DB,synthetic datasets,falling,2024,1,720,0.00139
+cs.DB,synthetic datasets,falling,2025,15,969,0.01548
+cs.DB,real data,falling,2015,6,277,0.02166
+cs.DB,real data,falling,2016,8,312,0.02564
+cs.DB,real data,falling,2017,2,360,0.00556
+cs.DB,real data,falling,2018,10,377,0.02653
+cs.DB,real data,falling,2019,8,471,0.01699
+cs.DB,real data,falling,2020,7,570,0.01228
+cs.DB,real data,falling,2021,10,514,0.01946
+cs.DB,real data,falling,2022,6,528,0.01136
+cs.DB,real data,falling,2023,3,597,0.00503
+cs.DB,real data,falling,2024,6,720,0.00833
+cs.DB,real data,falling,2025,5,969,0.00516
+cs.DB,internet,falling,2015,2,277,0.00722
+cs.DB,internet,falling,2016,9,312,0.02885
+cs.DB,internet,falling,2017,9,360,0.025
+cs.DB,internet,falling,2018,10,377,0.02653
+cs.DB,internet,falling,2019,12,471,0.02548
+cs.DB,internet,falling,2020,8,570,0.01404
+cs.DB,internet,falling,2021,6,514,0.01167
+cs.DB,internet,falling,2022,11,528,0.02083
+cs.DB,internet,falling,2023,17,597,0.02848
+cs.DB,internet,falling,2024,9,720,0.0125
+cs.DB,internet,falling,2025,4,969,0.00413

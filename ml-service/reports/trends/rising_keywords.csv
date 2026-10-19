@@ -1,0 +1,51 @@
+category,rank,term,base_share,recent_share,change_pp,log_ratio,display_label,similar_terms_merged
+cs.CV,1,diffusion models,7e-05,0.08331,8.32,3.7193,diffusion models,diffusion model; diffusion; diffusion-based
+cs.CV,2,large language,0.0,0.07996,8.0,3.7131,large language models,language models
+cs.CV,3,vision-language models,0.0,0.05928,5.93,3.4224,vision-language models,vision-language
+cs.CV,4,prompts,0.00012,0.06237,6.23,3.4143,prompts,prompt
+cs.CV,5,vlms,0.0,0.04222,4.22,3.096,vlms,models vlms
+cs.CV,6,foundation models,0.0,0.03808,3.81,2.9977,foundation models,foundation
+cs.CV,7,llms,0.0,0.03533,3.53,2.9266,llms,
+cs.CV,8,tokens,0.00056,0.04451,4.39,2.8995,tokens,token
+cs.CV,9,splatting,0.0,0.03412,3.41,2.8937,splatting,gaussian splatting
+cs.CV,10,mllms,0.0,0.03213,3.21,2.837,mllms,multimodal large
+cs.CL,1,llms,0.00017,0.52985,52.97,5.5025,llms,models llms; large language; llm; llm-based; model llm
+cs.CL,2,prompting,0.00029,0.07477,7.45,3.5131,prompting,
+cs.CL,3,retrieval-augmented,0.0,0.04943,4.94,3.2471,retrieval-augmented generation,rag; retrieval-augmented generation; generation rag
+cs.CL,4,gpt-4,0.0,0.04583,4.58,3.1744,gpt-4,
+cs.CL,5,prompt,0.00173,0.07848,7.68,3.0719,prompt,prompts
+cs.CL,6,in-context,0.0,0.03932,3.93,3.0283,in-context,in-context learning
+cs.CL,7,chain-of-thought,0.00017,0.03948,3.93,2.9513,chain-of-thought,
+cs.CL,8,hallucinations,0.00012,0.03472,3.46,2.8518,hallucinations,
+cs.CL,9,llama,0.0,0.03101,3.1,2.8036,llama,
+cs.CL,10,gpt-4o,0.0,0.02951,2.95,2.7573,gpt-4o,
+cs.CR,1,large language,0.0,0.18523,18.52,4.5392,large language models,language models; llms; models llms; llm; language model; llm-based; language
+cs.CR,2,prompt,0.00143,0.05842,5.7,2.8683,prompt,prompts; prompt injection
+cs.CR,3,jailbreak,0.0,0.0324,3.24,2.845,jailbreak,jailbreak attacks
+cs.CR,4,fine-tuning,0.00228,0.04466,4.24,2.3898,fine-tuning,
+cs.CR,5,learning fl,0.0011,0.02663,2.55,2.2217,learning fl,fl; federated learning
+cs.CR,6,alignment,0.00195,0.03168,2.97,2.1434,alignment,
+cs.CR,7,backdoor attacks,0.00195,0.02784,2.59,2.0224,backdoor attacks,
+cs.CR,8,enhances,0.00345,0.03908,3.56,2.0202,enhances,
+cs.CR,9,consistently,0.00188,0.02621,2.43,1.984,consistently,
+cs.CR,10,ai,0.01257,0.10072,8.81,1.9529,ai,
+cs.RO,1,large language,0.0,0.05732,5.73,3.3898,large language models,language models; llms; models llms; llm
+cs.RO,2,vision-language,0.0,0.03924,3.92,3.0263,vision-language,vision-language models
+cs.RO,3,diffusion,0.00131,0.04503,4.37,2.6549,diffusion,
+cs.RO,4,vision-language-action,0.0,0.02554,2.55,2.6225,vision-language-action,vla
+cs.RO,5,vlms,0.0,0.02417,2.42,2.5713,vlms,models vlms
+cs.RO,6,foundation models,0.0,0.02249,2.25,2.5052,foundation models,
+cs.RO,7,significant challenges,0.00065,0.02318,2.25,2.2504,significant challenges,
+cs.RO,8,project page,0.00065,0.02292,2.23,2.24,project page,
+cs.RO,9,transformer,0.00065,0.02113,2.05,2.1652,transformer,
+cs.RO,10,long-horizon,0.00261,0.03806,3.54,2.1615,long-horizon,
+cs.DB,1,large language,0.0,0.15615,15.62,4.3704,large language models,language models; llms; models llms; llm; llm-based; language model
+cs.DB,2,text-to-sql,0.0,0.03522,3.52,2.9238,text-to-sql,
+cs.DB,3,retrieval-augmented,0.0,0.02864,2.86,2.729,retrieval-augmented generation,rag; retrieval-augmented generation; generation rag; generation
+cs.DB,4,fine-tuning,0.00106,0.0235,2.24,2.1196,fine-tuning,
+cs.DB,5,enhances,0.00239,0.03264,3.03,2.0663,enhances,
+cs.DB,6,approximate nearest,0.00239,0.02897,2.66,1.9543,approximate nearest,neighbor search
+cs.DB,7,highlighting,0.00133,0.02088,1.96,1.9283,highlighting,
+cs.DB,8,advancements,0.00265,0.02975,2.71,1.9203,advancements,
+cs.DB,9,ai,0.00743,0.05872,5.13,1.8625,ai,
+cs.DB,10,leveraging,0.01433,0.08763,7.33,1.7029,leveraging,

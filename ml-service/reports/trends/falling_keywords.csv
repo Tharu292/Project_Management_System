@@ -1,0 +1,51 @@
+category,rank,term,base_share,recent_share,change_pp,log_ratio,display_label,similar_terms_merged
+cs.CV,1,deep convolutional,0.05076,0.00294,-4.78,-2.3693,deep convolutional,convolutional; convolutional networks; convolutional network
+cs.CV,2,fully convolutional,0.02603,0.00112,-2.49,-2.1958,fully convolutional,
+cs.CV,3,deep network,0.02088,0.00187,-1.9,-1.7775,deep network,
+cs.CV,4,convolutional neural,0.18735,0.03312,-15.42,-1.6848,convolutional neural,
+cs.CV,5,adversarial network,0.02502,0.00339,-2.16,-1.612,adversarial network,adversarial networks
+cs.CV,6,generative adversarial,0.05359,0.0093,-4.43,-1.5929,generative adversarial,
+cs.CV,7,neural network,0.18646,0.03747,-14.9,-1.5633,neural network,
+cs.CV,8,network cnn,0.03753,0.00647,-3.11,-1.5405,network cnn,cnn
+cs.CV,9,recurrent,0.03455,0.0063,-2.83,-1.4829,recurrent,
+cs.CV,10,deep neural,0.08666,0.02077,-6.59,-1.3595,deep neural,
+cs.CL,1,recurrent neural,0.04846,0.002,-4.65,-2.5352,recurrent neural networks,recurrent; neural; deep neural; neural networks; network; neural models
+cs.CL,2,word embeddings,0.06845,0.00541,-6.3,-2.2525,word embeddings,word embedding
+cs.CL,3,neural network,0.1124,0.01025,-10.21,-2.2343,neural network,
+cs.CL,4,convolutional,0.04548,0.00316,-4.23,-2.2202,convolutional,convolutional neural
+cs.CL,5,neural machine,0.07098,0.00667,-6.43,-2.1303,neural machine,nmt; translation nmt
+cs.CL,6,sequence-to-sequence,0.04231,0.00345,-3.89,-2.0962,sequence-to-sequence,
+cs.CL,7,rnn,0.02689,0.00202,-2.49,-1.9714,rnn,
+cs.CL,8,lstm,0.03748,0.00356,-3.39,-1.961,lstm,
+cs.CL,9,state art,0.04134,0.00502,-3.63,-1.8209,state art,
+cs.CL,10,parser,0.02204,0.00199,-2.01,-1.7959,parser,
+cs.CR,1,bitcoin,0.04322,0.01128,-3.19,-1.225,bitcoin,
+cs.CR,2,cryptocurrencies,0.02042,0.00567,-1.47,-1.0725,cryptocurrencies,
+cs.CR,3,anonymous,0.02164,0.00679,-1.49,-0.9892,anonymous,
+cs.CR,4,mining,0.03047,0.01183,-1.86,-0.8534,mining,
+cs.CR,5,cryptocurrency,0.02114,0.00803,-1.31,-0.8359,cryptocurrency,
+cs.CR,6,intel,0.02,0.00777,-1.22,-0.8118,intel,
+cs.CR,7,special,0.02064,0.00806,-1.26,-0.8111,special,
+cs.CR,8,purpose,0.02707,0.01105,-1.6,-0.8007,purpose,
+cs.CR,9,electronic,0.02192,0.00901,-1.29,-0.776,electronic,
+cs.CR,10,sensor,0.02682,0.01145,-1.54,-0.7617,sensor,
+cs.RO,1,convolutional neural,0.03646,0.00655,-2.99,-1.5031,convolutional neural,convolutional
+cs.RO,2,cnn,0.02157,0.00434,-1.72,-1.3137,cnn,
+cs.RO,3,laser,0.02068,0.006,-1.47,-1.0419,laser,
+cs.RO,4,deep neural,0.02848,0.00975,-1.87,-0.9537,deep neural,
+cs.RO,5,purpose,0.02301,0.00797,-1.5,-0.9198,purpose,
+cs.RO,6,illustrate,0.02606,0.01005,-1.6,-0.8451,illustrate,
+cs.RO,7,exploiting,0.02395,0.00952,-1.44,-0.8119,exploiting,
+cs.RO,8,useful,0.03387,0.01436,-1.95,-0.7847,useful,
+cs.RO,9,main,0.05011,0.0222,-2.79,-0.7669,main,
+cs.RO,10,state art,0.02002,0.0083,-1.17,-0.7596,state art,
+cs.DB,1,rdf data,0.02361,0.00466,-1.89,-1.3464,rdf data,rdf
+cs.DB,2,data set,0.02016,0.00399,-1.62,-1.3086,data set,
+cs.DB,3,decision making,0.02123,0.00466,-1.66,-1.2486,decision making,
+cs.DB,4,machines,0.02175,0.00603,-1.57,-1.0841,machines,
+cs.DB,5,list,0.02255,0.00641,-1.61,-1.0715,list,
+cs.DB,6,data mining,0.04113,0.01282,-2.83,-1.0683,data mining,
+cs.DB,7,probability,0.03529,0.01089,-2.44,-1.0619,probability,
+cs.DB,8,synthetic datasets,0.02759,0.00843,-1.92,-1.0424,synthetic datasets,
+cs.DB,9,real data,0.02176,0.00675,-1.5,-0.9991,real data,
+cs.DB,10,internet,0.026,0.00831,-1.77,-0.9988,internet,

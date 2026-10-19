@@ -1,0 +1,144 @@
+id,true,predicted,title
+2301.03118,cs.CR,cs.CV,Facial Misrecognition Systems: Simple Weight Manipulations Force DNNs to Err Only on Specific Persons
+2301.03656,cs.DB,cs.RO,Towards Multifaceted Human-Centered AI
+2301.12943,cs.CV,cs.CR,Factors that affect Camera based Self-Monitoring of Vitals in the Wild
+2302.04865,cs.CV,cs.RO,ELBA: Learning by Asking for Embodied Visual Navigation and Task Completion
+2302.05794,cs.CR,cs.CL,Mutation-Based Adversarial Attacks on Neural Text Detectors
+2303.05007,cs.CR,cs.CV,Towards Robust Image-in-Audio Deep Steganography
+2304.00436,cs.CV,cs.CR,Instance-Level Trojan Attacks on Visual Question Answering via Adversarial Learning in Neuron Activation Space
+2304.05735,cs.RO,cs.CV,RO-MAP: Real-Time Multi-Object Mapping with Neural Radiance Fields
+2304.13931,cs.DB,cs.CR,"Open Metaverse: Issues, Evolution, and Future"
+2304.14924,cs.CV,cs.DB,An Edge Assisted Robust Smart Traffic Management and Signalling System for Guiding Emergency Vehicles During Peak Hours
+2305.05875,cs.CR,cs.CV,Quantization Aware Attack: Enhancing Transferable Adversarial Attacks by Model Quantization
+2305.06105,cs.DB,cs.CR,Differential Privacy for Protecting Private Patterns in Data Streams
+2305.06456,cs.CV,cs.RO,Perpetual Humanoid Control for Real-time Simulated Avatars
+2305.11004,cs.CL,cs.CV,Insert or Attach: Taxonomy Completion via Box Embedding
+2305.13631,cs.CL,cs.CV,EDIS: Entity-Driven Image Search over Multimodal Web Content
+2305.14168,cs.CR,cs.CV,SXVCS: An XOR-based Visual Cryptography Scheme without Noise via Linear Algebra
+2305.14787,cs.CV,cs.RO,Polarimetric Imaging for Perception
+2305.17246,cs.CR,cs.RO,NASimEmu: Network Attack Simulator & Emulator for Training Agents Generalizing to Novel Scenarios
+2305.18072,cs.CV,cs.CL,Image Captioning with Multi-Context Synthetic Data
+2305.18786,cs.CV,cs.CL,Scalable Performance Analysis for Vision-Language Models
+2305.19776,cs.CR,cs.CV,Off-By-One Implementation Error in J-UNIWARD
+2306.03641,cs.RO,cs.CV,Single-Shot Global Localization via Graph-Theoretic Correspondence Matching
+2306.07629,cs.CL,cs.CV,SqueezeLLM: Dense-and-Sparse Quantization
+2306.07758,cs.CR,cs.DB,Generated Graph Detection
+2306.09189,cs.CR,cs.CV,High-Resolution Convolutional Neural Networks on Homomorphically Encrypted Data via Sharding Ciphertexts
+2306.11638,cs.CV,cs.RO,Collision Avoidance Detour for Multi-Agent Trajectory Forecasting
+2306.13211,cs.CR,cs.DB,Differentially Private Synthetic Data Using KD-Trees
+2306.13293,cs.DB,cs.CR,Differentially Private Streaming Data Release under Temporal Correlations via Post-processing
+2306.15946,cs.CV,cs.CL,Knowledge-Enhanced Hierarchical Information Correlation Learning for Multi-Modal Rumor Detection
+2306.16086,cs.CV,cs.RO,Lifelong Change Detection: Continuous Domain Adaptation for Small Object Change Detection in Every Robot Navigation
+2307.10195,cs.CR,cs.CL,"ChatGPT for Digital Forensic Investigation: The Good, The Bad, and The Unknown"
+2307.16875,cs.RO,cs.CR,Pyrus Base: An Open Source Python Framework for the RoboCup 2D Soccer Simulation
+2308.09515,cs.CV,cs.CL,Learnt Contrastive Concept Embeddings for Sign Recognition
+2308.09632,cs.CV,cs.RO,"VALERIE22 -- A photorealistic, richly metadata annotated dataset of urban environments"
+2308.10897,cs.CV,cs.CL,Can Language Models Learn to Listen?
+2308.12914,cs.CV,cs.RO,3D Pose Nowcasting: Forecast the Future to Improve the Present
+2309.10439,cs.CV,cs.CL,Posterior sampling algorithms for unsupervised speech enhancement with recurrent variational autoencoder
+2310.00749,cs.DB,cs.CL,SEED: Domain-Specific Data Curation With Large Language Models
+2310.01424,cs.CL,cs.CR,Identifying and Mitigating Privacy Risks Stemming from Language Models: A Survey
+2310.05418,cs.CL,cs.RO,Humanoid Agents: Platform for Simulating Human-like Generative Agents
+2310.11548,cs.DB,cs.CR,Differentially Private Data Generation with Missing Data
+2310.11753,cs.RO,cs.CL,Bias in Emotion Recognition with ChatGPT
+2310.13104,cs.DB,cs.CR,Within-Dataset Disclosure Risk for Differential Privacy
+2310.14001,cs.CL,cs.CR,Toward Stronger Textual Attack Detectors
+2310.19290,cs.CR,cs.CV,Analyzing eyebrow region for morphed image detection
+2311.11009,cs.CL,cs.CV,Joyful: Joint Modality Fusion and Graph Contrastive Learning for Multimodal Emotion Recognition
+2311.15660,cs.CV,cs.RO,Technical Report for Argoverse Challenges on 4D Occupancy Forecasting
+2311.17126,cs.CV,cs.CL,Reason out Your Layout: Evoking the Layout Master from Large Language Models for Text-to-Image Synthesis
+2311.18303,cs.CV,cs.CL,OmniMotionGPT: Animal Motion Generation with Limited Data
+2312.01860,cs.RO,cs.CV,Unveiling Objects with SOLA: An Annotation-Free Image Search on the Object Level for Automotive Data Sets
+2312.09554,cs.CV,cs.CR,Embodied Laser Attack:Leveraging Scene Priors to Achieve Agent-based Robust Non-contact Attacks
+2312.12379,cs.CV,cs.CL,Mixture of Cluster-conditional LoRA Experts for Vision-language Instruction Tuning
+2312.15869,cs.CL,cs.CV,Medical Report Generation based on Segment-Enhanced Contrastive Representation Learning
+2312.17241,cs.CV,cs.DB,Compact Neural Graphics Primitives with Learned Hash Probing
+2401.02031,cs.CV,cs.CR,Spy-Watermark: Robust Invisible Watermarking for Backdoor Attack
+2401.02960,cs.CR,cs.CV,Forensic Video Analytic Software
+2401.16820,cs.CR,cs.CL,Provably Robust Multi-bit Watermarking for AI-generated Text
+2401.17075,cs.DB,cs.CV,Non-central panorama indoor dataset
+2402.00453,cs.CV,cs.CL,Instruction Makes a Difference
+2402.00856,cs.CL,cs.RO,Towards Efficient Exact Optimization of Language Model Alignment
+2402.01680,cs.CL,cs.RO,Large Language Model based Multi-Agents: A Survey of Progress and Challenges
+2402.01763,cs.DB,cs.CL,When Large Language Models Meet Vector Databases: A Survey
+2402.04476,cs.CV,cs.RO,Dual-View Visual Contextualization for Web Navigation
+2402.06655,cs.CR,cs.CL,Adversarial Text Purification: A Large Language Model Approach for Defense
+2402.08349,cs.DB,cs.CL,Evaluating the Data Model Robustness of Text-to-SQL Systems Based on Real User Queries
+2402.08473,cs.CV,cs.CL,Intriguing Differences Between Zero-Shot and Systematic Evaluations of Vision-Language Transformer Models
+2402.09722,cs.RO,cs.CV,Reg-NF: Efficient Registration of Implicit Surfaces within Neural Fields
+2402.16567,cs.CL,cs.DB,Aligning Large Language Models to a Domain-specific Graph Database for NL2GQL
+2402.18319,cs.RO,cs.CV,A Multimodal Handover Failure Detection Dataset and Baselines
+2403.08004,cs.CL,cs.CV,Leveraging LLMs for On-the-Fly Instruction Guided Image Editing
+2403.09079,cs.CV,cs.RO,PreSight: Enhancing Autonomous Vehicle Perception with City-Scale NeRF Priors
+2403.13355,cs.CR,cs.CL,BadEdit: Backdooring large language models by model editing
+2403.14719,cs.CR,cs.CL,Bypassing LLM Watermarks with Color-Aware Substitutions
+2403.15522,cs.CR,cs.CV,Medical Image Data Provenance for Medical Cyber-Physical System
+2403.20014,cs.DB,cs.CL,PURPLE: Making a Large Language Model a Better SQL Writer
+2404.00645,cs.CV,cs.CR,Attire-Based Anomaly Detection in Restricted Areas Using YOLOv8 for Enhanced CCTV Security
+2404.02699,cs.CL,cs.CV,Scalable Model Editing via Customized Expert Networks
+2404.04653,cs.CV,cs.RO,HawkDrive: A Transformer-driven Visual Perception System for Autonomous Driving in Night Scene
+2404.05719,cs.CV,cs.CL,Ferret-UI: Grounded Mobile UI Understanding with Multimodal LLMs
+2404.07717,cs.RO,cs.CV,Reflectance Estimation for Proximity Sensing by Vision-Language Models: Utilizing Distributional Semantics for Low-Level Cognition in Robotics
+2404.10263,cs.CV,cs.RO,PreGSU-A Generalized Traffic Scene Understanding Model for Autonomous Driving based on Pre-trained Graph Attention Network
+2404.11357,cs.CV,cs.CR,Detector Collapse: Physical-World Backdooring Object Detection to Catastrophic Overload or Blindness in Autonomous Driving
+2404.11450,cs.DB,cs.CR,Real-Time Trajectory Synthesis with Local Differential Privacy
+2404.15383,cs.CV,cs.RO,WANDR: Intention-guided Human Motion Generation
+2404.17136,cs.DB,cs.CL,Automated Data Visualization from Natural Language via Large Language Models: An Exploratory Study
+2405.01071,cs.CV,cs.CL,Callico: a Versatile Open-Source Document Image Annotation Platform
+2405.04936,cs.DB,cs.CR,SPSW: Database Watermarking Based on Fake Tuples and Sparse Priority Strategy
+2405.07349,cs.RO,cs.CV,WeedScout: Real-Time Autonomous blackgrass Classification and Mapping using dedicated hardware
+2405.07419,cs.CR,cs.CV,Indoor and Outdoor Crowd Density Level Estimation with Video Analysis through Machine Learning Models
+2405.11419,cs.DB,cs.CR,Sketches-based join size estimation under local differential privacy
+2405.11988,cs.DB,cs.CR,"DuckDB-SGX2: The Good, The Bad and The Ugly within Confidential Analytical Query Processing"
+2405.12914,cs.CV,cs.CL,An Empirical Study and Analysis of Text-to-Image Generation Using Large Language Model-Powered Textual Representation
+2406.00083,cs.CR,cs.CL,BadRAG: Identifying Vulnerabilities in Retrieval Augmented Generation of Large Language Models
+2406.01258,cs.CR,cs.RO,SCALLER: Standard Cell Assembled and Local Layout Effect-based Ring Oscillators
+2406.04236,cs.CV,cs.CL,Understanding Information Storage and Transfer in Multi-modal Large Language Models
+2406.05946,cs.CR,cs.CL,Safety Alignment Should Be Made More Than Just a Few Tokens Deep
+2406.07820,cs.CV,cs.CR,Are Objective Explanatory Evaluation metrics Trustworthy? An Adversarial Analysis
+2406.16850,cs.CV,cs.RO,From Perfect to Noisy World Simulation: Customizable Embodied Multi-modal Perturbations for SLAM Robustness Benchmarking
+2406.17415,cs.CL,cs.CV,Layer-Wise Quantization: A Pragmatic and Effective Method for Quantizing LLMs Beyond Integer Bit-Levels
+2407.01509,cs.CV,cs.CL,MIA-Bench: Towards Better Instruction Following Evaluation of Multimodal LLMs
+2407.08924,cs.CR,cs.CL,Disassembling Obfuscated Executables with LLM
+2407.09551,cs.CV,cs.CL,Diminishing Stereotype Bias in Image Generation Model using Reinforcemenlent Learning Feedback
+2407.12701,cs.CR,cs.DB,Efficient and Flexible Differet-Radix Montgomery Modular Multiplication for Hardware Implementation
+2407.13488,cs.CV,cs.CL,Similarity over Factuality: Are we making progress on multimodal out-of-context misinformation detection?
+2407.19668,cs.DB,cs.CV,"Urban Traffic Accident Risk Prediction Revisited: Regionality, Proximity, Similarity and Sparsity"
+2407.21174,cs.CV,cs.CR,AI Safety in Practice: Enhancing Adversarial Robustness in Multimodal Image Captioning
+2408.00684,cs.CL,cs.CR,Assessing the Variety of a Concept Space Using an Unbiased Estimate of Rao's Quadratic Index
+2408.04728,cs.DB,cs.CR,HotStuff-1: Linear Consensus with One-Phase Speculation
+2408.06576,cs.CL,cs.CR,CTISum: A New Benchmark Dataset For Cyber Threat Intelligence Summarization
+2408.06825,cs.CR,cs.CV,Membership Inference Attack Against Masked Image Modeling
+2408.07154,cs.CL,cs.CV,Self-folding Self-replication
+2408.07494,cs.DB,cs.CL,QirK: Question Answering via Intermediate Representation on Knowledge Graphs
+2408.07728,cs.CR,cs.CV,Moderator: Moderating Text-to-Image Diffusion Models through Fine-grained Context-based Policies
+2408.11182,cs.CR,cs.CL,Hide Your Malicious Goal Into Benign Narratives: Jailbreak Large Language Models through Carrier Articles
+2408.11241,cs.CV,cs.RO,CooPre: Cooperative Pretraining for V2X Cooperative Perception
+2408.15899,cs.RO,cs.CV,Gen-Swarms: Adapting Deep Generative Models to Swarms of Drones
+2409.02676,cs.CV,cs.RO,Improved Single Camera BEV Perception Using Multi-Camera Training
+2409.05742,cs.RO,cs.CV,Robust Loss Functions for Object Grasping under Limited Ground Truth
+2409.09788,cs.CV,cs.CL,Reasoning Paths with Reference Objects Elicit Quantitative Spatial Reasoning in Large Vision-Language Models
+2409.10986,cs.DB,cs.CR,Control-flow Reconstruction Attacks on Business Process Models
+2409.11854,cs.RO,cs.CV,Physically-Based Photometric Bundle Adjustment in Non-Lambertian Environments
+2409.14556,cs.DB,cs.CL,RACOON: An LLM-based Framework for Retrieval-Augmented Column Type Annotation with a Knowledge Graph
+2410.00462,cs.RO,cs.CV,Joint Moment Estimation for Hip Exoskeleton Control: A Generalized Moment Feature Generation Method
+2410.02650,cs.CL,cs.CR,Undesirable Memorization in Large Language Models: A Survey
+2410.05217,cs.CV,cs.CL,Organizing Unstructured Image Collections using Natural Language
+2410.06526,cs.DB,cs.CL,KOR-Bench: Benchmarking Language Models on Knowledge-Orthogonal Reasoning Tasks
+2410.07062,cs.CV,cs.CL,TinyEmo: Scaling down Emotional Reasoning via Metric Projection
+2410.07125,cs.CV,cs.DB,A Simplified Positional Cell Type Visualization using Spatially Aggregated Clusters
+2410.10931,cs.DB,cs.CL,Combining Observational Data and Language for Species Range Estimation
+2410.13722,cs.CR,cs.CL,Persistent Pre-Training Poisoning of LLMs
+2410.13884,cs.DB,cs.RO,Cartographier des trajectoires maritimes incertaines du XVIII \`eme si\`ecle
+2410.19762,cs.CV,cs.RO,"Reliable, Routable, and Reproducible: Collection of Pedestrian Pathways at Statewide Scale"
+2411.02305,cs.CL,cs.DB,CRMArena: Understanding the Capacity of LLM Agents to Perform Professional CRM Tasks in Realistic Environments
+2411.03348,cs.CR,cs.CV,Undermining Image and Text Classification Algorithms Using Adversarial Attacks
+2411.03500,cs.DB,cs.CL,{\lambda}-Tune: Harnessing Large Language Models for Automated Database System Tuning
+2411.04319,cs.DB,cs.CL,Towards Optimizing SQL Generation via LLM Routing
+2411.07019,cs.CL,cs.DB,UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction
+2411.12508,cs.CR,cs.CV,Probe-Me-Not: Protecting Pre-trained Encoders from Malicious Probing
+2411.16742,cs.DB,cs.CL,Text-to-SQL Calibration: No Need to Ask -- Just Rescale Model Probabilities
+2412.01547,cs.CR,cs.CL,Improved Large Language Model Jailbreak Detection via Pretrained Embeddings
+2412.05091,cs.DB,cs.CR,"Designing a Secure, Scalable, and Cost-Effective Cloud Storage Solution: A Novel Approach to Data Management using NextCloud, TrueNAS, and QEMU/KVM"
+2412.15320,cs.CV,cs.CL,Multi-concept Model Immunization through Differentiable Model Merging
+2412.15451,cs.CR,cs.DB,How to Manage My Data? With Machine--Interpretable GDPR Rights!

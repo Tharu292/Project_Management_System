@@ -157,7 +157,90 @@ The classes are balanced by construction, so no class weighting is used.
 | `reports/svm_tfidf_v1/misclassified_test.csv` | Test papers the SVM got wrong, for error analysis | yes |
 | `reports/svm_tfidf_v1/split.json`, `test_ids.txt` | Split sizes, leakage checks, test ids | yes |
 
-## 7. Reproduce
+`metrics.json` also holds `svm_vs_nb`: an exact McNemar test on the same test
+papers, which shows whether the SVM–Naive Bayes difference is larger than chance.
+
+## 7. Temporal evaluation (`ml/temporal_eval.py`)
+
+This evaluation trains on earlier papers and tests on later ones.
+
+- **Training data:** papers first submitted 2018–2022, 1,600 per category.
+- **Test data:** papers from 2023–2024, 400 per category.
+- **Rules:** the same filters, labels, hash-ranked sampling, models, grids and
+  cross-validation as above. The sizes match the random split, so the two
+  results compare directly.
+- **Leakage check:** the same id and title check is applied.
+- **Results:** they are also broken down by test year. The run evaluates only
+  and saves no model.
+- **Output:** `reports/svm_tfidf_v1_temporal/`, with the same files as the
+  random-split run.
+
+## 8. Historical trend analysis (`ml/trends.py`)
+
+This is descriptive statistics over **every** paper in the snapshot, not the
+training sample. Outputs go to `reports/trends/` and `reports/figures/01–04`.
+
+- **Annual counts:** per category by primary category, and also by any
+  listing. The year is the first-version submission year.
+- **Incomplete year:** the newest year in the snapshot is incomplete. It is
+  flagged in the CSV and left out of growth figures, keyword periods and charts.
+- **Share of CS:** a category's papers divided by all papers whose primary
+  category is `cs.*`.
+- **Growth:** an index against 2018, and the compound annual growth rate up to
+  the last full year.
+- **Keyword trends:**
+  - **What is measured:** for each term (one or two words), the share of a
+    category's papers whose title and abstract contain it, per year from
+    2015.
+  - **Vocabulary:** taken from up to 40,000 hash-ranked papers per category,
+    keeping terms that appear in at least 10 of them. The shares themselves
+    are counted over all papers.
+  - **Rising and falling terms:** the score is
+    `log((recent + 0.002) / (base + 0.002))`, comparing 2018–2019 with the
+    last two full years. A rising term must appear in at least 2% of recent
+    papers; a falling term in at least 2% of base-period papers.
+  - **Variants of one concept are ranked once.** Terms are merged when their
+    words are a subset or superset of each other (ignoring plurals and a
+    "-based" suffix), or when they occur mostly in the same papers
+    (Jaccard ≥ 0.5). Example: "llms", "large language", "language models".
+    The merged variants are listed in `similar_terms_merged`.
+  - **Labels:** a label is lengthened to repair a bigram fragment ("large
+    language" → "large language models") only when the longer phrase occurs
+    in at least 80% of the papers counted. A chart line always counts the
+    term it names.
+  - **Manual filtering (stated plainly):**
+    - URLs are removed before counting.
+    - A short, hand-chosen list of academic boilerplate (`ACADEMIC_STOP_WORDS`
+      in `ml/trends.py`, for example "able", "order", "novel", "github") is
+      added to the standard English stop words.
+    - Lower-ranked entries in the CSVs can still include writing-style words
+      (for example "enhances"). The charts use the top three per category.
+
+**Interpretation:**
+- These figures describe what is published on arXiv. arXiv's own growth and
+  posting habits influence them.
+- They do not forecast the future.
+- A rising keyword means more papers mention it. It is not evidence of a
+  research gap, quality or impact.
+
+## 9. Model card and figures (`ml/model_card.py`)
+
+The script writes two things:
+- `reports/MODEL_CARD.md`, covering data, algorithm, results, limitations
+  and intended use;
+- figures `05_model_comparison.png` and `06_per_category_f1.png`.
+
+Every number and comparative word in them is read from the generated JSON
+files, so re-run the script after any other step.
+
+All figures use one style (`ml/plot_style.py`):
+- colours from a colour-blind-checked categorical palette, used in its
+  documented order;
+- the same colour for a category in every chart;
+- recessive axes and gridlines;
+- the data source on every figure.
+
+## 10. Reproduce
 
 ```powershell
 cd ml-service
@@ -165,14 +248,22 @@ cd ml-service
 python -m ml.prepare_data --input data/raw/arxiv-metadata-oai-snapshot.json `
     --categories cs.CV cs.CL cs.CR cs.RO cs.DB --per-category 2000 --years 2018-2024 --seed 42
 python -m ml.train_classifier --data data/processed/sample.jsonl.gz --seed 42
+python -m ml.temporal_eval --input data/raw/arxiv-metadata-oai-snapshot.json --seed 42
+python -m ml.trends --input data/raw/arxiv-metadata-oai-snapshot.json
+python -m ml.model_card
 ```
 
-## 8. Known limitations
+On this machine each step takes between 40 seconds and 2 minutes. The
+classifier and the temporal evaluation give identical metrics on every run.
+
+## 11. Known limitations
 
 - The labels are author-chosen primary categories. They are not expert
   annotations, and some papers truly belong to two areas.
-- A random split measures performance on papers from the same period as the
-  training data. A time-based split (train on earlier years, test on later
-  years) is planned as a further check.
 - Five categories are a first step. Accuracy usually drops as more and closer
   categories are added, for example `cs.LG` and `cs.AI`.
+- The classifier always answers with one of the five categories. It has no
+  "other" class.
+- Performance falls on newer papers (see the temporal evaluation), so the model
+  needs periodic retraining.
+- The trend statistics are descriptive. See section 8.

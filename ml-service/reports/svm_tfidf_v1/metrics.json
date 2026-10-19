@@ -1,6 +1,6 @@
 {
   "run_name": "svm_tfidf_v1",
-  "created_at": "2026-10-19T19:33:26+00:00",
+  "created_at": "2026-10-19T19:45:23+00:00",
   "main_model": "linear_svm",
   "labels": [
     "cs.CL",
@@ -43,7 +43,7 @@
       },
       "cv_macro_f1_mean": 0.9472,
       "cv_macro_f1_std": 0.0078,
-      "train_seconds": 17.1489,
+      "train_seconds": 15.5291,
       "test": {
         "accuracy": 0.937,
         "macro_precision": 0.9373,
@@ -92,7 +92,7 @@
       },
       "cv_macro_f1_mean": 0.9339,
       "cv_macro_f1_std": 0.0048,
-      "train_seconds": 11.0342,
+      "train_seconds": 9.4961,
       "test": {
         "accuracy": 0.932,
         "macro_precision": 0.9323,
@@ -182,5 +182,12 @@
         }
       }
     }
+  },
+  "svm_vs_nb": {
+    "test": "exact McNemar (two-sided binomial test on discordant papers)",
+    "only_svm_correct": 53,
+    "only_nb_correct": 43,
+    "p_value": 0.3583976321916263,
+    "significant_at_0.05": false
   }
 }

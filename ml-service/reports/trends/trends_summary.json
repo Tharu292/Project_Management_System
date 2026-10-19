@@ -1,0 +1,173 @@
+{
+  "created_at": "2026-10-19T20:18:27+00:00",
+  "dataset": {
+    "file": "arxiv-metadata-oai-snapshot.json",
+    "sha256": "b7a2b3abd8fd6b3789307419f778741017d16f570ae44125e825e401f2eb9dab",
+    "records": 3215335,
+    "malformed": 0,
+    "missing_date": 0,
+    "latest_submission": "2026-10-15",
+    "last_full_year": 2025
+  },
+  "parameters": {
+    "categories": [
+      "cs.CV",
+      "cs.CL",
+      "cs.CR",
+      "cs.RO",
+      "cs.DB"
+    ],
+    "from_year": 2010,
+    "index_base_year": 2018,
+    "keyword_years": [
+      2015,
+      2025
+    ],
+    "keyword_base_years": [
+      2018,
+      2019
+    ],
+    "keyword_recent_years": [
+      2024,
+      2025
+    ],
+    "min_share": 0.02,
+    "top_k": 10,
+    "vocab_sample": 40000,
+    "min_df": 10,
+    "min_abstract_words": 30,
+    "seed": 42,
+    "keyword_measure": "share of the category's papers (title + abstract) containing the term",
+    "rising_score": "log((recent_share + 0.002) / (base_share + 0.002))",
+    "stop_words": "scikit-learn English list + ACADEMIC_STOP_WORDS (manual, see ml/trends.py); URLs removed",
+    "same_concept_rule": "word subset/superset ignoring plurals, or Jaccard >= 0.5 of the papers containing each term"
+  },
+  "categories": {
+    "cs.CV": {
+      "papers_2018": 7261,
+      "papers_2025": 27877,
+      "growth_multiple": 3.839,
+      "cagr": 0.2119,
+      "share_of_cs_2018": 0.2091,
+      "share_of_cs_2025": 0.2163,
+      "keyword_papers": 134461,
+      "keyword_vocabulary_size": 55041,
+      "top_rising_keywords": [
+        "diffusion models",
+        "large language models",
+        "vision-language models",
+        "prompts",
+        "vlms"
+      ],
+      "top_falling_keywords": [
+        "deep convolutional",
+        "fully convolutional",
+        "deep network",
+        "convolutional neural",
+        "adversarial network"
+      ]
+    },
+    "cs.CL": {
+      "papers_2018": 2974,
+      "papers_2025": 17086,
+      "growth_multiple": 5.745,
+      "cagr": 0.2837,
+      "share_of_cs_2018": 0.0857,
+      "share_of_cs_2025": 0.1326,
+      "keyword_papers": 72806,
+      "keyword_vocabulary_size": 48707,
+      "top_rising_keywords": [
+        "llms",
+        "prompting",
+        "retrieval-augmented generation",
+        "gpt-4",
+        "prompt"
+      ],
+      "top_falling_keywords": [
+        "recurrent neural networks",
+        "word embeddings",
+        "neural network",
+        "convolutional",
+        "neural machine"
+      ]
+    },
+    "cs.CR": {
+      "papers_2018": 1530,
+      "papers_2025": 5799,
+      "growth_multiple": 3.79,
+      "cagr": 0.2097,
+      "share_of_cs_2018": 0.0441,
+      "share_of_cs_2025": 0.045,
+      "keyword_papers": 27097,
+      "keyword_vocabulary_size": 34756,
+      "top_rising_keywords": [
+        "large language models",
+        "prompt",
+        "jailbreak",
+        "fine-tuning",
+        "learning fl"
+      ],
+      "top_falling_keywords": [
+        "bitcoin",
+        "cryptocurrencies",
+        "anonymous",
+        "mining",
+        "cryptocurrency"
+      ]
+    },
+    "cs.RO": {
+      "papers_2018": 1284,
+      "papers_2025": 8121,
+      "growth_multiple": 6.325,
+      "cagr": 0.3015,
+      "share_of_cs_2018": 0.037,
+      "share_of_cs_2025": 0.063,
+      "keyword_papers": 34579,
+      "keyword_vocabulary_size": 46919,
+      "top_rising_keywords": [
+        "large language models",
+        "vision-language",
+        "diffusion",
+        "vision-language-action",
+        "vlms"
+      ],
+      "top_falling_keywords": [
+        "convolutional neural",
+        "cnn",
+        "laser",
+        "deep neural",
+        "purpose"
+      ]
+    },
+    "cs.DB": {
+      "papers_2018": 377,
+      "papers_2025": 969,
+      "growth_multiple": 2.57,
+      "cagr": 0.1444,
+      "share_of_cs_2018": 0.0109,
+      "share_of_cs_2025": 0.0075,
+      "keyword_papers": 5695,
+      "keyword_vocabulary_size": 7719,
+      "top_rising_keywords": [
+        "large language models",
+        "text-to-sql",
+        "retrieval-augmented generation",
+        "fine-tuning",
+        "enhances"
+      ],
+      "top_falling_keywords": [
+        "rdf data",
+        "data set",
+        "decision making",
+        "machines",
+        "list"
+      ]
+    }
+  },
+  "limitations": [
+    "arXiv submissions are a proxy for research activity, not all published research; arXiv's own growth and field-specific posting habits affect the counts.",
+    "Counts use the primary category; papers_any_listing in annual_counts.csv also counts cross-listings.",
+    "2026 is incomplete and excluded from growth, keyword periods and charts.",
+    "Keyword shares are word-occurrence statistics; they describe what is written about, not research quality, impact or gaps."
+  ]
+}

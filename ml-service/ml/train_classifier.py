@@ -43,6 +43,7 @@ from sklearn.metrics import (  # noqa: E402
 from sklearn.model_selection import GridSearchCV, StratifiedKFold, train_test_split  # noqa: E402
 from sklearn.naive_bayes import MultinomialNB  # noqa: E402
 from sklearn.pipeline import Pipeline  # noqa: E402
+from scipy.stats import binomtest  # noqa: E402
 from sklearn.svm import LinearSVC  # noqa: E402
 
 from ml.text_utils import build_text, normalise_title  # noqa: E402
@@ -96,6 +97,25 @@ def candidate_models(seed):
             {"clf__alpha": [0.01, 0.1, 0.5, 1.0]},
         ),
         "majority_class": (DummyClassifier(strategy="most_frequent"), None),
+    }
+
+
+def mcnemar_svm_vs_nb(y_true, fitted):
+    """Exact McNemar test on the same test papers: is the SVM/Naive Bayes difference larger than chance?
+
+    Only papers that exactly one of the two models gets right carry information; under
+    "no difference" each such paper is equally likely to favour either model.
+    """
+    svm_ok = fitted[MAIN_MODEL][1] == y_true
+    nb_ok = fitted["multinomial_nb"][1] == y_true
+    only_svm, only_nb = int((svm_ok & ~nb_ok).sum()), int((~svm_ok & nb_ok).sum())
+    p_value = binomtest(only_svm, only_svm + only_nb, 0.5).pvalue if only_svm + only_nb else 1.0
+    return {
+        "test": "exact McNemar (two-sided binomial test on discordant papers)",
+        "only_svm_correct": only_svm,
+        "only_nb_correct": only_nb,
+        "p_value": float(p_value),
+        "significant_at_0.05": bool(p_value < 0.05),
     }
 
 
@@ -161,6 +181,78 @@ def top_terms(pipeline, labels, k=15):
     return rows
 
 
+def check_no_leakage(papers, idx_train, idx_test):
+    """Stops the run if any paper id or normalised title appears in both train and test."""
+    train_ids = {papers[i]["id"] for i in idx_train}
+    train_titles = {normalise_title(papers[i]["title"]) for i in idx_train}
+    shared_ids = sum(papers[i]["id"] in train_ids for i in idx_test)
+    shared_titles = sum(normalise_title(papers[i]["title"]) in train_titles for i in idx_test)
+    if shared_ids or shared_titles:
+        sys.exit(f"Leakage check failed: {shared_ids} shared ids, {shared_titles} shared titles.")
+    return {"shared_ids": shared_ids, "test_titles_seen_in_train": shared_titles}
+
+
+def evaluate_models(X_train, y_train, X_test, y_test, labels, seed, cv_folds, n_jobs):
+    """Selects each candidate's parameters by CV on the training set, then scores the test set once.
+
+    Returns (results, fitted, svm_cv_rows): metrics per model, (model, test predictions) per
+    model, and the cross-validation table of the main model.
+    """
+    cv = StratifiedKFold(n_splits=cv_folds, shuffle=True, random_state=seed)
+    results, fitted, svm_cv_rows = {}, {}, []
+    for name, (estimator, grid) in candidate_models(seed).items():
+        print(f"Training {name} ...", file=sys.stderr)
+        t0 = time.perf_counter()
+        if grid:
+            search = GridSearchCV(estimator, grid, scoring="f1_macro", cv=cv, n_jobs=n_jobs, refit=True)
+            search.fit(X_train, y_train)
+            model = search.best_estimator_
+            best = search.best_index_
+            cv_summary = {
+                "best_params": search.best_params_,
+                "cv_macro_f1_mean": search.cv_results_["mean_test_score"][best],
+                "cv_macro_f1_std": search.cv_results_["std_test_score"][best],
+            }
+            if name == MAIN_MODEL:
+                svm_cv_rows = [
+                    [json.dumps(p), round(m, 4), round(s, 4)]
+                    for p, m, s in zip(search.cv_results_["params"], search.cv_results_["mean_test_score"],
+                                       search.cv_results_["std_test_score"])
+                ]
+        else:
+            model = estimator.fit(X_train, y_train)
+            cv_summary = {"best_params": {}, "cv_macro_f1_mean": None, "cv_macro_f1_std": None}
+        train_seconds = time.perf_counter() - t0
+        y_pred = model.predict(X_test)
+        results[name] = {**cv_summary, "train_seconds": train_seconds, "test": test_metrics(y_test, y_pred, labels)}
+        fitted[name] = (model, y_pred)
+        print(f"  test accuracy {results[name]['test']['accuracy']:.4f}, "
+              f"macro-F1 {results[name]['test']['macro_f1']:.4f}", file=sys.stderr)
+    return results, fitted, svm_cv_rows
+
+
+def write_model_reports(report_dir, results, fitted, svm_cv_rows, labels, y_test, test_ids, test_titles, cm_title):
+    """The report files shared by every evaluation run (all except metrics.json and split.json)."""
+    svm, svm_pred = fitted[MAIN_MODEL]
+    write_csv(report_dir / "cv_results.csv", ["params", "mean_macro_f1", "std_macro_f1"], svm_cv_rows)
+    (report_dir / "test_ids.txt").write_text("\n".join(sorted(test_ids)) + "\n", encoding="utf-8")
+    (report_dir / "classification_report.txt").write_text(
+        classification_report(y_test, svm_pred, labels=labels, digits=4, zero_division=0), encoding="utf-8"
+    )
+    save_confusion_matrix(confusion_matrix(y_test, svm_pred, labels=labels), labels, report_dir, cm_title)
+    write_csv(report_dir / "baseline_comparison.csv",
+              ["model", "best_params", "cv_macro_f1_mean", "cv_macro_f1_std",
+               "test_accuracy", "test_macro_precision", "test_macro_recall", "test_macro_f1"],
+              [[name, json.dumps(r["best_params"]), rounded(r["cv_macro_f1_mean"]), rounded(r["cv_macro_f1_std"]),
+                rounded(r["test"]["accuracy"]), rounded(r["test"]["macro_precision"]),
+                rounded(r["test"]["macro_recall"]), rounded(r["test"]["macro_f1"])]
+               for name, r in results.items()])
+    write_csv(report_dir / "top_terms.csv", ["category", "rank", "term", "svm_weight"], top_terms(svm, labels))
+    write_csv(report_dir / "misclassified_test.csv", ["id", "true", "predicted", "title"],
+              [[test_ids[k], y_test[k], svm_pred[k], test_titles[k]]
+               for k in range(len(y_test)) if y_test[k] != svm_pred[k]])
+
+
 def main(argv=None):
     args = parse_args(argv)
     if not args.data.is_file():
@@ -178,54 +270,19 @@ def main(argv=None):
     idx_train, idx_test = train_test_split(
         np.arange(len(papers)), test_size=args.test_size, stratify=y, random_state=args.seed
     )
-    train_titles = {normalise_title(papers[i]["title"]) for i in idx_train}
-    overlap_ids = len(set(ids[idx_train]) & set(ids[idx_test]))
-    overlap_titles = sum(normalise_title(papers[i]["title"]) in train_titles for i in idx_test)
-    if overlap_ids or overlap_titles:
-        sys.exit(f"Leakage check failed: {overlap_ids} shared ids, {overlap_titles} shared titles.")
-
+    leakage = check_no_leakage(papers, idx_train, idx_test)
     X_train, X_test, y_train, y_test = texts[idx_train], texts[idx_test], y[idx_train], y[idx_test]
-    cv = StratifiedKFold(n_splits=args.cv_folds, shuffle=True, random_state=args.seed)
 
     report_dir = args.reports_dir / args.run_name
     report_dir.mkdir(parents=True, exist_ok=True)
     args.models_dir.mkdir(parents=True, exist_ok=True)
 
-    results, fitted = {}, {}
-    for name, (estimator, grid) in candidate_models(args.seed).items():
-        print(f"Training {name} ...", file=sys.stderr)
-        t0 = time.perf_counter()
-        if grid:
-            # 2. Model selection on the training set only.
-            search = GridSearchCV(estimator, grid, scoring="f1_macro", cv=cv, n_jobs=args.n_jobs, refit=True)
-            search.fit(X_train, y_train)
-            model = search.best_estimator_
-            best = search.best_index_
-            cv_summary = {
-                "best_params": search.best_params_,
-                "cv_macro_f1_mean": search.cv_results_["mean_test_score"][best],
-                "cv_macro_f1_std": search.cv_results_["std_test_score"][best],
-            }
-            if name == MAIN_MODEL:
-                write_csv(report_dir / "cv_results.csv", ["params", "mean_macro_f1", "std_macro_f1"], [
-                    [json.dumps(p), round(m, 4), round(s, 4)]
-                    for p, m, s in zip(search.cv_results_["params"], search.cv_results_["mean_test_score"],
-                                       search.cv_results_["std_test_score"])
-                ])
-        else:
-            model = estimator.fit(X_train, y_train)
-            cv_summary = {"best_params": {}, "cv_macro_f1_mean": None, "cv_macro_f1_std": None}
-        train_seconds = time.perf_counter() - t0
-        # 3. The test set is scored once per model, after selection.
-        y_pred = model.predict(X_test)
-        results[name] = {**cv_summary, "train_seconds": train_seconds, "test": test_metrics(y_test, y_pred, labels)}
-        fitted[name] = (model, y_pred)
-        print(f"  test accuracy {results[name]['test']['accuracy']:.4f}, "
-              f"macro-F1 {results[name]['test']['macro_f1']:.4f}", file=sys.stderr)
+    # 2-3. Model selection on the training set only; one score on the test set per model.
+    results, fitted, svm_cv_rows = evaluate_models(
+        X_train, y_train, X_test, y_test, labels, args.seed, args.cv_folds, args.n_jobs
+    )
+    svm = fitted[MAIN_MODEL][0]
 
-    svm, svm_pred = fitted[MAIN_MODEL]
-
-    # Reports.
     split = {
         "method": "stratified random split (sklearn train_test_split)",
         "seed": args.seed,
@@ -235,10 +292,9 @@ def main(argv=None):
         "test_total": len(idx_test),
         "train_by_category": {label: int((y_train == label).sum()) for label in labels},
         "test_by_category": {label: int((y_test == label).sum()) for label in labels},
-        "leakage_checks": {"shared_ids": overlap_ids, "test_titles_seen_in_train": overlap_titles},
+        "leakage_checks": leakage,
     }
     (report_dir / "split.json").write_text(json.dumps(split, indent=2) + "\n", encoding="utf-8")
-    (report_dir / "test_ids.txt").write_text("\n".join(sorted(ids[idx_test])) + "\n", encoding="utf-8")
 
     metrics = {
         "run_name": args.run_name,
@@ -248,25 +304,12 @@ def main(argv=None):
         "sample_content_sha256": manifest["sample"]["content_sha256"] if manifest else None,
         "split": split,
         "models": rounded(results),
+        "svm_vs_nb": mcnemar_svm_vs_nb(y_test, fitted),
     }
     (report_dir / "metrics.json").write_text(json.dumps(metrics, indent=2) + "\n", encoding="utf-8")
-
-    (report_dir / "classification_report.txt").write_text(
-        classification_report(y_test, svm_pred, labels=labels, digits=4, zero_division=0), encoding="utf-8"
-    )
-    save_confusion_matrix(confusion_matrix(y_test, svm_pred, labels=labels), labels, report_dir,
-                          f"TF-IDF + Linear SVM, test set (n={len(idx_test)})")
-    write_csv(report_dir / "baseline_comparison.csv",
-              ["model", "best_params", "cv_macro_f1_mean", "cv_macro_f1_std",
-               "test_accuracy", "test_macro_precision", "test_macro_recall", "test_macro_f1"],
-              [[name, json.dumps(r["best_params"]), rounded(r["cv_macro_f1_mean"]), rounded(r["cv_macro_f1_std"]),
-                rounded(r["test"]["accuracy"]), rounded(r["test"]["macro_precision"]),
-                rounded(r["test"]["macro_recall"]), rounded(r["test"]["macro_f1"])]
-               for name, r in results.items()])
-    write_csv(report_dir / "top_terms.csv", ["category", "rank", "term", "svm_weight"], top_terms(svm, labels))
-    write_csv(report_dir / "misclassified_test.csv", ["id", "true", "predicted", "title"],
-              [[ids[i], y_test[k], svm_pred[k], papers[i]["title"]]
-               for k, i in enumerate(idx_test) if y_test[k] != svm_pred[k]])
+    write_model_reports(report_dir, results, fitted, svm_cv_rows, labels, y_test, ids[idx_test],
+                        [papers[i]["title"] for i in idx_test],
+                        f"TF-IDF + Linear SVM, test set (n={len(idx_test)})")
 
     # Model artifacts.
     joblib.dump(svm, args.models_dir / f"{args.run_name}.joblib")

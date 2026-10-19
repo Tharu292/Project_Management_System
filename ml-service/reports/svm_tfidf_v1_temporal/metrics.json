@@ -1,0 +1,267 @@
+{
+  "run_name": "svm_tfidf_v1_temporal",
+  "created_at": "2026-10-19T19:45:52+00:00",
+  "main_model": "linear_svm",
+  "labels": [
+    "cs.CL",
+    "cs.CR",
+    "cs.CV",
+    "cs.DB",
+    "cs.RO"
+  ],
+  "label_policy": "Label = primary arXiv category = first entry of the 'categories' field. Only papers whose primary category is one of the selected categories are kept. Cross-listed papers are kept and labelled by their primary category.",
+  "dataset_sha256": "b7a2b3abd8fd6b3789307419f778741017d16f570ae44125e825e401f2eb9dab",
+  "split": {
+    "method": "temporal: train and test papers come from disjoint submission-year ranges",
+    "train_years": [
+      2018,
+      2022
+    ],
+    "test_years": [
+      2023,
+      2024
+    ],
+    "seed": 42,
+    "sampling": "N smallest sha256('<seed>:<arxiv id>') per category within each period",
+    "cv_folds_on_train": 5,
+    "train_total": 8000,
+    "test_total": 2000,
+    "train_by_category": {
+      "cs.DB": 1600,
+      "cs.CV": 1600,
+      "cs.CL": 1600,
+      "cs.CR": 1600,
+      "cs.RO": 1600
+    },
+    "test_by_category": {
+      "cs.RO": 400,
+      "cs.CR": 400,
+      "cs.DB": 400,
+      "cs.CV": 400,
+      "cs.CL": 400
+    },
+    "test_by_year": {
+      "2023": 865,
+      "2024": 1135
+    },
+    "eligible_by_period": {
+      "train": {
+        "cs.RO": 12901,
+        "cs.CL": 26411,
+        "cs.CV": 53958,
+        "cs.CR": 11350,
+        "cs.DB": 2451
+      },
+      "test": {
+        "cs.CL": 25467,
+        "cs.CV": 42658,
+        "cs.RO": 11864,
+        "cs.CR": 7577,
+        "cs.DB": 1317
+      }
+    },
+    "leakage_checks": {
+      "shared_ids": 0,
+      "test_titles_seen_in_train": 0
+    },
+    "categories_below_target": {}
+  },
+  "models": {
+    "linear_svm": {
+      "best_params": {
+        "clf__C": 1.0
+      },
+      "cv_macro_f1_mean": 0.9498,
+      "cv_macro_f1_std": 0.0036,
+      "train_seconds": 15.6469,
+      "test": {
+        "accuracy": 0.9285,
+        "macro_precision": 0.9292,
+        "macro_recall": 0.9285,
+        "macro_f1": 0.9285,
+        "weighted_precision": 0.9292,
+        "weighted_recall": 0.9285,
+        "weighted_f1": 0.9285,
+        "per_class": {
+          "cs.CL": {
+            "precision": 0.8899,
+            "recall": 0.95,
+            "f1": 0.919,
+            "support": 400
+          },
+          "cs.CR": {
+            "precision": 0.934,
+            "recall": 0.92,
+            "f1": 0.927,
+            "support": 400
+          },
+          "cs.CV": {
+            "precision": 0.9067,
+            "recall": 0.875,
+            "f1": 0.8906,
+            "support": 400
+          },
+          "cs.DB": {
+            "precision": 0.9738,
+            "recall": 0.93,
+            "f1": 0.9514,
+            "support": 400
+          },
+          "cs.RO": {
+            "precision": 0.9416,
+            "recall": 0.9675,
+            "f1": 0.9544,
+            "support": 400
+          }
+        }
+      }
+    },
+    "multinomial_nb": {
+      "best_params": {
+        "clf__alpha": 0.1
+      },
+      "cv_macro_f1_mean": 0.9397,
+      "cv_macro_f1_std": 0.006,
+      "train_seconds": 9.3883,
+      "test": {
+        "accuracy": 0.9085,
+        "macro_precision": 0.9118,
+        "macro_recall": 0.9085,
+        "macro_f1": 0.909,
+        "weighted_precision": 0.9118,
+        "weighted_recall": 0.9085,
+        "weighted_f1": 0.909,
+        "per_class": {
+          "cs.CL": {
+            "precision": 0.8301,
+            "recall": 0.9525,
+            "f1": 0.8871,
+            "support": 400
+          },
+          "cs.CR": {
+            "precision": 0.9213,
+            "recall": 0.9075,
+            "f1": 0.9144,
+            "support": 400
+          },
+          "cs.CV": {
+            "precision": 0.8837,
+            "recall": 0.855,
+            "f1": 0.8691,
+            "support": 400
+          },
+          "cs.DB": {
+            "precision": 0.9677,
+            "recall": 0.8975,
+            "f1": 0.9313,
+            "support": 400
+          },
+          "cs.RO": {
+            "precision": 0.9563,
+            "recall": 0.93,
+            "f1": 0.943,
+            "support": 400
+          }
+        }
+      }
+    },
+    "majority_class": {
+      "best_params": {},
+      "cv_macro_f1_mean": null,
+      "cv_macro_f1_std": null,
+      "train_seconds": 0.0007,
+      "test": {
+        "accuracy": 0.2,
+        "macro_precision": 0.04,
+        "macro_recall": 0.2,
+        "macro_f1": 0.0667,
+        "weighted_precision": 0.04,
+        "weighted_recall": 0.2,
+        "weighted_f1": 0.0667,
+        "per_class": {
+          "cs.CL": {
+            "precision": 0.2,
+            "recall": 1.0,
+            "f1": 0.3333,
+            "support": 400
+          },
+          "cs.CR": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 400
+          },
+          "cs.CV": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 400
+          },
+          "cs.DB": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 400
+          },
+          "cs.RO": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 400
+          }
+        }
+      }
+    }
+  },
+  "svm_vs_nb": {
+    "test": "exact McNemar (two-sided binomial test on discordant papers)",
+    "only_svm_correct": 79,
+    "only_nb_correct": 39,
+    "p_value": 0.0002927402227399968,
+    "significant_at_0.05": true
+  },
+  "by_test_year": {
+    "2023": {
+      "n": 865,
+      "linear_svm": {
+        "accuracy": 0.9364,
+        "macro_precision": 0.9362,
+        "macro_recall": 0.9364,
+        "macro_f1": 0.9361,
+        "weighted_precision": 0.9364,
+        "weighted_recall": 0.9364,
+        "weighted_f1": 0.9362
+      },
+      "multinomial_nb": {
+        "accuracy": 0.9237,
+        "macro_precision": 0.9238,
+        "macro_recall": 0.9237,
+        "macro_f1": 0.9236,
+        "weighted_precision": 0.924,
+        "weighted_recall": 0.9237,
+        "weighted_f1": 0.9237
+      }
+    },
+    "2024": {
+      "n": 1135,
+      "linear_svm": {
+        "accuracy": 0.9225,
+        "macro_precision": 0.9243,
+        "macro_recall": 0.9223,
+        "macro_f1": 0.9226,
+        "weighted_precision": 0.9241,
+        "weighted_recall": 0.9225,
+        "weighted_f1": 0.9226
+      },
+      "multinomial_nb": {
+        "accuracy": 0.8969,
+        "macro_precision": 0.9047,
+        "macro_recall": 0.8966,
+        "macro_f1": 0.8979,
+        "weighted_precision": 0.9043,
+        "weighted_recall": 0.8969,
+        "weighted_f1": 0.8979
+      }
+    }
+  }
+}
