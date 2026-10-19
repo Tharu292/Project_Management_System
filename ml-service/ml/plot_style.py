@@ -12,6 +12,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.ticker import FuncFormatter  # noqa: E402
 
+from ml import categories  # noqa: E402
+
 CATEGORY_COLORS = {
     "cs.CV": "#2a78d6",  # slot 1 blue
     "cs.CL": "#eb6834",  # slot 2 orange
@@ -19,13 +21,7 @@ CATEGORY_COLORS = {
     "cs.RO": "#eda100",  # slot 4 yellow
     "cs.DB": "#e87ba4",  # slot 5 magenta
 }
-CATEGORY_NAMES = {
-    "cs.CV": "Computer Vision",
-    "cs.CL": "Computation & Language (NLP)",
-    "cs.CR": "Cryptography & Security",
-    "cs.RO": "Robotics",
-    "cs.DB": "Databases",
-}
+CATEGORY_NAMES = categories.CATEGORY_NAMES
 # For charts that are not about categories (for example several keywords in one panel):
 # the first three slots, which stay distinguishable even when every pair is compared.
 SERIES = ["#2a78d6", "#eb6834", "#1baf7a"]
