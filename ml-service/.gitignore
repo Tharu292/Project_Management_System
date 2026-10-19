@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 .env
 .pytest_cache/
+
+# Raw and processed arXiv data (several GB) and trained model binaries.
+# Evaluation reports in reports/ ARE committed.
+data/
+models/

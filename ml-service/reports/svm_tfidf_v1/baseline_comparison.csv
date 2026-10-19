@@ -1,0 +1,4 @@
+model,best_params,cv_macro_f1_mean,cv_macro_f1_std,test_accuracy,test_macro_precision,test_macro_recall,test_macro_f1
+linear_svm,"{""clf__C"": 1.0}",0.9472,0.0078,0.937,0.9373,0.937,0.9371
+multinomial_nb,"{""clf__alpha"": 0.1}",0.9339,0.0048,0.932,0.9323,0.932,0.932
+majority_class,{},,,0.2,0.04,0.2,0.0667

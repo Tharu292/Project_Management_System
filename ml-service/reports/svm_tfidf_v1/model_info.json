@@ -1,0 +1,24 @@
+{
+  "run_name": "svm_tfidf_v1",
+  "created_at": "2026-10-19T19:33:26+00:00",
+  "model": "TfidfVectorizer(ngram_range=(1,2), sublinear_tf, min_df=2, english stop words) + LinearSVC",
+  "best_params": {
+    "clf__C": 1.0
+  },
+  "labels": [
+    "cs.CL",
+    "cs.CR",
+    "cs.CV",
+    "cs.DB",
+    "cs.RO"
+  ],
+  "trained_on": "training split only (see reports/<run>/split.json)",
+  "train_size": 8000,
+  "sample_content_sha256": "4ff1d624ad77bf218eb8c61a593650641c86b0cb02548cc89519c2946b5c3c70",
+  "input": "ml.text_utils.build_text(title, abstract)",
+  "versions": {
+    "python": "3.12.10",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.3"
+  }
+}

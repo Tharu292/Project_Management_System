@@ -1,0 +1,186 @@
+{
+  "run_name": "svm_tfidf_v1",
+  "created_at": "2026-10-19T19:33:26+00:00",
+  "main_model": "linear_svm",
+  "labels": [
+    "cs.CL",
+    "cs.CR",
+    "cs.CV",
+    "cs.DB",
+    "cs.RO"
+  ],
+  "sample_content_sha256": "4ff1d624ad77bf218eb8c61a593650641c86b0cb02548cc89519c2946b5c3c70",
+  "split": {
+    "method": "stratified random split (sklearn train_test_split)",
+    "seed": 42,
+    "test_size": 0.2,
+    "cv_folds_on_train": 5,
+    "train_total": 8000,
+    "test_total": 2000,
+    "train_by_category": {
+      "cs.CL": 1600,
+      "cs.CR": 1600,
+      "cs.CV": 1600,
+      "cs.DB": 1600,
+      "cs.RO": 1600
+    },
+    "test_by_category": {
+      "cs.CL": 400,
+      "cs.CR": 400,
+      "cs.CV": 400,
+      "cs.DB": 400,
+      "cs.RO": 400
+    },
+    "leakage_checks": {
+      "shared_ids": 0,
+      "test_titles_seen_in_train": 0
+    }
+  },
+  "models": {
+    "linear_svm": {
+      "best_params": {
+        "clf__C": 1.0
+      },
+      "cv_macro_f1_mean": 0.9472,
+      "cv_macro_f1_std": 0.0078,
+      "train_seconds": 17.1489,
+      "test": {
+        "accuracy": 0.937,
+        "macro_precision": 0.9373,
+        "macro_recall": 0.937,
+        "macro_f1": 0.9371,
+        "weighted_precision": 0.9373,
+        "weighted_recall": 0.937,
+        "weighted_f1": 0.9371,
+        "per_class": {
+          "cs.CL": {
+            "precision": 0.9397,
+            "recall": 0.935,
+            "f1": 0.9373,
+            "support": 400
+          },
+          "cs.CR": {
+            "precision": 0.9305,
+            "recall": 0.9375,
+            "f1": 0.934,
+            "support": 400
+          },
+          "cs.CV": {
+            "precision": 0.8922,
+            "recall": 0.91,
+            "f1": 0.901,
+            "support": 400
+          },
+          "cs.DB": {
+            "precision": 0.9616,
+            "recall": 0.94,
+            "f1": 0.9507,
+            "support": 400
+          },
+          "cs.RO": {
+            "precision": 0.9625,
+            "recall": 0.9625,
+            "f1": 0.9625,
+            "support": 400
+          }
+        }
+      }
+    },
+    "multinomial_nb": {
+      "best_params": {
+        "clf__alpha": 0.1
+      },
+      "cv_macro_f1_mean": 0.9339,
+      "cv_macro_f1_std": 0.0048,
+      "train_seconds": 11.0342,
+      "test": {
+        "accuracy": 0.932,
+        "macro_precision": 0.9323,
+        "macro_recall": 0.932,
+        "macro_f1": 0.932,
+        "weighted_precision": 0.9323,
+        "weighted_recall": 0.932,
+        "weighted_f1": 0.932,
+        "per_class": {
+          "cs.CL": {
+            "precision": 0.9425,
+            "recall": 0.9425,
+            "f1": 0.9425,
+            "support": 400
+          },
+          "cs.CR": {
+            "precision": 0.9161,
+            "recall": 0.955,
+            "f1": 0.9351,
+            "support": 400
+          },
+          "cs.CV": {
+            "precision": 0.8972,
+            "recall": 0.895,
+            "f1": 0.8961,
+            "support": 400
+          },
+          "cs.DB": {
+            "precision": 0.961,
+            "recall": 0.925,
+            "f1": 0.9427,
+            "support": 400
+          },
+          "cs.RO": {
+            "precision": 0.9449,
+            "recall": 0.9425,
+            "f1": 0.9437,
+            "support": 400
+          }
+        }
+      }
+    },
+    "majority_class": {
+      "best_params": {},
+      "cv_macro_f1_mean": null,
+      "cv_macro_f1_std": null,
+      "train_seconds": 0.0007,
+      "test": {
+        "accuracy": 0.2,
+        "macro_precision": 0.04,
+        "macro_recall": 0.2,
+        "macro_f1": 0.0667,
+        "weighted_precision": 0.04,
+        "weighted_recall": 0.2,
+        "weighted_f1": 0.0667,
+        "per_class": {
+          "cs.CL": {
+            "precision": 0.2,
+            "recall": 1.0,
+            "f1": 0.3333,
+            "support": 400
+          },
+          "cs.CR": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 400
+          },
+          "cs.CV": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 400
+          },
+          "cs.DB": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 400
+          },
+          "cs.RO": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 400
+          }
+        }
+      }
+    }
+  }
+}

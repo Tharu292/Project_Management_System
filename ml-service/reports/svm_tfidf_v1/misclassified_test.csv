@@ -1,0 +1,127 @@
+id,true,predicted,title
+2312.14199,cs.CR,cs.CL,"Report on 2023 CyberTraining PI Meeting, 26-27 September 2023"
+2305.05496,cs.CL,cs.CV,Exploiting Pseudo Image Captions for Multimodal Summarization
+1810.05730,cs.CV,cs.DB,CRH: A Simple Benchmark Approach to Continuous Hashing
+2204.13613,cs.RO,cs.CV,DoPose-6D dataset for object segmentation and 6D pose estimation
+1904.01739,cs.CV,cs.DB,SADIH: Semantic-Aware DIscrete Hashing
+2311.10944,cs.CL,cs.CV,Deception Detection from Linguistic and Physiological Data Streams Using Bimodal Convolutional Neural Networks
+2410.09181,cs.CR,cs.CL,Can a large language model be a gaslighter?
+2312.00751,cs.CL,cs.CV,Mitigating Over-smoothing in Transformers via Regularized Nonlocal Functionals
+2204.08895,cs.CV,cs.CR,Invertible Mask Network for Face Privacy-Preserving
+2112.14883,cs.DB,cs.CR,XLPN: Efficient and Scalable Cross-Ledger Protocols for the Topological Consortium of Permissioned Blockchains
+2209.12365,cs.RO,cs.CV,Deep Convolutional Neural Network and Transfer Learning for Locomotion Intent Prediction
+2205.05889,cs.CL,cs.DB,Bridging the Gap between Reality and Ideality of Entity Matching: A Revisiting and Benchmark Re-Construction
+2305.14168,cs.CR,cs.CV,SXVCS: An XOR-based Visual Cryptography Scheme without Noise via Linear Algebra
+2307.16244,cs.DB,cs.CR,A Review of Media Copyright Management using Blockchain Technologies from the Academic and Business Perspectives
+2004.12108,cs.DB,cs.CR,Privacy Preserving Distributed Machine Learning with Federated Learning
+2107.14700,cs.CV,cs.DB,"Seeing poverty from space, how much can it be tuned?"
+2406.13092,cs.CL,cs.CV,Multilingual Synopses of Movie Narratives: A Dataset for Vision-Language Story Understanding
+2408.07154,cs.CL,cs.CR,Self-folding Self-replication
+2404.18722,cs.CV,cs.CL,Improving Automatic Text Recognition with Language Models in the PyLaia Open-Source Library
+2212.07350,cs.CV,cs.RO,A Fast Geometric Regularizer to Mitigate Event Collapse in the Contrast Maximization Framework
+2102.03316,cs.CR,cs.DB,Randomized Controlled Trials without Data Retention
+2401.02960,cs.CR,cs.CV,Forensic Video Analytic Software
+2007.00145,cs.CV,cs.CL,Modality-Agnostic Attention Fusion for visual search with text feedback
+2311.00391,cs.CV,cs.RO,Fixation-based Self-calibration for Eye Tracking in VR Headsets
+1811.07567,cs.CV,cs.CL,Fine-grained Classification using Heterogeneous Web Data and Auxiliary Categories
+2406.11288,cs.CL,cs.CV,MFC-Bench: Benchmarking Multimodal Fact-Checking with Large Vision-Language Models
+2308.13613,cs.DB,cs.CR,Block Chain in the IoT industry: A Systematic Literature Review
+2405.16181,cs.CV,cs.CR,Boosting Adversarial Transferability with Low-Cost Optimization via Maximin Expected Flatness
+2403.05758,cs.CV,cs.RO,Automating Catheterization Labs with Real-Time Perception
+2406.08439,cs.CV,cs.RO,Coherent Optical Modems for Full-Wavefield Lidar
+2309.01070,cs.CR,cs.CV,Multidomain transformer-based deep learning for early detection of network intrusion
+2411.12508,cs.CR,cs.CV,Probe-Me-Not: Protecting Pre-trained Encoders from Malicious Probing
+2403.06898,cs.DB,cs.CR,"SFVInt: Simple, Fast and Generic Variable-Length Integer Decoding using Bit Manipulation Instructions"
+1905.09153,cs.CL,cs.CV,Simplified Neural Unsupervised Domain Adaptation
+1902.08950,cs.RO,cs.CV,Efficient Fully Convolution Neural Network for Generating Pixel Wise Robotic Grasps With High Resolution Images
+2409.11854,cs.RO,cs.CV,Physically-Based Photometric Bundle Adjustment in Non-Lambertian Environments
+2411.07176,cs.CL,cs.CV,More Expressive Attention with Negative Weights
+2008.11817,cs.CR,cs.DB,"Spatial Privacy Pricing: The Interplay between Privacy, Utility and Price in Geo-Marketplaces"
+2211.08116,cs.CR,cs.DB,W-Trace: Robust and Effective Watermarking for GPS Trajectories
+2009.08018,cs.CL,cs.CV,Multi-modal Summarization for Video-containing Documents
+2312.02251,cs.DB,cs.CL,Fine-Tuning Language Models for Context-Specific SQL Query Generation
+2208.03496,cs.RO,cs.CV,Smart Explorer: Recognizing Objects in Dense Clutter via Interactive Exploration
+2405.07419,cs.CR,cs.CV,Indoor and Outdoor Crowd Density Level Estimation with Video Analysis through Machine Learning Models
+2009.01225,cs.CV,cs.CL,Seeing wake words: Audio-visual Keyword Spotting
+2407.03615,cs.CL,cs.CV,Visualizing Dialogues: Enhancing Image Selection through Dialogue Understanding with Large Language Models
+2405.11419,cs.DB,cs.CR,Sketches-based join size estimation under local differential privacy
+2108.03402,cs.RO,cs.CR,Arduino Controlled Spy Robo Car using Wireless Camera With live Streaming
+2401.02031,cs.CV,cs.CR,Spy-Watermark: Robust Invisible Watermarking for Backdoor Attack
+2309.12364,cs.DB,cs.CR,Optimizing Traversing and Retrieval Speed of Large Breached Databases
+2201.00568,cs.CR,cs.RO,Deep Learning for GPS Spoofing Detection in Cellular Enabled Unmanned Aerial Vehicle Systems
+1909.10270,cs.RO,cs.CV,Pose Estimation for Texture-less Shiny Objects in a Single RGB Image Using Synthetic Training Data
+2108.07374,cs.DB,cs.CL,Reusable Templates and Guides For Documenting Datasets and Models for Natural Language Processing and Generation: A Case Study of the HuggingFace and GEM Data and Model Cards
+2208.09744,cs.DB,cs.CR,A Neural Approach to Spatio-Temporal Data Release with User-Level Differential Privacy
+2305.13631,cs.CL,cs.CV,EDIS: Entity-Driven Image Search over Multimodal Web Content
+2301.12943,cs.CV,cs.CR,Factors that affect Camera based Self-Monitoring of Vitals in the Wild
+2212.12651,cs.CV,cs.CL,Pruning On-the-Fly: A Recoverable Pruning Method without Fine-tuning
+2110.12895,cs.DB,cs.CR,QoS-based Trust Evaluation for Data Services as a Black Box
+2310.10138,cs.DB,cs.CL,Node-based Knowledge Graph Contrastive Learning for Medical Relationship Prediction
+2412.19980,cs.DB,cs.CR,Hades: Homomorphic Augmented Decryption for Efficient Symbol-comparison -- A Database's Perspective
+1910.14673,cs.CV,cs.RO,Co-Generation with GANs using AIS based HMC
+2402.04476,cs.CV,cs.RO,Dual-View Visual Contextualization for Web Navigation
+2405.01071,cs.CV,cs.CL,Callico: a Versatile Open-Source Document Image Annotation Platform
+2212.08448,cs.CV,cs.CL,From Xception to NEXcepTion: New Design Decisions and Neural Architecture Search
+2406.01258,cs.CR,cs.CV,SCALLER: Standard Cell Assembled and Local Layout Effect-based Ring Oscillators
+2212.04782,cs.CV,cs.CL,"Music Recommendation System based on Emotion, Age and Ethnicity"
+2409.02968,cs.DB,cs.CR,A Comprehensive Survey of Blockchain Scalability: Shaping Inner-Chain and Inter-Chain Perspectives
+2403.09079,cs.CV,cs.RO,PreSight: Enhancing Autonomous Vehicle Perception with City-Scale NeRF Priors
+2103.01867,cs.CL,cs.CV,Dual Reinforcement-Based Specification Generation for Image De-Rendering
+1908.04777,cs.CL,cs.RO,"Learn How to Cook a New Recipe in a New House: Using Map Familiarization, Curriculum Learning, and Bandit Feedback to Learn Families of Text-Based Adventure Games"
+2311.12131,cs.CL,cs.CV,Human Learning by Model Feedback: The Dynamics of Iterative Prompting with Midjourney
+2210.03065,cs.DB,cs.RO,MOCAS: A Multimodal Dataset for Objective Cognitive Workload Assessment on Simultaneous Tasks
+2007.08517,cs.CV,cs.CR,Detecting Deepfake Videos: An Analysis of Three Techniques
+2008.11600,cs.CV,cs.CL,Estimating Example Difficulty Using Variance of Gradients
+1905.02781,cs.CV,cs.RO,Robust Dense Mapping for Large-Scale Dynamic Environments
+2102.13241,cs.CR,cs.CV,Exploring the Effect of Resolution on the Usability of Locimetric Authentication
+1802.02422,cs.CV,cs.DB,Revisiting the Inverted Indices for Billion-Scale Approximate Nearest Neighbors
+2207.01971,cs.CV,cs.RO,DualAfford: Learning Collaborative Visual Affordance for Dual-gripper Manipulation
+2408.07494,cs.DB,cs.CL,QirK: Question Answering via Intermediate Representation on Knowledge Graphs
+2406.11707,cs.CR,cs.RO,A First Physical-World Trajectory Prediction Attack via LiDAR-induced Deceptions in Autonomous Driving
+2303.07199,cs.CL,cs.CR,BeamAttack: Generating High-quality Textual Adversarial Examples through Beam Search and Mixed Semantic Spaces
+2407.01523,cs.CV,cs.CL,MMLongBench-Doc: Benchmarking Long-context Document Understanding with Visualizations
+2301.04875,cs.CR,cs.CV,Color-NeuraCrypt: Privacy-Preserving Color-Image Classification Using Extended Random Neural Networks
+2009.12276,cs.RO,cs.CV,SemanticVoxels: Sequential Fusion for 3D Pedestrian Detection using LiDAR Point Cloud and Semantic Segmentation
+2302.13878,cs.RO,cs.CV,Fully Immersive Virtual Reality for Skull-base Surgery: Surgical Training and Beyond
+2408.12787,cs.CR,cs.CL,LLM-PBE: Assessing Data Privacy in Large Language Models
+1903.03305,cs.RO,cs.CV,Multi-Process Fusion: Visual Place Recognition Using Multiple Image Processing Methods
+2111.04525,cs.RO,cs.CV,D-Flow: A Real Time Spatial Temporal Model for Target Area Segmentation
+2311.11009,cs.CL,cs.CV,Joyful: Joint Modality Fusion and Graph Contrastive Learning for Multimodal Emotion Recognition
+2408.00684,cs.CL,cs.CR,Assessing the Variety of a Concept Space Using an Unbiased Estimate of Rao's Quadratic Index
+2107.11592,cs.DB,cs.CR,Blockchain Transaction Processing
+2408.06825,cs.CR,cs.CV,Membership Inference Attack Against Masked Image Modeling
+2406.17213,cs.CL,cs.CV,Detecting Frames in News Headlines and Lead Images in U.S. Gun Violence Coverage
+2407.15957,cs.DB,cs.CR,Escalation of Commitment: A Case Study of the United States Census Bureau Efforts to Implement Differential Privacy for the 2020 Decennial Census
+2209.09470,cs.RO,cs.CV,BuFF: Burst Feature Finder for Light-Constrained 3D Reconstruction
+2412.15451,cs.CR,cs.DB,How to Manage My Data? With Machine--Interpretable GDPR Rights!
+2009.12770,cs.CL,cs.CV,Hierarchical Deep Multi-modal Network for Medical Visual Question Answering
+2211.00306,cs.CR,cs.DB,Empowering Data Centers for Next Generation Trusted Computing
+2404.01914,cs.CL,cs.CV,SCANNER: Knowledge-Enhanced Approach for Robust Multi-modal Named Entity Recognition of Unseen Entities
+2410.06526,cs.DB,cs.CL,KOR-Bench: Benchmarking Language Models on Knowledge-Orthogonal Reasoning Tasks
+2412.11198,cs.CV,cs.RO,"GEM: A Generalizable Ego-Vision Multimodal World Model for Fine-Grained Ego-Motion, Object Dynamics, and Scene Composition Control"
+2403.08004,cs.CL,cs.CV,Leveraging LLMs for On-the-Fly Instruction Guided Image Editing
+2010.13231,cs.CV,cs.CR,"Human or Machine? It Is Not What You Write, But How You Write It"
+2403.04782,cs.CL,cs.DB,A Survey on Temporal Knowledge Graph: Representation Learning and Applications
+2309.10439,cs.CV,cs.CL,Posterior sampling algorithms for unsupervised speech enhancement with recurrent variational autoencoder
+2108.11525,cs.DB,cs.CR,Supercomputing Enabled Deployable Analytics for Disaster Response
+2006.03684,cs.CR,cs.DB,Differentially private partition selection
+2404.11357,cs.CV,cs.CR,Detector Collapse: Physical-World Backdooring Object Detection to Catastrophic Overload or Blindness in Autonomous Driving
+2409.13252,cs.DB,cs.CL,Leveraging Knowledge Graphs and LLMs to Support and Monitor Legislative Systems
+2409.05742,cs.RO,cs.CV,Robust Loss Functions for Object Grasping under Limited Ground Truth
+2312.15869,cs.CL,cs.CV,Medical Report Generation based on Segment-Enhanced Contrastive Representation Learning
+1805.11849,cs.RO,cs.CV,Transfer Learning for Unseen Robot Detection and Joint Estimation on a Multi-Objective Convolutional Neural Network
+2202.13084,cs.CV,cs.CL,Visual Speech Recognition for Multiple Languages in the Wild
+2303.12429,cs.CR,cs.CL,Man vs the machine: The Struggle for Effective Text Anonymisation in the Age of Large Language Models
+1905.10989,cs.CL,cs.DB,Commonsense Properties from Query Logs and Question Answering Forums
+2404.11450,cs.DB,cs.CR,Real-Time Trajectory Synthesis with Local Differential Privacy
+2403.02642,cs.RO,cs.CV,UFO: Uncertainty-aware LiDAR-image Fusion for Off-road Semantic Terrain Map Estimation
+2310.19290,cs.CR,cs.CV,Analyzing eyebrow region for morphed image detection
+2001.07710,cs.CV,cs.CR,An Image Enhancing Pattern-based Sparsity for Real-time Inference on Mobile Devices
+2108.08273,cs.CR,cs.CV,User configurable 3D object regeneration for spatial privacy
+2208.10830,cs.DB,cs.CV,Satellite Image Search in AgoraEO
+2207.11238,cs.CV,cs.CL,Improved lightweight identification of agricultural diseases based on MobileNetV3
+1909.11465,cs.CR,cs.DB,On the linear structures of Balanced functions and quadratic APN functions
+2306.11638,cs.CV,cs.RO,Collision Avoidance Detour for Multi-Agent Trajectory Forecasting
+2408.06576,cs.CL,cs.CR,CTISum: A New Benchmark Dataset For Cyber Threat Intelligence Summarization
+2412.04178,cs.CR,cs.DB,Multi-Layer Privacy-Preserving Record Linkage with Clerical Review based on gradual information disclosure
+2107.03572,cs.DB,cs.CL,A Note on General Statistics of Publicly Accessible Knowledge Bases

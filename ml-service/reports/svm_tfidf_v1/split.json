@@ -1,0 +1,26 @@
+{
+  "method": "stratified random split (sklearn train_test_split)",
+  "seed": 42,
+  "test_size": 0.2,
+  "cv_folds_on_train": 5,
+  "train_total": 8000,
+  "test_total": 2000,
+  "train_by_category": {
+    "cs.CL": 1600,
+    "cs.CR": 1600,
+    "cs.CV": 1600,
+    "cs.DB": 1600,
+    "cs.RO": 1600
+  },
+  "test_by_category": {
+    "cs.CL": 400,
+    "cs.CR": 400,
+    "cs.CV": 400,
+    "cs.DB": 400,
+    "cs.RO": 400
+  },
+  "leakage_checks": {
+    "shared_ids": 0,
+    "test_titles_seen_in_train": 0
+  }
+}

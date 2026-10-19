@@ -1,0 +1,103 @@
+{
+  "created_at": "2026-10-19T19:16:00+00:00",
+  "dataset": {
+    "file": "arxiv-metadata-oai-snapshot.json",
+    "size_bytes": 5630408394,
+    "sha256": "b7a2b3abd8fd6b3789307419f778741017d16f570ae44125e825e401f2eb9dab",
+    "records_read": 3215335,
+    "malformed_lines": 0
+  },
+  "parameters": {
+    "categories": [
+      "cs.CV",
+      "cs.CL",
+      "cs.CR",
+      "cs.RO",
+      "cs.DB"
+    ],
+    "per_category": 2000,
+    "years": [
+      2018,
+      2024
+    ],
+    "seed": 42,
+    "min_abstract_words": 30,
+    "sampling": "N smallest sha256('<seed>:<arxiv id>') per category"
+  },
+  "label_policy": "Label = primary arXiv category = first entry of the 'categories' field. Only papers whose primary category is one of the selected categories are kept. Cross-listed papers are kept and labelled by their primary category.",
+  "filtering": {
+    "dropped_missing_date": 0,
+    "dropped_short_or_empty": 114,
+    "dropped_duplicate_id": 0,
+    "dropped_duplicate_title": 144,
+    "eligible_by_category": {
+      "cs.CV": 96616,
+      "cs.CL": 51878,
+      "cs.CR": 18927,
+      "cs.RO": 24765,
+      "cs.DB": 3768
+    }
+  },
+  "sample": {
+    "file": "data/processed/sample.jsonl.gz",
+    "content_sha256": "4ff1d624ad77bf218eb8c61a593650641c86b0cb02548cc89519c2946b5c3c70",
+    "total": 10000,
+    "by_category": {
+      "cs.CV": 2000,
+      "cs.CL": 2000,
+      "cs.CR": 2000,
+      "cs.RO": 2000,
+      "cs.DB": 2000
+    },
+    "by_category_and_year": {
+      "cs.CV": {
+        "2018": 145,
+        "2019": 170,
+        "2020": 226,
+        "2021": 267,
+        "2022": 316,
+        "2023": 394,
+        "2024": 482
+      },
+      "cs.CL": {
+        "2018": 110,
+        "2019": 146,
+        "2020": 225,
+        "2021": 233,
+        "2022": 298,
+        "2023": 425,
+        "2024": 563
+      },
+      "cs.CR": {
+        "2018": 157,
+        "2019": 184,
+        "2020": 281,
+        "2021": 295,
+        "2022": 303,
+        "2023": 336,
+        "2024": 444
+      },
+      "cs.RO": {
+        "2018": 101,
+        "2019": 151,
+        "2020": 220,
+        "2021": 274,
+        "2022": 318,
+        "2023": 394,
+        "2024": 542
+      },
+      "cs.DB": {
+        "2018": 200,
+        "2019": 240,
+        "2020": 284,
+        "2021": 286,
+        "2022": 268,
+        "2023": 327,
+        "2024": 395
+      }
+    },
+    "cross_listed_share": 0.4861,
+    "cross_listed_within_selected_share": 0.0748,
+    "categories_below_target": {}
+  }
+}
