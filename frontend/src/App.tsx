@@ -6,6 +6,9 @@ import PasswordChangeRoute from './auth/PasswordChangeRoute'
 import ProtectedRoute from './auth/ProtectedRoute'
 import PublicOnlyRoute from './auth/PublicOnlyRoute'
 import { ADMIN_HOME_PATH } from './auth/landing'
+import C3Routes from './features/c3/C3Routes'
+import ResearchIntelligencePage from './features/c3/intelligence/ResearchIntelligencePage'
+import { RESEARCH_INTELLIGENCE_PATH, RESEARCH_WORKSPACE_PATH } from './features/c3/paths'
 import ChangePasswordPage from './pages/ChangePasswordPage'
 import DashboardPage from './pages/DashboardPage'
 import LoginPage from './pages/LoginPage'
@@ -33,6 +36,8 @@ function App() {
         </Route>
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path={`${RESEARCH_WORKSPACE_PATH}/*`} element={<C3Routes />} />
+          <Route path={RESEARCH_INTELLIGENCE_PATH} element={<ResearchIntelligencePage />} />
           <Route element={<AdminRoute />}>
             <Route path="/admin" element={<Navigate to={ADMIN_HOME_PATH} replace />} />
             <Route path="/admin/dashboard" element={<AdminDashboardPage />} />

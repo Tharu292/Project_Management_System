@@ -1,12 +1,27 @@
 import type { ReactNode } from 'react'
 import { NavLink, useNavigate } from 'react-router'
 import { useAuth } from '../auth/AuthContext'
-import { ADMIN_HOME_PATH, ADMIN_NEW_STAFF_PATH, ADMIN_USERS_PATH, LOGIN_PATH, isAdmin } from '../auth/landing'
+import {
+  ADMIN_HOME_PATH,
+  ADMIN_NEW_STAFF_PATH,
+  ADMIN_USERS_PATH,
+  LOGIN_PATH,
+  USER_HOME_PATH,
+  isAdmin,
+} from '../auth/landing'
+import { RESEARCH_INTELLIGENCE_PATH, RESEARCH_WORKSPACE_PATH } from '../features/c3/paths'
 
 const ADMIN_NAVIGATION = [
   { to: ADMIN_HOME_PATH, label: 'Admin Dashboard', end: true },
   { to: ADMIN_USERS_PATH, label: 'User Management', end: true },
   { to: ADMIN_NEW_STAFF_PATH, label: 'Create Staff', end: true },
+]
+
+/** For students and staff. Administrators keep their own menu above. */
+const USER_NAVIGATION = [
+  { to: USER_HOME_PATH, label: 'Dashboard', end: true },
+  { to: RESEARCH_WORKSPACE_PATH, label: 'Research Workspace', end: false },
+  { to: RESEARCH_INTELLIGENCE_PATH, label: 'Research Intelligence', end: true },
 ]
 
 export const secondaryButtonClass =
@@ -20,8 +35,9 @@ export const actionButtonClass =
   'disabled:cursor-not-allowed disabled:bg-indigo-300'
 
 /**
- * The frame for every signed-in page: who is signed in, logout, and, for
- * system administrators only, the administration menu.
+ * The frame for every signed-in page: who is signed in, logout, and a menu:
+ * the administration menu for system administrators, the main menu for
+ * everyone else.
  */
 export default function AppShell({ children }: { children: ReactNode }) {
   const { user, logout } = useAuth()
@@ -31,6 +47,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
     return null
   }
   const showAdminNavigation = isAdmin(user)
+  const navigation = showAdminNavigation ? ADMIN_NAVIGATION : USER_NAVIGATION
 
   function handleLogout() {
     logout()
@@ -61,29 +78,27 @@ export default function AppShell({ children }: { children: ReactNode }) {
             </button>
           </div>
         </div>
-        {showAdminNavigation && (
-          <nav aria-label="Administration" className="border-t border-slate-200">
-            <ul className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4">
-              {ADMIN_NAVIGATION.map((item) => (
-                <li key={item.to} className="shrink-0">
-                  <NavLink
-                    to={item.to}
-                    end={item.end}
-                    className={({ isActive }) =>
-                      'block border-b-2 px-3 py-2.5 text-sm font-medium focus-visible:outline-2 ' +
-                      'focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 ' +
-                      (isActive
-                        ? 'border-indigo-600 text-indigo-700'
-                        : 'border-transparent text-slate-600 hover:border-slate-300 hover:text-slate-900')
-                    }
-                  >
-                    {item.label}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
+        <nav aria-label={showAdminNavigation ? 'Administration' : 'Main'} className="border-t border-slate-200">
+          <ul className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4">
+            {navigation.map((item) => (
+              <li key={item.to} className="shrink-0">
+                <NavLink
+                  to={item.to}
+                  end={item.end}
+                  className={({ isActive }) =>
+                    'block border-b-2 px-3 py-2.5 text-sm font-medium focus-visible:outline-2 ' +
+                    'focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 ' +
+                    (isActive
+                      ? 'border-indigo-600 text-indigo-700'
+                      : 'border-transparent text-slate-600 hover:border-slate-300 hover:text-slate-900')
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </header>
       <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
     </div>
