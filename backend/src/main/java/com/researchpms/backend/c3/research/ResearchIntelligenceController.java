@@ -59,6 +59,45 @@ public class ResearchIntelligenceController {
 		return ml.postJson("/api/v1/predict", body);
 	}
 
+	/**
+	 * Potential research directions for a title and abstract, grounded in real arXiv papers (retrieval, topic
+	 * model, coverage). The answer states that low coverage is not proof of a research gap.
+	 */
+	@PostMapping(value = "/opportunities", produces = MediaType.APPLICATION_JSON_VALUE)
+	public String opportunities(@RequestBody PredictionRequest request) {
+		requireText("title", request.title(), "Enter a title.", 1000);
+		requireText("abstract", request.abstractText(), "Enter the abstract.", 20000);
+		Map<String, String> body = new LinkedHashMap<>();
+		body.put("title", request.title());
+		body.put("abstract", request.abstractText());
+		return ml.postJson("/api/v1/opportunities", body);
+	}
+
+	@GetMapping(value = "/opportunities/evaluation", produces = MediaType.APPLICATION_JSON_VALUE)
+	public String opportunityEvaluation() {
+		return ml.get("/api/v1/opportunities/evaluation", Map.of());
+	}
+
+	/**
+	 * Aspect-level gap analysis for a title and abstract: aspect coverage across the most similar papers, author
+	 * statements quoted from their abstracts, and statistically inferred potential gaps, kept apart. Abstract-level
+	 * evidence only.
+	 */
+	@PostMapping(value = "/gap-analysis", produces = MediaType.APPLICATION_JSON_VALUE)
+	public String gapAnalysis(@RequestBody PredictionRequest request) {
+		requireText("title", request.title(), "Enter a title.", 1000);
+		requireText("abstract", request.abstractText(), "Enter the abstract.", 20000);
+		Map<String, String> body = new LinkedHashMap<>();
+		body.put("title", request.title());
+		body.put("abstract", request.abstractText());
+		return ml.postJson("/api/v1/gap-analysis", body);
+	}
+
+	@GetMapping(value = "/gap-analysis/evaluation", produces = MediaType.APPLICATION_JSON_VALUE)
+	public String gapEvaluation() {
+		return ml.get("/api/v1/gap-analysis/evaluation", Map.of());
+	}
+
 	@GetMapping(value = "/model/metrics", produces = MediaType.APPLICATION_JSON_VALUE)
 	public String modelMetrics() {
 		return ml.get("/api/v1/model/metrics", Map.of());

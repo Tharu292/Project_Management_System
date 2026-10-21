@@ -133,6 +133,54 @@ class C3ResearchProxyTest extends C3TestSupport {
 	}
 
 	@Test
+	void opportunityAnalysisIsForwardedWithOnlyTitleAndAbstract() throws Exception {
+		NEXT_ANSWER.set(new Object[] { 200, """
+				{"basis": "not proof of a research gap", "directions": [{"rank": 1, "title": "a x b"}]}
+				""" });
+		postAs(student, "/api/v1/c3/research/opportunities", """
+				{"title": "Legged robots", "abstract": "We study footstep planning.", "projectId": "ignored"}
+				""").andExpect(status().isOk())
+			.andExpect(jsonPath("$.directions[0].rank").value(1))
+			.andExpect(jsonPath("$.basis").value("not proof of a research gap"));
+		assertThat(LAST_REQUEST.get()).startsWith("POST /api/v1/opportunities ")
+			.contains("\"title\":\"Legged robots\"")
+			.doesNotContain("projectId");
+		getAs(supervisor, "/api/v1/c3/research/opportunities/evaluation").andExpect(status().isOk());
+		assertThat(LAST_REQUEST.get()).startsWith("GET /api/v1/opportunities/evaluation ");
+	}
+
+	@Test
+	void gapAnalysisIsForwardedWithOnlyTitleAndAbstract() throws Exception {
+		NEXT_ANSWER.set(new Object[] { 200, """
+				{"evidenceLevel": "abstract", "inferredGaps": [], "directlySupportedGaps": []}
+				""" });
+		postAs(student, "/api/v1/c3/research/gap-analysis", """
+				{"title": "Legged robots", "abstract": "We study footstep planning.", "userId": "ignored"}
+				""").andExpect(status().isOk()).andExpect(jsonPath("$.evidenceLevel").value("abstract"));
+		assertThat(LAST_REQUEST.get()).startsWith("POST /api/v1/gap-analysis ")
+			.contains("\"abstract\":\"We study footstep planning.\"")
+			.doesNotContain("userId");
+		getAs(supervisor, "/api/v1/c3/research/gap-analysis/evaluation").andExpect(status().isOk());
+		assertThat(LAST_REQUEST.get()).startsWith("GET /api/v1/gap-analysis/evaluation ");
+	}
+
+	@Test
+	void gapAnalysisChecksFieldsAndRequiresSignIn() throws Exception {
+		expectFieldError(postAs(student, "/api/v1/c3/research/gap-analysis", "{\"abstract\": \"a\"}"), "title");
+		expectUnauthorized(postAs(null, "/api/v1/c3/research/gap-analysis", "{\"title\": \"t\", \"abstract\": \"a\"}"));
+		expectUnauthorized(getAs(null, "/api/v1/c3/research/gap-analysis/evaluation"));
+		assertThat(LAST_REQUEST.get()).isNull();
+	}
+
+	@Test
+	void opportunityAnalysisChecksFieldsAndRequiresSignIn() throws Exception {
+		expectFieldError(postAs(student, "/api/v1/c3/research/opportunities", "{\"title\": \"t\"}"), "abstract");
+		expectUnauthorized(postAs(null, "/api/v1/c3/research/opportunities", "{\"title\": \"t\", \"abstract\": \"a\"}"));
+		expectUnauthorized(getAs(null, "/api/v1/c3/research/opportunities/evaluation"));
+		assertThat(LAST_REQUEST.get()).isNull();
+	}
+
+	@Test
 	void requiresSignInAndNeverReachesTheMlServiceOtherwise() throws Exception {
 		expectUnauthorized(postAs(null, "/api/v1/c3/research/predict", "{\"title\": \"t\", \"abstract\": \"a\"}"));
 		expectUnauthorized(getAs(null, "/api/v1/c3/research/trends"));

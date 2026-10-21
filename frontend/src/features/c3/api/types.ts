@@ -198,3 +198,199 @@ export interface ModelMetrics {
   evaluations: ModelEvaluation[]
   modelLoaded: boolean
 }
+
+// Research opportunities (passed through unchanged from the ML service)
+export interface PaperRef {
+  arxivId: string
+  title: string
+  year: number
+  primaryCategory: string
+  categoryName: string
+  url: string
+  rank?: number
+  similarity?: number
+}
+
+export interface TopicRef {
+  topicId: number
+  label: string
+  topTerms: string[]
+  lowerCoherence: boolean
+}
+
+export type CoverageAssessment = 'dataset_coverage' | 'limited_evidence' | 'relatively_low' | 'moderate' | 'well_covered'
+
+export interface OpportunityDirection {
+  rank: number
+  title: string
+  topics: TopicRef[]
+  summary: string
+  coverage: { assessment: CoverageAssessment; note: string }
+  evidence: {
+    recentPapers: number
+    olderPapers: number
+    recentShare: number
+    olderShare: number
+    growthLogRatio: number
+    similarPapersCombining: number
+    otherCsCategoriesShare: number
+    otherCsCategoriesPapers: number
+    corpusPapersCombining: number
+  }
+  score: number
+  factors: Record<string, number>
+  weights: Record<string, number>
+  supportingPapers: PaperRef[]
+}
+
+export interface OpportunityAnalysis {
+  basis: string
+  classification: {
+    category: string
+    categoryName: string
+    modelVersion: string
+    ranking: { rank: number; category: string; categoryName: string }[]
+  } | null
+  similarPapers: PaperRef[]
+  recognisedTerms: number
+  topicProfile: (TopicRef & { weight: number; ownWeight: number })[]
+  directions: OpportunityDirection[]
+  insufficientEvidence: { topics: TopicRef[]; recentPapers: number; olderPapers: number }[]
+  windows: { older: number[]; recent: number[]; olderPapers: number; recentPapers: number }
+  candidatesConsidered: number
+  method: Record<string, string>
+  limitations: string[]
+}
+
+export interface OpportunityEvaluation {
+  available: boolean
+  retrieval: {
+    queries: number
+    known_item_search: { recall_at_1: number; recall_at_10: number; mrr: number; task: string }
+    category_agreement_at_10: { mean: number; expected_for_random_neighbours: number; note: string }
+    index: { papers: number }
+  }
+  topicModel: {
+    chosenK: number
+    selectionRule: string
+    selection: { k: number; mean_npmi: number; diversity_top25: number }[]
+  }
+  recommendations: {
+    status: string
+    groundedness_share_with_3plus_supporting_papers: number
+    topic_agreement_share: number
+    stability_mean_jaccard_top5_after_dropping_20pct_words: number | null
+    temporal_backtest_of_growth_signal: { spearman_rho: number; p_value: number; pairs: number; question: string }
+    expert_review: { done: boolean }
+  }
+}
+
+// Aspect-level gap analysis (abstract-level evidence; passed through unchanged from the ML service)
+export type AspectFamily = 'setting' | 'metric' | 'application' | 'dataset'
+
+export interface AspectRef {
+  aspectId: string
+  family: AspectFamily
+  familyLabel: string
+  label: string
+}
+
+export interface GapPaper extends PaperRef {
+  relevanceRank: number
+}
+
+export interface AspectCoverage extends AspectRef {
+  relevantPapers: number
+  relevantTotal: number
+  share: number
+  interval95: [number, number]
+  areaPapers: number
+  areaTotal: number
+  areaShare: number
+  inYourText: boolean
+  examplePapers?: GapPaper[]
+}
+
+export interface AuthorStatement {
+  quote: string
+  type: string
+  typeLabel: string
+  paper: GapPaper
+  aspects: AspectRef[]
+}
+
+export interface InferredGap extends AspectCoverage {
+  rule: 'anchored' | 'area' | 'anchored+area'
+  why: string
+  pValue?: number
+  qValue?: number
+  corroboratedByAuthorStatements: boolean
+  examplePapers: GapPaper[]
+}
+
+export interface DirectGap extends AspectRef {
+  paperCount: number
+  statements: AuthorStatement[]
+  inYourText: boolean
+}
+
+export type GapUncertainty = 'corroborated' | 'indicative' | 'exploratory'
+
+/** An evidence-supported potential gap connected to the student's text (never a verified gap). */
+export interface PotentialGap {
+  heading: string
+  aspect: AspectRef | null
+  signals: ('author_statements' | 'low_coverage')[]
+  uncertainty: GapUncertainty
+  uncertaintyLabel: string
+  explanation: string
+  notes: string[]
+  paperCount: number
+  statementCount: number
+  latestYear: number | null
+  closestRank: number | null
+  sharedTerms: string[]
+  statements: Omit<AuthorStatement, 'aspects'>[]
+  coverage: { relevantPapers: number; relevantTotal: number; share: number; interval95: [number, number]; examplePapers: GapPaper[] } | null
+}
+
+export interface GapAnalysis {
+  evidenceLevel: 'abstract'
+  basis: string
+  relevantPapers: GapPaper[]
+  relevantTotal: number
+  recognisedTerms: number
+  wideArea: { topics: { topicId: number; label: string }[]; papers: number }
+  yourAspects: AspectRef[]
+  wellCovered: AspectCoverage[]
+  methodTerms: { term: string; relevantPapers: number; relevantTotal: number; interval95: [number, number]; fewMentions: boolean }[]
+  authorStatements: Record<string, AuthorStatement[]>
+  potentialGaps: PotentialGap[]
+  potentialGapsScreening: {
+    statementsConsidered: number
+    candidates: number
+    shown: number
+    excluded: {
+      limitationOfPriorWorkOrAddressedByThePaper: number
+      limitationWithUnclearOwner: number
+      notConnectedToYourText: number
+      rarerThanTheWiderAreaOnly: number
+    }
+  }
+  uncertaintyLabels: { level: GapUncertainty; label: string; rule: string }[]
+  directlySupportedGaps: DirectGap[]
+  inferredGaps: InferredGap[]
+  method: Record<string, string>
+  limitations: string[]
+}
+
+export interface GapEvaluation {
+  available: boolean
+  evidenceLevel: 'abstract'
+  evidenceStore: {
+    papers: number
+    aspects: { total: number; curated: number; datasets: number }
+    statements: { total: number; verified_exact_substrings: number; by_type: Record<string, number> }
+  }
+  manualReview: { labelled: boolean; status: string; sheets?: Record<string, number> }
+}

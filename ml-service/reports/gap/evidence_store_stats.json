@@ -1,0 +1,261 @@
+{
+  "lexicon_version": "2026-10-21.3",
+  "papers": 334582,
+  "aspects": {
+    "total": 1286,
+    "curated": 71,
+    "datasets": 1215,
+    "min_dataset_papers": 5
+  },
+  "papers_per_aspect": {
+    "setting:Real-world evaluation / deployment": 20026,
+    "setting:Simulation": 25304,
+    "setting:Zero-shot": 12726,
+    "setting:Few-shot": 7204,
+    "setting:Cross-domain / domain shift": 12373,
+    "setting:Multilingual / cross-lingual": 8214,
+    "setting:Low-resource": 4786,
+    "setting:Real-time": 17400,
+    "setting:On-device / edge / embedded": 6558,
+    "setting:Adversarial robustness": 5182,
+    "setting:Robustness / noise": 25183,
+    "setting:Human evaluation / user study": 6628,
+    "setting:Long-horizon tasks": 3032,
+    "setting:Open-vocabulary / open-world": 3889,
+    "setting:Privacy": 12399,
+    "setting:Fairness / bias": 5586,
+    "setting:Interpretability / explainability": 13939,
+    "setting:Computational efficiency": 29427,
+    "setting:Scalability": 38521,
+    "setting:Uncertainty quantification": 8177,
+    "setting:Safety": 13650,
+    "setting:Multimodal": 25485,
+    "setting:Self-/unsupervised learning": 18919,
+    "setting:Continual / incremental learning": 2827,
+    "setting:Federated / distributed learning": 2240,
+    "setting:New benchmark or dataset released": 3346,
+    "setting:Reproducibility / open source": 32795,
+    "metric:Accuracy": 60383,
+    "metric:F1 score": 9503,
+    "metric:Precision / recall": 13745,
+    "metric:AUC / ROC": 3363,
+    "metric:mAP / average precision": 17006,
+    "metric:IoU / mIoU": 3893,
+    "metric:BLEU / ROUGE / METEOR": 3042,
+    "metric:Perplexity": 1240,
+    "metric:PSNR / SSIM": 2394,
+    "metric:FID / Inception score": 1380,
+    "metric:Success rate": 6048,
+    "metric:Error (RMSE / MAE / ATE)": 2954,
+    "metric:Latency / throughput / FPS": 11763,
+    "metric:Word error rate": 1092,
+    "metric:Attack success rate": 4033,
+    "metric:Detection / false-positive rate": 1887,
+    "application:Medical / clinical": 25353,
+    "application:Healthcare / EHR": 3801,
+    "application:Autonomous driving": 10422,
+    "application:UAV / drones / aerial": 6825,
+    "application:Remote sensing / satellite": 5342,
+    "application:Agriculture": 3877,
+    "application:Manufacturing / industrial": 6163,
+    "application:Household / domestic": 1610,
+    "application:Surgery": 2428,
+    "application:Underwater / marine": 1788,
+    "application:Space": 781,
+    "application:Education": 8329,
+    "application:Legal": 4777,
+    "application:Finance": 3820,
+    "application:Social media": 5154,
+    "application:Source code / software": 8269,
+    "application:IoT / smart devices": 3401,
+    "application:Blockchain / smart contracts": 3687,
+    "application:Networks / communications": 3413,
+    "application:Cloud / data centres": 1117,
+    "application:Documents / OCR": 3030,
+    "application:Speech / audio": 13372,
+    "application:Video surveillance / security cameras": 2913,
+    "application:Biometrics / faces": 9721,
+    "application:Low-resource or non-English languages": 3521,
+    "application:Robot manipulation / grasping": 17214,
+    "application:Navigation / mobile robots": 14543,
+    "application:Databases / queries": 9697
+  },
+  "top_datasets": [
+    {
+      "name": "LLM",
+      "papers": 20010
+    },
+    {
+      "name": "NLP",
+      "papers": 9488
+    },
+    {
+      "name": "CNN",
+      "papers": 8798
+    },
+    {
+      "name": "RGB",
+      "papers": 6768
+    },
+    {
+      "name": "LiDAR",
+      "papers": 4315
+    },
+    {
+      "name": "ImageNet",
+      "papers": 4295
+    },
+    {
+      "name": "QA",
+      "papers": 3946
+    },
+    {
+      "name": "VLM",
+      "papers": 3377
+    },
+    {
+      "name": "RAG",
+      "papers": 2963
+    },
+    {
+      "name": "INTERACTION",
+      "papers": 2910
+    },
+    {
+      "name": "RGB-D",
+      "papers": 2762
+    },
+    {
+      "name": "ASR",
+      "papers": 2658
+    },
+    {
+      "name": "COCO",
+      "papers": 2590
+    },
+    {
+      "name": "KITTI",
+      "papers": 2491
+    },
+    {
+      "name": "SLAM",
+      "papers": 2491
+    },
+    {
+      "name": "IoT",
+      "papers": 2488
+    },
+    {
+      "name": "MRI",
+      "papers": 2450
+    },
+    {
+      "name": "UAV",
+      "papers": 2321
+    },
+    {
+      "name": "CT",
+      "papers": 2220
+    },
+    {
+      "name": "CIFAR-10",
+      "papers": 2119
+    },
+    {
+      "name": "VQA",
+      "papers": 2011
+    },
+    {
+      "name": "Time",
+      "papers": 1822
+    },
+    {
+      "name": "MLLM",
+      "papers": 1750
+    },
+    {
+      "name": "nuScenes",
+      "papers": 1675
+    },
+    {
+      "name": "SFT",
+      "papers": 1596
+    },
+    {
+      "name": "OOD",
+      "papers": 1552
+    },
+    {
+      "name": "PASCAL",
+      "papers": 1474
+    },
+    {
+      "name": "MS-COCO",
+      "papers": 1452
+    },
+    {
+      "name": "NER",
+      "papers": 1365
+    },
+    {
+      "name": "Arabic",
+      "papers": 1363
+    },
+    {
+      "name": "German",
+      "papers": 1354
+    },
+    {
+      "name": "LM",
+      "papers": 1336
+    },
+    {
+      "name": "VOC",
+      "papers": 1333
+    },
+    {
+      "name": "Wikipedia",
+      "papers": 1303
+    },
+    {
+      "name": "PASCAL VOC",
+      "papers": 1289
+    },
+    {
+      "name": "Cityscapes",
+      "papers": 1255
+    },
+    {
+      "name": "CIFAR-100",
+      "papers": 1250
+    },
+    {
+      "name": "Twitter",
+      "papers": 1237
+    },
+    {
+      "name": "MT",
+      "papers": 1161
+    },
+    {
+      "name": "MNIST",
+      "papers": 1122
+    }
+  ],
+  "statements": {
+    "total": 116463,
+    "verified_exact_substrings": 116463,
+    "by_type": {
+      "future_work": 9888,
+      "under_explored": 9028,
+      "limitation_own": 2771,
+      "limitation_evaluated": 4895,
+      "limitation_prior": 12653,
+      "limitation_unclear": 59641,
+      "limitation_addressed": 17587
+    },
+    "papers_with_any": 96103
+  },
+  "evidence_level": "abstract only (the snapshot contains no full paper text)",
+  "build_seconds": 1217.7
+}

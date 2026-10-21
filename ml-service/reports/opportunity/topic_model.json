@@ -1,0 +1,2326 @@
+{
+  "method": "NMF (scikit-learn, nndsvda initialisation, Frobenius loss) on TF-IDF of words and word pairs",
+  "training_papers": 66739,
+  "training_by_category": {
+    "cs.CL": 15000,
+    "cs.CV": 15000,
+    "cs.RO": 15000,
+    "cs.CR": 15000,
+    "cs.DB": 6739
+  },
+  "reference_papers": 20000,
+  "vocabulary_terms": 20000,
+  "selection": [
+    {
+      "k": 20,
+      "mean_npmi": 0.1926,
+      "median_npmi": 0.2199,
+      "topics_with_negative_npmi": 2,
+      "diversity_top25": 0.832,
+      "reconstruction_error": 251.66,
+      "fit_seconds": 10.7
+    },
+    {
+      "k": 30,
+      "mean_npmi": 0.1988,
+      "median_npmi": 0.2305,
+      "topics_with_negative_npmi": 3,
+      "diversity_top25": 0.796,
+      "reconstruction_error": 250.4,
+      "fit_seconds": 53.5
+    },
+    {
+      "k": 40,
+      "mean_npmi": 0.1948,
+      "median_npmi": 0.2324,
+      "topics_with_negative_npmi": 5,
+      "diversity_top25": 0.769,
+      "reconstruction_error": 249.29,
+      "fit_seconds": 40.0
+    }
+  ],
+  "chosen_k": 30,
+  "selection_rule": "highest mean NPMI of the 10 top terms on the held-out reference set (smaller k on ties)",
+  "share_threshold": 0.15,
+  "windows": {
+    "old": [
+      2018,
+      2019
+    ],
+    "recent": [
+      2024,
+      2025
+    ]
+  },
+  "corpus_papers_covered_per_year": {
+    "2015": 3508,
+    "2016": 5900,
+    "2017": 9043,
+    "2018": 13334,
+    "2019": 16843,
+    "2020": 21965,
+    "2021": 25611,
+    "2022": 28768,
+    "2023": 38103,
+    "2024": 50310,
+    "2025": 59417,
+    "2026": 59629
+  },
+  "control_papers_covered": {
+    "old": 14083,
+    "recent": 36335
+  },
+  "topics": [
+    {
+      "id": 0,
+      "label": "extensive \u00b7 attention \u00b7 experiments",
+      "top_terms": [
+        "extensive",
+        "attention",
+        "experiments",
+        "extensive experiments",
+        "framework",
+        "achieves",
+        "existing",
+        "efficient",
+        "demonstrate",
+        "state-of-the-art"
+      ],
+      "npmi": 0.1321,
+      "papers_by_year": {
+        "2015": 3,
+        "2016": 8,
+        "2017": 12,
+        "2018": 37,
+        "2019": 57,
+        "2020": 127,
+        "2021": 270,
+        "2022": 406,
+        "2023": 549,
+        "2024": 1255,
+        "2025": 2494,
+        "2026": 2155
+      },
+      "representative_papers": [
+        {
+          "id": "2503.23455",
+          "title": "Efficient Token Compression for Vision Transformer with Spatial Information Preserved",
+          "year": 2025,
+          "primary": "cs.CV",
+          "share": 0.671
+        },
+        {
+          "id": "2111.12419",
+          "title": "NAM: Normalization-based Attention Module",
+          "year": 2021,
+          "primary": "cs.CV",
+          "share": 0.623
+        },
+        {
+          "id": "2610.11251",
+          "title": "V-CoLA: Vision Token Compression with Linear Attention",
+          "year": 2026,
+          "primary": "cs.CV",
+          "share": 0.609
+        },
+        {
+          "id": "2601.19133",
+          "title": "QA-ReID: Quality-Aware Query-Adaptive Convolution Leveraging Fused Global and Structural Cues for Clothes-Changing ReID",
+          "year": 2026,
+          "primary": "cs.CV",
+          "share": 0.59
+        },
+        {
+          "id": "2507.16260",
+          "title": "ToFe: Lagged Token Freezing and Reusing for Efficient Vision Transformer Inference",
+          "year": 2025,
+          "primary": "cs.CV",
+          "share": 0.544
+        }
+      ],
+      "category_mix": {
+        "cs.CV": 6084,
+        "cs.CL": 1080,
+        "cs.DB": 81,
+        "cs.RO": 65,
+        "cs.CR": 63
+      }
+    },
+    {
+      "id": 1,
+      "label": "llms \u00b7 large language \u00b7 language models",
+      "top_terms": [
+        "llms",
+        "large language",
+        "language models",
+        "language",
+        "large",
+        "models llms",
+        "llm",
+        "reasoning",
+        "capabilities",
+        "prompts"
+      ],
+      "npmi": 0.4133,
+      "papers_by_year": {
+        "2015": 4,
+        "2016": 20,
+        "2017": 21,
+        "2018": 30,
+        "2019": 39,
+        "2020": 84,
+        "2021": 195,
+        "2022": 543,
+        "2023": 4397,
+        "2024": 11093,
+        "2025": 14331,
+        "2026": 9880
+      },
+      "representative_papers": [
+        {
+          "id": "2502.16721",
+          "title": "Speed and Conversational Large Language Models: Not All Is About Tokens per Second",
+          "year": 2025,
+          "primary": "cs.CL",
+          "share": 0.868
+        },
+        {
+          "id": "2502.12821",
+          "title": "Pitfalls of Scale: Investigating the Inverse Task of Redefinition in Large Language Models",
+          "year": 2025,
+          "primary": "cs.CL",
+          "share": 0.822
+        },
+        {
+          "id": "2402.01765",
+          "title": "LLMs Simulate Big Five Personality Traits: Further Evidence",
+          "year": 2024,
+          "primary": "cs.CL",
+          "share": 0.804
+        },
+        {
+          "id": "2606.28978",
+          "title": "Can LLMs Hire Fairly? Racial Bias in Resume Screening",
+          "year": 2026,
+          "primary": "cs.CL",
+          "share": 0.786
+        },
+        {
+          "id": "2406.10486",
+          "title": "Do Large Language Models Discriminate in Hiring Decisions on the Basis of Race, Ethnicity, and Gender?",
+          "year": 2024,
+          "primary": "cs.CL",
+          "share": 0.773
+        }
+      ],
+      "category_mix": {
+        "cs.CL": 31491,
+        "cs.CV": 4816,
+        "cs.CR": 3083,
+        "cs.RO": 875,
+        "cs.DB": 372
+      }
+    },
+    {
+      "id": 2,
+      "label": "security \u00b7 secure \u00b7 blockchain",
+      "top_terms": [
+        "security",
+        "secure",
+        "blockchain",
+        "protocol",
+        "iot",
+        "devices",
+        "smart",
+        "protocols",
+        "encryption",
+        "authentication"
+      ],
+      "npmi": -0.0998,
+      "papers_by_year": {
+        "2015": 445,
+        "2016": 525,
+        "2017": 715,
+        "2018": 1011,
+        "2019": 1318,
+        "2020": 1489,
+        "2021": 1578,
+        "2022": 1591,
+        "2023": 1743,
+        "2024": 1959,
+        "2025": 2320,
+        "2026": 2113
+      },
+      "representative_papers": [
+        {
+          "id": "1911.04708",
+          "title": "ConnectionChain: Secure Interworking of Blockchains",
+          "year": 2019,
+          "primary": "cs.CR",
+          "share": 0.995
+        },
+        {
+          "id": "1604.08799",
+          "title": "A method to Implement the Kerberos User Authentication and the secured Internet Service",
+          "year": 2016,
+          "primary": "cs.CR",
+          "share": 0.984
+        },
+        {
+          "id": "1909.06494",
+          "title": "Transactional Smart Contracts in Blockchain Systems",
+          "year": 2019,
+          "primary": "cs.DB",
+          "share": 0.975
+        },
+        {
+          "id": "2302.06966",
+          "title": "Proof of Reputation",
+          "year": 2023,
+          "primary": "cs.CR",
+          "share": 0.97
+        },
+        {
+          "id": "2510.24101",
+          "title": "Traceable Signatures from Lattices",
+          "year": 2025,
+          "primary": "cs.CR",
+          "share": 0.956
+        }
+      ],
+      "category_mix": {
+        "cs.CR": 15499,
+        "cs.CV": 522,
+        "cs.DB": 448,
+        "cs.RO": 236,
+        "cs.CL": 102
+      }
+    },
+    {
+      "id": 3,
+      "label": "image \u00b7 images \u00b7 visual",
+      "top_terms": [
+        "image",
+        "images",
+        "visual",
+        "vision",
+        "features",
+        "medical",
+        "color",
+        "input",
+        "face",
+        "imaging"
+      ],
+      "npmi": 0.0484,
+      "papers_by_year": {
+        "2015": 877,
+        "2016": 1370,
+        "2017": 2142,
+        "2018": 3050,
+        "2019": 3253,
+        "2020": 3819,
+        "2021": 4447,
+        "2022": 5075,
+        "2023": 6530,
+        "2024": 7726,
+        "2025": 7723,
+        "2026": 6147
+      },
+      "representative_papers": [
+        {
+          "id": "1502.06556",
+          "title": "Shannon, Tsallis and Kaniadakis entropies in bi-level image thresholding",
+          "year": 2015,
+          "primary": "cs.CV",
+          "share": 0.924
+        },
+        {
+          "id": "1601.00260",
+          "title": "Image Resolution Enhancement by Using Interpolation Followed by Iterative Back Projection",
+          "year": 2016,
+          "primary": "cs.CV",
+          "share": 0.875
+        },
+        {
+          "id": "1512.05653",
+          "title": "Effects of GIMP Retinex Filtering Evaluated by the Image Entropy",
+          "year": 2015,
+          "primary": "cs.CV",
+          "share": 0.831
+        },
+        {
+          "id": "2310.10517",
+          "title": "Distribution prediction for image compression: An experimental re-compressor for JPEG images",
+          "year": 2023,
+          "primary": "cs.CV",
+          "share": 0.829
+        },
+        {
+          "id": "1610.00382",
+          "title": "Near-Infrared Coloring via a Contrast-Preserving Mapping Model",
+          "year": 2016,
+          "primary": "cs.CV",
+          "share": 0.821
+        }
+      ],
+      "category_mix": {
+        "cs.CV": 49686,
+        "cs.CL": 961,
+        "cs.CR": 825,
+        "cs.RO": 658,
+        "cs.DB": 29
+      }
+    },
+    {
+      "id": 4,
+      "label": "query \u00b7 queries \u00b7 database",
+      "top_terms": [
+        "query",
+        "queries",
+        "database",
+        "databases",
+        "sql",
+        "relational",
+        "search",
+        "time",
+        "index",
+        "processing"
+      ],
+      "npmi": 0.0892,
+      "papers_by_year": {
+        "2015": 303,
+        "2016": 377,
+        "2017": 403,
+        "2018": 448,
+        "2019": 536,
+        "2020": 668,
+        "2021": 628,
+        "2022": 718,
+        "2023": 796,
+        "2024": 894,
+        "2025": 1219,
+        "2026": 1515
+      },
+      "representative_papers": [
+        {
+          "id": "1501.01817",
+          "title": "The Hunt for a Red Spider: Conjunctive Query Determinacy Is Undecidable",
+          "year": 2015,
+          "primary": "cs.DB",
+          "share": 1.0
+        },
+        {
+          "id": "1709.01600",
+          "title": "Covers of Query Results",
+          "year": 2017,
+          "primary": "cs.DB",
+          "share": 1.0
+        },
+        {
+          "id": "1509.00100",
+          "title": "Decidability of Equivalence of Aggregate Count-Distinct Queries",
+          "year": 2015,
+          "primary": "cs.DB",
+          "share": 0.989
+        },
+        {
+          "id": "2609.09978",
+          "title": "Few Rows Tell Them Apart: Equivalence of Queries Mixing Set and Bag Semantics",
+          "year": 2026,
+          "primary": "cs.DB",
+          "share": 0.986
+        },
+        {
+          "id": "1903.12469",
+          "title": "Corrigendum to \"Counting Database Repairs that Satisfy Conjunctive Queries with Self-Joins\"",
+          "year": 2019,
+          "primary": "cs.DB",
+          "share": 0.979
+        }
+      ],
+      "category_mix": {
+        "cs.DB": 4577,
+        "cs.CV": 1405,
+        "cs.CL": 1326,
+        "cs.CR": 1076,
+        "cs.RO": 121
+      }
+    },
+    {
+      "id": 5,
+      "label": "text \u00b7 speech \u00b7 word",
+      "top_terms": [
+        "text",
+        "speech",
+        "word",
+        "recognition",
+        "embeddings",
+        "words",
+        "information",
+        "entity",
+        "speech recognition",
+        "embedding"
+      ],
+      "npmi": 0.1648,
+      "papers_by_year": {
+        "2015": 440,
+        "2016": 863,
+        "2017": 1225,
+        "2018": 1715,
+        "2019": 2230,
+        "2020": 2729,
+        "2021": 3029,
+        "2022": 2930,
+        "2023": 3168,
+        "2024": 3074,
+        "2025": 2817,
+        "2026": 2687
+      },
+      "representative_papers": [
+        {
+          "id": "1906.05993",
+          "title": "Conceptor Debiasing of Word Representations Evaluated on WEAT",
+          "year": 2019,
+          "primary": "cs.CL",
+          "share": 1.0
+        },
+        {
+          "id": "1907.02679",
+          "title": "Improving Chemical Named Entity Recognition in Patents with Contextualized Word Embeddings",
+          "year": 2019,
+          "primary": "cs.CL",
+          "share": 0.917
+        },
+        {
+          "id": "2010.11019",
+          "title": "LT3 at SemEval-2020 Task 9: Cross-lingual Embeddings for Sentiment Analysis of Hinglish Social Media Text",
+          "year": 2020,
+          "primary": "cs.CL",
+          "share": 0.891
+        },
+        {
+          "id": "2402.02617",
+          "title": "Layer-Wise Analysis of Self-Supervised Acoustic Word Embeddings: A Study on Speech Emotion Recognition",
+          "year": 2024,
+          "primary": "cs.CL",
+          "share": 0.891
+        },
+        {
+          "id": "1706.00506",
+          "title": "Morphological Embeddings for Named Entity Recognition in Morphologically Rich Languages",
+          "year": 2017,
+          "primary": "cs.CL",
+          "share": 0.886
+        }
+      ],
+      "category_mix": {
+        "cs.CL": 22255,
+        "cs.CV": 4057,
+        "cs.CR": 408,
+        "cs.RO": 94,
+        "cs.DB": 93
+      }
+    },
+    {
+      "id": 6,
+      "label": "reinforcement \u00b7 reinforcement learning \u00b7 learning",
+      "top_terms": [
+        "reinforcement",
+        "reinforcement learning",
+        "learning",
+        "rl",
+        "policy",
+        "reward",
+        "learning rl",
+        "deep reinforcement",
+        "deep",
+        "policies"
+      ],
+      "npmi": 0.3732,
+      "papers_by_year": {
+        "2015": 13,
+        "2016": 80,
+        "2017": 203,
+        "2018": 321,
+        "2019": 459,
+        "2020": 622,
+        "2021": 671,
+        "2022": 748,
+        "2023": 1048,
+        "2024": 1430,
+        "2025": 2905,
+        "2026": 3222
+      },
+      "representative_papers": [
+        {
+          "id": "2310.13396",
+          "title": "RL-X: A Deep Reinforcement Learning Library (not only) for RoboCup",
+          "year": 2023,
+          "primary": "cs.RO",
+          "share": 0.815
+        },
+        {
+          "id": "2409.08938",
+          "title": "Average-Reward Maximum Entropy Reinforcement Learning for Underactuated Double Pendulum Tasks",
+          "year": 2024,
+          "primary": "cs.RO",
+          "share": 0.749
+        },
+        {
+          "id": "2603.27400",
+          "title": "Rainbow-DemoRL: Combining Improvements in Demonstration-Augmented Reinforcement Learning",
+          "year": 2026,
+          "primary": "cs.RO",
+          "share": 0.732
+        },
+        {
+          "id": "1707.06299",
+          "title": "Reward-Balancing for Statistical Spoken Dialogue Systems using Multi-objective Reinforcement Learning",
+          "year": 2017,
+          "primary": "cs.CL",
+          "share": 0.73
+        },
+        {
+          "id": "1907.12894",
+          "title": "Reward Learning for Efficient Reinforcement Learning in Extractive Document Summarisation",
+          "year": 2019,
+          "primary": "cs.CL",
+          "share": 0.73
+        }
+      ],
+      "category_mix": {
+        "cs.RO": 5646,
+        "cs.CL": 3179,
+        "cs.CV": 2378,
+        "cs.CR": 427,
+        "cs.DB": 92
+      }
+    },
+    {
+      "id": 7,
+      "label": "planning \u00b7 motion \u00b7 path",
+      "top_terms": [
+        "planning",
+        "motion",
+        "path",
+        "algorithm",
+        "motion planning",
+        "problem",
+        "trajectory",
+        "planner",
+        "path planning",
+        "optimal"
+      ],
+      "npmi": 0.1342,
+      "papers_by_year": {
+        "2015": 216,
+        "2016": 325,
+        "2017": 406,
+        "2018": 475,
+        "2019": 638,
+        "2020": 856,
+        "2021": 960,
+        "2022": 1014,
+        "2023": 1261,
+        "2024": 1493,
+        "2025": 1642,
+        "2026": 1616
+      },
+      "representative_papers": [
+        {
+          "id": "2007.09626",
+          "title": "Optimal tool path planning for 3D printing with spatio-temporal and thermal constraints",
+          "year": 2020,
+          "primary": "cs.RO",
+          "share": 0.969
+        },
+        {
+          "id": "2104.02298",
+          "title": "Admissible heuristics for obstacle clearance optimization objectives",
+          "year": 2021,
+          "primary": "cs.RO",
+          "share": 0.952
+        },
+        {
+          "id": "2409.09816",
+          "title": "Fast Shortest Path Polyline Smoothing With $G^1$ Continuity and Bounded Curvature",
+          "year": 2024,
+          "primary": "cs.RO",
+          "share": 0.931
+        },
+        {
+          "id": "2107.05344",
+          "title": "Post Triangular Rewiring Method for Shorter RRT Robot Path Planning",
+          "year": 2021,
+          "primary": "cs.RO",
+          "share": 0.915
+        },
+        {
+          "id": "2302.11648",
+          "title": "Fillet-based RRT*: A Rapid Convergence Implementation of RRT* for Curvature Constrained Vehicles",
+          "year": 2023,
+          "primary": "cs.RO",
+          "share": 0.912
+        }
+      ],
+      "category_mix": {
+        "cs.RO": 8251,
+        "cs.CV": 1396,
+        "cs.CR": 532,
+        "cs.DB": 368,
+        "cs.CL": 355
+      }
+    },
+    {
+      "id": 8,
+      "label": "detection \u00b7 malware \u00b7 intrusion",
+      "top_terms": [
+        "detection",
+        "malware",
+        "intrusion",
+        "machine",
+        "machine learning",
+        "intrusion detection",
+        "detect",
+        "detecting",
+        "anomaly",
+        "anomaly detection"
+      ],
+      "npmi": -0.2853,
+      "papers_by_year": {
+        "2015": 211,
+        "2016": 354,
+        "2017": 546,
+        "2018": 819,
+        "2019": 1003,
+        "2020": 1389,
+        "2021": 1729,
+        "2022": 1795,
+        "2023": 2127,
+        "2024": 2668,
+        "2025": 3319,
+        "2026": 2563
+      },
+      "representative_papers": [
+        {
+          "id": "2405.05206",
+          "title": "Anomaly Detection in Certificate Transparency Logs",
+          "year": 2024,
+          "primary": "cs.CR",
+          "share": 0.882
+        },
+        {
+          "id": "1910.12074",
+          "title": "Intrusion Detection using Sequential Hybrid Model",
+          "year": 2019,
+          "primary": "cs.CR",
+          "share": 0.788
+        },
+        {
+          "id": "1802.08611",
+          "title": "An investigation of the classifiers to detect android malicious apps",
+          "year": 2018,
+          "primary": "cs.CR",
+          "share": 0.759
+        },
+        {
+          "id": "1607.08087",
+          "title": "Android Malware Detection: an Eigenspace Analysis Approach",
+          "year": 2016,
+          "primary": "cs.CR",
+          "share": 0.739
+        },
+        {
+          "id": "2111.13910",
+          "title": "Assessing the Effectiveness of YARA Rules for Signature-Based Malware Detection and Classification",
+          "year": 2021,
+          "primary": "cs.CR",
+          "share": 0.729
+        }
+      ],
+      "category_mix": {
+        "cs.CV": 10460,
+        "cs.CR": 4735,
+        "cs.CL": 2854,
+        "cs.RO": 372,
+        "cs.DB": 102
+      }
+    },
+    {
+      "id": 9,
+      "label": "attacks \u00b7 attack \u00b7 adversarial",
+      "top_terms": [
+        "attacks",
+        "attack",
+        "adversarial",
+        "defense",
+        "backdoor",
+        "defenses",
+        "adversarial attacks",
+        "security",
+        "vulnerable",
+        "poisoning"
+      ],
+      "npmi": 0.4851,
+      "papers_by_year": {
+        "2015": 100,
+        "2016": 162,
+        "2017": 269,
+        "2018": 496,
+        "2019": 716,
+        "2020": 1010,
+        "2021": 1133,
+        "2022": 1264,
+        "2023": 1596,
+        "2024": 2164,
+        "2025": 2628,
+        "2026": 2636
+      },
+      "representative_papers": [
+        {
+          "id": "1511.01549",
+          "title": "Extension of Overbeck's Attack for Gabidulin Based Cryptosystems",
+          "year": 2015,
+          "primary": "cs.CR",
+          "share": 0.861
+        },
+        {
+          "id": "2602.03040",
+          "title": "DF-LoGiT: Data-Free Logic-Gated Backdoor Attacks in Vision Transformers",
+          "year": 2026,
+          "primary": "cs.CR",
+          "share": 0.775
+        },
+        {
+          "id": "2002.11750",
+          "title": "On Certifying Robustness against Backdoor Attacks via Randomized Smoothing",
+          "year": 2020,
+          "primary": "cs.CR",
+          "share": 0.76
+        },
+        {
+          "id": "2507.00577",
+          "title": "BadViM: Backdoor Attack against Vision Mamba",
+          "year": 2025,
+          "primary": "cs.CR",
+          "share": 0.715
+        },
+        {
+          "id": "1607.05113",
+          "title": "On the Effectiveness of Defensive Distillation",
+          "year": 2016,
+          "primary": "cs.CR",
+          "share": 0.715
+        }
+      ],
+      "category_mix": {
+        "cs.CR": 9328,
+        "cs.CV": 3501,
+        "cs.CL": 1201,
+        "cs.RO": 130,
+        "cs.DB": 14
+      }
+    },
+    {
+      "id": 10,
+      "label": "object \u00b7 objects \u00b7 object detection",
+      "top_terms": [
+        "object",
+        "objects",
+        "object detection",
+        "grasping",
+        "grasp",
+        "detection",
+        "scene",
+        "shape",
+        "grasps",
+        "scenes"
+      ],
+      "npmi": 0.0474,
+      "papers_by_year": {
+        "2015": 333,
+        "2016": 503,
+        "2017": 729,
+        "2018": 1060,
+        "2019": 1375,
+        "2020": 1815,
+        "2021": 2144,
+        "2022": 2532,
+        "2023": 3011,
+        "2024": 3333,
+        "2025": 3130,
+        "2026": 2726
+      },
+      "representative_papers": [
+        {
+          "id": "1704.02603",
+          "title": "Estimating Tactile Data for Adaptive Grasping of Novel Objects",
+          "year": 2017,
+          "primary": "cs.RO",
+          "share": 0.702
+        },
+        {
+          "id": "2008.11754",
+          "title": "Design of a sensor integrated adaptive gripper",
+          "year": 2020,
+          "primary": "cs.RO",
+          "share": 0.674
+        },
+        {
+          "id": "1511.08177",
+          "title": "Exploring Person Context and Local Scene Context for Object Detection",
+          "year": 2015,
+          "primary": "cs.CV",
+          "share": 0.665
+        },
+        {
+          "id": "2211.12108",
+          "title": "Explaining YOLO: Leveraging Grad-CAM to Explain Object Detections",
+          "year": 2022,
+          "primary": "cs.CV",
+          "share": 0.655
+        },
+        {
+          "id": "2606.00470",
+          "title": "A passive universal grasping mechanism based on an everting shell",
+          "year": 2026,
+          "primary": "cs.RO",
+          "share": 0.648
+        }
+      ],
+      "category_mix": {
+        "cs.CV": 17651,
+        "cs.RO": 4504,
+        "cs.CL": 223,
+        "cs.CR": 160,
+        "cs.DB": 153
+      }
+    },
+    {
+      "id": 11,
+      "label": "neural \u00b7 networks \u00b7 network",
+      "top_terms": [
+        "neural",
+        "networks",
+        "network",
+        "neural networks",
+        "deep",
+        "neural network",
+        "convolutional",
+        "convolutional neural",
+        "deep neural",
+        "cnn"
+      ],
+      "npmi": 0.4042,
+      "papers_by_year": {
+        "2015": 675,
+        "2016": 1543,
+        "2017": 2676,
+        "2018": 4013,
+        "2019": 4067,
+        "2020": 4352,
+        "2021": 4115,
+        "2022": 3738,
+        "2023": 3530,
+        "2024": 3308,
+        "2025": 2834,
+        "2026": 1656
+      },
+      "representative_papers": [
+        {
+          "id": "1904.11816",
+          "title": "Think Again Networks and the Delta Loss",
+          "year": 2019,
+          "primary": "cs.CL",
+          "share": 0.916
+        },
+        {
+          "id": "1907.06483",
+          "title": "Color Cerberus",
+          "year": 2019,
+          "primary": "cs.CV",
+          "share": 0.911
+        },
+        {
+          "id": "1705.07049",
+          "title": "What are the Receptive, Effective Receptive, and Projective Fields of Neurons in Convolutional Neural Networks?",
+          "year": 2017,
+          "primary": "cs.CV",
+          "share": 0.907
+        },
+        {
+          "id": "1909.06276",
+          "title": "Parameterized Convolutional Neural Networks for Aspect Level Sentiment Classification",
+          "year": 2019,
+          "primary": "cs.CL",
+          "share": 0.875
+        },
+        {
+          "id": "2002.05107",
+          "title": "Analysis of Dutch Master Paintings with Convolutional Neural Networks",
+          "year": 2020,
+          "primary": "cs.CV",
+          "share": 0.87
+        }
+      ],
+      "category_mix": {
+        "cs.CV": 27459,
+        "cs.CL": 4727,
+        "cs.CR": 2286,
+        "cs.RO": 1916,
+        "cs.DB": 119
+      }
+    },
+    {
+      "id": 12,
+      "label": "generation \u00b7 diffusion \u00b7 diffusion models",
+      "top_terms": [
+        "generation",
+        "diffusion",
+        "diffusion models",
+        "generative",
+        "quality",
+        "latent",
+        "generate",
+        "text",
+        "generated",
+        "diffusion model"
+      ],
+      "npmi": 0.2297,
+      "papers_by_year": {
+        "2015": 92,
+        "2016": 167,
+        "2017": 377,
+        "2018": 667,
+        "2019": 943,
+        "2020": 1280,
+        "2021": 1599,
+        "2022": 2051,
+        "2023": 4375,
+        "2024": 7236,
+        "2025": 9381,
+        "2026": 9643
+      },
+      "representative_papers": [
+        {
+          "id": "2609.34525",
+          "title": "SAGE: Subspace Alignment for Classifier-Free Guidance in Mixture-of-Experts Diffusion Models",
+          "year": 2026,
+          "primary": "cs.CV",
+          "share": 0.874
+        },
+        {
+          "id": "2308.16512",
+          "title": "MVDream: Multi-view Diffusion for 3D Generation",
+          "year": 2023,
+          "primary": "cs.CV",
+          "share": 0.872
+        },
+        {
+          "id": "2606.20076",
+          "title": "Variable-Length Tokenization via Learnable Global Merging for Diffusion Transformers",
+          "year": 2026,
+          "primary": "cs.CV",
+          "share": 0.853
+        },
+        {
+          "id": "2402.14311",
+          "title": "Font Style Interpolation with Diffusion Models",
+          "year": 2024,
+          "primary": "cs.CV",
+          "share": 0.836
+        },
+        {
+          "id": "2312.00375",
+          "title": "Text-Guided 3D Face Synthesis -- From Generation to Editing",
+          "year": 2023,
+          "primary": "cs.CV",
+          "share": 0.832
+        }
+      ],
+      "category_mix": {
+        "cs.CV": 26765,
+        "cs.CL": 8034,
+        "cs.RO": 1673,
+        "cs.CR": 1222,
+        "cs.DB": 117
+      }
+    },
+    {
+      "id": 13,
+      "label": "privacy \u00b7 differential privacy \u00b7 differential",
+      "top_terms": [
+        "privacy",
+        "differential privacy",
+        "differential",
+        "private",
+        "federated",
+        "dp",
+        "privacy-preserving",
+        "federated learning",
+        "utility",
+        "differentially"
+      ],
+      "npmi": 0.3527,
+      "papers_by_year": {
+        "2015": 127,
+        "2016": 140,
+        "2017": 213,
+        "2018": 310,
+        "2019": 384,
+        "2020": 612,
+        "2021": 671,
+        "2022": 846,
+        "2023": 898,
+        "2024": 1157,
+        "2025": 1383,
+        "2026": 1143
+      },
+      "representative_papers": [
+        {
+          "id": "1708.01884",
+          "title": "Differential Privacy By Sampling",
+          "year": 2017,
+          "primary": "cs.CR",
+          "share": 0.963
+        },
+        {
+          "id": "2201.00099",
+          "title": "Differential Privacy Made Easy",
+          "year": 2022,
+          "primary": "cs.CR",
+          "share": 0.931
+        },
+        {
+          "id": "1706.04890",
+          "title": "Distributed Differential Privacy By Sampling",
+          "year": 2017,
+          "primary": "cs.CR",
+          "share": 0.92
+        },
+        {
+          "id": "2401.06601",
+          "title": "A proposal to increase data utility on Global Differential Privacy data based on data use predictions",
+          "year": 2024,
+          "primary": "cs.CR",
+          "share": 0.919
+        },
+        {
+          "id": "2202.03388",
+          "title": "Distributed Differentially Private Ranking Aggregation",
+          "year": 2022,
+          "primary": "cs.CR",
+          "share": 0.914
+        }
+      ],
+      "category_mix": {
+        "cs.CR": 6105,
+        "cs.CV": 980,
+        "cs.CL": 522,
+        "cs.DB": 214,
+        "cs.RO": 63
+      }
+    },
+    {
+      "id": 14,
+      "label": "agents \u00b7 agent \u00b7 llm",
+      "top_terms": [
+        "agents",
+        "agent",
+        "llm",
+        "llm agents",
+        "execution",
+        "multi-agent",
+        "agentic",
+        "ai",
+        "tool",
+        "memory"
+      ],
+      "npmi": 0.2628,
+      "papers_by_year": {
+        "2015": 35,
+        "2016": 66,
+        "2017": 115,
+        "2018": 195,
+        "2019": 281,
+        "2020": 391,
+        "2021": 425,
+        "2022": 473,
+        "2023": 716,
+        "2024": 1330,
+        "2025": 2915,
+        "2026": 8727
+      },
+      "representative_papers": [
+        {
+          "id": "2605.27333",
+          "title": "FinHarness: An Inline Lifecycle Safety Harness for Finance LLM Agents",
+          "year": 2026,
+          "primary": "cs.CL",
+          "share": 0.9
+        },
+        {
+          "id": "2609.30266",
+          "title": "LLM Agents Can Easily Tamper With Their Own Traces",
+          "year": 2026,
+          "primary": "cs.CR",
+          "share": 0.892
+        },
+        {
+          "id": "2606.28679",
+          "title": "Capability Gates Are Not Authorization: Confused-Deputy Failures in LLM Agent Frameworks",
+          "year": 2026,
+          "primary": "cs.CR",
+          "share": 0.892
+        },
+        {
+          "id": "2609.35557",
+          "title": "The Compiler May Read It, the Agent May Not: Keeping Part of a Research Code Away from a Coding Agent",
+          "year": 2026,
+          "primary": "cs.CR",
+          "share": 0.89
+        },
+        {
+          "id": "2609.39065",
+          "title": "Can Agents Trust Their Skills? Uncovering Unsafe Chains of Trust in Skill-Based LLM Agents",
+          "year": 2026,
+          "primary": "cs.CR",
+          "share": 0.878
+        }
+      ],
+      "category_mix": {
+        "cs.CL": 6484,
+        "cs.CR": 3791,
+        "cs.RO": 2567,
+        "cs.CV": 2486,
+        "cs.DB": 341
+      }
+    },
+    {
+      "id": 15,
+      "label": "video \u00b7 temporal \u00b7 videos",
+      "top_terms": [
+        "video",
+        "temporal",
+        "videos",
+        "frames",
+        "motion",
+        "frame",
+        "action",
+        "recognition",
+        "video generation",
+        "visual"
+      ],
+      "npmi": 0.2313,
+      "papers_by_year": {
+        "2015": 267,
+        "2016": 478,
+        "2017": 635,
+        "2018": 875,
+        "2019": 1150,
+        "2020": 1482,
+        "2021": 1741,
+        "2022": 2012,
+        "2023": 2388,
+        "2024": 3266,
+        "2025": 4599,
+        "2026": 5150
+      },
+      "representative_papers": [
+        {
+          "id": "2203.06890",
+          "title": "Attention based Memory video portrait matting",
+          "year": 2022,
+          "primary": "cs.CV",
+          "share": 0.773
+        },
+        {
+          "id": "2003.02115",
+          "title": "VESR-Net: The Winning Solution to Youku Video Enhancement and Super-Resolution Challenge",
+          "year": 2020,
+          "primary": "cs.CV",
+          "share": 0.749
+        },
+        {
+          "id": "1910.06737",
+          "title": "Integrating Temporal and Spatial Attentions for VATEX Video Captioning Challenge 2019",
+          "year": 2019,
+          "primary": "cs.CV",
+          "share": 0.747
+        },
+        {
+          "id": "2005.01233",
+          "title": "AIM 2019 Challenge on Video Temporal Super-Resolution: Methods and Results",
+          "year": 2020,
+          "primary": "cs.CV",
+          "share": 0.738
+        },
+        {
+          "id": "2309.11881",
+          "title": "Using Saliency and Cropping to Improve Video Memorability",
+          "year": 2023,
+          "primary": "cs.CV",
+          "share": 0.726
+        }
+      ],
+      "category_mix": {
+        "cs.CV": 22598,
+        "cs.RO": 657,
+        "cs.CL": 526,
+        "cs.CR": 196,
+        "cs.DB": 66
+      }
+    },
+    {
+      "id": 16,
+      "label": "estimation \u00b7 pose \u00b7 localization",
+      "top_terms": [
+        "estimation",
+        "pose",
+        "localization",
+        "depth",
+        "camera",
+        "slam",
+        "pose estimation",
+        "mapping",
+        "sensor",
+        "map"
+      ],
+      "npmi": 0.1924,
+      "papers_by_year": {
+        "2015": 269,
+        "2016": 479,
+        "2017": 711,
+        "2018": 1047,
+        "2019": 1284,
+        "2020": 1589,
+        "2021": 1923,
+        "2022": 2128,
+        "2023": 2600,
+        "2024": 3388,
+        "2025": 3814,
+        "2026": 4188
+      },
+      "representative_papers": [
+        {
+          "id": "2402.04953",
+          "title": "4-Dimensional deformation part model for pose estimation using Kalman filter constraints",
+          "year": 2024,
+          "primary": "cs.CV",
+          "share": 0.882
+        },
+        {
+          "id": "2303.08550",
+          "title": "UMS-VINS: United Monocular-Stereo Features for Visual-Inertial Tightly Coupled Odometry",
+          "year": 2023,
+          "primary": "cs.RO",
+          "share": 0.876
+        },
+        {
+          "id": "1908.08891",
+          "title": "Flexible Trinocular: Non-rigid Multi-Camera-IMU Dense Reconstruction for UAV Navigation and Mapping",
+          "year": 2019,
+          "primary": "cs.RO",
+          "share": 0.869
+        },
+        {
+          "id": "1702.02175",
+          "title": "Keyframe-Based Visual-Inertial Online SLAM with Relocalization",
+          "year": 2017,
+          "primary": "cs.CV",
+          "share": 0.846
+        },
+        {
+          "id": "2608.10938",
+          "title": "GS-CPE: Unified 6-Degree-of-Freedom Camera Pose Estimation via 3D Gaussian Splatting",
+          "year": 2026,
+          "primary": "cs.CV",
+          "share": 0.839
+        }
+      ],
+      "category_mix": {
+        "cs.CV": 16534,
+        "cs.RO": 6402,
+        "cs.CR": 208,
+        "cs.CL": 176,
+        "cs.DB": 100
+      }
+    },
+    {
+      "id": 17,
+      "label": "manipulation \u00b7 action \u00b7 policy",
+      "top_terms": [
+        "manipulation",
+        "action",
+        "policy",
+        "tasks",
+        "robotic",
+        "policies",
+        "vla",
+        "success",
+        "demonstrations",
+        "robotic manipulation"
+      ],
+      "npmi": 0.2507,
+      "papers_by_year": {
+        "2015": 17,
+        "2016": 47,
+        "2017": 79,
+        "2018": 130,
+        "2019": 220,
+        "2020": 293,
+        "2021": 345,
+        "2022": 481,
+        "2023": 684,
+        "2024": 1108,
+        "2025": 2277,
+        "2026": 4844
+      },
+      "representative_papers": [
+        {
+          "id": "2603.08122",
+          "title": "Towards Human-Like Manipulation through RL-Augmented Teleoperation and Mixture-of-Dexterous-Experts VLA",
+          "year": 2026,
+          "primary": "cs.RO",
+          "share": 0.816
+        },
+        {
+          "id": "2609.28955",
+          "title": "ActGaze: Learning Action-Grounded Gaze through Counterfactual Visual Interventions for High-Precision Manipulation",
+          "year": 2026,
+          "primary": "cs.RO",
+          "share": 0.806
+        },
+        {
+          "id": "2501.10356",
+          "title": "DexForce: Extracting Force-informed Actions from Kinesthetic Demonstrations for Dexterous Manipulation",
+          "year": 2025,
+          "primary": "cs.RO",
+          "share": 0.782
+        },
+        {
+          "id": "2603.09542",
+          "title": "NS-VLA: Towards Neuro-Symbolic Vision-Language-Action Models",
+          "year": 2026,
+          "primary": "cs.RO",
+          "share": 0.77
+        },
+        {
+          "id": "2609.22684",
+          "title": "StateMem: Single-State Residual Memory with Adaptive Inference for Vision-Language-Action Policies",
+          "year": 2026,
+          "primary": "cs.RO",
+          "share": 0.768
+        }
+      ],
+      "category_mix": {
+        "cs.RO": 8880,
+        "cs.CV": 1348,
+        "cs.CL": 178,
+        "cs.CR": 113,
+        "cs.DB": 6
+      }
+    },
+    {
+      "id": 18,
+      "label": "graph \u00b7 graphs \u00b7 knowledge",
+      "top_terms": [
+        "graph",
+        "graphs",
+        "knowledge",
+        "knowledge graph",
+        "knowledge graphs",
+        "nodes",
+        "entities",
+        "edges",
+        "relations",
+        "entity"
+      ],
+      "npmi": 0.2862,
+      "papers_by_year": {
+        "2015": 218,
+        "2016": 258,
+        "2017": 348,
+        "2018": 526,
+        "2019": 855,
+        "2020": 1185,
+        "2021": 1398,
+        "2022": 1419,
+        "2023": 1639,
+        "2024": 1759,
+        "2025": 1936,
+        "2026": 1952
+      },
+      "representative_papers": [
+        {
+          "id": "2109.09391",
+          "title": "Statistics of Knowledge Graphs Based On The Conceptual Schema",
+          "year": 2021,
+          "primary": "cs.DB",
+          "share": 0.874
+        },
+        {
+          "id": "2508.02548",
+          "title": "The KG-ER Conceptual Schema Language",
+          "year": 2025,
+          "primary": "cs.DB",
+          "share": 0.799
+        },
+        {
+          "id": "2012.07011",
+          "title": "Context-Enhanced Entity and Relation Embedding for Knowledge Graph Completion",
+          "year": 2020,
+          "primary": "cs.CL",
+          "share": 0.787
+        },
+        {
+          "id": "1808.02856",
+          "title": "On the Solvability of Viewing Graphs",
+          "year": 2018,
+          "primary": "cs.CV",
+          "share": 0.784
+        },
+        {
+          "id": "1907.03936",
+          "title": "Property Graph Exchange Format",
+          "year": 2019,
+          "primary": "cs.DB",
+          "share": 0.759
+        }
+      ],
+      "category_mix": {
+        "cs.CL": 5093,
+        "cs.CV": 4416,
+        "cs.DB": 1478,
+        "cs.RO": 1256,
+        "cs.CR": 1250
+      }
+    },
+    {
+      "id": 19,
+      "label": "question \u00b7 answering \u00b7 question answering",
+      "top_terms": [
+        "question",
+        "answering",
+        "question answering",
+        "reasoning",
+        "questions",
+        "answer",
+        "qa",
+        "retrieval",
+        "answers",
+        "visual"
+      ],
+      "npmi": 0.379,
+      "papers_by_year": {
+        "2015": 88,
+        "2016": 190,
+        "2017": 266,
+        "2018": 420,
+        "2019": 671,
+        "2020": 870,
+        "2021": 1028,
+        "2022": 1226,
+        "2023": 1842,
+        "2024": 3102,
+        "2025": 5213,
+        "2026": 6406
+      },
+      "representative_papers": [
+        {
+          "id": "1909.07598",
+          "title": "Multi-step Entity-centric Information Retrieval for Multi-Hop Question Answering",
+          "year": 2019,
+          "primary": "cs.CL",
+          "share": 0.878
+        },
+        {
+          "id": "2211.09401",
+          "title": "Open-Domain Conversational Question Answering with Historical Answers",
+          "year": 2022,
+          "primary": "cs.CL",
+          "share": 0.874
+        },
+        {
+          "id": "2410.15512",
+          "title": "Reverse Question Answering: Can an LLM Write a Question so Hard (or Bad) that it Can't Answer?",
+          "year": 2024,
+          "primary": "cs.CL",
+          "share": 0.871
+        },
+        {
+          "id": "2002.09919",
+          "title": "Do Multi-Hop Question Answering Systems Know How to Answer the Single-Hop Sub-Questions?",
+          "year": 2020,
+          "primary": "cs.CL",
+          "share": 0.867
+        },
+        {
+          "id": "2009.07465",
+          "title": "Answering Any-hop Open-domain Questions with Iterative Document Reranking",
+          "year": 2020,
+          "primary": "cs.CL",
+          "share": 0.86
+        }
+      ],
+      "category_mix": {
+        "cs.CL": 13029,
+        "cs.CV": 7162,
+        "cs.CR": 543,
+        "cs.DB": 326,
+        "cs.RO": 262
+      }
+    },
+    {
+      "id": 20,
+      "label": "evaluation \u00b7 dataset \u00b7 benchmark",
+      "top_terms": [
+        "evaluation",
+        "dataset",
+        "benchmark",
+        "metrics",
+        "human",
+        "datasets",
+        "evaluating",
+        "available",
+        "quality",
+        "evaluate"
+      ],
+      "npmi": 0.0821,
+      "papers_by_year": {
+        "2015": 175,
+        "2016": 330,
+        "2017": 531,
+        "2018": 859,
+        "2019": 1183,
+        "2020": 1805,
+        "2021": 2196,
+        "2022": 2656,
+        "2023": 3996,
+        "2024": 6271,
+        "2025": 8698,
+        "2026": 8787
+      },
+      "representative_papers": [
+        {
+          "id": "2007.05374",
+          "title": "SacreROUGE: An Open-Source Library for Using and Developing Summarization Evaluation Metrics",
+          "year": 2020,
+          "primary": "cs.CL",
+          "share": 0.834
+        },
+        {
+          "id": "2406.11228",
+          "title": "ComperDial: Commonsense Persona-grounded Dialogue Dataset and Benchmark",
+          "year": 2024,
+          "primary": "cs.CL",
+          "share": 0.831
+        },
+        {
+          "id": "2206.09403",
+          "title": "MME-CRS: Multi-Metric Evaluation Based on Correlation Re-Scaling for Evaluating Open-Domain Dialogue",
+          "year": 2022,
+          "primary": "cs.CL",
+          "share": 0.812
+        },
+        {
+          "id": "2011.04096",
+          "title": "Metrics also Disagree in the Low Scoring Range: Revisiting Summarization Evaluation Metrics",
+          "year": 2020,
+          "primary": "cs.CL",
+          "share": 0.805
+        },
+        {
+          "id": "2502.09416",
+          "title": "Rethinking Evaluation Metrics for Grammatical Error Correction: Why Use a Different Evaluation Process than Human?",
+          "year": 2025,
+          "primary": "cs.CL",
+          "share": 0.798
+        }
+      ],
+      "category_mix": {
+        "cs.CL": 17904,
+        "cs.CV": 16046,
+        "cs.CR": 1545,
+        "cs.RO": 1368,
+        "cs.DB": 624
+      }
+    },
+    {
+      "id": 21,
+      "label": "robot \u00b7 robots \u00b7 human",
+      "top_terms": [
+        "robot",
+        "robots",
+        "human",
+        "interaction",
+        "human-robot",
+        "environments",
+        "mobile",
+        "navigation",
+        "robotic",
+        "environment"
+      ],
+      "npmi": 0.184,
+      "papers_by_year": {
+        "2015": 155,
+        "2016": 310,
+        "2017": 511,
+        "2018": 712,
+        "2019": 1022,
+        "2020": 1324,
+        "2021": 1637,
+        "2022": 1925,
+        "2023": 2485,
+        "2024": 3223,
+        "2025": 3345,
+        "2026": 3210
+      },
+      "representative_papers": [
+        {
+          "id": "2211.05572",
+          "title": "Modular Robots: extending the capabilities of one robot",
+          "year": 2022,
+          "primary": "cs.RO",
+          "share": 0.94
+        },
+        {
+          "id": "2005.01527",
+          "title": "Proceedings of the 2020 Workshop on Assessing, Explaining, and Conveying Robot Proficiency for Human-Robot Teaming",
+          "year": 2020,
+          "primary": "cs.RO",
+          "share": 0.939
+        },
+        {
+          "id": "1905.01065",
+          "title": "MobiKa - Low-Cost Mobile Robot for Human-Robot Interaction",
+          "year": 2019,
+          "primary": "cs.RO",
+          "share": 0.911
+        },
+        {
+          "id": "2203.07543",
+          "title": "Sugar, Salt & Pepper -- Humanoid robotics for autism",
+          "year": 2022,
+          "primary": "cs.RO",
+          "share": 0.904
+        },
+        {
+          "id": "1705.05464",
+          "title": "Dise\\~na, Fabrica y Programa Tu Propio Robot",
+          "year": 2017,
+          "primary": "cs.RO",
+          "share": 0.9
+        }
+      ],
+      "category_mix": {
+        "cs.RO": 18185,
+        "cs.CV": 1112,
+        "cs.CL": 383,
+        "cs.CR": 158,
+        "cs.DB": 21
+      }
+    },
+    {
+      "id": 22,
+      "label": "autonomous \u00b7 driving \u00b7 autonomous driving",
+      "top_terms": [
+        "autonomous",
+        "driving",
+        "autonomous driving",
+        "vehicles",
+        "vehicle",
+        "safety",
+        "traffic",
+        "autonomous vehicles",
+        "scenarios",
+        "perception"
+      ],
+      "npmi": 0.3697,
+      "papers_by_year": {
+        "2015": 52,
+        "2016": 127,
+        "2017": 221,
+        "2018": 458,
+        "2019": 691,
+        "2020": 979,
+        "2021": 1238,
+        "2022": 1333,
+        "2023": 1945,
+        "2024": 2513,
+        "2025": 2884,
+        "2026": 2420
+      },
+      "representative_papers": [
+        {
+          "id": "2103.02176",
+          "title": "Towards Fully Intelligent Transportation through Infrastructure-Vehicle Cooperative Autonomous Driving: Challenges and Opportunities",
+          "year": 2021,
+          "primary": "cs.RO",
+          "share": 0.907
+        },
+        {
+          "id": "2305.20071",
+          "title": "Assessing the Criticality of Longitudinal Driving Scenarios using Time Series Data",
+          "year": 2023,
+          "primary": "cs.RO",
+          "share": 0.877
+        },
+        {
+          "id": "2409.02556",
+          "title": "Want a Ride? Attitudes Towards Autonomous Driving and Behavior in Autonomous Vehicles",
+          "year": 2024,
+          "primary": "cs.RO",
+          "share": 0.869
+        },
+        {
+          "id": "2409.01504",
+          "title": "Situation-aware Autonomous Driving Decision Making with Cooperative Perception on Demand",
+          "year": 2024,
+          "primary": "cs.RO",
+          "share": 0.867
+        },
+        {
+          "id": "2208.14052",
+          "title": "Intelligent Perception System for Vehicle-Road Cooperation",
+          "year": 2022,
+          "primary": "cs.RO",
+          "share": 0.852
+        }
+      ],
+      "category_mix": {
+        "cs.CV": 7081,
+        "cs.RO": 6893,
+        "cs.CR": 741,
+        "cs.CL": 112,
+        "cs.DB": 34
+      }
+    },
+    {
+      "id": 23,
+      "label": "training \u00b7 learning \u00b7 domain",
+      "top_terms": [
+        "training",
+        "learning",
+        "domain",
+        "adaptation",
+        "target",
+        "samples",
+        "transfer",
+        "knowledge",
+        "datasets",
+        "training data"
+      ],
+      "npmi": 0.1103,
+      "papers_by_year": {
+        "2015": 348,
+        "2016": 690,
+        "2017": 1201,
+        "2018": 2039,
+        "2019": 2946,
+        "2020": 4503,
+        "2021": 5811,
+        "2022": 7053,
+        "2023": 8230,
+        "2024": 8568,
+        "2025": 7717,
+        "2026": 6875
+      },
+      "representative_papers": [
+        {
+          "id": "2003.08264",
+          "title": "Cross-domain Self-supervised Learning for Domain Adaptation with Few Source Labels",
+          "year": 2020,
+          "primary": "cs.CV",
+          "share": 0.98
+        },
+        {
+          "id": "2207.04564",
+          "title": "Domain Confused Contrastive Learning for Unsupervised Domain Adaptation",
+          "year": 2022,
+          "primary": "cs.CL",
+          "share": 0.977
+        },
+        {
+          "id": "2106.16093",
+          "title": "Multi-Source domain adaptation via supervised contrastive learning and confident consistency regularization",
+          "year": 2021,
+          "primary": "cs.CV",
+          "share": 0.964
+        },
+        {
+          "id": "1903.09980",
+          "title": "Cluster Alignment with a Teacher for Unsupervised Domain Adaptation",
+          "year": 2019,
+          "primary": "cs.CV",
+          "share": 0.958
+        },
+        {
+          "id": "2109.01087",
+          "title": "On-target Adaptation",
+          "year": 2021,
+          "primary": "cs.CV",
+          "share": 0.956
+        }
+      ],
+      "category_mix": {
+        "cs.CV": 36700,
+        "cs.CL": 16118,
+        "cs.CR": 1474,
+        "cs.RO": 1446,
+        "cs.DB": 243
+      }
+    },
+    {
+      "id": 24,
+      "label": "translation \u00b7 machine translation \u00b7 languages",
+      "top_terms": [
+        "translation",
+        "machine translation",
+        "languages",
+        "machine",
+        "multilingual",
+        "neural machine",
+        "english",
+        "low-resource",
+        "nmt",
+        "mt"
+      ],
+      "npmi": 0.4721,
+      "papers_by_year": {
+        "2015": 151,
+        "2016": 323,
+        "2017": 502,
+        "2018": 776,
+        "2019": 1075,
+        "2020": 1371,
+        "2021": 1510,
+        "2022": 1507,
+        "2023": 1785,
+        "2024": 2159,
+        "2025": 2319,
+        "2026": 2237
+      },
+      "representative_papers": [
+        {
+          "id": "2109.14368",
+          "title": "EdinSaar@WMT21: North-Germanic Low-Resource Multilingual NMT",
+          "year": 2021,
+          "primary": "cs.CL",
+          "share": 0.964
+        },
+        {
+          "id": "2312.04764",
+          "title": "First Attempt at Building Parallel Corpora for Machine Translation of Northeast India's Very Low-Resource Languages",
+          "year": 2023,
+          "primary": "cs.CL",
+          "share": 0.936
+        },
+        {
+          "id": "2301.08008",
+          "title": "Improving Machine Translation with Phrase Pair Injection and Corpus Filtering",
+          "year": 2023,
+          "primary": "cs.CL",
+          "share": 0.931
+        },
+        {
+          "id": "1709.08898",
+          "title": "Improving a Multi-Source Neural Machine Translation Model with Corpus Extension for Low-Resource Languages",
+          "year": 2017,
+          "primary": "cs.CL",
+          "share": 0.923
+        },
+        {
+          "id": "2310.14644",
+          "title": "Multilingual k-Nearest-Neighbor Machine Translation",
+          "year": 2023,
+          "primary": "cs.CL",
+          "share": 0.92
+        }
+      ],
+      "category_mix": {
+        "cs.CL": 13551,
+        "cs.CV": 1707,
+        "cs.CR": 205,
+        "cs.RO": 150,
+        "cs.DB": 102
+      }
+    },
+    {
+      "id": 25,
+      "label": "segmentation \u00b7 semantic \u00b7 semantic segmentation",
+      "top_terms": [
+        "segmentation",
+        "semantic",
+        "semantic segmentation",
+        "image segmentation",
+        "instance",
+        "medical",
+        "instance segmentation",
+        "masks",
+        "segment",
+        "mask"
+      ],
+      "npmi": 0.2392,
+      "papers_by_year": {
+        "2015": 306,
+        "2016": 584,
+        "2017": 912,
+        "2018": 1529,
+        "2019": 1700,
+        "2020": 1986,
+        "2021": 2385,
+        "2022": 2674,
+        "2023": 3522,
+        "2024": 3837,
+        "2025": 4645,
+        "2026": 4783
+      },
+      "representative_papers": [
+        {
+          "id": "1910.04751",
+          "title": "Panoptic-DeepLab",
+          "year": 2019,
+          "primary": "cs.CV",
+          "share": 0.911
+        },
+        {
+          "id": "1706.00083",
+          "title": "Blood capillaries and vessels segmentation in optical coherence tomography angiogram using fuzzy C-means and Curvelet transform",
+          "year": 2017,
+          "primary": "cs.CV",
+          "share": 0.896
+        },
+        {
+          "id": "2304.10326",
+          "title": "Ensembling Instance and Semantic Segmentation for Panoptic Segmentation",
+          "year": 2023,
+          "primary": "cs.CV",
+          "share": 0.871
+        },
+        {
+          "id": "2204.01278",
+          "title": "Technical Report on Subspace Pyramid Fusion Network for Semantic Segmentation",
+          "year": 2022,
+          "primary": "cs.CV",
+          "share": 0.852
+        },
+        {
+          "id": "2411.14723",
+          "title": "Effective SAM Combination for Open-Vocabulary Semantic Segmentation",
+          "year": 2024,
+          "primary": "cs.CV",
+          "share": 0.808
+        }
+      ],
+      "category_mix": {
+        "cs.CV": 24934,
+        "cs.CL": 2618,
+        "cs.RO": 1007,
+        "cs.CR": 171,
+        "cs.DB": 133
+      }
+    },
+    {
+      "id": 26,
+      "label": "point \u00b7 cloud \u00b7 point cloud",
+      "top_terms": [
+        "point",
+        "cloud",
+        "point cloud",
+        "clouds",
+        "point clouds",
+        "points",
+        "lidar",
+        "registration",
+        "geometric",
+        "cloud registration"
+      ],
+      "npmi": 0.4426,
+      "papers_by_year": {
+        "2015": 167,
+        "2016": 261,
+        "2017": 414,
+        "2018": 538,
+        "2019": 800,
+        "2020": 1121,
+        "2021": 1241,
+        "2022": 1495,
+        "2023": 1838,
+        "2024": 2179,
+        "2025": 2165,
+        "2026": 1992
+      },
+      "representative_papers": [
+        {
+          "id": "2304.08929",
+          "title": "SDFReg: Learning Signed Distance Functions for Point Cloud Registration",
+          "year": 2023,
+          "primary": "cs.CV",
+          "share": 0.889
+        },
+        {
+          "id": "2301.06936",
+          "title": "The use of Octree in point cloud analysis with application to cultural heritage",
+          "year": 2022,
+          "primary": "cs.CV",
+          "share": 0.887
+        },
+        {
+          "id": "2503.18283",
+          "title": "Voxel-based Point Cloud Geometry Compression with Space-to-Channel Context",
+          "year": 2025,
+          "primary": "cs.CV",
+          "share": 0.883
+        },
+        {
+          "id": "2307.08992",
+          "title": "Arbitrary point cloud upsampling via Dual Back-Projection Network",
+          "year": 2023,
+          "primary": "cs.CV",
+          "share": 0.877
+        },
+        {
+          "id": "2402.07243",
+          "title": "PIVOT-Net: Heterogeneous Point-Voxel-Tree-based Framework for Point Cloud Compression",
+          "year": 2024,
+          "primary": "cs.CV",
+          "share": 0.874
+        }
+      ],
+      "category_mix": {
+        "cs.CV": 9863,
+        "cs.RO": 2263,
+        "cs.CR": 1240,
+        "cs.CL": 548,
+        "cs.DB": 297
+      }
+    },
+    {
+      "id": 27,
+      "label": "control \u00b7 controller \u00b7 dynamics",
+      "top_terms": [
+        "control",
+        "controller",
+        "dynamics",
+        "predictive",
+        "tracking",
+        "model predictive",
+        "predictive control",
+        "mpc",
+        "nonlinear",
+        "locomotion"
+      ],
+      "npmi": -0.506,
+      "papers_by_year": {
+        "2015": 151,
+        "2016": 268,
+        "2017": 412,
+        "2018": 552,
+        "2019": 774,
+        "2020": 1048,
+        "2021": 1295,
+        "2022": 1509,
+        "2023": 1805,
+        "2024": 2373,
+        "2025": 3168,
+        "2026": 4236
+      },
+      "representative_papers": [
+        {
+          "id": "2504.02255",
+          "title": "Bipedal Robust Walking on Uneven Footholds: Piecewise Slope LIPM with Discrete Model Predictive Control",
+          "year": 2025,
+          "primary": "cs.RO",
+          "share": 0.978
+        },
+        {
+          "id": "2411.06707",
+          "title": "Quadrotor Trajectory Tracking Using Linear and Nonlinear Model Predictive Control",
+          "year": 2024,
+          "primary": "cs.RO",
+          "share": 0.945
+        },
+        {
+          "id": "2503.12250",
+          "title": "Nonparametric adaptive payload tracking for an offshore crane",
+          "year": 2025,
+          "primary": "cs.RO",
+          "share": 0.939
+        },
+        {
+          "id": "2207.04375",
+          "title": "An Input-Output Feedback Linearization based Exponentially Stable Controller for Multi-UAV Payload Transport",
+          "year": 2022,
+          "primary": "cs.RO",
+          "share": 0.933
+        },
+        {
+          "id": "1705.05727",
+          "title": "A General Scheme Implicit Force Control for a Flexible-Link Manipulator",
+          "year": 2017,
+          "primary": "cs.RO",
+          "share": 0.931
+        }
+      ],
+      "category_mix": {
+        "cs.RO": 13434,
+        "cs.CV": 1942,
+        "cs.CR": 1334,
+        "cs.CL": 738,
+        "cs.DB": 143
+      }
+    },
+    {
+      "id": 28,
+      "label": "natural \u00b7 natural language \u00b7 language",
+      "top_terms": [
+        "natural",
+        "natural language",
+        "language",
+        "language processing",
+        "processing",
+        "nlp",
+        "tasks",
+        "processing nlp",
+        "language models",
+        "pre-trained"
+      ],
+      "npmi": 0.3235,
+      "papers_by_year": {
+        "2015": 182,
+        "2016": 391,
+        "2017": 544,
+        "2018": 874,
+        "2019": 1305,
+        "2020": 2066,
+        "2021": 2631,
+        "2022": 2922,
+        "2023": 3870,
+        "2024": 4149,
+        "2025": 3492,
+        "2026": 2143
+      },
+      "representative_papers": [
+        {
+          "id": "1906.11608",
+          "title": "Simple Natural Language Processing Tools for Danish",
+          "year": 2019,
+          "primary": "cs.CL",
+          "share": 0.866
+        },
+        {
+          "id": "1706.04872",
+          "title": "Towards a theory of word order. Comment on \"Dependency distance: a new perspective on syntactic patterns in natural language\" by Haitao Liu et al",
+          "year": 2017,
+          "primary": "cs.CL",
+          "share": 0.853
+        },
+        {
+          "id": "2404.00458",
+          "title": "Beyond One-Size-Fits-All: Multi-Domain, Multi-Task Framework for Embedding Model Selection",
+          "year": 2024,
+          "primary": "cs.CL",
+          "share": 0.85
+        },
+        {
+          "id": "2004.08900",
+          "title": "The Cost of Training NLP Models: A Concise Overview",
+          "year": 2020,
+          "primary": "cs.CL",
+          "share": 0.83
+        },
+        {
+          "id": "1607.05650",
+          "title": "A Supervised Authorship Attribution Framework for Bengali Language",
+          "year": 2016,
+          "primary": "cs.CL",
+          "share": 0.823
+        }
+      ],
+      "category_mix": {
+        "cs.CL": 19066,
+        "cs.CV": 3670,
+        "cs.RO": 915,
+        "cs.CR": 572,
+        "cs.DB": 346
+      }
+    },
+    {
+      "id": 29,
+      "label": "research \u00b7 challenges \u00b7 survey",
+      "top_terms": [
+        "research",
+        "challenges",
+        "survey",
+        "future",
+        "analysis",
+        "review",
+        "systems",
+        "ai",
+        "security",
+        "applications"
+      ],
+      "npmi": 0.1543,
+      "papers_by_year": {
+        "2015": 441,
+        "2016": 595,
+        "2017": 875,
+        "2018": 1177,
+        "2019": 1545,
+        "2020": 2199,
+        "2021": 2669,
+        "2022": 2979,
+        "2023": 4759,
+        "2024": 7580,
+        "2025": 7553,
+        "2026": 3658
+      },
+      "representative_papers": [
+        {
+          "id": "1608.06249",
+          "title": "A Survey on Honeypot Software and Data Analysis",
+          "year": 2016,
+          "primary": "cs.CR",
+          "share": 0.996
+        },
+        {
+          "id": "1702.04652",
+          "title": "Overview of Cyber Science and Technology Programs at the U.S. Army Research Laboratory",
+          "year": 2017,
+          "primary": "cs.CR",
+          "share": 0.96
+        },
+        {
+          "id": "1710.02964",
+          "title": "The Nuts and Bolts of Micropayments: A Survey",
+          "year": 2017,
+          "primary": "cs.CR",
+          "share": 0.95
+        },
+        {
+          "id": "1704.04697",
+          "title": "A Comprehensive Review of Smart Wheelchairs: Past, Present and Future",
+          "year": 2017,
+          "primary": "cs.RO",
+          "share": 0.938
+        },
+        {
+          "id": "2312.11292",
+          "title": "DFRWS EU 10-Year Review and Future Directions in Digital Forensic Research",
+          "year": 2023,
+          "primary": "cs.CR",
+          "share": 0.936
+        }
+      ],
+      "category_mix": {
+        "cs.CL": 10943,
+        "cs.CV": 9901,
+        "cs.CR": 9671,
+        "cs.RO": 3755,
+        "cs.DB": 1760
+      }
+    }
+  ],
+  "build_seconds": 211.6
+}

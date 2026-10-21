@@ -3,7 +3,7 @@ import { getEmergingTopics } from '../api/c3Api'
 import type { EmergingTopics, Keyword } from '../api/types'
 import { useLoad } from '../api/useLoad'
 import StateView from '../components/StateView'
-import { cardClass } from '../display'
+import { focusRing, panelClass, sectionTitleClass } from '../ui/styles'
 import { CATEGORY_COLORS, share } from './format'
 
 /** A tiny one-line trend of a keyword's yearly share, drawn in its category's colour. */
@@ -18,6 +18,20 @@ function Sparkline({ keyword, color }: { keyword: Keyword; color: string }) {
   )
 }
 
+/** The measured share of papers in the two periods, as two thin bars on one scale. */
+function ShareBars({ keyword, color, scale }: { keyword: Keyword; color: string; scale: number }) {
+  return (
+    <span aria-hidden="true" className="block w-32 space-y-1">
+      <span className="block h-1.5 rounded-r-full bg-slate-100">
+        <span className="block h-1.5 rounded-r-full bg-slate-400" style={{ width: `${(keyword.baseShare / scale) * 100}%` }} />
+      </span>
+      <span className="block h-1.5 rounded-r-full bg-slate-100">
+        <span className="block h-1.5 rounded-r-full" style={{ width: `${(keyword.recentShare / scale) * 100}%`, backgroundColor: color }} />
+      </span>
+    </span>
+  )
+}
+
 function KeywordsView({ topics }: { topics: EmergingTopics }) {
   const [selected, setSelected] = useState(topics.categories[0]?.code ?? '')
   const category = topics.categories.find((c) => c.code === selected) ?? topics.categories[0]
@@ -25,40 +39,56 @@ function KeywordsView({ topics }: { topics: EmergingTopics }) {
   const recent = topics.recentPeriod.join('–')
   if (!category) return null
   const color = CATEGORY_COLORS[category.code] ?? '#52514e'
+  const scale = Math.max(...category.keywords.map((k) => Math.max(k.baseShare, k.recentShare)), 0.0001)
 
   return (
-    <div className={cardClass}>
+    <div className={panelClass}>
       <div role="group" aria-label="Category" className="flex flex-wrap gap-2">
-        {topics.categories.map((c) => (
-          <button key={c.code} type="button" aria-pressed={c.code === category.code} onClick={() => setSelected(c.code)}
-            className={
-              'rounded-lg border px-3 py-1.5 text-sm font-medium ' +
-              (c.code === category.code ? 'border-indigo-600 bg-indigo-50 text-indigo-800' : 'border-slate-300 text-slate-700')
-            }>
-            {c.code} {c.name}
-          </button>
-        ))}
+        {topics.categories.map((c) => {
+          const active = c.code === category.code
+          return (
+            <button key={c.code} type="button" aria-pressed={active} onClick={() => setSelected(c.code)}
+              className={
+                'inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium ring-1 ring-inset transition ' + focusRing + ' ' +
+                (active ? 'bg-slate-900 text-white ring-slate-900' : 'bg-white text-slate-700 ring-slate-200 hover:bg-slate-50')
+              }>
+              <span aria-hidden="true" className="inline-block size-2.5 rounded-full" style={{ backgroundColor: CATEGORY_COLORS[c.code] }} />
+              {c.code} {c.name}
+            </button>
+          )
+        })}
       </div>
-      <ol className="mt-4 divide-y divide-slate-100" aria-label={`Rising keywords in ${category.code}`}>
+      <div className="mt-5 hidden grid-cols-[2rem_minmax(0,1fr)_8rem_10rem_5rem_6rem] gap-4 border-b border-slate-100 pb-2 text-xs font-semibold tracking-wide text-slate-500 uppercase md:grid">
+        <span>#</span>
+        <span>Keyword</span>
+        <span>{base} → {recent}</span>
+        <span>Share of papers</span>
+        <span className="text-right">Change</span>
+        <span>Yearly trend</span>
+      </div>
+      <ol className="divide-y divide-slate-100" aria-label={`Rising keywords in ${category.code}`}>
         {category.keywords.map((k) => {
           const latest = k.yearly[k.yearly.length - 1]
           return (
-            <li key={k.term} className="flex flex-wrap items-center gap-x-4 gap-y-1 py-2">
-              <span className="w-6 text-sm text-slate-500 tabular-nums">{k.rank}</span>
-              <span className="min-w-48 flex-1">
-                <span className="font-medium text-slate-900">{k.label}</span>
+            <li key={k.term} className="grid grid-cols-[2rem_minmax(0,1fr)] items-center gap-x-4 gap-y-2 py-3 md:grid-cols-[2rem_minmax(0,1fr)_8rem_10rem_5rem_6rem]">
+              <span className="inline-flex size-7 items-center justify-center rounded-lg bg-slate-100 text-xs font-semibold text-slate-600 tabular-nums">
+                {k.rank}
+              </span>
+              <span className="min-w-0">
+                <span className="block font-medium text-slate-900">{k.label}</span>
                 {k.similarTerms.length > 0 && (
-                  <span className="block text-xs text-slate-500">also counted as: {k.similarTerms.join(', ')}</span>
+                  <span className="block truncate text-xs text-slate-500">also counted as: {k.similarTerms.join(', ')}</span>
                 )}
               </span>
-              <span className="text-sm text-slate-700 tabular-nums">
-                {share(k.baseShare)} → {share(k.recentShare)} of papers
+              <span className="col-start-2 text-sm text-slate-700 tabular-nums md:col-start-auto">
+                {share(k.baseShare)} → {share(k.recentShare)}
               </span>
-              <span className="w-20 text-right text-sm font-medium text-green-800 tabular-nums">
+              <span className="col-start-2 md:col-start-auto"><ShareBars keyword={k} color={color} scale={scale} /></span>
+              <span className="col-start-2 text-sm font-semibold text-emerald-700 tabular-nums md:col-start-auto md:text-right">
                 {k.changePercentagePoints > 0 ? '+' : ''}
                 {k.changePercentagePoints.toFixed(1)} pts
               </span>
-              <Sparkline keyword={k} color={color} />
+              <span className="col-start-2 md:col-start-auto"><Sparkline keyword={k} color={color} /></span>
               {latest && (
                 <span className="sr-only">
                   In {latest.year}, {latest.papersWithTerm} of {latest.papers} papers mentioned it.
@@ -68,9 +98,9 @@ function KeywordsView({ topics }: { topics: EmergingTopics }) {
           )
         })}
       </ol>
-      <p className="mt-3 text-xs text-slate-500">
-        Share of {category.code} papers whose title or abstract contains the term, {base} compared with {recent}. Only
-        terms in at least {share(topics.minimumShare, 0)} of recent papers are listed. {topics.basis}
+      <p className="mt-4 text-xs text-slate-500">
+        Share of {category.code} papers whose title or abstract contains the term, {base} (grey bar) compared with {recent}
+        {' '}(coloured bar). Only terms in at least {share(topics.minimumShare, 0)} of recent papers are listed. {topics.basis}
       </p>
     </div>
   )
@@ -79,8 +109,8 @@ function KeywordsView({ topics }: { topics: EmergingTopics }) {
 export default function KeywordsSection() {
   const { state, reload } = useLoad(getEmergingTopics, 'emerging-topics')
   return (
-    <section aria-labelledby="keywords-heading">
-      <h2 id="keywords-heading" className="text-lg font-semibold text-slate-900">
+    <section id="keywords" aria-labelledby="keywords-heading" className="scroll-mt-16">
+      <h2 id="keywords-heading" className={sectionTitleClass}>
         Historically rising keywords
       </h2>
       <p className="mt-1 mb-4 text-sm text-slate-600">

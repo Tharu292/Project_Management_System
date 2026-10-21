@@ -18,6 +18,8 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.config import Settings
 from app.model_store import MIN_RECOGNISED_TERMS, ModelStore
+from app.gap_store import GAP_BUILD_HINT, GapStore
+from app.opportunity_store import BUILD_HINT, OpportunityStore
 from app.reports_store import ReportsStore
 from ml.categories import category_name
 
@@ -28,6 +30,13 @@ ABSTRACT_MIN_WORDS, ABSTRACT_MAX_WORDS, ABSTRACT_MAX_CHARS = 30, 1000, 10_000
 SCORE_NOTE = (
     "Decision scores are the Linear SVM's raw margins. They only rank the categories for this text; "
     "they are not probabilities or confidence levels and must not be shown as percentages."
+)
+
+
+OPPORTUNITY_BASIS = (
+    "Potential research directions derived from real arXiv papers: similar-paper retrieval (TF-IDF), an NMF "
+    "topic model and topic-combination coverage over time. Low coverage in this corpus is not proof of a "
+    "research gap, and no direction is claimed to be unexplored or novel."
 )
 
 
@@ -101,6 +110,8 @@ def create_app(settings=None):
     settings = settings or Settings.from_env()
     model = ModelStore(settings.model_path, settings.model_info_path).load()
     reports = ReportsStore(settings.reports_dir).load()
+    opportunity = OpportunityStore(settings.opportunity_dir)
+    gap = GapStore(settings.gap_dir, opportunity)
     if model.error:
         logger.warning(model.error)
 
@@ -110,7 +121,8 @@ def create_app(settings=None):
                     "for Component 3. Called by the Spring Boot backend; not exposed to browsers directly.",
         version="1.0.0",
     )
-    app.state.model, app.state.reports = model, reports
+    app.state.model, app.state.reports, app.state.opportunity = model, reports, opportunity
+    app.state.gap = gap
 
     # ------------------------------------------------------------ errors
 
@@ -198,6 +210,10 @@ def create_app(settings=None):
             "evaluationReportsLoaded": reports.metrics_loaded,
             "trendsLoaded": reports.trends_loaded,
             "modelMatchesReports": matches,
+            "opportunityAnalysisAvailable": opportunity.available,
+            "opportunityAnalysisLoaded": opportunity.loaded,
+            "gapAnalysisAvailable": gap.available,
+            "gapAnalysisLoaded": gap.loaded,
         }
 
     @app.post("/api/v1/predict")
@@ -244,6 +260,58 @@ def create_app(settings=None):
         require_trends()
         check_category(category)
         return reports.keywords(category, direction, limit)
+
+    @app.post("/api/v1/opportunities")
+    def opportunities(request: PredictRequest):
+        engine = opportunity.engine()
+        if engine is None:
+            raise ApiProblem(503, "The research opportunity analysis is not available. "
+                                  + (opportunity.error or BUILD_HINT))
+        analysis = engine.analyse(request.title, request.abstract)
+        if analysis["recognisedTerms"] < MIN_RECOGNISED_TERMS:
+            raise ApiProblem(400, "The text could not be analysed.", {
+                "abstract": f"The text contains too few terms the index recognises ({analysis['recognisedTerms']} "
+                            f"found, at least {MIN_RECOGNISED_TERMS} needed). Enter an English research title and abstract."})
+        classification = None
+        if model.loaded:
+            ranking, _ = model.classify(request.title, request.abstract)
+            classification = {"category": ranking[0][0], "categoryName": category_name(ranking[0][0]),
+                              "modelVersion": model.version,
+                              "ranking": [{"rank": i, "category": c, "categoryName": category_name(c)}
+                                          for i, (c, _) in enumerate(ranking, start=1)]}
+        return {"basis": OPPORTUNITY_BASIS, "classification": classification, **analysis}
+
+    @app.get("/api/v1/opportunities/evaluation")
+    def opportunity_evaluation():
+        if reports.opportunity is None:
+            raise ApiProblem(503, "The research opportunity evaluation reports are not available.")
+        return {"available": opportunity.available, **reports.opportunity_evaluation()}
+
+    @app.post("/api/v1/gap-analysis")
+    def gap_analysis(request: PredictRequest):
+        analyser = gap.analyser()
+        if analyser is None:
+            raise ApiProblem(503, "The aspect-level gap analysis is not available. "
+                                  + (gap.error or opportunity.error or GAP_BUILD_HINT))
+        result = analyser.analyse(request.title, request.abstract)
+        if result["recognisedTerms"] < MIN_RECOGNISED_TERMS:
+            raise ApiProblem(400, "The text could not be analysed.", {
+                "abstract": f"The text contains too few terms the index recognises ({result['recognisedTerms']} "
+                            f"found, at least {MIN_RECOGNISED_TERMS} needed). Enter an English research title and abstract."})
+        return result
+
+    @app.get("/api/v1/gap-analysis/evaluation")
+    def gap_evaluation():
+        if reports.gap is None:
+            raise ApiProblem(503, "The gap analysis reports are not available.")
+        review = reports.gap["review"]
+        return {
+            "available": gap.available,
+            "evidenceLevel": "abstract",
+            "evidenceStore": reports.gap["evidence"],
+            "manualReview": review or {"labelled": False, "status": "No manual labels yet: extraction precision, "
+                                       "recall and gap-identification accuracy are NOT measured."},
+        }
 
     return app
 

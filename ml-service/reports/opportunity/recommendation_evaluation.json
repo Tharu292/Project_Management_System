@@ -1,0 +1,35 @@
+{
+  "status": "No expert ratings yet: recommendation accuracy is NOT measured. The figures below are automatic checks of grounding, agreement and stability, plus a backtest of the growth factor.",
+  "queries": {
+    "count": 100,
+    "selection": "hash-ranked corpus papers first submitted in 2026 (seed 44); each query paper is excluded from its own neighbours and supporting papers"
+  },
+  "directions_returned": 500,
+  "groundedness_share_with_3plus_supporting_papers": 1.0,
+  "availability_share_with_3plus_directions": 1.0,
+  "topic_agreement_share": 0.792,
+  "stability_mean_jaccard_top5_after_dropping_20pct_words": 0.763,
+  "dataset_coverage_warning_share": 0.104,
+  "temporal_backtest_of_growth_signal": {
+    "question": "Did topic pairs that grew from 2016-17 to 2020-21 keep growing to 2024-25?",
+    "pairs": 255,
+    "min_papers_per_window": 10,
+    "spearman_rho": 0.2305,
+    "p_value": 0.0002053710611939907,
+    "later_growth_median_top_quartile_earlier": -0.0891,
+    "later_growth_median_other_pairs": -0.3547,
+    "note": "Tests only whether the growth factor carries information about later growth; it is not a test of whether a suggested direction is a real research gap."
+  },
+  "expert_review": {
+    "done": false,
+    "sheet": "reports/opportunity/expert_review_sheet.csv",
+    "rubric": [
+      "relevance_1to5",
+      "specificity_1to5",
+      "evidence_supports_claim_1to5",
+      "plausibly_less_studied_yes_no_unsure",
+      "reviewer",
+      "notes"
+    ]
+  }
+}

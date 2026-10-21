@@ -31,10 +31,15 @@ export default function LineChart({
   series,
   formatY,
   ariaLabel,
+  highlight = null,
+  onHighlight,
 }: {
   series: ChartSeries[]
   formatY: (value: number) => string
   ariaLabel: string
+  /** A series to emphasise (others fade); the legend toggles it when `onHighlight` is given. */
+  highlight?: string | null
+  onHighlight?: (key: string | null) => void
 }) {
   const [hoverX, setHoverX] = useState<number | null>(null)
   const xs = [...new Set(series.flatMap((s) => s.points.map((p) => p.x)))].sort((a, b) => a - b)
@@ -66,13 +71,37 @@ export default function LineChart({
 
   return (
     <div>
-      <ul className="mb-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-700" aria-label="Legend">
-        {series.map((s) => (
-          <li key={s.key} className="flex items-center gap-1.5">
-            <span aria-hidden="true" className="inline-block h-0.5 w-4 rounded" style={{ backgroundColor: s.color }} />
-            {s.label}
-          </li>
-        ))}
+      <ul className="mb-3 flex flex-wrap gap-2 text-sm text-slate-700" aria-label="Areas in the chart">
+        {series.map((s) => {
+          const swatch = <span aria-hidden="true" className="inline-block h-1 w-4 rounded" style={{ backgroundColor: s.color }} />
+          return (
+            <li key={s.key}>
+              {onHighlight ? (
+                <button
+                  type="button"
+                  aria-pressed={highlight === s.key}
+                  onClick={() => onHighlight(highlight === s.key ? null : s.key)}
+                  className={
+                    'flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset transition ' +
+                    (highlight === s.key
+                      ? 'bg-slate-900 text-white ring-slate-900'
+                      : highlight
+                        ? 'bg-white text-slate-400 ring-slate-200 hover:text-slate-700'
+                        : 'bg-white text-slate-700 ring-slate-200 hover:bg-slate-50')
+                  }
+                >
+                  {swatch}
+                  {s.label}
+                </button>
+              ) : (
+                <span className="flex items-center gap-1.5 px-1">
+                  {swatch}
+                  {s.label}
+                </span>
+              )}
+            </li>
+          )
+        })}
       </ul>
       <div className="relative">
         <svg viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="h-auto w-full" role="img" aria-label={ariaLabel}>
@@ -95,16 +124,24 @@ export default function LineChart({
             <line x1={xScale(hoverX)} x2={xScale(hoverX)} y1={MARGIN.top} y2={MARGIN.top + plotHeight} stroke={MUTED}
               strokeWidth={1} />
           )}
-          {series.map((s) => (
-            <g key={s.key}>
-              <polyline fill="none" stroke={s.color} strokeWidth={2} strokeLinejoin="round" strokeLinecap="round"
-                points={s.points.map((p) => `${xScale(p.x)},${yScale(p.y)}`).join(' ')} />
-              {s.points.length > 0 && (
-                <circle cx={xScale(s.points[s.points.length - 1].x)} cy={yScale(s.points[s.points.length - 1].y)} r={4}
-                  fill={s.color} stroke={SURFACE} strokeWidth={2} />
-              )}
-            </g>
-          ))}
+          {[...series].sort((a, b) => Number(a.key === highlight) - Number(b.key === highlight)).map((s) => {
+            const line = s.points.map((p) => `${xScale(p.x)},${yScale(p.y)}`).join(' ')
+            const faded = highlight !== null && highlight !== s.key
+            const last = s.points[s.points.length - 1]
+            return (
+              <g key={s.key} opacity={faded ? 0.2 : 1}>
+                {highlight === s.key && s.points.length > 1 && (
+                  <polygon fill={s.color} opacity={0.1}
+                    points={`${xScale(s.points[0].x)},${yScale(0)} ${line} ${xScale(last.x)},${yScale(0)}`} />
+                )}
+                <polyline fill="none" stroke={s.color} strokeWidth={highlight === s.key ? 2.5 : 2} strokeLinejoin="round"
+                  strokeLinecap="round" points={line} />
+                {last && (
+                  <circle cx={xScale(last.x)} cy={yScale(last.y)} r={4} fill={s.color} stroke={SURFACE} strokeWidth={2} />
+                )}
+              </g>
+            )
+          })}
           {hovered.map(({ s, point }) => (
             <circle key={s.key} cx={xScale(point.x)} cy={yScale(point.y)} r={4} fill={s.color} stroke={SURFACE}
               strokeWidth={2} />

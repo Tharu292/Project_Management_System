@@ -1,15 +1,22 @@
 import { useState, type FormEvent } from 'react'
 import Alert from '../../../components/Alert'
-import { actionButtonClass, secondaryButtonClass } from '../../../components/AppShell'
 import FormField from '../../../components/FormField'
 import { createMeeting, listMeetings, recordMinutes } from '../api/c3Api'
 import type { Meeting } from '../api/types'
 import { useLoad } from '../api/useLoad'
 import StateView from '../components/StateView'
 import { TextAreaField } from '../components/fields'
-import { cardClass, formError, formatDateTime } from '../display'
+import { formError, formatDateTime } from '../display'
+import Badge from '../ui/Badge'
+import Collapsible from '../ui/Collapsible'
+import EmptyState from '../ui/EmptyState'
+import Icon from '../ui/Icon'
+import { panel, primaryButtonClass, quietButtonClass, sectionTitleClass } from '../ui/styles'
 
 type FormProblem = { message: string; fields: Record<string, string> } | null
+
+const month = new Intl.DateTimeFormat('en-GB', { month: 'short' })
+const timeOfDay = new Intl.DateTimeFormat('en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit' })
 
 function isWebAddress(value: string): boolean {
   return /^https?:\/\//i.test(value)
@@ -55,27 +62,36 @@ function NewMeetingForm({ projectId, onCreated }: { projectId: string; onCreated
   }
 
   return (
-    <form onSubmit={submit} className={cardClass + ' space-y-3'} aria-label="Schedule a meeting">
-      <h3 className="font-semibold text-slate-900">Schedule a meeting</h3>
-      {error && <Alert tone="error">{error.message}</Alert>}
-      <FormField id="meeting-title" label="Title" value={title} onChange={(e) => setTitle(e.target.value)}
-        maxLength={200} required error={error?.fields.title} />
+    <form onSubmit={submit} className="grid gap-3 sm:grid-cols-2" aria-label="Schedule a meeting">
+      {error && <div className="sm:col-span-2"><Alert tone="error">{error.message}</Alert></div>}
+      <div className="sm:col-span-2">
+        <FormField id="meeting-title" label="Title" value={title} onChange={(e) => setTitle(e.target.value)}
+          maxLength={200} required error={error?.fields.title} />
+      </div>
       <FormField id="meeting-when" label="Date and time" type="datetime-local" value={when}
         onChange={(e) => setWhen(e.target.value)} required error={error?.fields.scheduledAt} />
       <FormField id="meeting-duration" label="Duration (minutes)" type="number" min={1} max={1440} value={duration}
         onChange={(e) => setDuration(e.target.value)} error={error?.fields.durationMinutes} />
-      <FormField id="meeting-location" label="Location or meeting link" value={location}
-        onChange={(e) => setLocation(e.target.value)} maxLength={500} error={error?.fields.location} />
-      <TextAreaField id="meeting-agenda" label="Agenda" rows={3} value={agenda}
-        onChange={(e) => setAgenda(e.target.value)} maxLength={5000} error={error?.fields.agenda} />
-      <button type="submit" className={actionButtonClass} disabled={saving}>
-        {saving ? 'Saving…' : 'Schedule meeting'}
-      </button>
+      <div className="sm:col-span-2">
+        <FormField id="meeting-location" label="Location or meeting link" value={location}
+          onChange={(e) => setLocation(e.target.value)} maxLength={500} error={error?.fields.location} />
+      </div>
+      <div className="sm:col-span-2">
+        <TextAreaField id="meeting-agenda" label="Agenda" rows={3} value={agenda}
+          onChange={(e) => setAgenda(e.target.value)} maxLength={5000} error={error?.fields.agenda} />
+      </div>
+      <div className="sm:col-span-2">
+        <button type="submit" className={primaryButtonClass} disabled={saving}>
+          <Icon name="calendar" className="size-4" />
+          {saving ? 'Saving…' : 'Schedule meeting'}
+        </button>
+      </div>
     </form>
   )
 }
 
 function MinutesForm({ meeting, onRecorded }: { meeting: Meeting; onRecorded: () => void }) {
+  const [open, setOpen] = useState(false)
   const [minutes, setMinutes] = useState('')
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<FormProblem>(null)
@@ -94,71 +110,93 @@ function MinutesForm({ meeting, onRecorded }: { meeting: Meeting; onRecorded: ()
     }
   }
 
+  if (!open) {
+    return (
+      <button type="button" className={quietButtonClass + ' mt-4'} onClick={() => setOpen(true)}>
+        <Icon name="note" className="size-4" />
+        Record minutes
+      </button>
+    )
+  }
   return (
-    <form onSubmit={submit} className="mt-3 space-y-2" aria-label={`Minutes for ${meeting.title}`}>
+    <form onSubmit={submit} className="mt-4 space-y-2 rounded-xl bg-slate-50 p-4" aria-label={`Minutes for ${meeting.title}`}>
       {error && <Alert tone="error">{error.message}</Alert>}
-      <TextAreaField id={`minutes-${meeting.id}`} label="Minutes" rows={3} value={minutes}
+      <TextAreaField id={`minutes-${meeting.id}`} label="Minutes" rows={4} value={minutes}
         onChange={(e) => setMinutes(e.target.value)} maxLength={10000} required error={error?.fields.minutes}
         hint="Decisions, agreed actions and who does them. Minutes can be recorded once." />
-      <button type="submit" className={secondaryButtonClass} disabled={saving}>
-        {saving ? 'Saving…' : 'Record minutes'}
-      </button>
+      <div className="flex gap-2">
+        <button type="submit" className={primaryButtonClass} disabled={saving}>
+          {saving ? 'Saving…' : 'Save minutes'}
+        </button>
+        <button type="button" className={quietButtonClass} onClick={() => setOpen(false)}>
+          Cancel
+        </button>
+      </div>
     </form>
   )
 }
 
 function MeetingCard({ meeting, now, onChanged }: { meeting: Meeting; now: number; onChanged: () => void }) {
-  const started = new Date(meeting.scheduledAt).getTime() <= now
+  const at = new Date(meeting.scheduledAt)
+  const started = at.getTime() <= now
   return (
-    <li className={cardClass}>
-      <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 className="font-semibold text-slate-900">{meeting.title}</h3>
-        <span
-          className={
-            'rounded-full px-2 py-0.5 text-xs font-semibold ' +
-            (meeting.minutes
-              ? 'bg-green-100 text-green-800'
-              : started
-                ? 'bg-amber-100 text-amber-900'
-                : 'bg-indigo-100 text-indigo-800')
-          }
-        >
-          {meeting.minutes ? 'Minutes recorded' : started ? 'Minutes pending' : 'Upcoming'}
-        </span>
+    <li className={`${panel} flex gap-4 p-5`}>
+      <div className={
+        'flex w-16 shrink-0 flex-col items-center justify-center self-start rounded-xl py-2 ' +
+        (started ? 'bg-slate-100 text-slate-600' : 'bg-indigo-600 text-white shadow-sm shadow-indigo-600/20')
+      }>
+        <span className="text-xs font-semibold uppercase">{month.format(at)}</span>
+        <span className="text-2xl leading-none font-semibold">{at.getDate()}</span>
+        <span className="mt-0.5 text-[11px] opacity-80">{at.getFullYear()}</span>
       </div>
-      <p className="mt-1 text-sm text-slate-600">
-        {formatDateTime(meeting.scheduledAt)}
-        {meeting.durationMinutes ? ` · ${meeting.durationMinutes} min` : ''}
-        {meeting.location && (
-          <>
-            {' · '}
-            {isWebAddress(meeting.location) ? (
-              <a href={meeting.location} target="_blank" rel="noreferrer noopener" className="text-indigo-700 underline">
-                {meeting.location}
-              </a>
-            ) : (
-              meeting.location
-            )}
-          </>
-        )}
-      </p>
-      {meeting.agenda && (
-        <p className="mt-2 text-sm whitespace-pre-wrap text-slate-800">
-          <span className="font-medium">Agenda: </span>
-          {meeting.agenda}
-        </p>
-      )}
-      {meeting.minutes ? (
-        <div className="mt-3 rounded-lg bg-slate-50 px-3 py-2">
-          <p className="text-xs text-slate-500">
-            Minutes by {meeting.minutesRecordedBy?.name} · {formatDateTime(meeting.minutesRecordedAt ?? meeting.createdAt)}
-          </p>
-          <p className="mt-1 text-sm whitespace-pre-wrap text-slate-800">{meeting.minutes}</p>
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-wrap items-start justify-between gap-2">
+          <h4 className="font-semibold text-slate-900">{meeting.title}</h4>
+          {meeting.minutes ? (
+            <Badge tone="green" icon="check">Minutes recorded</Badge>
+          ) : started ? (
+            <Badge tone="amber" icon="hourglass">Minutes pending</Badge>
+          ) : (
+            <Badge tone="indigo" icon="calendar">Upcoming</Badge>
+          )}
         </div>
-      ) : (
-        started && <MinutesForm meeting={meeting} onRecorded={onChanged} />
-      )}
-      <p className="mt-3 text-xs text-slate-400">Scheduled by {meeting.createdBy.name}</p>
+        <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-600">
+          <span className="inline-flex items-center gap-1.5">
+            <Icon name="clock" className="size-4 text-slate-400" />
+            {timeOfDay.format(at)}
+            {meeting.durationMinutes ? ` · ${meeting.durationMinutes} min` : ''}
+          </span>
+          {meeting.location && (
+            <span className="inline-flex min-w-0 items-center gap-1.5">
+              <Icon name={isWebAddress(meeting.location) ? 'link' : 'pin'} className="size-4 text-slate-400" />
+              {isWebAddress(meeting.location) ? (
+                <a href={meeting.location} target="_blank" rel="noreferrer noopener" className="truncate text-indigo-700 underline">
+                  {meeting.location}
+                </a>
+              ) : (
+                meeting.location
+              )}
+            </span>
+          )}
+        </p>
+        {meeting.agenda && (
+          <p className="mt-3 text-sm whitespace-pre-wrap text-slate-700">
+            <span className="font-semibold text-slate-900">Agenda: </span>
+            {meeting.agenda}
+          </p>
+        )}
+        {meeting.minutes ? (
+          <div className="mt-4 rounded-xl border border-emerald-100 bg-emerald-50/60 p-4">
+            <p className="text-xs font-semibold text-emerald-800">
+              Minutes · {meeting.minutesRecordedBy?.name} · {formatDateTime(meeting.minutesRecordedAt ?? meeting.createdAt)}
+            </p>
+            <p className="mt-1 text-sm whitespace-pre-wrap text-slate-800">{meeting.minutes}</p>
+          </div>
+        ) : (
+          started && <MinutesForm meeting={meeting} onRecorded={onChanged} />
+        )}
+        <p className="mt-3 text-xs text-slate-400">Scheduled by {meeting.createdBy.name}</p>
+      </div>
     </li>
   )
 }
@@ -168,24 +206,48 @@ export default function MeetingsModule({ projectId }: { projectId: string }) {
   // Taken once per visit, so the page does not change between renders.
   const [now] = useState(() => Date.now())
   return (
-    <div className="grid gap-6 lg:grid-cols-[2fr_3fr]">
-      <NewMeetingForm projectId={projectId} onCreated={reload} />
-      <div>
-        <h3 className="mb-3 font-semibold text-slate-900">Meeting history</h3>
-        <StateView state={state} retry={reload} loadingText="Loading meetings…">
-          {(meetings) =>
-            meetings.length === 0 ? (
-              <p className="text-sm text-slate-500">No meetings yet.</p>
+    <StateView state={state} retry={reload} loadingText="Loading meetings…">
+      {(meetings) => {
+        const upcoming = meetings.filter((m) => new Date(m.scheduledAt).getTime() > now).reverse()
+        const past = meetings.filter((m) => new Date(m.scheduledAt).getTime() <= now)
+        return (
+          <div className="space-y-8">
+            <Collapsible icon="plus" title="Schedule a meeting" defaultOpen={meetings.length === 0}>
+              <NewMeetingForm projectId={projectId} onCreated={reload} />
+            </Collapsible>
+            {meetings.length === 0 ? (
+              <EmptyState icon="calendar" title="No meetings yet.">Schedule the first supervision meeting above.</EmptyState>
             ) : (
-              <ul className="space-y-3" aria-label="Meetings">
-                {meetings.map((m) => (
-                  <MeetingCard key={m.id} meeting={m} now={now} onChanged={reload} />
-                ))}
-              </ul>
-            )
-          }
-        </StateView>
-      </div>
-    </div>
+              <>
+                <section aria-labelledby="upcoming-heading">
+                  <h3 id="upcoming-heading" className={sectionTitleClass + ' mb-3 flex items-center gap-2'}>
+                    Upcoming <Badge tone="indigo">{String(upcoming.length)}</Badge>
+                  </h3>
+                  {upcoming.length === 0 ? (
+                    <p className="text-sm text-slate-500">No upcoming meetings.</p>
+                  ) : (
+                    <ul className="space-y-3" aria-label="Upcoming meetings">
+                      {upcoming.map((m) => <MeetingCard key={m.id} meeting={m} now={now} onChanged={reload} />)}
+                    </ul>
+                  )}
+                </section>
+                <section aria-labelledby="past-heading">
+                  <h3 id="past-heading" className={sectionTitleClass + ' mb-3 flex items-center gap-2'}>
+                    Meeting history <Badge tone="slate">{String(past.length)}</Badge>
+                  </h3>
+                  {past.length === 0 ? (
+                    <p className="text-sm text-slate-500">No past meetings yet.</p>
+                  ) : (
+                    <ul className="space-y-3" aria-label="Past meetings">
+                      {past.map((m) => <MeetingCard key={m.id} meeting={m} now={now} onChanged={reload} />)}
+                    </ul>
+                  )}
+                </section>
+              </>
+            )}
+          </div>
+        )
+      }}
+    </StateView>
   )
 }

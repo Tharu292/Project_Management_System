@@ -37,6 +37,10 @@ uvicorn app.main:app --host 127.0.0.1 --port 8000
 | `GET /api/v1/model/metrics` | Evaluation results (random and temporal splits, baselines, McNemar, per category) |
 | `GET /api/v1/trends?category=` | Annual counts, share of CS papers, growth (historical) |
 | `GET /api/v1/emerging-topics?category=&direction=rising\|falling&limit=1..10` | Historically rising (or falling) keywords with yearly counts |
+| `POST /api/v1/opportunities` | Similar real papers, topic profile, topic-combination coverage and 3–5 ranked potential research directions for a title and abstract (see `docs/opportunities.md`) |
+| `GET /api/v1/opportunities/evaluation` | Retrieval, topic-model and recommendation evaluation reports |
+| `POST /api/v1/gap-analysis` | Aspect-level gap analysis (abstract-level evidence): potential research gaps (evidence-supported, connected to the text, with uncertainty labels and cautions), coverage context, and raw quoted author statements (see `docs/gap_analysis.md`) |
+| `GET /api/v1/gap-analysis/evaluation` | Evidence-store statistics and the manual review status (metrics only once labels exist) |
 
 ### `POST /api/v1/predict`
 
@@ -119,6 +123,8 @@ python -m pytest
 | `tests/test_api.py` | 30 | Model loading, prediction, invalid inputs, missing and corrupt model files, trends, emerging topics and error handling |
 | `tests/test_generated_reports.py` | 20 | Consistency of the generated reports |
 | `tests/test_pipeline_units.py` | 16 | Unit tests of the pipeline helpers |
+| `tests/test_opportunity.py` | 15 | Research opportunity engine, API and evaluation reports (index-dependent tests skip when `models/opportunity` is not built) |
+| `tests/test_gap.py` | 22 | Gap-analysis rules, exact quotes, analyser consistency, API and review metrics (store-dependent tests skip when `models/gap` is not built) |
 
 Tests that need the trained model are skipped, with a reason, when `models/`
 has not been generated.

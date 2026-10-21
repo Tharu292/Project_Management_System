@@ -5,9 +5,13 @@ import type {
   ConversationKind,
   ConversationSummary,
   EmergingTopics,
+  GapAnalysis,
+  GapEvaluation,
   Evidence,
   Meeting,
   ModelMetrics,
+  OpportunityAnalysis,
+  OpportunityEvaluation,
   MyProject,
   Prediction,
   Reply,
@@ -76,3 +80,9 @@ export const predictTopic = (title: string, abstract: string) =>
 export const getTrends = () => apiRequest<Trends>(`${RESEARCH}/trends`, auth)
 export const getEmergingTopics = () => apiRequest<EmergingTopics>(`${RESEARCH}/emerging-topics`, auth)
 export const getModelMetrics = () => apiRequest<ModelMetrics>(`${RESEARCH}/model/metrics`, auth)
+export const analyseOpportunities = (title: string, abstract: string) =>
+  apiRequest<OpportunityAnalysis>(`${RESEARCH}/opportunities`, { ...auth, method: 'POST', body: { title, abstract } })
+export const getOpportunityEvaluation = () => apiRequest<OpportunityEvaluation>(`${RESEARCH}/opportunities/evaluation`, auth)
+export const analyseGaps = (title: string, abstract: string) =>
+  apiRequest<GapAnalysis>(`${RESEARCH}/gap-analysis`, { ...auth, method: 'POST', body: { title, abstract } })
+export const getGapEvaluation = () => apiRequest<GapEvaluation>(`${RESEARCH}/gap-analysis/evaluation`, auth)

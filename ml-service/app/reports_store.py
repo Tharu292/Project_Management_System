@@ -46,6 +46,8 @@ class ReportsStore:
         self.reports_dir = reports_dir
         self.metrics = {}
         self.trends = None
+        self.opportunity = None
+        self.gap = None
         self.errors = {}
 
     def load(self):
@@ -74,7 +76,48 @@ class ReportsStore:
             logger.warning("Trend reports unavailable: %s", exc)
             self.trends = None
             self.errors["trends"] = "The trend reports were not found."
+        try:
+            opportunity_dir = self.reports_dir / "opportunity"
+            self.opportunity = {
+                "retrieval": _json(opportunity_dir / "retrieval_metrics.json"),
+                "topics": _json(opportunity_dir / "topic_model.json"),
+                "recommendations": _json(opportunity_dir / "recommendation_evaluation.json"),
+            }
+        except (OSError, ValueError) as exc:
+            logger.warning("Opportunity evaluation reports unavailable: %s", exc)
+            self.opportunity = None
+        try:
+            gap_dir = self.reports_dir / "gap"
+            self.gap = {"evidence": _json(gap_dir / "evidence_store_stats.json")}
+            review = gap_dir / "review" / "review_status.json"
+            self.gap["review"] = _json(review) if review.is_file() else None
+        except (OSError, ValueError) as exc:
+            logger.warning("Gap analysis reports unavailable: %s", exc)
+            self.gap = None
         return self
+
+    def opportunity_evaluation(self):
+        """The retrieval, topic-model and recommendation evaluations, as generated (nothing recalculated)."""
+        topics = self.opportunity["topics"]
+        return {
+            "retrieval": self.opportunity["retrieval"],
+            "topicModel": {
+                "method": topics["method"],
+                "chosenK": topics["chosen_k"],
+                "selectionRule": topics["selection_rule"],
+                "selection": topics["selection"],
+                "trainingPapers": topics["training_papers"],
+                "referencePapers": topics["reference_papers"],
+                "topics": [
+                    {"id": t["id"], "label": t["label"], "topTerms": t["top_terms"], "npmi": t["npmi"],
+                     "lowerCoherence": t["npmi"] < 0,
+                     "representativePapers": [
+                         {"arxivId": p["id"], "title": p["title"], "year": p["year"], "primaryCategory": p["primary"],
+                          "url": f"https://arxiv.org/abs/{p['id']}"} for p in t["representative_papers"]]}
+                    for t in topics["topics"]],
+            },
+            "recommendations": self.opportunity["recommendations"],
+        }
 
     @property
     def metrics_loaded(self):

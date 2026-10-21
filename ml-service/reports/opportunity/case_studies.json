@@ -1,0 +1,3652 @@
+{
+  "cs.CV": {
+    "query": {
+      "arxivId": "2609.29638",
+      "title": "SpectralCTGaussians: Projection-Domain Reconstruction and Basis Material Decomposition for Spectral CT using 3D Gaussian Splatting Spectral computed tomography (CT) extends conventional CT by measuring attenuation across multiple energy channels, allowing improved modeling of physical X-ray interactions and energy-dependent material behavior and leading to richer scene understanding",
+      "primaryCategory": "cs.CV"
+    },
+    "result": {
+      "similarPapers": [
+        {
+          "arxivId": "2608.16463",
+          "title": "Shared-Structure 4D Spectral Gaussian Representation for Sparse-View Spectral CT Reconstruction",
+          "year": 2026,
+          "primaryCategory": "cs.CV",
+          "categoryName": "Computer Vision",
+          "url": "https://arxiv.org/abs/2608.16463",
+          "rank": 1,
+          "similarity": 0.2002
+        },
+        {
+          "arxivId": "2610.09492",
+          "title": "Gaussian Material Fields for Volumetric Multi-Energy CT Decomposition",
+          "year": 2026,
+          "primaryCategory": "cs.CV",
+          "categoryName": "Computer Vision",
+          "url": "https://arxiv.org/abs/2610.09492",
+          "rank": 2,
+          "similarity": 0.1889
+        },
+        {
+          "arxivId": "2604.01844",
+          "title": "FaCT-GS: Fast and Scalable CT Reconstruction with Gaussian Splatting",
+          "year": 2026,
+          "primaryCategory": "cs.CV",
+          "categoryName": "Computer Vision",
+          "url": "https://arxiv.org/abs/2604.01844",
+          "rank": 3,
+          "similarity": 0.1848
+        },
+        {
+          "arxivId": "2503.08596",
+          "title": "X-Field: A Physically Grounded Representation for 3D X-ray Reconstruction",
+          "year": 2025,
+          "primaryCategory": "cs.CV",
+          "categoryName": "Computer Vision",
+          "url": "https://arxiv.org/abs/2503.08596",
+          "rank": 4,
+          "similarity": 0.1831
+        },
+        {
+          "arxivId": "1810.10346",
+          "title": "Block Matching Frame based Material Reconstruction for Spectral CT",
+          "year": 2018,
+          "primaryCategory": "cs.CV",
+          "categoryName": "Computer Vision",
+          "url": "https://arxiv.org/abs/1810.10346",
+          "rank": 5,
+          "similarity": 0.1658
+        },
+        {
+          "arxivId": "2609.22849",
+          "title": "LINGO: Latent Initialization and Gradient Optimization for Sparse-view X-ray Novel View Synthesis and CT Reconstruction with 3D Gaussian Splatting",
+          "year": 2026,
+          "primaryCategory": "cs.CV",
+          "categoryName": "Computer Vision",
+          "url": "https://arxiv.org/abs/2609.22849",
+          "rank": 6,
+          "similarity": 0.1634
+        },
+        {
+          "arxivId": "1807.10610",
+          "title": "Non-local Low-rank Cube-based Tensor Factorization for Spectral CT Reconstruction",
+          "year": 2018,
+          "primaryCategory": "cs.CV",
+          "categoryName": "Computer Vision",
+          "url": "https://arxiv.org/abs/1807.10610",
+          "rank": 7,
+          "similarity": 0.1626
+        },
+        {
+          "arxivId": "2608.15343",
+          "title": "Feed-Forward Hierarchical Gaussian Diffusion for Extreme CT Reconstruction",
+          "year": 2026,
+          "primaryCategory": "cs.CV",
+          "categoryName": "Computer Vision",
+          "url": "https://arxiv.org/abs/2608.15343",
+          "rank": 8,
+          "similarity": 0.16
+        },
+        {
+          "arxivId": "2501.12369",
+          "title": "DARB-Splatting: Generalizing Splatting with Decaying Anisotropic Radial Basis Functions",
+          "year": 2025,
+          "primaryCategory": "cs.CV",
+          "categoryName": "Computer Vision",
+          "url": "https://arxiv.org/abs/2501.12369",
+          "rank": 9,
+          "similarity": 0.1588
+        },
+        {
+          "arxivId": "2607.14415",
+          "title": "$K$-NeAS: Scalable Multi-Material CT Reconstruction Using Neural SDFs",
+          "year": 2026,
+          "primaryCategory": "cs.CV",
+          "categoryName": "Computer Vision",
+          "url": "https://arxiv.org/abs/2607.14415",
+          "rank": 10,
+          "similarity": 0.1588
+        }
+      ],
+      "topicProfile": [
+        {
+          "topicId": 16,
+          "label": "estimation · pose · localization",
+          "topTerms": [
+            "estimation",
+            "pose",
+            "localization",
+            "depth",
+            "camera",
+            "slam"
+          ],
+          "weight": 0.1935,
+          "ownWeight": 0.1942,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 12,
+          "label": "generation · diffusion · diffusion models",
+          "topTerms": [
+            "generation",
+            "diffusion",
+            "diffusion models",
+            "generative",
+            "quality",
+            "latent"
+          ],
+          "weight": 0.1542,
+          "ownWeight": 0.1146,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 25,
+          "label": "segmentation · semantic · semantic segmentation",
+          "topTerms": [
+            "segmentation",
+            "semantic",
+            "semantic segmentation",
+            "image segmentation",
+            "instance",
+            "medical"
+          ],
+          "weight": 0.1208,
+          "ownWeight": 0.1903,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 3,
+          "label": "image · images · visual",
+          "topTerms": [
+            "image",
+            "images",
+            "visual",
+            "vision",
+            "features",
+            "medical"
+          ],
+          "weight": 0.0944,
+          "ownWeight": 0.0608,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 20,
+          "label": "evaluation · dataset · benchmark",
+          "topTerms": [
+            "evaluation",
+            "dataset",
+            "benchmark",
+            "metrics",
+            "human",
+            "datasets"
+          ],
+          "weight": 0.0697,
+          "ownWeight": 0.1148,
+          "lowerCoherence": false
+        }
+      ],
+      "directions": [
+        {
+          "rank": 1,
+          "title": "generation · diffusion · diffusion models  ×  estimation · pose · localization",
+          "topics": [
+            {
+              "topicId": 12,
+              "label": "generation · diffusion · diffusion models",
+              "topTerms": [
+                "generation",
+                "diffusion",
+                "diffusion models",
+                "generative",
+                "quality",
+                "latent"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 16,
+              "label": "estimation · pose · localization",
+              "topTerms": [
+                "estimation",
+                "pose",
+                "localization",
+                "depth",
+                "camera",
+                "slam"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "1206 papers in 2024–2025 cover both topics (1.10 in every 100 papers), against 27 in 2018–2019 (0.09 in every 100): their share grew. 25 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "well_covered",
+            "note": "Among the more covered topic combinations in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 1206,
+            "olderPapers": 27,
+            "recentShare": 0.01099,
+            "olderShare": 0.00089,
+            "growthLogRatio": 2.4114,
+            "similarPapersCombining": 25,
+            "otherCsCategoriesShare": 0.00195,
+            "otherCsCategoriesPapers": 71,
+            "corpusPapersCombining": 2305
+          },
+          "score": 0.7704,
+          "factors": {
+            "relevance": 1.0,
+            "low_coverage": 0.176,
+            "growth": 0.882,
+            "neighbour_support": 1.0
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2604.01844",
+              "title": "FaCT-GS: Fast and Scalable CT Reconstruction with Gaussian Splatting",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2604.01844",
+              "similarity": 0.1848
+            },
+            {
+              "arxivId": "2501.12369",
+              "title": "DARB-Splatting: Generalizing Splatting with Decaying Anisotropic Radial Basis Functions",
+              "year": 2025,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2501.12369",
+              "similarity": 0.1588
+            },
+            {
+              "arxivId": "2608.17255",
+              "title": "Learning Where and What to Lift for Bi-planar X-ray-to-CT Reconstruction",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2608.17255",
+              "similarity": 0.1524
+            },
+            {
+              "arxivId": "2608.13159",
+              "title": "Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2608.13159",
+              "similarity": 0.1415
+            },
+            {
+              "arxivId": "2602.01057",
+              "title": "Radioactive 3D Gaussian Ray Tracing for Tomographic Reconstruction",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2602.01057",
+              "similarity": 0.141
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "title": "estimation · pose · localization  ×  segmentation · semantic · semantic segmentation",
+          "topics": [
+            {
+              "topicId": 16,
+              "label": "estimation · pose · localization",
+              "topTerms": [
+                "estimation",
+                "pose",
+                "localization",
+                "depth",
+                "camera",
+                "slam"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 25,
+              "label": "segmentation · semantic · semantic segmentation",
+              "topTerms": [
+                "segmentation",
+                "semantic",
+                "semantic segmentation",
+                "image segmentation",
+                "instance",
+                "medical"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "349 papers in 2024–2025 cover both topics (0.32 in every 100 papers), against 135 in 2018–2019 (0.45 in every 100): their share fell. 4 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "moderate",
+            "note": "Moderately covered in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 349,
+            "olderPapers": 135,
+            "recentShare": 0.00318,
+            "olderShare": 0.00447,
+            "growthLogRatio": -0.3323,
+            "similarPapersCombining": 4,
+            "otherCsCategoriesShare": 0.00014,
+            "otherCsCategoriesPapers": 5,
+            "corpusPapersCombining": 1193
+          },
+          "score": 0.7104,
+          "factors": {
+            "relevance": 0.941,
+            "low_coverage": 0.765,
+            "growth": 0.118,
+            "neighbour_support": 0.794
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2608.17255",
+              "title": "Learning Where and What to Lift for Bi-planar X-ray-to-CT Reconstruction",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2608.17255",
+              "similarity": 0.1524
+            },
+            {
+              "arxivId": "2610.14963",
+              "title": "AD-GS: Anatomical Density-guided 3D Gaussian Splatting for Sparse-View Dental CBCT Reconstruction",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2610.14963",
+              "similarity": 0.1211
+            },
+            {
+              "arxivId": "2408.06975",
+              "title": "SpectralGaussians: Semantic, spectral 3D Gaussian splatting for multi-spectral scene representation, visualization and analysis",
+              "year": 2024,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2408.06975",
+              "similarity": 0.1206
+            },
+            {
+              "arxivId": "2408.11697",
+              "title": "Robust 3D Gaussian Splatting for Novel View Synthesis in Presence of Distractors",
+              "year": 2024,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2408.11697",
+              "similarity": 0.1199
+            },
+            {
+              "arxivId": "2505.17338",
+              "title": "Render-FM: Feedforward Model for Real-time Photorealistic Volumetric Rendering",
+              "year": 2025,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2505.17338",
+              "similarity": 0.111
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "title": "generation · diffusion · diffusion models  ×  segmentation · semantic · semantic segmentation",
+          "topics": [
+            {
+              "topicId": 12,
+              "label": "generation · diffusion · diffusion models",
+              "topTerms": [
+                "generation",
+                "diffusion",
+                "diffusion models",
+                "generative",
+                "quality",
+                "latent"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 25,
+              "label": "segmentation · semantic · semantic segmentation",
+              "topTerms": [
+                "segmentation",
+                "semantic",
+                "semantic segmentation",
+                "image segmentation",
+                "instance",
+                "medical"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "626 papers in 2024–2025 cover both topics (0.57 in every 100 papers), against 51 in 2018–2019 (0.17 in every 100): their share grew. 4 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "well_covered",
+            "note": "Among the more covered topic combinations in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 626,
+            "olderPapers": 51,
+            "recentShare": 0.00571,
+            "olderShare": 0.00169,
+            "growthLogRatio": 1.1765,
+            "similarPapersCombining": 4,
+            "otherCsCategoriesShare": 0.00096,
+            "otherCsCategoriesPapers": 35,
+            "corpusPapersCombining": 1476
+          },
+          "score": 0.6895,
+          "factors": {
+            "relevance": 0.882,
+            "low_coverage": 0.353,
+            "growth": 0.647,
+            "neighbour_support": 0.794
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2608.17255",
+              "title": "Learning Where and What to Lift for Bi-planar X-ray-to-CT Reconstruction",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2608.17255",
+              "similarity": 0.1524
+            },
+            {
+              "arxivId": "2610.14963",
+              "title": "AD-GS: Anatomical Density-guided 3D Gaussian Splatting for Sparse-View Dental CBCT Reconstruction",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2610.14963",
+              "similarity": 0.1211
+            },
+            {
+              "arxivId": "2408.06975",
+              "title": "SpectralGaussians: Semantic, spectral 3D Gaussian splatting for multi-spectral scene representation, visualization and analysis",
+              "year": 2024,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2408.06975",
+              "similarity": 0.1206
+            },
+            {
+              "arxivId": "2408.11697",
+              "title": "Robust 3D Gaussian Splatting for Novel View Synthesis in Presence of Distractors",
+              "year": 2024,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2408.11697",
+              "similarity": 0.1199
+            },
+            {
+              "arxivId": "2505.17338",
+              "title": "Render-FM: Feedforward Model for Real-time Photorealistic Volumetric Rendering",
+              "year": 2025,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2505.17338",
+              "similarity": 0.111
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "title": "extensive · attention · experiments  ×  estimation · pose · localization",
+          "topics": [
+            {
+              "topicId": 0,
+              "label": "extensive · attention · experiments",
+              "topTerms": [
+                "extensive",
+                "attention",
+                "experiments",
+                "extensive experiments",
+                "framework",
+                "achieves"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 16,
+              "label": "estimation · pose · localization",
+              "topTerms": [
+                "estimation",
+                "pose",
+                "localization",
+                "depth",
+                "camera",
+                "slam"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "257 papers in 2024–2025 cover both topics (0.23 in every 100 papers), against 4 in 2018–2019 (0.01 in every 100): their share grew. 1 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "moderate",
+            "note": "Moderately covered in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 257,
+            "olderPapers": 4,
+            "recentShare": 0.00234,
+            "olderShare": 0.00013,
+            "growthLogRatio": 2.3515,
+            "similarPapersCombining": 1,
+            "otherCsCategoriesShare": 0.00041,
+            "otherCsCategoriesPapers": 15,
+            "corpusPapersCombining": 537
+          },
+          "score": 0.6355,
+          "factors": {
+            "relevance": 0.412,
+            "low_coverage": 0.941,
+            "growth": 0.824,
+            "neighbour_support": 0.471
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2603.21304",
+              "title": "F4Splat: Feed-Forward Predictive Densification for Feed-Forward 3D Gaussian Splatting",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2603.21304",
+              "similarity": 0.1244
+            },
+            {
+              "arxivId": "2602.11705",
+              "title": "TG-Field: Geometry-Aware Radiative Gaussian Fields for Tomographic Reconstruction",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2602.11705",
+              "similarity": 0.1148
+            },
+            {
+              "arxivId": "2507.16144",
+              "title": "LongSplat: Online Generalizable 3D Gaussian Splatting from Long Sequence Images",
+              "year": 2025,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2507.16144",
+              "similarity": 0.1113
+            },
+            {
+              "arxivId": "2606.02346",
+              "title": "VEDAL: Variational Error-Driven Asynchronous Learning for 3D Gaussian Splatting Pruning",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2606.02346",
+              "similarity": 0.109
+            },
+            {
+              "arxivId": "2505.23280",
+              "title": "Holistic Large-Scale Scene Reconstruction via Mixed Gaussian Splatting",
+              "year": 2025,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2505.23280",
+              "similarity": 0.105
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "title": "estimation · pose · localization  ×  control · controller · dynamics",
+          "topics": [
+            {
+              "topicId": 16,
+              "label": "estimation · pose · localization",
+              "topTerms": [
+                "estimation",
+                "pose",
+                "localization",
+                "depth",
+                "camera",
+                "slam"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 27,
+              "label": "control · controller · dynamics",
+              "topTerms": [
+                "control",
+                "controller",
+                "dynamics",
+                "predictive",
+                "tracking",
+                "model predictive"
+              ],
+              "lowerCoherence": true
+            }
+          ],
+          "summary": "410 papers in 2024–2025 cover both topics (0.37 in every 100 papers), against 79 in 2018–2019 (0.26 in every 100): their share grew. 2 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "moderate",
+            "note": "Moderately covered in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 410,
+            "olderPapers": 79,
+            "recentShare": 0.00374,
+            "olderShare": 0.00262,
+            "growthLogRatio": 0.3447,
+            "similarPapersCombining": 2,
+            "otherCsCategoriesShare": 0.00193,
+            "otherCsCategoriesPapers": 70,
+            "corpusPapersCombining": 1356
+          },
+          "score": 0.5719,
+          "factors": {
+            "relevance": 0.529,
+            "low_coverage": 0.706,
+            "growth": 0.412,
+            "neighbour_support": 0.676
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2602.01057",
+              "title": "Radioactive 3D Gaussian Ray Tracing for Tomographic Reconstruction",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2602.01057",
+              "similarity": 0.141
+            },
+            {
+              "arxivId": "2603.21304",
+              "title": "F4Splat: Feed-Forward Predictive Densification for Feed-Forward 3D Gaussian Splatting",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2603.21304",
+              "similarity": 0.1244
+            },
+            {
+              "arxivId": "2410.04974",
+              "title": "6DGS: Enhanced Direction-Aware Gaussian Splatting for Volumetric Rendering",
+              "year": 2024,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2410.04974",
+              "similarity": 0.1039
+            },
+            {
+              "arxivId": "2411.10133",
+              "title": "Efficient Density Control for 3D Gaussian Splatting",
+              "year": 2024,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2411.10133",
+              "similarity": 0.0968
+            },
+            {
+              "arxivId": "2508.09239",
+              "title": "Gradient-Direction-Aware Density Control for 3D Gaussian Splatting",
+              "year": 2025,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2508.09239",
+              "similarity": 0.0954
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cs.CL": {
+    "query": {
+      "arxivId": "2607.09348",
+      "title": "DKCD: Domain Knowledge-Enhanced Causal Discovery from Unstructured Data Causal discovery from unstructured data is a challenging yet underexplored task in high-expertise domains such as healthcare, finance, and education",
+      "primaryCategory": "cs.CL"
+    },
+    "result": {
+      "similarPapers": [
+        {
+          "arxivId": "2410.06392",
+          "title": "Counterfactual Causal Inference in Natural Language with Large Language Models",
+          "year": 2024,
+          "primaryCategory": "cs.CL",
+          "categoryName": "Computation & Language (NLP)",
+          "url": "https://arxiv.org/abs/2410.06392",
+          "rank": 1,
+          "similarity": 0.2231
+        },
+        {
+          "arxivId": "2411.12759",
+          "title": "A Novel Approach to Eliminating Hallucinations in Large Language Model-Assisted Causal Discovery",
+          "year": 2024,
+          "primaryCategory": "cs.CL",
+          "categoryName": "Computation & Language (NLP)",
+          "url": "https://arxiv.org/abs/2411.12759",
+          "rank": 2,
+          "similarity": 0.2201
+        },
+        {
+          "arxivId": "2604.06902",
+          "title": "iTAG: Inverse Design for Natural Text Generation with Accurate Causal Graph Annotations",
+          "year": 2026,
+          "primaryCategory": "cs.CL",
+          "categoryName": "Computation & Language (NLP)",
+          "url": "https://arxiv.org/abs/2604.06902",
+          "rank": 3,
+          "similarity": 0.2111
+        },
+        {
+          "arxivId": "2606.07525",
+          "title": "Implicit Causal Graph Construction in Text via Chain Discovery",
+          "year": 2026,
+          "primaryCategory": "cs.CL",
+          "categoryName": "Computation & Language (NLP)",
+          "url": "https://arxiv.org/abs/2606.07525",
+          "rank": 4,
+          "similarity": 0.2037
+        },
+        {
+          "arxivId": "2512.01827",
+          "title": "CauSight: Learning to Supersense for Visual Causal Discovery",
+          "year": 2025,
+          "primaryCategory": "cs.CV",
+          "categoryName": "Computer Vision",
+          "url": "https://arxiv.org/abs/2512.01827",
+          "rank": 5,
+          "similarity": 0.1908
+        },
+        {
+          "arxivId": "2301.13819",
+          "title": "Causal-Discovery Performance of ChatGPT in the context of Neuropathic Pain Diagnosis",
+          "year": 2023,
+          "primaryCategory": "cs.CL",
+          "categoryName": "Computation & Language (NLP)",
+          "url": "https://arxiv.org/abs/2301.13819",
+          "rank": 6,
+          "similarity": 0.1858
+        },
+        {
+          "arxivId": "2402.15301",
+          "title": "Causal Graph Discovery with Retrieval-Augmented Generation based Large Language Models",
+          "year": 2024,
+          "primaryCategory": "cs.CL",
+          "categoryName": "Computation & Language (NLP)",
+          "url": "https://arxiv.org/abs/2402.15301",
+          "rank": 7,
+          "similarity": 0.1815
+        },
+        {
+          "arxivId": "2510.09217",
+          "title": "IRIS: An Iterative and Integrated Framework for Verifiable Causal Discovery in the Absence of Tabular Data",
+          "year": 2025,
+          "primaryCategory": "cs.CL",
+          "categoryName": "Computation & Language (NLP)",
+          "url": "https://arxiv.org/abs/2510.09217",
+          "rank": 8,
+          "similarity": 0.1786
+        },
+        {
+          "arxivId": "2410.15939",
+          "title": "CausalGraph2LLM: Evaluating LLMs for Causal Queries",
+          "year": 2024,
+          "primaryCategory": "cs.CL",
+          "categoryName": "Computation & Language (NLP)",
+          "url": "https://arxiv.org/abs/2410.15939",
+          "rank": 9,
+          "similarity": 0.1775
+        },
+        {
+          "arxivId": "2303.05279",
+          "title": "Can large language models build causal graphs?",
+          "year": 2023,
+          "primaryCategory": "cs.CL",
+          "categoryName": "Computation & Language (NLP)",
+          "url": "https://arxiv.org/abs/2303.05279",
+          "rank": 10,
+          "similarity": 0.1747
+        }
+      ],
+      "topicProfile": [
+        {
+          "topicId": 18,
+          "label": "graph · graphs · knowledge",
+          "topTerms": [
+            "graph",
+            "graphs",
+            "knowledge",
+            "knowledge graph",
+            "knowledge graphs",
+            "nodes"
+          ],
+          "weight": 0.276,
+          "ownWeight": 0.3721,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 1,
+          "label": "llms · large language · language models",
+          "topTerms": [
+            "llms",
+            "large language",
+            "language models",
+            "language",
+            "large",
+            "models llms"
+          ],
+          "weight": 0.176,
+          "ownWeight": 0.1936,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 23,
+          "label": "training · learning · domain",
+          "topTerms": [
+            "training",
+            "learning",
+            "domain",
+            "adaptation",
+            "target",
+            "samples"
+          ],
+          "weight": 0.0962,
+          "ownWeight": 0.1314,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 19,
+          "label": "question · answering · question answering",
+          "topTerms": [
+            "question",
+            "answering",
+            "question answering",
+            "reasoning",
+            "questions",
+            "answer"
+          ],
+          "weight": 0.0873,
+          "ownWeight": 0.1032,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 29,
+          "label": "research · challenges · survey",
+          "topTerms": [
+            "research",
+            "challenges",
+            "survey",
+            "future",
+            "analysis",
+            "review"
+          ],
+          "weight": 0.0823,
+          "ownWeight": 0.0907,
+          "lowerCoherence": false
+        }
+      ],
+      "directions": [
+        {
+          "rank": 1,
+          "title": "llms · large language · language models  ×  graph · graphs · knowledge",
+          "topics": [
+            {
+              "topicId": 1,
+              "label": "llms · large language · language models",
+              "topTerms": [
+                "llms",
+                "large language",
+                "language models",
+                "language",
+                "large",
+                "models llms"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 18,
+              "label": "graph · graphs · knowledge",
+              "topTerms": [
+                "graph",
+                "graphs",
+                "knowledge",
+                "knowledge graph",
+                "knowledge graphs",
+                "nodes"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "811 papers in 2024–2025 cover both topics (0.74 in every 100 papers), against 2 in 2018–2019 (0.01 in every 100): their share grew. 14 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "well_covered",
+            "note": "Among the more covered topic combinations in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 811,
+            "olderPapers": 2,
+            "recentShare": 0.00739,
+            "olderShare": 7e-05,
+            "growthLogRatio": 3.8078,
+            "similarPapersCombining": 14,
+            "otherCsCategoriesShare": 0.00677,
+            "otherCsCategoriesPapers": 246,
+            "corpusPapersCombining": 1234
+          },
+          "score": 0.8235,
+          "factors": {
+            "relevance": 1.0,
+            "low_coverage": 0.529,
+            "growth": 0.706,
+            "neighbour_support": 1.0
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2410.06392",
+              "title": "Counterfactual Causal Inference in Natural Language with Large Language Models",
+              "year": 2024,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2410.06392",
+              "similarity": 0.2231
+            },
+            {
+              "arxivId": "2606.07525",
+              "title": "Implicit Causal Graph Construction in Text via Chain Discovery",
+              "year": 2026,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2606.07525",
+              "similarity": 0.2037
+            },
+            {
+              "arxivId": "2402.15301",
+              "title": "Causal Graph Discovery with Retrieval-Augmented Generation based Large Language Models",
+              "year": 2024,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2402.15301",
+              "similarity": 0.1815
+            },
+            {
+              "arxivId": "2410.15939",
+              "title": "CausalGraph2LLM: Evaluating LLMs for Causal Queries",
+              "year": 2024,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2410.15939",
+              "similarity": 0.1775
+            },
+            {
+              "arxivId": "2303.05279",
+              "title": "Can large language models build causal graphs?",
+              "year": 2023,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2303.05279",
+              "similarity": 0.1747
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "title": "graph · graphs · knowledge  ×  question · answering · question answering",
+          "topics": [
+            {
+              "topicId": 18,
+              "label": "graph · graphs · knowledge",
+              "topTerms": [
+                "graph",
+                "graphs",
+                "knowledge",
+                "knowledge graph",
+                "knowledge graphs",
+                "nodes"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 19,
+              "label": "question · answering · question answering",
+              "topTerms": [
+                "question",
+                "answering",
+                "question answering",
+                "reasoning",
+                "questions",
+                "answer"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "404 papers in 2024–2025 cover both topics (0.37 in every 100 papers), against 94 in 2018–2019 (0.31 in every 100): their share grew. 1 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "moderate",
+            "note": "Moderately covered in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 404,
+            "olderPapers": 94,
+            "recentShare": 0.00368,
+            "olderShare": 0.00311,
+            "growthLogRatio": 0.1624,
+            "similarPapersCombining": 1,
+            "otherCsCategoriesShare": 0.00361,
+            "otherCsCategoriesPapers": 131,
+            "corpusPapersCombining": 1265
+          },
+          "score": 0.694,
+          "factors": {
+            "relevance": 0.882,
+            "low_coverage": 0.647,
+            "growth": 0.412,
+            "neighbour_support": 0.647
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2501.07227",
+              "title": "MECD+: Unlocking Event-Level Causal Graph Discovery for Video Reasoning",
+              "year": 2025,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2501.07227",
+              "similarity": 0.1434
+            },
+            {
+              "arxivId": "2409.00331",
+              "title": "WikiCausal: Corpus and Evaluation Framework for Causal Knowledge Graph Construction",
+              "year": 2024,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2409.00331",
+              "similarity": 0.12
+            },
+            {
+              "arxivId": "2112.08615",
+              "title": "Knowledge-Augmented Language Models for Cause-Effect Relation Classification",
+              "year": 2021,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2112.08615",
+              "similarity": 0.1158
+            },
+            {
+              "arxivId": "2606.04915",
+              "title": "Caliper: Probing Lexical Anchors versus Causal Structure in LLMs",
+              "year": 2026,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2606.04915",
+              "similarity": 0.114
+            },
+            {
+              "arxivId": "2605.29339",
+              "title": "DMC-CF: Dynamic Multimodal CounterFactual QA benchmark for Causal Reasoning",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2605.29339",
+              "similarity": 0.1047
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "title": "graph · graphs · knowledge  ×  evaluation · dataset · benchmark",
+          "topics": [
+            {
+              "topicId": 18,
+              "label": "graph · graphs · knowledge",
+              "topTerms": [
+                "graph",
+                "graphs",
+                "knowledge",
+                "knowledge graph",
+                "knowledge graphs",
+                "nodes"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 20,
+              "label": "evaluation · dataset · benchmark",
+              "topTerms": [
+                "evaluation",
+                "dataset",
+                "benchmark",
+                "metrics",
+                "human",
+                "datasets"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "188 papers in 2024–2025 cover both topics (0.17 in every 100 papers), against 46 in 2018–2019 (0.15 in every 100): their share grew. 1 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "moderate",
+            "note": "Moderately covered in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 188,
+            "olderPapers": 46,
+            "recentShare": 0.00171,
+            "olderShare": 0.00152,
+            "growthLogRatio": 0.1101,
+            "similarPapersCombining": 1,
+            "otherCsCategoriesShare": 0.00275,
+            "otherCsCategoriesPapers": 100,
+            "corpusPapersCombining": 597
+          },
+          "score": 0.6587,
+          "factors": {
+            "relevance": 0.706,
+            "low_coverage": 0.882,
+            "growth": 0.294,
+            "neighbour_support": 0.647
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2303.15381",
+              "title": "Causal schema induction for knowledge discovery",
+              "year": 2023,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2303.15381",
+              "similarity": 0.1247
+            },
+            {
+              "arxivId": "2409.00331",
+              "title": "WikiCausal: Corpus and Evaluation Framework for Causal Knowledge Graph Construction",
+              "year": 2024,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2409.00331",
+              "similarity": 0.12
+            },
+            {
+              "arxivId": "2605.29339",
+              "title": "DMC-CF: Dynamic Multimodal CounterFactual QA benchmark for Causal Reasoning",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2605.29339",
+              "similarity": 0.1047
+            },
+            {
+              "arxivId": "2606.15779",
+              "title": "Faithful Action-unit Causal Reasoning for Counterfactually Faithful Emotion Explanations",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2606.15779",
+              "similarity": 0.0868
+            },
+            {
+              "arxivId": "2105.15033",
+              "title": "DiaKG: an Annotated Diabetes Dataset for Medical Knowledge Graph Construction",
+              "year": 2021,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2105.15033",
+              "similarity": 0.0857
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "title": "graph · graphs · knowledge  ×  research · challenges · survey",
+          "topics": [
+            {
+              "topicId": 18,
+              "label": "graph · graphs · knowledge",
+              "topTerms": [
+                "graph",
+                "graphs",
+                "knowledge",
+                "knowledge graph",
+                "knowledge graphs",
+                "nodes"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 29,
+              "label": "research · challenges · survey",
+              "topTerms": [
+                "research",
+                "challenges",
+                "survey",
+                "future",
+                "analysis",
+                "review"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "254 papers in 2024–2025 cover both topics (0.23 in every 100 papers), against 83 in 2018–2019 (0.28 in every 100): their share fell. 1 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "dataset_coverage",
+            "note": "More common in other computer-science categories (such as cs.LG or cs.AI) than in this corpus: the low count here is most likely a dataset-coverage effect, not a research gap."
+          },
+          "evidence": {
+            "recentPapers": 254,
+            "olderPapers": 83,
+            "recentShare": 0.00231,
+            "olderShare": 0.00275,
+            "growthLogRatio": -0.1658,
+            "similarPapersCombining": 1,
+            "otherCsCategoriesShare": 0.00966,
+            "otherCsCategoriesPapers": 351,
+            "corpusPapersCombining": 807
+          },
+          "score": 0.6415,
+          "factors": {
+            "relevance": 0.824,
+            "low_coverage": 0.765,
+            "growth": 0.118,
+            "neighbour_support": 0.647
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2510.09217",
+              "title": "IRIS: An Iterative and Integrated Framework for Verifiable Causal Discovery in the Absence of Tabular Data",
+              "year": 2025,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2510.09217",
+              "similarity": 0.1786
+            },
+            {
+              "arxivId": "1902.07688",
+              "title": "Towards Semantic Big Graph Analytics for Cross-Domain Knowledge Discovery",
+              "year": 2019,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/1902.07688",
+              "similarity": 0.1009
+            },
+            {
+              "arxivId": "2503.16533",
+              "title": "From Patient Consultations to Graphs: Leveraging LLMs for Patient Journey Knowledge Graph Construction",
+              "year": 2025,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2503.16533",
+              "similarity": 0.0983
+            },
+            {
+              "arxivId": "2602.11211",
+              "title": "TRACE: Timely Retrieval and Alignment for Cybersecurity Knowledge Graph Construction and Expansion",
+              "year": 2026,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2602.11211",
+              "similarity": 0.0976
+            },
+            {
+              "arxivId": "2207.12718",
+              "title": "XInsight: eXplainable Data Analysis Through The Lens of Causality",
+              "year": 2022,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/2207.12718",
+              "similarity": 0.0925
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "title": "graph · graphs · knowledge  ×  training · learning · domain",
+          "topics": [
+            {
+              "topicId": 18,
+              "label": "graph · graphs · knowledge",
+              "topTerms": [
+                "graph",
+                "graphs",
+                "knowledge",
+                "knowledge graph",
+                "knowledge graphs",
+                "nodes"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 23,
+              "label": "training · learning · domain",
+              "topTerms": [
+                "training",
+                "learning",
+                "domain",
+                "adaptation",
+                "target",
+                "samples"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "277 papers in 2024–2025 cover both topics (0.25 in every 100 papers), against 138 in 2018–2019 (0.46 in every 100): their share fell. 0 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "dataset_coverage",
+            "note": "More common in other computer-science categories (such as cs.LG or cs.AI) than in this corpus: the low count here is most likely a dataset-coverage effect, not a research gap."
+          },
+          "evidence": {
+            "recentPapers": 277,
+            "olderPapers": 138,
+            "recentShare": 0.00252,
+            "olderShare": 0.00457,
+            "growthLogRatio": -0.5769,
+            "similarPapersCombining": 0,
+            "otherCsCategoriesShare": 0.01073,
+            "otherCsCategoriesPapers": 390,
+            "corpusPapersCombining": 1310
+          },
+          "score": 0.5881,
+          "factors": {
+            "relevance": 0.941,
+            "low_coverage": 0.706,
+            "growth": 0.0,
+            "neighbour_support": 0.235
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "1909.07606",
+              "title": "K-BERT: Enabling Language Representation with Knowledge Graph",
+              "year": 2019,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/1909.07606",
+              "similarity": 0.1058
+            },
+            {
+              "arxivId": "2212.05251",
+              "title": "A Unified Knowledge Graph Augmentation Service for Boosting Domain-specific NLP Tasks",
+              "year": 2022,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2212.05251",
+              "similarity": 0.1036
+            },
+            {
+              "arxivId": "2411.15888",
+              "title": "Evaluating Large Language Models for Causal Modeling",
+              "year": 2024,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2411.15888",
+              "similarity": 0.103
+            },
+            {
+              "arxivId": "2511.17012",
+              "title": "Supervised Fine Tuning of Large Language Models for Domain Specific Knowledge Graph Construction:A Case Study on Hunan's Historical Celebrities",
+              "year": 2025,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2511.17012",
+              "similarity": 0.1025
+            },
+            {
+              "arxivId": "2411.19064",
+              "title": "Way to Specialist: Closing Loop Between Specialized LLM and Evolving Domain Knowledge Graph",
+              "year": 2024,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2411.19064",
+              "similarity": 0.1025
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cs.RO": {
+    "query": {
+      "arxivId": "2604.00416",
+      "title": "Learning Humanoid Navigation from Human Data We present EgoNav, a system that enables a humanoid robot to traverse diverse, unseen environments by learning entirely from 5 hours of human walking data, with no robot data or finetuning",
+      "primaryCategory": "cs.RO"
+    },
+    "result": {
+      "similarPapers": [
+        {
+          "arxivId": "2605.01477",
+          "title": "Action Agent: Agentic Video Generation Meets Flow-Constrained Diffusion",
+          "year": 2026,
+          "primaryCategory": "cs.RO",
+          "categoryName": "Robotics",
+          "url": "https://arxiv.org/abs/2605.01477",
+          "rank": 1,
+          "similarity": 0.1355
+        },
+        {
+          "arxivId": "2609.09158",
+          "title": "TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model",
+          "year": 2026,
+          "primaryCategory": "cs.RO",
+          "categoryName": "Robotics",
+          "url": "https://arxiv.org/abs/2609.09158",
+          "rank": 2,
+          "similarity": 0.1192
+        },
+        {
+          "arxivId": "2410.07849",
+          "title": "Online DNN-driven Nonlinear MPC for Stylistic Humanoid Robot Walking with Step Adjustment",
+          "year": 2024,
+          "primaryCategory": "cs.RO",
+          "categoryName": "Robotics",
+          "url": "https://arxiv.org/abs/2410.07849",
+          "rank": 3,
+          "similarity": 0.1183
+        },
+        {
+          "arxivId": "2607.24249",
+          "title": "SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation",
+          "year": 2026,
+          "primaryCategory": "cs.CV",
+          "categoryName": "Computer Vision",
+          "url": "https://arxiv.org/abs/2607.24249",
+          "rank": 4,
+          "similarity": 0.1133
+        },
+        {
+          "arxivId": "2508.01247",
+          "title": "Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy",
+          "year": 2025,
+          "primaryCategory": "cs.RO",
+          "categoryName": "Robotics",
+          "url": "https://arxiv.org/abs/2508.01247",
+          "rank": 5,
+          "similarity": 0.1115
+        },
+        {
+          "arxivId": "2502.02858",
+          "title": "Dexterous Safe Control for Humanoids in Cluttered Environments via Projected Safe Set Algorithm",
+          "year": 2025,
+          "primaryCategory": "cs.RO",
+          "categoryName": "Robotics",
+          "url": "https://arxiv.org/abs/2502.02858",
+          "rank": 6,
+          "similarity": 0.1115
+        },
+        {
+          "arxivId": "2601.12790",
+          "title": "FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local Navigation",
+          "year": 2026,
+          "primaryCategory": "cs.RO",
+          "categoryName": "Robotics",
+          "url": "https://arxiv.org/abs/2601.12790",
+          "rank": 7,
+          "similarity": 0.1102
+        },
+        {
+          "arxivId": "2603.21723",
+          "title": "Can a Robot Walk the Robotic Dog: Triple-Zero Collaborative Navigation for Heterogeneous Multi-Agent Systems",
+          "year": 2026,
+          "primaryCategory": "cs.RO",
+          "categoryName": "Robotics",
+          "url": "https://arxiv.org/abs/2603.21723",
+          "rank": 8,
+          "similarity": 0.11
+        },
+        {
+          "arxivId": "2606.18772",
+          "title": "HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human Demonstrations",
+          "year": 2026,
+          "primaryCategory": "cs.RO",
+          "categoryName": "Robotics",
+          "url": "https://arxiv.org/abs/2606.18772",
+          "rank": 9,
+          "similarity": 0.1096
+        },
+        {
+          "arxivId": "2605.12347",
+          "title": "Real-Time Whole-Body Teleoperation of a Humanoid Robot Using IMU-Based Motion Capture with Sim2Sim and Sim2Real Validation",
+          "year": 2026,
+          "primaryCategory": "cs.RO",
+          "categoryName": "Robotics",
+          "url": "https://arxiv.org/abs/2605.12347",
+          "rank": 10,
+          "similarity": 0.1096
+        }
+      ],
+      "topicProfile": [
+        {
+          "topicId": 21,
+          "label": "robot · robots · human",
+          "topTerms": [
+            "robot",
+            "robots",
+            "human",
+            "interaction",
+            "human-robot",
+            "environments"
+          ],
+          "weight": 0.257,
+          "ownWeight": 0.2698,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 12,
+          "label": "generation · diffusion · diffusion models",
+          "topTerms": [
+            "generation",
+            "diffusion",
+            "diffusion models",
+            "generative",
+            "quality",
+            "latent"
+          ],
+          "weight": 0.1167,
+          "ownWeight": 0.1804,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 27,
+          "label": "control · controller · dynamics",
+          "topTerms": [
+            "control",
+            "controller",
+            "dynamics",
+            "predictive",
+            "tracking",
+            "model predictive"
+          ],
+          "weight": 0.1152,
+          "ownWeight": 0.0406,
+          "lowerCoherence": true
+        },
+        {
+          "topicId": 6,
+          "label": "reinforcement · reinforcement learning · learning",
+          "topTerms": [
+            "reinforcement",
+            "reinforcement learning",
+            "learning",
+            "rl",
+            "policy",
+            "reward"
+          ],
+          "weight": 0.0864,
+          "ownWeight": 0.0592,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 17,
+          "label": "manipulation · action · policy",
+          "topTerms": [
+            "manipulation",
+            "action",
+            "policy",
+            "tasks",
+            "robotic",
+            "policies"
+          ],
+          "weight": 0.0733,
+          "ownWeight": 0.0494,
+          "lowerCoherence": false
+        }
+      ],
+      "directions": [
+        {
+          "rank": 1,
+          "title": "generation · diffusion · diffusion models  ×  robot · robots · human",
+          "topics": [
+            {
+              "topicId": 12,
+              "label": "generation · diffusion · diffusion models",
+              "topTerms": [
+                "generation",
+                "diffusion",
+                "diffusion models",
+                "generative",
+                "quality",
+                "latent"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 21,
+              "label": "robot · robots · human",
+              "topTerms": [
+                "robot",
+                "robots",
+                "human",
+                "interaction",
+                "human-robot",
+                "environments"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "194 papers in 2024–2025 cover both topics (0.18 in every 100 papers), against 14 in 2018–2019 (0.05 in every 100): their share grew. 5 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "moderate",
+            "note": "Moderately covered in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 194,
+            "olderPapers": 14,
+            "recentShare": 0.00177,
+            "olderShare": 0.00046,
+            "growthLogRatio": 1.1977,
+            "similarPapersCombining": 5,
+            "otherCsCategoriesShare": 0.00058,
+            "otherCsCategoriesPapers": 21,
+            "corpusPapersCombining": 418
+          },
+          "score": 0.856,
+          "factors": {
+            "relevance": 1.0,
+            "low_coverage": 0.824,
+            "growth": 0.765,
+            "neighbour_support": 0.647
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2606.22998",
+              "title": "TEXEDO : Test Time Scaling for Controller-aware Language-conditioned Humanoid Motion Generation",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2606.22998",
+              "similarity": 0.1089
+            },
+            {
+              "arxivId": "2602.07439",
+              "title": "TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2602.07439",
+              "similarity": 0.1048
+            },
+            {
+              "arxivId": "2504.20808",
+              "title": "SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings",
+              "year": 2025,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2504.20808",
+              "similarity": 0.1006
+            },
+            {
+              "arxivId": "2403.19026",
+              "title": "EgoNav: Egocentric Scene-aware Human Trajectory Prediction",
+              "year": 2024,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2403.19026",
+              "similarity": 0.0981
+            },
+            {
+              "arxivId": "2512.05094",
+              "title": "From Generated Human Videos to Physically Plausible Robot Trajectories",
+              "year": 2025,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2512.05094",
+              "similarity": 0.0956
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "title": "reinforcement · reinforcement learning · learning  ×  robot · robots · human",
+          "topics": [
+            {
+              "topicId": 6,
+              "label": "reinforcement · reinforcement learning · learning",
+              "topTerms": [
+                "reinforcement",
+                "reinforcement learning",
+                "learning",
+                "rl",
+                "policy",
+                "reward"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 21,
+              "label": "robot · robots · human",
+              "topTerms": [
+                "robot",
+                "robots",
+                "human",
+                "interaction",
+                "human-robot",
+                "environments"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "674 papers in 2024–2025 cover both topics (0.61 in every 100 papers), against 138 in 2018–2019 (0.46 in every 100): their share grew. 12 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "well_covered",
+            "note": "Among the more covered topic combinations in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 674,
+            "olderPapers": 138,
+            "recentShare": 0.00614,
+            "olderShare": 0.00457,
+            "growthLogRatio": 0.2896,
+            "similarPapersCombining": 12,
+            "otherCsCategoriesShare": 0.00069,
+            "otherCsCategoriesPapers": 25,
+            "corpusPapersCombining": 1907
+          },
+          "score": 0.6367,
+          "factors": {
+            "relevance": 0.882,
+            "low_coverage": 0.353,
+            "growth": 0.294,
+            "neighbour_support": 0.912
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2508.01247",
+              "title": "Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy",
+              "year": 2025,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2508.01247",
+              "similarity": 0.1115
+            },
+            {
+              "arxivId": "2502.08378",
+              "title": "Learning Humanoid Standing-up Control across Diverse Postures",
+              "year": 2025,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2502.08378",
+              "similarity": 0.1083
+            },
+            {
+              "arxivId": "2603.03067",
+              "title": "CMoE: Contrastive Mixture of Experts for Motion Control and Terrain Adaptation of Humanoid Robots",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2603.03067",
+              "similarity": 0.1073
+            },
+            {
+              "arxivId": "2602.15827",
+              "title": "Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2602.15827",
+              "similarity": 0.1067
+            },
+            {
+              "arxivId": "2606.04718",
+              "title": "CoRe-MoE: Contrastive Reweighted Mixture of Experts for Multi-Terrain Humanoid Locomotion with Gait Adaptation",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2606.04718",
+              "similarity": 0.1061
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "title": "generation · diffusion · diffusion models  ×  control · controller · dynamics",
+          "topics": [
+            {
+              "topicId": 12,
+              "label": "generation · diffusion · diffusion models",
+              "topTerms": [
+                "generation",
+                "diffusion",
+                "diffusion models",
+                "generative",
+                "quality",
+                "latent"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 27,
+              "label": "control · controller · dynamics",
+              "topTerms": [
+                "control",
+                "controller",
+                "dynamics",
+                "predictive",
+                "tracking",
+                "model predictive"
+              ],
+              "lowerCoherence": true
+            }
+          ],
+          "summary": "432 papers in 2024–2025 cover both topics (0.39 in every 100 papers), against 28 in 2018–2019 (0.09 in every 100): their share grew. 3 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "well_covered",
+            "note": "Among the more covered topic combinations in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 432,
+            "olderPapers": 28,
+            "recentShare": 0.00394,
+            "olderShare": 0.00093,
+            "growthLogRatio": 1.368,
+            "similarPapersCombining": 3,
+            "otherCsCategoriesShare": 0.0033,
+            "otherCsCategoriesPapers": 120,
+            "corpusPapersCombining": 1072
+          },
+          "score": 0.6352,
+          "factors": {
+            "relevance": 0.588,
+            "low_coverage": 0.588,
+            "growth": 0.824,
+            "neighbour_support": 0.588
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2606.22998",
+              "title": "TEXEDO : Test Time Scaling for Controller-aware Language-conditioned Humanoid Motion Generation",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2606.22998",
+              "similarity": 0.1089
+            },
+            {
+              "arxivId": "2602.07439",
+              "title": "TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2602.07439",
+              "similarity": 0.1048
+            },
+            {
+              "arxivId": "2504.20808",
+              "title": "SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings",
+              "year": 2025,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2504.20808",
+              "similarity": 0.1006
+            },
+            {
+              "arxivId": "2604.11251",
+              "title": "CLAW: Composable Language-Annotated Whole-body Motion Generation",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2604.11251",
+              "similarity": 0.0933
+            },
+            {
+              "arxivId": "2608.28693",
+              "title": "RoboGesture: Real-Time Semantic-aligned Co-Speech Gestures Generation for Humanoid Interaction",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2608.28693",
+              "similarity": 0.0904
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "title": "video · temporal · videos  ×  robot · robots · human",
+          "topics": [
+            {
+              "topicId": 15,
+              "label": "video · temporal · videos",
+              "topTerms": [
+                "video",
+                "temporal",
+                "videos",
+                "frames",
+                "motion",
+                "frame"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 21,
+              "label": "robot · robots · human",
+              "topTerms": [
+                "robot",
+                "robots",
+                "human",
+                "interaction",
+                "human-robot",
+                "environments"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "121 papers in 2024–2025 cover both topics (0.11 in every 100 papers), against 27 in 2018–2019 (0.09 in every 100): their share grew. 1 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "moderate",
+            "note": "Moderately covered in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 121,
+            "olderPapers": 27,
+            "recentShare": 0.0011,
+            "olderShare": 0.00089,
+            "growthLogRatio": 0.1899,
+            "similarPapersCombining": 1,
+            "otherCsCategoriesShare": 0.00044,
+            "otherCsCategoriesPapers": 16,
+            "corpusPapersCombining": 363
+          },
+          "score": 0.6117,
+          "factors": {
+            "relevance": 0.706,
+            "low_coverage": 1.0,
+            "growth": 0.176,
+            "neighbour_support": 0.294
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2512.05094",
+              "title": "From Generated Human Videos to Physically Plausible Robot Trajectories",
+              "year": 2025,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2512.05094",
+              "similarity": 0.0956
+            },
+            {
+              "arxivId": "2602.02473",
+              "title": "HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2602.02473",
+              "similarity": 0.0883
+            },
+            {
+              "arxivId": "2606.05160",
+              "title": "GRAIL: Generating Humanoid Loco-Manipulation from 3D Assets and Video Priors",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2606.05160",
+              "similarity": 0.0841
+            },
+            {
+              "arxivId": "2512.21573",
+              "title": "World-Coordinate Human Motion Retargeting via SAM 3D Body",
+              "year": 2025,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2512.21573",
+              "similarity": 0.081
+            },
+            {
+              "arxivId": "2610.11283",
+              "title": "Being-M0.7: A Latent World-Action Model for Humanoid Robots",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2610.11283",
+              "similarity": 0.0787
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "title": "manipulation · action · policy  ×  robot · robots · human",
+          "topics": [
+            {
+              "topicId": 17,
+              "label": "manipulation · action · policy",
+              "topTerms": [
+                "manipulation",
+                "action",
+                "policy",
+                "tasks",
+                "robotic",
+                "policies"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 21,
+              "label": "robot · robots · human",
+              "topTerms": [
+                "robot",
+                "robots",
+                "human",
+                "interaction",
+                "human-robot",
+                "environments"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "856 papers in 2024–2025 cover both topics (0.78 in every 100 papers), against 124 in 2018–2019 (0.41 in every 100): their share grew. 10 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "well_covered",
+            "note": "Among the more covered topic combinations in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 856,
+            "olderPapers": 124,
+            "recentShare": 0.0078,
+            "olderShare": 0.00411,
+            "growthLogRatio": 0.6298,
+            "similarPapersCombining": 10,
+            "otherCsCategoriesShare": 0.00022,
+            "otherCsCategoriesPapers": 8,
+            "corpusPapersCombining": 2337
+          },
+          "score": 0.5914,
+          "factors": {
+            "relevance": 0.824,
+            "low_coverage": 0.176,
+            "growth": 0.471,
+            "neighbour_support": 0.824
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2609.09158",
+              "title": "TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2609.09158",
+              "similarity": 0.1192
+            },
+            {
+              "arxivId": "2606.18772",
+              "title": "HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human Demonstrations",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2606.18772",
+              "similarity": 0.1096
+            },
+            {
+              "arxivId": "2602.09628",
+              "title": "TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with Motion Prior",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2602.09628",
+              "similarity": 0.0964
+            },
+            {
+              "arxivId": "2606.30645",
+              "title": "VLK: Learning Humanoid Loco-Manipulation from Synthetic Interactions in Reconstructed Scenes",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2606.30645",
+              "similarity": 0.0959
+            },
+            {
+              "arxivId": "2610.18950",
+              "title": "$\\lambda_0$: Scaling Open-World Egocentric Human Data for Humanoid Loco-Manipulation",
+              "year": 2026,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2610.18950",
+              "similarity": 0.0951
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cs.CR": {
+    "query": {
+      "arxivId": "2603.19962",
+      "title": "Channel Prediction-Based Physical Layer Authentication under Consecutive Spoofing Attacks Wireless networks are highly vulnerable to spoofing attacks, especially when attackers transmit consecutive spoofing packets",
+      "primaryCategory": "cs.CR"
+    },
+    "result": {
+      "similarPapers": [
+        {
+          "arxivId": "2307.08946",
+          "title": "EsaNet: Environment Semantics Enabled Physical Layer Authentication",
+          "year": 2023,
+          "primaryCategory": "cs.CR",
+          "categoryName": "Cryptography & Security",
+          "url": "https://arxiv.org/abs/2307.08946",
+          "rank": 1,
+          "similarity": 0.2814
+        },
+        {
+          "arxivId": "2505.10932",
+          "title": "Enhanced Multiuser CSI-Based Physical Layer Authentication Based on Information Reconciliation",
+          "year": 2025,
+          "primaryCategory": "cs.CR",
+          "categoryName": "Cryptography & Security",
+          "url": "https://arxiv.org/abs/2505.10932",
+          "rank": 2,
+          "similarity": 0.2319
+        },
+        {
+          "arxivId": "2606.27044",
+          "title": "Physical Layer Authentication With Channel Knowledge Maps in Indoor Environments",
+          "year": 2026,
+          "primaryCategory": "cs.CR",
+          "categoryName": "Cryptography & Security",
+          "url": "https://arxiv.org/abs/2606.27044",
+          "rank": 3,
+          "similarity": 0.2304
+        },
+        {
+          "arxivId": "2405.00426",
+          "title": "On the Potential of Re-configurable Intelligent Surface (RIS)-assisted Physical Layer Authentication (PLA)",
+          "year": 2024,
+          "primaryCategory": "cs.CR",
+          "categoryName": "Cryptography & Security",
+          "url": "https://arxiv.org/abs/2405.00426",
+          "rank": 4,
+          "similarity": 0.2209
+        },
+        {
+          "arxivId": "2602.23760",
+          "title": "PLA for Drone RID Frames via Motion Estimation and Consistency Verification",
+          "year": 2026,
+          "primaryCategory": "cs.CR",
+          "categoryName": "Cryptography & Security",
+          "url": "https://arxiv.org/abs/2602.23760",
+          "rank": 5,
+          "similarity": 0.2072
+        },
+        {
+          "arxivId": "1909.07969",
+          "title": "Statistical and Machine Learning-based Decision Techniques for Physical Layer Authentication",
+          "year": 2019,
+          "primaryCategory": "cs.CR",
+          "categoryName": "Cryptography & Security",
+          "url": "https://arxiv.org/abs/1909.07969",
+          "rank": 6,
+          "similarity": 0.2059
+        },
+        {
+          "arxivId": "2610.18946",
+          "title": "Physical Layer Anomaly Detection via Adaptive Gaussian Mixture Model",
+          "year": 2026,
+          "primaryCategory": "cs.CR",
+          "categoryName": "Cryptography & Security",
+          "url": "https://arxiv.org/abs/2610.18946",
+          "rank": 7,
+          "similarity": 0.196
+        },
+        {
+          "arxivId": "1907.00429",
+          "title": "Machine Learning for Intelligent Authentication in 5G-and-Beyond Wireless Networks",
+          "year": 2019,
+          "primaryCategory": "cs.CR",
+          "categoryName": "Cryptography & Security",
+          "url": "https://arxiv.org/abs/1907.00429",
+          "rank": 8,
+          "similarity": 0.1951
+        },
+        {
+          "arxivId": "2503.11508",
+          "title": "Leveraging Angle of Arrival Estimation against Impersonation Attacks in Physical Layer Authentication",
+          "year": 2025,
+          "primaryCategory": "cs.CR",
+          "categoryName": "Cryptography & Security",
+          "url": "https://arxiv.org/abs/2503.11508",
+          "rank": 9,
+          "similarity": 0.1947
+        },
+        {
+          "arxivId": "2508.09213",
+          "title": "VeriPHY: Physical Layer Signal Authentication for Wireless Communication in 5G Environments",
+          "year": 2025,
+          "primaryCategory": "cs.CR",
+          "categoryName": "Cryptography & Security",
+          "url": "https://arxiv.org/abs/2508.09213",
+          "rank": 10,
+          "similarity": 0.1831
+        }
+      ],
+      "topicProfile": [
+        {
+          "topicId": 9,
+          "label": "attacks · attack · adversarial",
+          "topTerms": [
+            "attacks",
+            "attack",
+            "adversarial",
+            "defense",
+            "backdoor",
+            "defenses"
+          ],
+          "weight": 0.2889,
+          "ownWeight": 0.387,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 2,
+          "label": "security · secure · blockchain",
+          "topTerms": [
+            "security",
+            "secure",
+            "blockchain",
+            "protocol",
+            "iot",
+            "devices"
+          ],
+          "weight": 0.191,
+          "ownWeight": 0.1916,
+          "lowerCoherence": true
+        },
+        {
+          "topicId": 16,
+          "label": "estimation · pose · localization",
+          "topTerms": [
+            "estimation",
+            "pose",
+            "localization",
+            "depth",
+            "camera",
+            "slam"
+          ],
+          "weight": 0.0726,
+          "ownWeight": 0.0885,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 11,
+          "label": "neural · networks · network",
+          "topTerms": [
+            "neural",
+            "networks",
+            "network",
+            "neural networks",
+            "deep",
+            "neural network"
+          ],
+          "weight": 0.0637,
+          "ownWeight": 0.0887,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 22,
+          "label": "autonomous · driving · autonomous driving",
+          "topTerms": [
+            "autonomous",
+            "driving",
+            "autonomous driving",
+            "vehicles",
+            "vehicle",
+            "safety"
+          ],
+          "weight": 0.0533,
+          "ownWeight": 0.06,
+          "lowerCoherence": false
+        }
+      ],
+      "directions": [
+        {
+          "rank": 1,
+          "title": "attacks · attack · adversarial  ×  estimation · pose · localization",
+          "topics": [
+            {
+              "topicId": 9,
+              "label": "attacks · attack · adversarial",
+              "topTerms": [
+                "attacks",
+                "attack",
+                "adversarial",
+                "defense",
+                "backdoor",
+                "defenses"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 16,
+              "label": "estimation · pose · localization",
+              "topTerms": [
+                "estimation",
+                "pose",
+                "localization",
+                "depth",
+                "camera",
+                "slam"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "38 papers in 2024–2025 cover both topics (0.03 in every 100 papers), against 10 in 2018–2019 (0.03 in every 100): their share stayed about the same. 6 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "relatively_low",
+            "note": "Among the less covered topic combinations in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 38,
+            "olderPapers": 10,
+            "recentShare": 0.00035,
+            "olderShare": 0.00033,
+            "growthLogRatio": 0.034,
+            "similarPapersCombining": 6,
+            "otherCsCategoriesShare": 0.00011,
+            "otherCsCategoriesPapers": 4,
+            "corpusPapersCombining": 112
+          },
+          "score": 0.8692,
+          "factors": {
+            "relevance": 0.941,
+            "low_coverage": 0.912,
+            "growth": 0.706,
+            "neighbour_support": 0.824
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2610.18946",
+              "title": "Physical Layer Anomaly Detection via Adaptive Gaussian Mixture Model",
+              "year": 2026,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2610.18946",
+              "similarity": 0.196
+            },
+            {
+              "arxivId": "2503.11508",
+              "title": "Leveraging Angle of Arrival Estimation against Impersonation Attacks in Physical Layer Authentication",
+              "year": 2025,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2503.11508",
+              "similarity": 0.1947
+            },
+            {
+              "arxivId": "1609.00225",
+              "title": "Random-Training-Assisted Pilot Spoofing Detection and Secure Transmission",
+              "year": 2016,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/1609.00225",
+              "similarity": 0.1656
+            },
+            {
+              "arxivId": "2401.01304",
+              "title": "Experimental Validation of Sensor Fusion-based GNSS Spoofing Attack Detection Framework for Autonomous Vehicles",
+              "year": 2024,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2401.01304",
+              "similarity": 0.1447
+            },
+            {
+              "arxivId": "2502.13641",
+              "title": "SLAMSpoof: Practical LiDAR Spoofing Attacks on Localization Systems Guided by Scan Matching Vulnerability Analysis",
+              "year": 2025,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2502.13641",
+              "similarity": 0.1375
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "title": "attacks · attack · adversarial  ×  autonomous · driving · autonomous driving",
+          "topics": [
+            {
+              "topicId": 9,
+              "label": "attacks · attack · adversarial",
+              "topTerms": [
+                "attacks",
+                "attack",
+                "adversarial",
+                "defense",
+                "backdoor",
+                "defenses"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 22,
+              "label": "autonomous · driving · autonomous driving",
+              "topTerms": [
+                "autonomous",
+                "driving",
+                "autonomous driving",
+                "vehicles",
+                "vehicle",
+                "safety"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "166 papers in 2024–2025 cover both topics (0.15 in every 100 papers), against 27 in 2018–2019 (0.09 in every 100): their share grew. 3 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "moderate",
+            "note": "Moderately covered in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 166,
+            "olderPapers": 27,
+            "recentShare": 0.00151,
+            "olderShare": 0.00089,
+            "growthLogRatio": 0.4833,
+            "similarPapersCombining": 3,
+            "otherCsCategoriesShare": 0.00017,
+            "otherCsCategoriesPapers": 6,
+            "corpusPapersCombining": 445
+          },
+          "score": 0.7341,
+          "factors": {
+            "relevance": 0.824,
+            "low_coverage": 0.588,
+            "growth": 0.824,
+            "neighbour_support": 0.618
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2401.01304",
+              "title": "Experimental Validation of Sensor Fusion-based GNSS Spoofing Attack Detection Framework for Autonomous Vehicles",
+              "year": 2024,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2401.01304",
+              "similarity": 0.1447
+            },
+            {
+              "arxivId": "2006.16974",
+              "title": "Towards Robust LiDAR-based Perception in Autonomous Driving: General Black-box Adversarial Sensor Attack and Countermeasures",
+              "year": 2020,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2006.16974",
+              "similarity": 0.1439
+            },
+            {
+              "arxivId": "2502.13641",
+              "title": "SLAMSpoof: Practical LiDAR Spoofing Attacks on Localization Systems Guided by Scan Matching Vulnerability Analysis",
+              "year": 2025,
+              "primaryCategory": "cs.RO",
+              "categoryName": "Robotics",
+              "url": "https://arxiv.org/abs/2502.13641",
+              "similarity": 0.1375
+            },
+            {
+              "arxivId": "2301.12766",
+              "title": "GPS-Spoofing Attack Detection Mechanism for UAV Swarms",
+              "year": 2023,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2301.12766",
+              "similarity": 0.1224
+            },
+            {
+              "arxivId": "2510.10766",
+              "title": "GPS Spoofing Attack Detection in Autonomous Vehicles Using Adaptive DBSCAN",
+              "year": 2025,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2510.10766",
+              "similarity": 0.1214
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "title": "extensive · attention · experiments  ×  attacks · attack · adversarial",
+          "topics": [
+            {
+              "topicId": 0,
+              "label": "extensive · attention · experiments",
+              "topTerms": [
+                "extensive",
+                "attention",
+                "experiments",
+                "extensive experiments",
+                "framework",
+                "achieves"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 9,
+              "label": "attacks · attack · adversarial",
+              "topTerms": [
+                "attacks",
+                "attack",
+                "adversarial",
+                "defense",
+                "backdoor",
+                "defenses"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "17 papers in 2024–2025 cover both topics (0.02 in every 100 papers), against 0 in 2018–2019 (0.00 in every 100): their share grew. 0 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "limited_evidence",
+            "note": "Few papers in this corpus combine these topics, so the evidence is limited."
+          },
+          "evidence": {
+            "recentPapers": 17,
+            "olderPapers": 0,
+            "recentShare": 0.00015,
+            "olderShare": 0.0,
+            "growthLogRatio": 0.9358,
+            "similarPapersCombining": 0,
+            "otherCsCategoriesShare": 8e-05,
+            "otherCsCategoriesPapers": 3,
+            "corpusPapersCombining": 41
+          },
+          "score": 0.7308,
+          "factors": {
+            "relevance": 0.706,
+            "low_coverage": 1.0,
+            "growth": 0.882,
+            "neighbour_support": 0.147
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2602.18965",
+              "title": "Face Presentation Attack Detection via Content-Adaptive Spatial Operators",
+              "year": 2026,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2602.18965",
+              "similarity": 0.0592
+            },
+            {
+              "arxivId": "2405.16940",
+              "title": "Adversarial Attacks on Both Face Recognition and Face Anti-spoofing Models",
+              "year": 2024,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2405.16940",
+              "similarity": 0.0573
+            },
+            {
+              "arxivId": "2503.00429",
+              "title": "DADM: Dual Alignment of Domain and Modality for Face Anti-spoofing",
+              "year": 2025,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2503.00429",
+              "similarity": 0.0562
+            },
+            {
+              "arxivId": "2401.01752",
+              "title": "FullLoRA: Efficiently Boosting the Robustness of Pretrained Vision Transformers",
+              "year": 2024,
+              "primaryCategory": "cs.CV",
+              "categoryName": "Computer Vision",
+              "url": "https://arxiv.org/abs/2401.01752",
+              "similarity": 0.0389
+            },
+            {
+              "arxivId": "2510.24985",
+              "title": "FaRAccel: FPGA-Accelerated Defense Architecture for Efficient Bit-Flip Attack Resilience in Transformer Models",
+              "year": 2025,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2510.24985",
+              "similarity": 0.0354
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "title": "security · secure · blockchain  ×  estimation · pose · localization",
+          "topics": [
+            {
+              "topicId": 2,
+              "label": "security · secure · blockchain",
+              "topTerms": [
+                "security",
+                "secure",
+                "blockchain",
+                "protocol",
+                "iot",
+                "devices"
+              ],
+              "lowerCoherence": true
+            },
+            {
+              "topicId": 16,
+              "label": "estimation · pose · localization",
+              "topTerms": [
+                "estimation",
+                "pose",
+                "localization",
+                "depth",
+                "camera",
+                "slam"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "38 papers in 2024–2025 cover both topics (0.03 in every 100 papers), against 16 in 2018–2019 (0.05 in every 100): their share fell. 4 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "dataset_coverage",
+            "note": "More common in other computer-science categories (such as cs.LG or cs.AI) than in this corpus: the low count here is most likely a dataset-coverage effect, not a research gap."
+          },
+          "evidence": {
+            "recentPapers": 38,
+            "olderPapers": 16,
+            "recentShare": 0.00035,
+            "olderShare": 0.00053,
+            "growthLogRatio": -0.345,
+            "similarPapersCombining": 4,
+            "otherCsCategoriesShare": 0.00237,
+            "otherCsCategoriesPapers": 86,
+            "corpusPapersCombining": 141
+          },
+          "score": 0.6913,
+          "factors": {
+            "relevance": 0.647,
+            "low_coverage": 0.912,
+            "growth": 0.471,
+            "neighbour_support": 0.735
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2606.27044",
+              "title": "Physical Layer Authentication With Channel Knowledge Maps in Indoor Environments",
+              "year": 2026,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2606.27044",
+              "similarity": 0.2304
+            },
+            {
+              "arxivId": "2602.23760",
+              "title": "PLA for Drone RID Frames via Motion Estimation and Consistency Verification",
+              "year": 2026,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2602.23760",
+              "similarity": 0.2072
+            },
+            {
+              "arxivId": "2503.11508",
+              "title": "Leveraging Angle of Arrival Estimation against Impersonation Attacks in Physical Layer Authentication",
+              "year": 2025,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2503.11508",
+              "similarity": 0.1947
+            },
+            {
+              "arxivId": "1609.00225",
+              "title": "Random-Training-Assisted Pilot Spoofing Detection and Secure Transmission",
+              "year": 2016,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/1609.00225",
+              "similarity": 0.1656
+            },
+            {
+              "arxivId": "2301.11745",
+              "title": "Side Auth: Synthesizing Virtual Sensors for Authentication",
+              "year": 2023,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2301.11745",
+              "similarity": 0.1243
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "title": "security · secure · blockchain  ×  attacks · attack · adversarial",
+          "topics": [
+            {
+              "topicId": 2,
+              "label": "security · secure · blockchain",
+              "topTerms": [
+                "security",
+                "secure",
+                "blockchain",
+                "protocol",
+                "iot",
+                "devices"
+              ],
+              "lowerCoherence": true
+            },
+            {
+              "topicId": 9,
+              "label": "attacks · attack · adversarial",
+              "topTerms": [
+                "attacks",
+                "attack",
+                "adversarial",
+                "defense",
+                "backdoor",
+                "defenses"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "614 papers in 2024–2025 cover both topics (0.56 in every 100 papers), against 404 in 2018–2019 (1.34 in every 100): their share fell. 10 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "well_covered",
+            "note": "Among the more covered topic combinations in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 614,
+            "olderPapers": 404,
+            "recentShare": 0.0056,
+            "olderShare": 0.01339,
+            "growthLogRatio": -0.8621,
+            "similarPapersCombining": 10,
+            "otherCsCategoriesShare": 0.00118,
+            "otherCsCategoriesPapers": 43,
+            "corpusPapersCombining": 2595
+          },
+          "score": 0.6074,
+          "factors": {
+            "relevance": 1.0,
+            "low_coverage": 0.059,
+            "growth": 0.235,
+            "neighbour_support": 0.971
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "2503.11508",
+              "title": "Leveraging Angle of Arrival Estimation against Impersonation Attacks in Physical Layer Authentication",
+              "year": 2025,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2503.11508",
+              "similarity": 0.1947
+            },
+            {
+              "arxivId": "1806.10387",
+              "title": "Physical Layer Authentication in Mission-Critical MTC Networks: A Security and Delay Performance Analysis",
+              "year": 2018,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/1806.10387",
+              "similarity": 0.1786
+            },
+            {
+              "arxivId": "2407.08282",
+              "title": "AoA-Based Physical Layer Authentication in Analog Arrays under Impersonation Attacks",
+              "year": 2024,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2407.08282",
+              "similarity": 0.1678
+            },
+            {
+              "arxivId": "1609.00225",
+              "title": "Random-Training-Assisted Pilot Spoofing Detection and Secure Transmission",
+              "year": 2016,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/1609.00225",
+              "similarity": 0.1656
+            },
+            {
+              "arxivId": "2506.16400",
+              "title": "Physical-Layer Signal Injection Attacks on EV Charging Ports: Bypassing Authentication via Electrical-Level Exploits",
+              "year": 2025,
+              "primaryCategory": "cs.CR",
+              "categoryName": "Cryptography & Security",
+              "url": "https://arxiv.org/abs/2506.16400",
+              "similarity": 0.1632
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cs.DB": {
+    "query": {
+      "arxivId": "2609.09978",
+      "title": "Few Rows Tell Them Apart: Equivalence of Queries Mixing Set and Bag Semantics Bounded SQL equivalence checkers search for a counter-example database of bounded size, and a search that comes back empty proves nothing",
+      "primaryCategory": "cs.DB"
+    },
+    "result": {
+      "similarPapers": [
+        {
+          "arxivId": "1905.02069",
+          "title": "Mixing set and bag semantics",
+          "year": 2019,
+          "primaryCategory": "cs.DB",
+          "categoryName": "Databases",
+          "url": "https://arxiv.org/abs/1905.02069",
+          "rank": 1,
+          "similarity": 0.2383
+        },
+        {
+          "arxivId": "2112.12742",
+          "title": "Determinacy of Real Conjunctive Queries. The Boolean Case",
+          "year": 2021,
+          "primaryCategory": "cs.DB",
+          "categoryName": "Databases",
+          "url": "https://arxiv.org/abs/2112.12742",
+          "rank": 2,
+          "similarity": 0.2369
+        },
+        {
+          "arxivId": "2609.16218",
+          "title": "How Can We Shrink the Family of Test Databases? Query Containment with Nulls and Comparisons",
+          "year": 2026,
+          "primaryCategory": "cs.DB",
+          "categoryName": "Databases",
+          "url": "https://arxiv.org/abs/2609.16218",
+          "rank": 3,
+          "similarity": 0.2354
+        },
+        {
+          "arxivId": "2004.00481",
+          "title": "A Symbolic Approach to Proving Query Equivalence Under Bag Semantics",
+          "year": 2020,
+          "primaryCategory": "cs.DB",
+          "categoryName": "Databases",
+          "url": "https://arxiv.org/abs/2004.00481",
+          "rank": 4,
+          "similarity": 0.2237
+        },
+        {
+          "arxivId": "2608.26775",
+          "title": "Size Bounds for CQs Under Acyclic Constraints",
+          "year": 2026,
+          "primaryCategory": "cs.DB",
+          "categoryName": "Databases",
+          "url": "https://arxiv.org/abs/2608.26775",
+          "rank": 5,
+          "similarity": 0.1963
+        },
+        {
+          "arxivId": "2503.18003",
+          "title": "Bag Semantics Conjunctive Query Containment. Four Small Steps Towards Undecidability",
+          "year": 2025,
+          "primaryCategory": "cs.DB",
+          "categoryName": "Databases",
+          "url": "https://arxiv.org/abs/2503.18003",
+          "rank": 6,
+          "similarity": 0.1939
+        },
+        {
+          "arxivId": "2609.30956",
+          "title": "Attacking Diophantus: Special Cases of Bag Containment",
+          "year": 2026,
+          "primaryCategory": "cs.DB",
+          "categoryName": "Databases",
+          "url": "https://arxiv.org/abs/2609.30956",
+          "rank": 7,
+          "similarity": 0.1806
+        },
+        {
+          "arxivId": "1509.00100",
+          "title": "Decidability of Equivalence of Aggregate Count-Distinct Queries",
+          "year": 2015,
+          "primaryCategory": "cs.DB",
+          "categoryName": "Databases",
+          "url": "https://arxiv.org/abs/1509.00100",
+          "rank": 8,
+          "similarity": 0.1802
+        },
+        {
+          "arxivId": "2311.14579",
+          "title": "Counting Solutions to Conjunctive Queries: Structural and Hybrid Tractability",
+          "year": 2023,
+          "primaryCategory": "cs.DB",
+          "categoryName": "Databases",
+          "url": "https://arxiv.org/abs/2311.14579",
+          "rank": 9,
+          "similarity": 0.1779
+        },
+        {
+          "arxivId": "2007.08876",
+          "title": "Tractability Beyond $\\beta$-Acyclicity for Conjunctive Queries with Negation",
+          "year": 2020,
+          "primaryCategory": "cs.DB",
+          "categoryName": "Databases",
+          "url": "https://arxiv.org/abs/2007.08876",
+          "rank": 10,
+          "similarity": 0.1774
+        }
+      ],
+      "topicProfile": [
+        {
+          "topicId": 4,
+          "label": "query · queries · database",
+          "topTerms": [
+            "query",
+            "queries",
+            "database",
+            "databases",
+            "sql",
+            "relational"
+          ],
+          "weight": 0.8364,
+          "ownWeight": 0.9863,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 19,
+          "label": "question · answering · question answering",
+          "topTerms": [
+            "question",
+            "answering",
+            "question answering",
+            "reasoning",
+            "questions",
+            "answer"
+          ],
+          "weight": 0.0328,
+          "ownWeight": 0.0,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 18,
+          "label": "graph · graphs · knowledge",
+          "topTerms": [
+            "graph",
+            "graphs",
+            "knowledge",
+            "knowledge graph",
+            "knowledge graphs",
+            "nodes"
+          ],
+          "weight": 0.0212,
+          "ownWeight": 0.0012,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 20,
+          "label": "evaluation · dataset · benchmark",
+          "topTerms": [
+            "evaluation",
+            "dataset",
+            "benchmark",
+            "metrics",
+            "human",
+            "datasets"
+          ],
+          "weight": 0.0148,
+          "ownWeight": 0.0,
+          "lowerCoherence": false
+        },
+        {
+          "topicId": 25,
+          "label": "segmentation · semantic · semantic segmentation",
+          "topTerms": [
+            "segmentation",
+            "semantic",
+            "semantic segmentation",
+            "image segmentation",
+            "instance",
+            "medical"
+          ],
+          "weight": 0.0133,
+          "ownWeight": 0.0121,
+          "lowerCoherence": false
+        }
+      ],
+      "directions": [
+        {
+          "rank": 1,
+          "title": "query · queries · database  ×  question · answering · question answering",
+          "topics": [
+            {
+              "topicId": 4,
+              "label": "query · queries · database",
+              "topTerms": [
+                "query",
+                "queries",
+                "database",
+                "databases",
+                "sql",
+                "relational"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 19,
+              "label": "question · answering · question answering",
+              "topTerms": [
+                "question",
+                "answering",
+                "question answering",
+                "reasoning",
+                "questions",
+                "answer"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "183 papers in 2024–2025 cover both topics (0.17 in every 100 papers), against 50 in 2018–2019 (0.17 in every 100): their share stayed about the same. 8 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "dataset_coverage",
+            "note": "More common in other computer-science categories (such as cs.LG or cs.AI) than in this corpus: the low count here is most likely a dataset-coverage effect, not a research gap."
+          },
+          "evidence": {
+            "recentPapers": 183,
+            "olderPapers": 50,
+            "recentShare": 0.00167,
+            "olderShare": 0.00166,
+            "growthLogRatio": 0.0062,
+            "similarPapersCombining": 8,
+            "otherCsCategoriesShare": 0.00429,
+            "otherCsCategoriesPapers": 156,
+            "corpusPapersCombining": 657
+          },
+          "score": 0.809,
+          "factors": {
+            "relevance": 1.0,
+            "low_coverage": 0.471,
+            "growth": 0.706,
+            "neighbour_support": 1.0
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "1905.02069",
+              "title": "Mixing set and bag semantics",
+              "year": 2019,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/1905.02069",
+              "similarity": 0.2383
+            },
+            {
+              "arxivId": "2503.18003",
+              "title": "Bag Semantics Conjunctive Query Containment. Four Small Steps Towards Undecidability",
+              "year": 2025,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/2503.18003",
+              "similarity": 0.1939
+            },
+            {
+              "arxivId": "2203.13475",
+              "title": "A Dichotomy in Consistent Query Answering for Primary Keys and Unary Foreign Keys",
+              "year": 2022,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/2203.13475",
+              "similarity": 0.1713
+            },
+            {
+              "arxivId": "2003.07800",
+              "title": "When is Ontology-Mediated Querying Efficient?",
+              "year": 2020,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/2003.07800",
+              "similarity": 0.1482
+            },
+            {
+              "arxivId": "1812.04329",
+              "title": "Semantic Width of Conjunctive Queries and Constraint Satisfaction Problems",
+              "year": 2018,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/1812.04329",
+              "similarity": 0.1477
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "title": "query · queries · database  ×  segmentation · semantic · semantic segmentation",
+          "topics": [
+            {
+              "topicId": 4,
+              "label": "query · queries · database",
+              "topTerms": [
+                "query",
+                "queries",
+                "database",
+                "databases",
+                "sql",
+                "relational"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 25,
+              "label": "segmentation · semantic · semantic segmentation",
+              "topTerms": [
+                "segmentation",
+                "semantic",
+                "semantic segmentation",
+                "image segmentation",
+                "instance",
+                "medical"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "55 papers in 2024–2025 cover both topics (0.05 in every 100 papers), against 21 in 2018–2019 (0.07 in every 100): their share fell. 1 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "relatively_low",
+            "note": "Among the less covered topic combinations in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 55,
+            "olderPapers": 21,
+            "recentShare": 0.0005,
+            "olderShare": 0.0007,
+            "growthLogRatio": -0.2805,
+            "similarPapersCombining": 1,
+            "otherCsCategoriesShare": 0.00039,
+            "otherCsCategoriesPapers": 14,
+            "corpusPapersCombining": 202
+          },
+          "score": 0.7531,
+          "factors": {
+            "relevance": 0.824,
+            "low_coverage": 0.941,
+            "growth": 0.412,
+            "neighbour_support": 0.706
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "1812.04329",
+              "title": "Semantic Width of Conjunctive Queries and Constraint Satisfaction Problems",
+              "year": 2018,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/1812.04329",
+              "similarity": 0.1477
+            },
+            {
+              "arxivId": "2503.18214",
+              "title": "On the feasibility of semantic query metrics",
+              "year": 2025,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/2503.18214",
+              "similarity": 0.118
+            },
+            {
+              "arxivId": "2506.09359",
+              "title": "Taming SQL Complexity: LLM-Based Equivalence Evaluation for Text-to-SQL",
+              "year": 2025,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2506.09359",
+              "similarity": 0.1147
+            },
+            {
+              "arxivId": "2610.08089",
+              "title": "When Plans Change Answers: Formalizing Cost-Accuracy Optimization for Semantic Queries",
+              "year": 2026,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/2610.08089",
+              "similarity": 0.1144
+            },
+            {
+              "arxivId": "2608.20356",
+              "title": "Disentangling Structure and Semantics: How Schema Representation Affects LLM-Based SQL Generation",
+              "year": 2026,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/2608.20356",
+              "similarity": 0.1143
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "title": "query · queries · database  ×  evaluation · dataset · benchmark",
+          "topics": [
+            {
+              "topicId": 4,
+              "label": "query · queries · database",
+              "topTerms": [
+                "query",
+                "queries",
+                "database",
+                "databases",
+                "sql",
+                "relational"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 20,
+              "label": "evaluation · dataset · benchmark",
+              "topTerms": [
+                "evaluation",
+                "dataset",
+                "benchmark",
+                "metrics",
+                "human",
+                "datasets"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "139 papers in 2024–2025 cover both topics (0.13 in every 100 papers), against 57 in 2018–2019 (0.19 in every 100): their share fell. 3 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "moderate",
+            "note": "Moderately covered in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 139,
+            "olderPapers": 57,
+            "recentShare": 0.00127,
+            "olderShare": 0.00189,
+            "growthLogRatio": -0.3751,
+            "similarPapersCombining": 3,
+            "otherCsCategoriesShare": 0.00253,
+            "otherCsCategoriesPapers": 92,
+            "corpusPapersCombining": 535
+          },
+          "score": 0.7175,
+          "factors": {
+            "relevance": 0.882,
+            "low_coverage": 0.647,
+            "growth": 0.353,
+            "neighbour_support": 0.882
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "1808.04663",
+              "title": "Evaluating Datalog via Tree Automata and Cycluits",
+              "year": 2018,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/1808.04663",
+              "similarity": 0.1533
+            },
+            {
+              "arxivId": "1612.04203",
+              "title": "Combined Tractability of Query Evaluation via Tree Automata and Cycluits (Extended Version)",
+              "year": 2016,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/1612.04203",
+              "similarity": 0.1501
+            },
+            {
+              "arxivId": "2609.29573",
+              "title": "ModularSQL: A Runtime Guardrail for the Multiplicity Blind Spot in Text-to-SQL",
+              "year": 2026,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2609.29573",
+              "similarity": 0.1336
+            },
+            {
+              "arxivId": "2603.04334",
+              "title": "SpotIt+: Verification-based Text-to-SQL Evaluation with Database Constraints",
+              "year": 2026,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/2603.04334",
+              "similarity": 0.128
+            },
+            {
+              "arxivId": "2412.11669",
+              "title": "Soft and Constrained Hypertree Width",
+              "year": 2024,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/2412.11669",
+              "similarity": 0.1203
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "title": "query · queries · database  ×  natural · natural language · language",
+          "topics": [
+            {
+              "topicId": 4,
+              "label": "query · queries · database",
+              "topTerms": [
+                "query",
+                "queries",
+                "database",
+                "databases",
+                "sql",
+                "relational"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 28,
+              "label": "natural · natural language · language",
+              "topTerms": [
+                "natural",
+                "natural language",
+                "language",
+                "language processing",
+                "processing",
+                "nlp"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "160 papers in 2024–2025 cover both topics (0.15 in every 100 papers), against 46 in 2018–2019 (0.15 in every 100): their share stayed about the same. 1 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "moderate",
+            "note": "Moderately covered in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 160,
+            "olderPapers": 46,
+            "recentShare": 0.00146,
+            "olderShare": 0.00152,
+            "growthLogRatio": -0.0416,
+            "similarPapersCombining": 1,
+            "otherCsCategoriesShare": 0.00272,
+            "otherCsCategoriesPapers": 99,
+            "corpusPapersCombining": 500
+          },
+          "score": 0.6647,
+          "factors": {
+            "relevance": 0.706,
+            "low_coverage": 0.588,
+            "growth": 0.647,
+            "neighbour_support": 0.706
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "1610.04315",
+              "title": "The multiset semantics of SPARQL patterns",
+              "year": 2016,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/1610.04315",
+              "similarity": 0.1445
+            },
+            {
+              "arxivId": "2605.00417",
+              "title": "Multiset semantics in SPARQL, Relational Algebra and Datalog",
+              "year": 2026,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/2605.00417",
+              "similarity": 0.1214
+            },
+            {
+              "arxivId": "1603.07185",
+              "title": "Enabling Cognitive Intelligence Queries in Relational Databases using Low-dimensional Word Embeddings",
+              "year": 2016,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/1603.07185",
+              "similarity": 0.0969
+            },
+            {
+              "arxivId": "2412.17068",
+              "title": "A Plug-and-Play Natural Language Rewriter for Natural Language to SQL",
+              "year": 2024,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/2412.17068",
+              "similarity": 0.0889
+            },
+            {
+              "arxivId": "2606.03145",
+              "title": "The Case for Text-to-SQL Friendly Logical Database Design",
+              "year": 2026,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/2606.03145",
+              "similarity": 0.0877
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "title": "question · answering · question answering  ×  segmentation · semantic · semantic segmentation",
+          "topics": [
+            {
+              "topicId": 19,
+              "label": "question · answering · question answering",
+              "topTerms": [
+                "question",
+                "answering",
+                "question answering",
+                "reasoning",
+                "questions",
+                "answer"
+              ],
+              "lowerCoherence": false
+            },
+            {
+              "topicId": 25,
+              "label": "segmentation · semantic · semantic segmentation",
+              "topTerms": [
+                "segmentation",
+                "semantic",
+                "semantic segmentation",
+                "image segmentation",
+                "instance",
+                "medical"
+              ],
+              "lowerCoherence": false
+            }
+          ],
+          "summary": "125 papers in 2024–2025 cover both topics (0.11 in every 100 papers), against 29 in 2018–2019 (0.10 in every 100): their share grew. 1 of the 50 papers most similar to your text combine them.",
+          "coverage": {
+            "assessment": "moderate",
+            "note": "Moderately covered in this corpus."
+          },
+          "evidence": {
+            "recentPapers": 125,
+            "olderPapers": 29,
+            "recentShare": 0.00114,
+            "olderShare": 0.00096,
+            "growthLogRatio": 0.1552,
+            "similarPapersCombining": 1,
+            "otherCsCategoriesShare": 0.00022,
+            "otherCsCategoriesPapers": 8,
+            "corpusPapersCombining": 360
+          },
+          "score": 0.662,
+          "factors": {
+            "relevance": 0.471,
+            "low_coverage": 0.765,
+            "growth": 0.882,
+            "neighbour_support": 0.706
+          },
+          "weights": {
+            "relevance": 0.4,
+            "low_coverage": 0.25,
+            "growth": 0.2,
+            "neighbour_support": 0.15
+          },
+          "supportingPapers": [
+            {
+              "arxivId": "1812.04329",
+              "title": "Semantic Width of Conjunctive Queries and Constraint Satisfaction Problems",
+              "year": 2018,
+              "primaryCategory": "cs.DB",
+              "categoryName": "Databases",
+              "url": "https://arxiv.org/abs/1812.04329",
+              "similarity": 0.1477
+            },
+            {
+              "arxivId": "2010.11246",
+              "title": "On the Potential of Lexico-logical Alignments for Semantic Parsing to SQL Queries",
+              "year": 2020,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2010.11246",
+              "similarity": 0.0687
+            },
+            {
+              "arxivId": "1908.11214",
+              "title": "Global Reasoning over Database Structures for Text-to-SQL Parsing",
+              "year": 2019,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/1908.11214",
+              "similarity": 0.0636
+            },
+            {
+              "arxivId": "1909.13293",
+              "title": "A Pilot Study for Chinese SQL Semantic Parsing",
+              "year": 2019,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/1909.13293",
+              "similarity": 0.0499
+            },
+            {
+              "arxivId": "2311.02616",
+              "title": "Divide & Conquer for Entailment-aware Multi-hop Evidence Retrieval",
+              "year": 2023,
+              "primaryCategory": "cs.CL",
+              "categoryName": "Computation & Language (NLP)",
+              "url": "https://arxiv.org/abs/2311.02616",
+              "similarity": 0.0458
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

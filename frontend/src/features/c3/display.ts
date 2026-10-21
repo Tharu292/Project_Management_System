@@ -46,4 +46,4 @@ export function formError(caught: unknown): { message: string; fields: Record<st
   return { message: errorMessage(caught), fields: caught instanceof ApiError ? caught.fieldErrors : {} }
 }
 
-export const cardClass = 'rounded-xl border border-slate-200 bg-white p-5'
+export const cardClass = 'rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm shadow-slate-200/60'

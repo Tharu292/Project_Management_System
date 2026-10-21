@@ -1,0 +1,20 @@
+{
+  "labelled": false,
+  "status": "No manual labels yet: extraction precision, recall and gap-identification accuracy are NOT measured.",
+  "sheets": {
+    "a_statements.csv": 225,
+    "b_datasets.csv": 100,
+    "c_aspects.csv": 100,
+    "d_case_studies.csv": 13,
+    "e_recall_sentences.csv": 300
+  },
+  "how_to_label": {
+    "a_statements.csv": "Is the predicted type right? If not, give the true type. Check the quote against the arXiv page.",
+    "b_datasets.csv": "Is the name a dataset or benchmark (not a method, language or organisation)?",
+    "c_aspects.csv": "Does the paper really concern this aspect, judging from the matched text in context?",
+    "d_case_studies.csv": "Is each displayed potential gap relevant to the query paper and supported by the evidence shown: supported, plausible, not_supported or unsure?",
+    "e_recall_sentences.csv": "What is the sentence's true type (or none)? Used to estimate recall."
+  },
+  "then_run": "python -m ml.gap_metrics",
+  "sampling": "hash-ranked with fixed seeds; case-study papers are excluded from their own evidence"
+}
